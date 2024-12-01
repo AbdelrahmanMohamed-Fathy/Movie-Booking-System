@@ -155,17 +155,22 @@
     <None Include=".env" />
     <Compile Include="Controller.cs" />
     <Compile Include="DBManager.cs" />
-    <Compile Include="DotEnv.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="EnvReader.cs" />
+    <Compile Include="welcomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="welcomeForm.Designer.cs">
+      <DependentUpon>welcomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movie_Booking_DBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Movie_Booking_DBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="welcomeForm.resx">
+      <DependentUpon>welcomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -176,6 +181,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Movie_Booking_DBDataSet.xsc">
+      <DependentUpon>Movie_Booking_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Movie_Booking_DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Movie_Booking_DBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Movie_Booking_DBDataSet.xss">
+      <DependentUpon>Movie_Booking_DBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

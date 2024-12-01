@@ -17,9 +17,9 @@ namespace Movie_Booking_System
 
             //Loading Connection String
             string root = Directory.GetCurrentDirectory();
-            DotEnv.Load(Path.Combine(root, "..\\..\\.env"));
+            EnvReader.Load(Path.Combine(root, "..\\..\\.env"));
 
-            Application.Run(new Form1());
+            Application.Run(new welcomeForm());
         }
     }
 }

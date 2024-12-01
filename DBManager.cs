@@ -75,7 +75,7 @@ namespace Movie_Booking_System
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return 0;
+                return -1;
             }
         }
 
@@ -89,6 +89,10 @@ namespace Movie_Booking_System
             {
                 Console.WriteLine(e.Message);
             }
+        }
+        ~DBManager()
+        {
+            this.CloseConnection();
         }
     }
 };
