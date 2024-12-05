@@ -8,19 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Movie_Booking_System
+namespace Movie_Booking_System.Screens
 {
-    public partial class mainForm : Form
+    public partial class loginScreen : UserControl
     {
-        public mainForm()
+        public loginScreen()
         {
             InitializeComponent();
         }
 
-        private void mainForm_Load(object sender, EventArgs e)
+        private void loginScreen_Load(object sender, EventArgs e)
         {
-            this.Controls.Clear();
-            this.Controls.Add(new Screens.loginScreen());
+
         }
     }
 }
