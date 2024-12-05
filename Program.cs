@@ -19,7 +19,7 @@ namespace Movie_Booking_System
             string root = Directory.GetCurrentDirectory();
             EnvReader.Load(Path.Combine(root, "..\\..\\.env"));
 
-            Application.Run(new welcomeForm());
+            Application.Run(new mainForm());
         }
     }
 }

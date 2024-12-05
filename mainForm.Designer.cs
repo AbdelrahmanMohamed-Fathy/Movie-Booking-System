@@ -1,6 +1,6 @@
 ﻿namespace Movie_Booking_System
 {
-    partial class welcomeForm
+    partial class mainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // welcomeForm
+            // mainPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "welcomeForm";
-            this.Text = "Welcome";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(0, 0);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(804, 461);
+            this.mainPanel.TabIndex = 0;
+            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
+            // 
+            // mainForm
+            // 
+            this.ClientSize = new System.Drawing.Size(804, 461);
+            this.Controls.Add(this.mainPanel);
+            this.Name = "mainForm";
+            this.Load += new System.EventHandler(this.mainForm_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+        private System.Windows.Forms.Panel mainPanel;
     }
 }
 
