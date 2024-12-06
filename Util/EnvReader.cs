@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace Movie_Booking_System
+namespace Movie_Booking_System.Util
 {
     public static class EnvReader
     {

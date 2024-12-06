@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 
-namespace Movie_Booking_System
+namespace Movie_Booking_System.Util
 {
     public class Controller
     {

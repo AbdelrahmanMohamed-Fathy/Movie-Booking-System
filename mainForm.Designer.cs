@@ -28,18 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(0, 0);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(784, 461);
+            this.mainPanel.TabIndex = 0;
             // 
             // mainForm
             // 
-            this.ClientSize = new System.Drawing.Size(804, 461);
+            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.mainPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "mainForm";
+            this.Text = "Movie Booking System";
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel mainPanel;
     }
 }
 
