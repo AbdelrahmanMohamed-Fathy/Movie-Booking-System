@@ -362,3 +362,7 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /.env
+/Movie_Booking_DBDataSet.Designer.cs
+/Movie_Booking_DBDataSet.xsc
+/Movie_Booking_DBDataSet.xsd
+/Movie_Booking_DBDataSet.xss
