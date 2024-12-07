@@ -204,27 +204,11 @@
     <Compile Include="mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Movie_Booking_DBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Movie_Booking_DBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Movie_Booking_DBDataSet.xsc">
-      <DependentUpon>Movie_Booking_DBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Movie_Booking_DBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Movie_Booking_DBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Movie_Booking_DBDataSet.xss">
-      <DependentUpon>Movie_Booking_DBDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
