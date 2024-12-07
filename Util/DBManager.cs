@@ -2,7 +2,7 @@
 using System.Data;
 using Microsoft.Data.SqlClient;
 
-namespace Movie_Booking_System
+namespace Movie_Booking_System.Util
 {
     public class DBManager
     {

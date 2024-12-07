@@ -152,15 +152,33 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <None Include=".env" />
-    <Compile Include="Controller.cs" />
-    <Compile Include="DBManager.cs" />
-    <Compile Include="EnvReader.cs" />
-    <Compile Include="welcomeForm.cs">
+    <Compile Include="Screens\loginScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="welcomeForm.Designer.cs">
-      <DependentUpon>welcomeForm.cs</DependentUpon>
+    <Compile Include="Screens\loginScreen.Designer.cs">
+      <DependentUpon>loginScreen.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Screens\loginScreen.resx">
+      <DependentUpon>loginScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\userScreen.resx">
+      <DependentUpon>userScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include=".env" />
+    <Compile Include="Screens\userScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\userScreen.Designer.cs">
+      <DependentUpon>userScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\Controller.cs" />
+    <Compile Include="Util\DBManager.cs" />
+    <Compile Include="Util\EnvReader.cs" />
+    <Compile Include="mainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainForm.Designer.cs">
+      <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Movie_Booking_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -169,18 +187,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="welcomeForm.resx">
-      <DependentUpon>welcomeForm.cs</DependentUpon>
+    <EmbeddedResource Include="mainForm.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Movie_Booking_DBDataSet.xsc">
       <DependentUpon>Movie_Booking_DBDataSet.xsd</DependentUpon>
     </None>
@@ -193,18 +202,12 @@
       <DependentUpon>Movie_Booking_DBDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\absolute-cinema.ico" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DBCREATIONQUERY.sql" />
@@ -216,5 +219,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets'))" />
+    <Error Condition="!Exists('packages\Microsoft.Web.WebView2.1.0.1264.42\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Web.WebView2.1.0.1264.42\build\Microsoft.Web.WebView2.targets'))" />
   </Target>
+  <Import Project="packages\Microsoft.Web.WebView2.1.0.1264.42\build\Microsoft.Web.WebView2.targets" Condition="Exists('packages\Microsoft.Web.WebView2.1.0.1264.42\build\Microsoft.Web.WebView2.targets')" />
 </Project>
