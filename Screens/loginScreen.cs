@@ -35,7 +35,7 @@ namespace Movie_Booking_System.Screens
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
-            
+            parentForm.LoadNewForm(new userScreen(parentForm, userMode.Guest));
         }
 
         private bool ValidateLogin(out userMode mode)
