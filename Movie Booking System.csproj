@@ -180,7 +180,6 @@
     <EmbeddedResource Include="Screens\userScreen.resx">
       <DependentUpon>userScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include=".env" />
     <Compile Include="Screens\userScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,7 +205,6 @@
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include=".env.Example" />
     <None Include="Movie_Booking_DBDataSet.xsc">
       <DependentUpon>Movie_Booking_DBDataSet.xsd</DependentUpon>
     </None>
