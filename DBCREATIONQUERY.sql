@@ -44,7 +44,7 @@ CREATE TABLE Orders (
 FoodID				INTEGER			NOT NULL,
 OID					INTEGER			NOT NULL,
 OrderCount			INTEGER			NOT NULL,
-PRIMARY KEY			(OID),
+PRIMARY KEY			(OID,FoodID),
 FOREIGN KEY			(FoodID)		REFERENCES Fooditem
 );
 ---------------------------------------
