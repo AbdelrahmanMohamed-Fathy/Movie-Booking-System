@@ -215,6 +215,7 @@
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include=".env.Example" />
     <None Include="Movie_Booking_DBDataSet.xsc">
       <DependentUpon>Movie_Booking_DBDataSet.xsd</DependentUpon>
     </None>
