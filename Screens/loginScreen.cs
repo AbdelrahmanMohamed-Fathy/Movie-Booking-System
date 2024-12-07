@@ -31,6 +31,12 @@ namespace Movie_Booking_System.Screens
             userMode mode;
             if (ValidateLogin(out mode))
                 parentForm.LoadNewForm(new userScreen(parentForm,mode));
+            else
+            {
+                txtbxUsername.ForeColor = Color.Red;
+                txtbxPassword.ForeColor = Color.Red;
+                lblInvalid.Show();
+            }
         }
 
         private void btnContinue_Click(object sender, EventArgs e)
@@ -61,5 +67,24 @@ namespace Movie_Booking_System.Screens
             return false;
         }
 
+        private void txtbxUsername_TextChanged(object sender, EventArgs e)
+        {
+            if (txtbxUsername.ForeColor == Color.Red)
+            {
+                txtbxUsername.ForeColor = Color.Black;
+                txtbxPassword.ForeColor = Color.Black;
+                lblInvalid.Hide();
+            }
+        }
+
+        private void txtbxPassword_TextChanged(object sender, EventArgs e)
+        {
+            if (txtbxPassword.ForeColor == Color.Red)
+            {
+                txtbxUsername.ForeColor = Color.Black;
+                txtbxPassword.ForeColor = Color.Black;
+                lblInvalid.Hide();
+            }
+        }
     }
 }
