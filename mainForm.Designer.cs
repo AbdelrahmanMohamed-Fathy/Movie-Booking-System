@@ -35,6 +35,7 @@
             // 
             // mainPanel
             // 
+            this.mainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.mainPanel.Cursor = System.Windows.Forms.Cursors.Default;
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
@@ -44,12 +45,15 @@
             // 
             // btnGoBack
             // 
+            this.btnGoBack.BackColor = System.Drawing.SystemColors.Control;
+            this.btnGoBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGoBack.BackgroundImage")));
+            this.btnGoBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGoBack.Location = new System.Drawing.Point(3, 3);
             this.btnGoBack.Name = "btnGoBack";
-            this.btnGoBack.Size = new System.Drawing.Size(75, 23);
+            this.btnGoBack.Size = new System.Drawing.Size(41, 32);
             this.btnGoBack.TabIndex = 0;
-            this.btnGoBack.Text = "Go Back";
-            this.btnGoBack.UseVisualStyleBackColor = true;
+            this.btnGoBack.UseVisualStyleBackColor = false;
             this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
             // mainForm

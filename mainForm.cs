@@ -21,6 +21,8 @@ namespace Movie_Booking_System
 
         private void mainForm_Load(object sender, EventArgs e)
         {
+            btnGoBack.FlatStyle = FlatStyle.Flat;
+            btnGoBack.FlatAppearance.BorderSize = 0;
             LoadNewForm(new Screens.loginScreen(this),false);
         }
 

@@ -21,11 +21,6 @@ namespace Movie_Booking_System.Screens
             this.parentForm = parent;
         }
 
-        private void loginScreen_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             userMode mode;
