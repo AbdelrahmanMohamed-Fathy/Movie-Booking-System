@@ -14,6 +14,7 @@ namespace Movie_Booking_System
     {
 
         private Stack<Type> formStack = new Stack<Type>();
+        public userMode Authority = userMode.Guest;
         public mainForm()
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace Movie_Booking_System
         {
             btnGoBack.FlatStyle = FlatStyle.Flat;
             btnGoBack.FlatAppearance.BorderSize = 0;
-            LoadNewForm(new Screens.loginScreen(this),false);
+            LoadNewForm(new Screens.loginScreen(this, this.Authority),false);
         }
 
         public void LoadNewForm(Form f , bool store = true)
@@ -53,9 +54,16 @@ namespace Movie_Booking_System
                 return;
 
             Type formtype = formStack.Pop();
-            Form form = (Form)System.Activator.CreateInstance(formtype, this);
+            Form form = (Form)System.Activator.CreateInstance(formtype, this, this.Authority);
             LoadNewForm(form, false);
 
         }
+    }
+    public enum userMode
+    {
+        Guest,
+        User,
+        Employee,
+        Admin
     }
 }

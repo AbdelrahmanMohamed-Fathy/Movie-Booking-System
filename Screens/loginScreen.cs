@@ -15,17 +15,21 @@ namespace Movie_Booking_System.Screens
     {
         private mainForm parentForm;
 
-        public loginScreen(mainForm parent)
+        public loginScreen(mainForm parent, userMode mode)
         {
             InitializeComponent();
             this.parentForm = parent;
+            parentForm.Authority = userMode.Guest;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             userMode mode;
             if (ValidateLogin(out mode))
-                parentForm.LoadNewForm(new userScreen(parentForm,mode));
+            {
+                parentForm.Authority = mode;
+                parentForm.LoadNewForm(new userScreen(parentForm,parentForm.Authority));
+            }
             else
             {
                 txtbxUsername.ForeColor = Color.Red;
@@ -36,7 +40,8 @@ namespace Movie_Booking_System.Screens
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
-            parentForm.LoadNewForm(new userScreen(parentForm, userMode.Guest));
+            parentForm.Authority = userMode.Guest;
+            parentForm.LoadNewForm(new userScreen(parentForm, parentForm.Authority));
         }
 
         private bool ValidateLogin(out userMode mode)

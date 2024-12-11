@@ -26,13 +26,4 @@ namespace Movie_Booking_System.Screens
 
         }
     }
-
-
-    public enum userMode
-    {
-        Guest,
-        User,
-        Employee,
-        Admin
-    }
 }
