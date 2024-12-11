@@ -173,6 +173,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="README.MD" />
     <Compile Include="Screens\loginScreen.cs">
       <SubType>Form</SubType>
     </Compile>
