@@ -12,7 +12,6 @@ namespace Movie_Booking_System
 {
     public partial class mainForm : Form
     {
-
         private Stack<Type> formStack = new Stack<Type>();
         public userMode Authority = userMode.Guest;
         public mainForm()
@@ -27,18 +26,34 @@ namespace Movie_Booking_System
             LoadNewForm(new Screens.loginScreen(this, this.Authority),false);
         }
 
-        public void LoadNewForm(Form f , bool store = true)
+        /// <summary>
+        /// This method loads forms onto the main form elegantly.
+        /// <example>
+        /// For example:
+        /// <code>
+        /// LoadNewForm(new Screens.loginScreen(this, this.Authority));
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="form">
+        /// The form to be loaded
+        /// </param>
+        /// <param name="store"> 
+        /// This specificies whether or not this form should be stored for the back button
+        /// however you shouldn't this change from the default unless you know what you're doing
+        /// </param>
+        public void LoadNewForm(Form form , bool store = true)
         {
             if (store)
                 formStack.Push(mainPanel.Controls[0].GetType());
 
             CleanUp();
-            f.TopLevel = false;
-            f.ControlBox = false;
-            f.FormBorderStyle = FormBorderStyle.None;
-            f.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            mainPanel.Controls.Add(f);
-            f.Show();
+            form.TopLevel = false;
+            form.ControlBox = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            mainPanel.Controls.Add(form);
+            form.Show();
         }
 
         private void CleanUp()
