@@ -106,7 +106,10 @@ SeatID              INTEGER         NOT NULL,
 ShowID              INTEGER         NOT NULL,
 Price               DECIMAL         NOT NULL,
 PaymentMethod		VARCHAR(20)		NOT NULL CHECK (Paymentmethod IN ('Cash', 'Credit')),
-PRIMARY KEY			(BookingID)
+PRIMARY KEY			(BookingID),
+FOREIGN KEY         (UserID)        REFERENCES Users,
+FOREIGN KEY         (SeatID)        REFERENCES Seats,
+FOREIGN KEY         (ShowID)        REFERENCES Shows
 );
 ---------------------------------------
 CREATE TABLE Orders (
