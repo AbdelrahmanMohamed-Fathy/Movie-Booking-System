@@ -118,9 +118,9 @@
             // visibleconfpass
             // 
             this.visibleconfpass.Image = ((System.Drawing.Image)(resources.GetObject("visibleconfpass.Image")));
-            this.visibleconfpass.Location = new System.Drawing.Point(561, 281);
+            this.visibleconfpass.Location = new System.Drawing.Point(600, 281);
             this.visibleconfpass.Name = "visibleconfpass";
-            this.visibleconfpass.Size = new System.Drawing.Size(32, 22);
+            this.visibleconfpass.Size = new System.Drawing.Size(41, 22);
             this.visibleconfpass.TabIndex = 17;
             this.visibleconfpass.Click += new System.EventHandler(this.visibleconfpass_Click);
             // 

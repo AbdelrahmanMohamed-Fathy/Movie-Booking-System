@@ -180,10 +180,11 @@ namespace Movie_Booking_System.Screens
             }
             if (string.IsNullOrEmpty(confirmpass.Text) || confirmpass.Text == "Confirm Password")
             {
+                confirmpasslbl.Text = "Please confirm the Password";
                 confirmpasslbl.Show();
                 IsValid=false;
             }
-            if (password.Text != confirmpass.Text)
+            else if (password.Text != confirmpass.Text)
             {
                 confirmpasslbl.Text = "Passwords do not match!";
                 confirmpasslbl.Show();
@@ -413,9 +414,6 @@ namespace Movie_Booking_System.Screens
                 return false;
             }
         }
-
-
-
     }
     public static class ModifyProgressBarColor
     {
