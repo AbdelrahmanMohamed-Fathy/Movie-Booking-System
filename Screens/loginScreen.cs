@@ -79,5 +79,24 @@ namespace Movie_Booking_System.Screens
                 lblInvalid.Hide();
             }
         }
+
+        private void Signupclk_Click(object sender, EventArgs e)
+        {
+            parentForm.Authority = userMode.Guest;
+            parentForm.LoadNewForm(new NewUser(parentForm, parentForm.Authority));
+        }
+
+        private void visibleconfpass_Click(object sender, EventArgs e)
+        {
+            if (txtbxPassword.UseSystemPasswordChar == true)
+            {
+                txtbxPassword.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtbxPassword.UseSystemPasswordChar= true;
+            } 
+            
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Movie_Booking_System.Screens
@@ -15,6 +16,31 @@ namespace Movie_Booking_System.Screens
         }
 
         private void userScreen_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "Enter Movie Name")
+            {
+                textBox1.Text = "";
+                textBox1.ForeColor = Color.Black;
+                textBox1.Font =new Font(textBox1.Font,FontStyle.Regular);
+            }
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(textBox1.Text))
+            {
+                textBox1.Text = "Enter Movie Name";
+                textBox1.ForeColor = Color.Silver;
+                textBox1.Font = new Font(textBox1.Font, FontStyle.Italic);
+            }
+        }
+
+        private void btnGoBack_Click(object sender, EventArgs e)
         {
 
         }
