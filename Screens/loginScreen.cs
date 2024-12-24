@@ -25,13 +25,16 @@ namespace Movie_Booking_System.Screens
         private void btnLogin_Click(object sender, EventArgs e)
         {
             userMode mode;
+            this.Cursor = Cursors.WaitCursor;
             if (ValidateLogin(out mode))
             {
+                this.Cursor = Cursors.Default;
                 parentForm.Authority = mode;
                 parentForm.LoadNewForm(new userScreen(parentForm,parentForm.Authority));
             }
             else
             {
+                this.Cursor = Cursors.Default;
                 txtbxUsername.ForeColor = Color.Red;
                 txtbxPassword.ForeColor = Color.Red;
                 lblInvalid.Show();
