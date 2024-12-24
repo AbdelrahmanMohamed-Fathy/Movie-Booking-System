@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.btnGoBack = new System.Windows.Forms.Button();
+            this.btnGoBack = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -46,14 +46,12 @@
             // btnGoBack
             // 
             this.btnGoBack.BackColor = System.Drawing.SystemColors.Control;
-            this.btnGoBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGoBack.BackgroundImage")));
-            this.btnGoBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGoBack.Location = new System.Drawing.Point(3, 3);
+            this.btnGoBack.Image = ((System.Drawing.Image)(resources.GetObject("btnGoBack.Image")));
+            this.btnGoBack.Location = new System.Drawing.Point(12, 9);
             this.btnGoBack.Name = "btnGoBack";
-            this.btnGoBack.Size = new System.Drawing.Size(41, 32);
-            this.btnGoBack.TabIndex = 0;
-            this.btnGoBack.UseVisualStyleBackColor = false;
+            this.btnGoBack.Size = new System.Drawing.Size(39, 32);
+            this.btnGoBack.TabIndex = 1;
             this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
             // mainForm
@@ -72,7 +70,7 @@
         #endregion
 
         private System.Windows.Forms.Panel mainPanel;
-        private System.Windows.Forms.Button btnGoBack;
+        private System.Windows.Forms.Label btnGoBack;
     }
 }
 

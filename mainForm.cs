@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -9,6 +10,10 @@ namespace Movie_Booking_System
     {
         private Stack<Type> formStack = new Stack<Type>();
         public userMode Authority = userMode.Guest;
+        public Color FormColor = Color.White;
+        public Color FormSubTextColor = Color.Silver;
+        public Color FormTextColor = Color.Black;
+        public Color btnColor = Color.LightGray;
         public mainForm()
         {
             InitializeComponent();
@@ -17,7 +22,7 @@ namespace Movie_Booking_System
         private void mainForm_Load(object sender, EventArgs e)
         {
             btnGoBack.FlatStyle = FlatStyle.Flat;
-            btnGoBack.FlatAppearance.BorderSize = 0;
+            btnGoBack.BackColor = FormColor;
             LoadNewForm(new Screens.loginScreen(this, this.Authority),false);
         }
 
