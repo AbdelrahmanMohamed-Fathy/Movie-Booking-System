@@ -19,7 +19,6 @@ namespace Movie_Booking_System.Screens
 {
     public partial class NewUser : Form
     {
-        Controller controllerobj = new Controller();
         private mainForm parentForm;
         sbyte progessBarRed = 2;
         sbyte progessBarYellow = 3;
@@ -194,7 +193,7 @@ namespace Movie_Booking_System.Screens
             if (IsValid)
             {
                 //exception error
-                //controllerobj.InsertAccount(Fname.Text, Lname.Text, Email.Text, password.Text, Convert.ToInt32(phonenum.Text), "Client");
+                //Controller.InsertAccount(Fname.Text, Lname.Text, Email.Text, password.Text, Convert.ToInt32(phonenum.Text), "Client");
                 MessageBox.Show("user entered successfully");
             }
         }

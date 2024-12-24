@@ -72,5 +72,16 @@ namespace Movie_Booking_System.Controls
             this.MinimumSize = new System.Drawing.Size(0, textBox1.Height);
             this.MaximumSize = new System.Drawing.Size(this.Size.Width*100, textBox1.Height);
         }
+
+        [Browsable(true)]
+        [Category("Property Changed")]
+        public event EventHandler TextChanged;
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (this.TextChanged != null)
+                if (textBox1.Text != placeHolderText)
+                    this.TextChanged(this, e);
+        }
     }
 }

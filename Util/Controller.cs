@@ -7,9 +7,7 @@ namespace Movie_Booking_System.Util
     public class Controller
     {
         static DBManager dbMan = new DBManager();
-        public Controller()
-        {
-        }
+
         static public void TerminateConnection()
         {
             dbMan.CloseConnection();
@@ -36,26 +34,14 @@ namespace Movie_Booking_System.Util
                 "FROM Accounts\n" +
                 $"WHERE Email='{Email}' AND Pass='{Password}'";
 
-
-
             object ResultObject = dbMan.ExecuteScalar(query);
             string Result;
             if (ResultObject != null)
                 Result = ResultObject.ToString();
             else
                 Result = null;
-                
-            switch(Result)
-            {
-                case "Admin":
-                    return userMode.Admin;
-                case "Employee":
-                    return userMode.Employee;
-                case "Client":
-                    return userMode.User;
-                default:
-                    return userMode.Guest;
-            }
+
+            return HelperFunctions.ParseAuthority(Result);
         }
 
     }

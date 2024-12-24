@@ -107,5 +107,10 @@ namespace Movie_Booking_System.Screens
         {
 
         }
+
+        private void placeHolderTextBox1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
