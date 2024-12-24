@@ -229,6 +229,10 @@
     <Content Include="Assets\go-back-arrow.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Closed-eye-icon.png" />
+    <Content Include="Assets\Open-eye-icon.png" />
+    <Content Include="Assets\icons8-search-30.png" />
+    <Content Include="Assets\icons8-visibility-30.png" />
     <Content Include="DBCREATIONQUERY.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

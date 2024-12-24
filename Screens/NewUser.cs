@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Runtime.InteropServices;
 using Movie_Booking_System.Screens;
+using System.Collections.ObjectModel;
 
 namespace Movie_Booking_System.Screens
 {
@@ -280,25 +281,40 @@ namespace Movie_Booking_System.Screens
 
         private void visibleconfpass_Click(object sender, EventArgs e)
         {
+            if (confirmpass.Text == "Confirm Password")
+            {
+                return;
+            }
             if (confirmpass.UseSystemPasswordChar == true)
             {
                 confirmpass.UseSystemPasswordChar = false;
+                visibleconfpass.Image = Image.FromFile("C:\\Users\\User\\Source\\Repos\\Movie-Booking-System\\Assets\\Closed-eye-icon.png");
             }
             else
             {
                 confirmpass.UseSystemPasswordChar = true;
+                visibleconfpass.Image = Image.FromFile("C:\\Users\\User\\Source\\Repos\\Movie-Booking-System\\Assets\\Open-eye-icon.png");
             }
 
         }
-        private void label3_Click(object sender, EventArgs e)
+        private void visiblepass_Click(object sender, EventArgs e)
         {
+            if (password.Text == "Password")
+            {
+                return;
+            }
             if (password.UseSystemPasswordChar == true)
             {
                 password.UseSystemPasswordChar = false;
+                visiblepass.Image = Image.FromFile("C:\\Users\\User\\Source\\Repos\\Movie-Booking-System\\Assets\\Closed-eye-icon.png");
+                
+
             }
             else
             {
                 password.UseSystemPasswordChar = true;
+                visiblepass.Image = Image.FromFile("C:\\Users\\User\\Source\\Repos\\Movie-Booking-System\\Assets\\Open-eye-icon.png");
+
             }
            
         }

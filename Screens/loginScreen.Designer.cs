@@ -41,6 +41,7 @@
             // 
             // lblLogin
             // 
+            this.lblLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblLogin.Location = new System.Drawing.Point(419, 203);
@@ -52,6 +53,7 @@
             // 
             // txtbxUsername
             // 
+            this.txtbxUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtbxUsername.BackColor = System.Drawing.SystemColors.Window;
             this.txtbxUsername.Location = new System.Drawing.Point(352, 249);
             this.txtbxUsername.Margin = new System.Windows.Forms.Padding(4);
@@ -62,6 +64,7 @@
             // 
             // txtbxPassword
             // 
+            this.txtbxPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtbxPassword.BackColor = System.Drawing.SystemColors.Window;
             this.txtbxPassword.Location = new System.Drawing.Point(352, 281);
             this.txtbxPassword.Margin = new System.Windows.Forms.Padding(4);
@@ -73,6 +76,7 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLogin.Location = new System.Drawing.Point(367, 342);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
@@ -84,6 +88,7 @@
             // 
             // btnContinue
             // 
+            this.btnContinue.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnContinue.Location = new System.Drawing.Point(367, 379);
             this.btnContinue.Margin = new System.Windows.Forms.Padding(4);
             this.btnContinue.Name = "btnContinue";
@@ -95,6 +100,7 @@
             // 
             // lblInvalid
             // 
+            this.lblInvalid.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblInvalid.AutoSize = true;
             this.lblInvalid.ForeColor = System.Drawing.Color.Red;
             this.lblInvalid.Location = new System.Drawing.Point(363, 309);
@@ -107,6 +113,7 @@
             // 
             // Signupclk
             // 
+            this.Signupclk.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Signupclk.Location = new System.Drawing.Point(367, 414);
             this.Signupclk.Name = "Signupclk";
             this.Signupclk.Size = new System.Drawing.Size(213, 29);
@@ -117,6 +124,7 @@
             // 
             // visibleconfpass
             // 
+            this.visibleconfpass.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.visibleconfpass.Image = ((System.Drawing.Image)(resources.GetObject("visibleconfpass.Image")));
             this.visibleconfpass.Location = new System.Drawing.Point(600, 281);
             this.visibleconfpass.Name = "visibleconfpass";

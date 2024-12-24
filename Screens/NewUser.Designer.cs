@@ -55,6 +55,9 @@
             this.specialcharlbl = new System.Windows.Forms.Label();
             this.passlenlbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.phoneicon = new System.Windows.Forms.Label();
+            this.emailicon = new System.Windows.Forms.Label();
+            this.passicon = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,11 +133,11 @@
             // Createaccclk
             // 
             this.Createaccclk.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Createaccclk.BackColor = System.Drawing.Color.Gray;
+            this.Createaccclk.BackColor = System.Drawing.Color.Magenta;
             this.Createaccclk.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Createaccclk.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Createaccclk.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Createaccclk.ForeColor = System.Drawing.Color.Azure;
+            this.Createaccclk.ForeColor = System.Drawing.Color.White;
             this.Createaccclk.Location = new System.Drawing.Point(631, 406);
             this.Createaccclk.Name = "Createaccclk";
             this.Createaccclk.Size = new System.Drawing.Size(197, 56);
@@ -247,16 +250,18 @@
             // visiblepass
             // 
             this.visiblepass.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.visiblepass.BackColor = System.Drawing.Color.Transparent;
             this.visiblepass.Image = ((System.Drawing.Image)(resources.GetObject("visiblepass.Image")));
             this.visiblepass.Location = new System.Drawing.Point(536, 329);
             this.visiblepass.Name = "visiblepass";
             this.visiblepass.Size = new System.Drawing.Size(38, 34);
             this.visiblepass.TabIndex = 15;
-            this.visiblepass.Click += new System.EventHandler(this.label3_Click);
+            this.visiblepass.Click += new System.EventHandler(this.visiblepass_Click);
             // 
             // visibleconfpass
             // 
             this.visibleconfpass.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.visibleconfpass.BackColor = System.Drawing.Color.Transparent;
             this.visibleconfpass.Image = ((System.Drawing.Image)(resources.GetObject("visibleconfpass.Image")));
             this.visibleconfpass.Location = new System.Drawing.Point(937, 329);
             this.visibleconfpass.Name = "visibleconfpass";
@@ -375,6 +380,33 @@
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
             // 
+            // phoneicon
+            // 
+            this.phoneicon.BackColor = System.Drawing.Color.Transparent;
+            this.phoneicon.Image = ((System.Drawing.Image)(resources.GetObject("phoneicon.Image")));
+            this.phoneicon.Location = new System.Drawing.Point(592, 256);
+            this.phoneicon.Name = "phoneicon";
+            this.phoneicon.Size = new System.Drawing.Size(33, 34);
+            this.phoneicon.TabIndex = 29;
+            // 
+            // emailicon
+            // 
+            this.emailicon.BackColor = System.Drawing.Color.Transparent;
+            this.emailicon.Image = ((System.Drawing.Image)(resources.GetObject("emailicon.Image")));
+            this.emailicon.Location = new System.Drawing.Point(192, 256);
+            this.emailicon.Name = "emailicon";
+            this.emailicon.Size = new System.Drawing.Size(32, 34);
+            this.emailicon.TabIndex = 30;
+            // 
+            // passicon
+            // 
+            this.passicon.BackColor = System.Drawing.Color.Transparent;
+            this.passicon.Image = ((System.Drawing.Image)(resources.GetObject("passicon.Image")));
+            this.passicon.Location = new System.Drawing.Point(195, 331);
+            this.passicon.Name = "passicon";
+            this.passicon.Size = new System.Drawing.Size(29, 32);
+            this.passicon.TabIndex = 31;
+            // 
             // NewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -383,6 +415,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1089, 681);
+            this.Controls.Add(this.passicon);
+            this.Controls.Add(this.emailicon);
+            this.Controls.Add(this.phoneicon);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.passlenlbl);
             this.Controls.Add(this.specialcharlbl);
@@ -446,5 +481,8 @@
         private System.Windows.Forms.Label specialcharlbl;
         private System.Windows.Forms.Label passlenlbl;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label phoneicon;
+        private System.Windows.Forms.Label emailicon;
+        private System.Windows.Forms.Label passicon;
     }
 }
