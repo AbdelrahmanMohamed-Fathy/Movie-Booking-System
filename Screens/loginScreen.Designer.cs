@@ -36,7 +36,7 @@
             this.btnContinue = new System.Windows.Forms.Button();
             this.lblInvalid = new System.Windows.Forms.Label();
             this.btnSignup = new System.Windows.Forms.Button();
-            this.visibleconfpass = new System.Windows.Forms.Label();
+            this.btnPassVis = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblLogin
@@ -45,7 +45,7 @@
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblLogin.Location = new System.Drawing.Point(321, 134);
-            this.lblLogin.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.lblLogin.Margin = new System.Windows.Forms.Padding(3);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(80, 31);
             this.lblLogin.TabIndex = 0;
@@ -75,23 +75,29 @@
             // btnLogin
             // 
             this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLogin.BackColor = System.Drawing.Color.Gray;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(282, 247);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(160, 23);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnContinue
             // 
             this.btnContinue.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnContinue.BackColor = System.Drawing.Color.Gray;
+            this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnContinue.ForeColor = System.Drawing.Color.White;
             this.btnContinue.Location = new System.Drawing.Point(282, 277);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(160, 23);
             this.btnContinue.TabIndex = 4;
             this.btnContinue.Text = "Continue as Guest";
-            this.btnContinue.UseVisualStyleBackColor = true;
+            this.btnContinue.UseVisualStyleBackColor = false;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
             // 
             // lblInvalid
@@ -109,25 +115,30 @@
             // btnSignup
             // 
             this.btnSignup.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSignup.BackColor = System.Drawing.Color.Gray;
+            this.btnSignup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSignup.ForeColor = System.Drawing.Color.White;
             this.btnSignup.Location = new System.Drawing.Point(282, 305);
-            this.btnSignup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSignup.Margin = new System.Windows.Forms.Padding(2);
             this.btnSignup.Name = "btnSignup";
             this.btnSignup.Size = new System.Drawing.Size(160, 24);
             this.btnSignup.TabIndex = 6;
             this.btnSignup.Text = "Sign up";
-            this.btnSignup.UseVisualStyleBackColor = true;
+            this.btnSignup.UseVisualStyleBackColor = false;
             this.btnSignup.Click += new System.EventHandler(this.btnSignup_Click);
             // 
-            // visibleconfpass
+            // btnPassVis
             // 
-            this.visibleconfpass.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.visibleconfpass.Image = ((System.Drawing.Image)(resources.GetObject("visibleconfpass.Image")));
-            this.visibleconfpass.Location = new System.Drawing.Point(457, 197);
-            this.visibleconfpass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.visibleconfpass.Name = "visibleconfpass";
-            this.visibleconfpass.Size = new System.Drawing.Size(31, 18);
-            this.visibleconfpass.TabIndex = 17;
-            this.visibleconfpass.Click += new System.EventHandler(this.visibleconfpass_Click);
+            this.btnPassVis.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPassVis.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPassVis.Image = ((System.Drawing.Image)(resources.GetObject("btnPassVis.Image")));
+            this.btnPassVis.Location = new System.Drawing.Point(458, 197);
+            this.btnPassVis.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.btnPassVis.Name = "btnPassVis";
+            this.btnPassVis.Size = new System.Drawing.Size(31, 20);
+            this.btnPassVis.TabIndex = 17;
+            this.btnPassVis.Visible = false;
+            this.btnPassVis.Click += new System.EventHandler(this.btnPassVis_Click);
             // 
             // loginScreen
             // 
@@ -135,7 +146,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 500);
             this.ControlBox = false;
-            this.Controls.Add(this.visibleconfpass);
+            this.Controls.Add(this.btnPassVis);
             this.Controls.Add(this.btnSignup);
             this.Controls.Add(this.lblInvalid);
             this.Controls.Add(this.btnContinue);
@@ -145,7 +156,7 @@
             this.Controls.Add(this.lblLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "loginScreen";
-            this.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Padding = new System.Windows.Forms.Padding(3);
             this.Text = "loginScreen";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -161,6 +172,6 @@
         private System.Windows.Forms.Button btnContinue;
         private System.Windows.Forms.Label lblInvalid;
         private System.Windows.Forms.Button btnSignup;
-        private System.Windows.Forms.Label visibleconfpass;
+        private System.Windows.Forms.Label btnPassVis;
     }
 }

@@ -84,6 +84,14 @@ namespace Movie_Booking_System.Screens
                 txtbxPassword.ForeColor = Color.Black;
                 lblInvalid.Hide();
             }
+            if (String.IsNullOrEmpty(txtbxPassword.Text))
+            {
+                btnPassVis.Hide();
+            }
+            else
+            {
+                btnPassVis.Show();
+            }
         }
 
         private void btnSignup_Click(object sender, EventArgs e)
@@ -92,17 +100,9 @@ namespace Movie_Booking_System.Screens
             parentForm.LoadNewForm(new NewUser(parentForm, parentForm.Authority));
         }
 
-        private void visibleconfpass_Click(object sender, EventArgs e)
+        private void btnPassVis_Click(object sender, EventArgs e)
         {
-            if (txtbxPassword.UseSystemPasswordChar == true)
-            {
-                txtbxPassword.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                txtbxPassword.UseSystemPasswordChar= true;
-            } 
-            
+            txtbxPassword.UseSystemPasswordChar = !txtbxPassword.UseSystemPasswordChar;
         }
     }
 }

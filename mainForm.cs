@@ -8,12 +8,14 @@ namespace Movie_Booking_System
 {
     public partial class mainForm : Form
     {
-        private Stack<Type> formStack = new Stack<Type>();
-        public userMode Authority = userMode.Guest;
+        //Standard Colors:
         public Color FormColor = Color.White;
         public Color FormSubTextColor = Color.Silver;
-        public Color FormTextColor = Color.Black;
-        public Color btnColor = Color.LightGray;
+        public Color FormTextColor = Color.White;
+        public Color btnColor = Color.Gray;
+
+        private Stack<Type> formStack = new Stack<Type>();
+        public userMode Authority = userMode.Guest;
         public mainForm()
         {
             InitializeComponent();
@@ -71,6 +73,10 @@ namespace Movie_Booking_System
             Type formtype = formStack.Pop();
             Form form = (Form)System.Activator.CreateInstance(formtype, this, this.Authority);
             LoadNewForm(form, false);
+        }
+
+        private void metroProgressBar1_Click(object sender, EventArgs e)
+        {
 
         }
     }

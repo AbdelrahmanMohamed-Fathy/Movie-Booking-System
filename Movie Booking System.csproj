@@ -44,8 +44,8 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.9.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Bcl.TimeProvider, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Bcl.TimeProvider.8.0.1\lib\net462\Microsoft.Bcl.TimeProvider.dll</HintPath>
+    <Reference Include="Microsoft.Bcl.TimeProvider, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.TimeProvider.9.0.0\lib\net462\Microsoft.Bcl.TimeProvider.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Data.SqlClient, Version=5.0.0.0, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Data.SqlClient.5.2.2\lib\net462\Microsoft.Data.SqlClient.dll</HintPath>
@@ -74,14 +74,14 @@
     <Reference Include="Microsoft.IdentityModel.Tokens, Version=8.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.IdentityModel.Tokens.8.3.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.1264.42, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Web.WebView2.1.0.1264.42\lib\net45\Microsoft.Web.WebView2.Core.dll</HintPath>
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.2903.40, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Web.WebView2.1.0.2903.40\lib\net462\Microsoft.Web.WebView2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.1264.42, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Web.WebView2.1.0.1264.42\lib\net45\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.2903.40, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Web.WebView2.1.0.2903.40\lib\net462\Microsoft.Web.WebView2.WinForms.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.1264.42, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Web.WebView2.1.0.1264.42\lib\net45\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.2903.40, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Web.WebView2.1.0.2903.40\lib\net462\Microsoft.Web.WebView2.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -225,10 +225,23 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Absolute Cinema logo with the name included, simple and stylish.png" />
     <Content Include="Assets\absolute-cinema.ico" />
+    <Content Include="Assets\Absolute_Cinema_Full.png" />
+    <Content Include="Assets\Absolute_Cinema_Quarter.png" />
+    <Content Include="Assets\arrow_back_16dp_000000_FILL0_wght400_GRAD0_opsz20%281%29.png" />
+    <Content Include="Assets\arrow_back_16dp_000000_FILL0_wght400_GRAD0_opsz20.png" />
+    <Content Include="Assets\arrow_back_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" />
+    <Content Include="Assets\CINEMA.jpg" />
+    <Content Include="Assets\Create a unique and cinematic logo for Absolute Cinema, resize to 950x600, remove all text except Absolute Cinema.png" />
+    <Content Include="Assets\download %2818%29.jpg" />
+    <Content Include="Assets\download %2819%29.jpg" />
     <Content Include="Assets\go-back-arrow.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\icons8-eye-24.png" />
+    <Content Include="Assets\icons8-search-30.png" />
+    <Content Include="Assets\Search icon.png" />
     <Content Include="DBCREATIONQUERY.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -238,7 +251,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets'))" />
-    <Error Condition="!Exists('packages\Microsoft.Web.WebView2.1.0.1264.42\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Web.WebView2.1.0.1264.42\build\Microsoft.Web.WebView2.targets'))" />
+    <Error Condition="!Exists('packages\Microsoft.Web.WebView2.1.0.2903.40\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Web.WebView2.1.0.2903.40\build\Microsoft.Web.WebView2.targets'))" />
   </Target>
-  <Import Project="packages\Microsoft.Web.WebView2.1.0.1264.42\build\Microsoft.Web.WebView2.targets" Condition="Exists('packages\Microsoft.Web.WebView2.1.0.1264.42\build\Microsoft.Web.WebView2.targets')" />
+  <Import Project="packages\Microsoft.Web.WebView2.1.0.2903.40\build\Microsoft.Web.WebView2.targets" Condition="Exists('packages\Microsoft.Web.WebView2.1.0.2903.40\build\Microsoft.Web.WebView2.targets')" />
 </Project>
