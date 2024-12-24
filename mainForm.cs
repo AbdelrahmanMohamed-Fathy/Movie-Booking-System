@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -7,6 +8,12 @@ namespace Movie_Booking_System
 {
     public partial class mainForm : Form
     {
+        //Standard Colors:
+        public Color FormColor = Color.White;
+        public Color FormSubTextColor = Color.Silver;
+        public Color FormTextColor = Color.White;
+        public Color btnColor = Color.Gray;
+
         private Stack<Type> formStack = new Stack<Type>();
         public userMode Authority = userMode.Guest;
         public mainForm()
@@ -17,7 +24,7 @@ namespace Movie_Booking_System
         private void mainForm_Load(object sender, EventArgs e)
         {
             btnGoBack.FlatStyle = FlatStyle.Flat;
-            btnGoBack.FlatAppearance.BorderSize = 0;
+            btnGoBack.BackColor = FormColor;
             LoadNewForm(new Screens.loginScreen(this, this.Authority),false);
         }
 
@@ -66,6 +73,10 @@ namespace Movie_Booking_System
             Type formtype = formStack.Pop();
             Form form = (Form)System.Activator.CreateInstance(formtype, this, this.Authority);
             LoadNewForm(form, false);
+        }
+
+        private void metroProgressBar1_Click(object sender, EventArgs e)
+        {
 
         }
     }

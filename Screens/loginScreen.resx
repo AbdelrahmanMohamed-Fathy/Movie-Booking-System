@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="visibleconfpass.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnPassVis.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAARhJREFUSEvtlLlNxFAYBh0gEo5gYyRK4WiHAtAicqAMOkBABRDRANlGXAUQEMKM
+        DQAACw0B7QfALAAAARhJREFUSEvtlLlNxFAYBh0gEo5gYyRK4WiHAtAicqAMOkBABRDRANlGXAUQEMKM
         ZK/wt+95ITAi2JFGst5/+F12s+LfM8EjvMUn/Gj12TFj5vyaNZziO34u0RxzrfkRO/iApWZDWmPtILs4
         wyy+wj3caN3Ha8w8a+1RZBMfMYuOscYJZr497LXAJWayM5d1vMBXfMHzdkxuMOvs1cMlZ5K6LWLDjDkm
         B5gxteeceywldUt15hl7Q9nCjOkdzln2ArclY88o25gx7b2gtkXdMktbdIZyiBnT3hZJ6ZC9iuKB+hJX

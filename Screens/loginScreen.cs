@@ -13,6 +13,12 @@ namespace Movie_Booking_System.Screens
             InitializeComponent();
             this.parentForm = parent;
             parentForm.Authority = userMode.Guest;
+            
+            this.BackColor = parent.FormColor;
+            this.ForeColor = parent.FormTextColor;
+            this.btnContinue.BackColor = parent.btnColor;
+            this.btnLogin.BackColor = parent.btnColor;
+            this.btnSignup.BackColor = parent.btnColor;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -78,25 +84,25 @@ namespace Movie_Booking_System.Screens
                 txtbxPassword.ForeColor = Color.Black;
                 lblInvalid.Hide();
             }
+            if (String.IsNullOrEmpty(txtbxPassword.Text))
+            {
+                btnPassVis.Hide();
+            }
+            else
+            {
+                btnPassVis.Show();
+            }
         }
 
-        private void Signupclk_Click(object sender, EventArgs e)
+        private void btnSignup_Click(object sender, EventArgs e)
         {
             parentForm.Authority = userMode.Guest;
             parentForm.LoadNewForm(new NewUser(parentForm, parentForm.Authority));
         }
 
-        private void visibleconfpass_Click(object sender, EventArgs e)
+        private void btnPassVis_Click(object sender, EventArgs e)
         {
-            if (txtbxPassword.UseSystemPasswordChar == true)
-            {
-                txtbxPassword.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                txtbxPassword.UseSystemPasswordChar= true;
-            } 
-            
+            txtbxPassword.UseSystemPasswordChar = !txtbxPassword.UseSystemPasswordChar;
         }
     }
 }
