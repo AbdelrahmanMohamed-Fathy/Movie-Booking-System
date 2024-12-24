@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Movie_Booking_System.Util;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -45,25 +46,22 @@ namespace Movie_Booking_System.Screens
 
         private bool ValidateLogin(out userMode mode)
         {
-            //TODO: write these condition once queries are done
-            if (false)
+            userMode Result = Controller.FetchUser(txtbxUsername.Text, txtbxPassword.Text);
+            switch (Result)
             {
-                mode = userMode.User;
-                return true;
+                case userMode.Admin:
+                    mode = userMode.Admin;
+                    return true;
+                case userMode.Employee:
+                    mode = userMode.Employee;
+                    return true;
+                case userMode.User:
+                    mode = userMode.User;
+                    return true;
+                default:
+                    mode = userMode.Guest;
+                    return false;
             }
-            else if (false)
-            {
-                mode = userMode.Employee;
-                return true;
-            }
-            else if (false)
-            {
-                mode = userMode.Admin;
-                return true;
-            }
-
-            mode = userMode.Guest;
-            return false;
         }
 
         private void txtbxUsername_TextChanged(object sender, EventArgs e)
