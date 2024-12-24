@@ -40,7 +40,7 @@ namespace Movie_Booking_System.Screens
             }
         }
 
-        private void btnGoBack_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }
