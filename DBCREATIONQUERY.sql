@@ -1,11 +1,13 @@
 ----------------------------------------Database Creation----------------------------------------
-USE MASTER
+USE master;
 GO
-DROP TABLE IF EXISTS MovieBooking_system
+ALTER DATABASE MovieBooking_system SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+GO
+DROP DATABASE IF EXISTS MovieBooking_system;
 GO
 CREATE DATABASE MovieBooking_system;
 GO
-USE MovieBooking_system
+USE MovieBooking_system;
 GO
 --------------------------------------------Functions--------------------------------------------
 CREATE FUNCTION dbo.GetEndTime (@MovieID INTEGER,@StartTime TIME)
@@ -48,14 +50,14 @@ GO
 --GO
 ---------------------------------------------Tables----------------------------------------------
 CREATE TABLE Accounts (
-    UserID			INTEGER 		NOT NULL IDENTITY(1,1),
-    Fname			VARCHAR(20)		NOT NULL,
-    Lname			VARCHAR(20)		NOT NULL,
-    Email			VARCHAR(50)		NOT NULL UNIQUE,
-    Pass			VARCHAR(64)		NOT NULL,
-    PhoneNumber		INTEGER,
-    Authority		VARCHAR(10)		NOT NULL CHECK (Authority IN ('Admin', 'Employee', 'Client')),
-	PRIMARY KEY		(UserID)
+UserID			INTEGER 		NOT NULL IDENTITY(1,1),
+Fname			VARCHAR(20)		NOT NULL,
+Lname			VARCHAR(20)		NOT NULL,
+Email			VARCHAR(50)		NOT NULL UNIQUE,
+Pass			VARCHAR(64)		NOT NULL,
+PhoneNumber		INTEGER,
+Authority		VARCHAR(10)		NOT NULL CHECK (Authority IN ('Admin', 'Employee', 'Client')),
+PRIMARY KEY		(UserID)
 );
 ----------------------------------------
 CREATE TABLE Movies (
@@ -160,3 +162,26 @@ FOREIGN KEY         (FoodID)        REFERENCES FoodItems,
 FOREIGN KEY         (UserID)        REFERENCES Accounts
 );
 ---------------------------------------
+
+INSERT INTO Accounts VALUES (N'Ahmed', N'Soltan', N'A7medsoltan2004@gmail.com', N'12345', 1203547383, N'Admin')
+INSERT INTO Movies VALUES ('La La Land', N'Damien Chazelle', CAST(N'02:08:00' AS Time))
+INSERT INTO Movies VALUES ('The Shawshank Redemption', N'Frank Darabont', CAST(N'02:22:00' AS Time))
+INSERT INTO Movies VALUES ('The Godfather', N'Francis Ford Coppola', CAST(N'02:55:00' AS Time))
+INSERT INTO Movies VALUES ('The Dark Knight', N'Christopher Nolan', CAST(N'02:32:00' AS Time)) 
+INSERT INTO Movies VALUES ('Pulp Fiction', N'Quentin Tarantino', CAST(N'02:34:00' AS Time)) 
+INSERT INTO Movies VALUES ('The Lord of the Rings: The Return of the King', N'Peter Jackson', CAST(N'03:21:00' AS Time))
+INSERT INTO Movies VALUES ('Fight Club', N'David Fincher', CAST(N'02:19:00' AS Time)) 
+INSERT INTO Movies VALUES ('Inception', N'Christopher Nolan', CAST(N'02:28:00' AS Time)) 
+INSERT INTO Movies VALUES ('Forrest Gump', N'Robert Zemeckis', CAST(N'02:22:00' AS Time))
+INSERT INTO Movies VALUES ('The Matrix', N'Lana Wachowski', CAST(N'02:16:00' AS Time)) 
+INSERT INTO Movies VALUES ('Goodfellas', N'Martin Scorsese', CAST(N'02:26:00' AS Time))
+INSERT INTO Movies VALUES ('Se7en', N'David Fincher', CAST(N'02:07:00' AS Time)) 
+INSERT INTO Movies VALUES ('Interstellar', N'Christopher Nolan', CAST(N'02:49:00' AS Time)) 
+INSERT INTO Movies VALUES ('The Silence of the Lambs', N'Jonathan Demme', CAST(N'01:58:00' AS Time)) 
+INSERT INTO Movies VALUES ('The Green Mile', N'Frank Darabont', CAST(N'03:09:00' AS Time)) 
+INSERT INTO Movies VALUES ('Gladiator', N'Ridley Scott', CAST(N'02:35:00' AS Time)) 
+INSERT INTO Movies VALUES ('The Prestige', N'Christopher Nolan', CAST(N'02:10:00' AS Time)) 
+INSERT INTO Movies VALUES ('Memento', N'Christopher Nolan', CAST(N'01:53:00' AS Time)) 
+INSERT INTO Movies VALUES ('The Departed', N'Martin Scorsese', CAST(N'02:31:00' AS Time)) 
+INSERT INTO Movies VALUES ('Whiplash', N'Damien Chazelle', CAST(N'01:47:00' AS Time))
+INSERT INTO Movies VALUES ('Django Unchained', N'Quentin Tarantino', CAST(N'02:45:00' AS Time))
