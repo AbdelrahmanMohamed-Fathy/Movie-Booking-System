@@ -55,6 +55,7 @@ namespace Movie_Booking_System
             form.FormBorderStyle = FormBorderStyle.None;
             form.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             mainPanel.Controls.Add(form);
+            form.Dock = DockStyle.Fill;
             form.Show();
         }
 
