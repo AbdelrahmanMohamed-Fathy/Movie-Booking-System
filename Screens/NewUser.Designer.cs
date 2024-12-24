@@ -67,7 +67,7 @@
             this.Fname.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fname.ForeColor = System.Drawing.Color.Silver;
             this.Fname.Location = new System.Drawing.Point(172, 89);
-            this.Fname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Fname.Margin = new System.Windows.Forms.Padding(2);
             this.Fname.Name = "Fname";
             this.Fname.Size = new System.Drawing.Size(226, 29);
             this.Fname.TabIndex = 0;
@@ -82,7 +82,7 @@
             this.Lname.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lname.ForeColor = System.Drawing.Color.Silver;
             this.Lname.Location = new System.Drawing.Point(172, 148);
-            this.Lname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Lname.Margin = new System.Windows.Forms.Padding(2);
             this.Lname.Name = "Lname";
             this.Lname.Size = new System.Drawing.Size(226, 29);
             this.Lname.TabIndex = 1;
@@ -97,7 +97,7 @@
             this.Email.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Email.ForeColor = System.Drawing.Color.Silver;
             this.Email.Location = new System.Drawing.Point(172, 208);
-            this.Email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Email.Margin = new System.Windows.Forms.Padding(2);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(226, 29);
             this.Email.TabIndex = 2;
@@ -112,7 +112,7 @@
             this.password.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password.ForeColor = System.Drawing.Color.Silver;
             this.password.Location = new System.Drawing.Point(172, 267);
-            this.password.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.password.Margin = new System.Windows.Forms.Padding(2);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(226, 29);
             this.password.TabIndex = 3;
@@ -127,7 +127,7 @@
             this.phonenum.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phonenum.ForeColor = System.Drawing.Color.Silver;
             this.phonenum.Location = new System.Drawing.Point(473, 208);
-            this.phonenum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.phonenum.Margin = new System.Windows.Forms.Padding(2);
             this.phonenum.Name = "phonenum";
             this.phonenum.Size = new System.Drawing.Size(226, 29);
             this.phonenum.TabIndex = 4;
@@ -236,7 +236,7 @@
             this.confirmpass.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmpass.ForeColor = System.Drawing.Color.Silver;
             this.confirmpass.Location = new System.Drawing.Point(473, 267);
-            this.confirmpass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.confirmpass.Margin = new System.Windows.Forms.Padding(2);
             this.confirmpass.Name = "confirmpass";
             this.confirmpass.Size = new System.Drawing.Size(226, 29);
             this.confirmpass.TabIndex = 12;
@@ -292,7 +292,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.ForeColor = System.Drawing.Color.RoyalBlue;
             this.panel1.Location = new System.Drawing.Point(172, 301);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(57, 13);
             this.panel1.TabIndex = 21;
@@ -303,7 +303,7 @@
             this.panel2.BackColor = System.Drawing.Color.LightGray;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Location = new System.Drawing.Point(228, 301);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(57, 13);
             this.panel2.TabIndex = 22;
@@ -314,7 +314,7 @@
             this.panel3.BackColor = System.Drawing.Color.LightGray;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Location = new System.Drawing.Point(284, 301);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(57, 13);
             this.panel3.TabIndex = 22;
@@ -325,7 +325,7 @@
             this.panel4.BackColor = System.Drawing.Color.LightGray;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Location = new System.Drawing.Point(339, 301);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(57, 13);
             this.panel4.TabIndex = 22;
@@ -400,7 +400,7 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(490, 89);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(0, 0);
             this.pictureBox1.TabIndex = 28;
@@ -410,7 +410,7 @@
             // 
             this.phoneicon.BackColor = System.Drawing.Color.Transparent;
             this.phoneicon.Image = ((System.Drawing.Image)(resources.GetObject("phoneicon.Image")));
-            this.phoneicon.Location = new System.Drawing.Point(592, 256);
+            this.phoneicon.Location = new System.Drawing.Point(435, 208);
             this.phoneicon.Name = "phoneicon";
             this.phoneicon.Size = new System.Drawing.Size(33, 34);
             this.phoneicon.TabIndex = 29;
@@ -419,7 +419,7 @@
             // 
             this.emailicon.BackColor = System.Drawing.Color.Transparent;
             this.emailicon.Image = ((System.Drawing.Image)(resources.GetObject("emailicon.Image")));
-            this.emailicon.Location = new System.Drawing.Point(192, 256);
+            this.emailicon.Location = new System.Drawing.Point(135, 208);
             this.emailicon.Name = "emailicon";
             this.emailicon.Size = new System.Drawing.Size(32, 34);
             this.emailicon.TabIndex = 30;
@@ -428,7 +428,7 @@
             // 
             this.passicon.BackColor = System.Drawing.Color.Transparent;
             this.passicon.Image = ((System.Drawing.Image)(resources.GetObject("passicon.Image")));
-            this.passicon.Location = new System.Drawing.Point(195, 331);
+            this.passicon.Location = new System.Drawing.Point(138, 267);
             this.passicon.Name = "passicon";
             this.passicon.Size = new System.Drawing.Size(29, 32);
             this.passicon.TabIndex = 31;
@@ -471,7 +471,7 @@
             this.Controls.Add(this.Fname);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Red;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NewUser";
             this.Text = "NewUser";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
