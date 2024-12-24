@@ -102,5 +102,10 @@ namespace Movie_Booking_System.Screens
         {
             txtbxPassword.UseSystemPasswordChar = !txtbxPassword.UseSystemPasswordChar;
         }
+
+        private void loginScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

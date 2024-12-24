@@ -44,5 +44,10 @@ namespace Movie_Booking_System.Screens
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

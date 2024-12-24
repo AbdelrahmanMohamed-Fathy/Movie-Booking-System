@@ -158,6 +158,7 @@
             this.Name = "loginScreen";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.Text = "loginScreen";
+            this.Load += new System.EventHandler(this.loginScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

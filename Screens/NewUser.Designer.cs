@@ -66,10 +66,10 @@
             this.Fname.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Fname.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fname.ForeColor = System.Drawing.Color.Silver;
-            this.Fname.Location = new System.Drawing.Point(150, 98);
-            this.Fname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Fname.Location = new System.Drawing.Point(112, 80);
+            this.Fname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Fname.Name = "Fname";
-            this.Fname.Size = new System.Drawing.Size(300, 34);
+            this.Fname.Size = new System.Drawing.Size(226, 29);
             this.Fname.TabIndex = 0;
             this.Fname.Text = "First Name";
             this.Fname.TextChanged += new System.EventHandler(this.Fname_TextChanged);
@@ -81,10 +81,10 @@
             this.Lname.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lname.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lname.ForeColor = System.Drawing.Color.Silver;
-            this.Lname.Location = new System.Drawing.Point(150, 170);
-            this.Lname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Lname.Location = new System.Drawing.Point(112, 138);
+            this.Lname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Lname.Name = "Lname";
-            this.Lname.Size = new System.Drawing.Size(300, 34);
+            this.Lname.Size = new System.Drawing.Size(226, 29);
             this.Lname.TabIndex = 1;
             this.Lname.Text = "Last Name";
             this.Lname.TextChanged += new System.EventHandler(this.Lname_TextChanged);
@@ -96,10 +96,10 @@
             this.Email.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Email.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Email.ForeColor = System.Drawing.Color.Silver;
-            this.Email.Location = new System.Drawing.Point(150, 244);
-            this.Email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Email.Location = new System.Drawing.Point(112, 198);
+            this.Email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(300, 34);
+            this.Email.Size = new System.Drawing.Size(226, 29);
             this.Email.TabIndex = 2;
             this.Email.Text = "Email Address";
             this.Email.TextChanged += new System.EventHandler(this.Email_TextChanged);
@@ -111,10 +111,10 @@
             this.password.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.password.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password.ForeColor = System.Drawing.Color.Silver;
-            this.password.Location = new System.Drawing.Point(150, 317);
-            this.password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.password.Location = new System.Drawing.Point(112, 258);
+            this.password.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(300, 34);
+            this.password.Size = new System.Drawing.Size(226, 29);
             this.password.TabIndex = 3;
             this.password.Text = "Password";
             this.password.TextChanged += new System.EventHandler(this.password_TextChanged);
@@ -126,10 +126,10 @@
             this.phonenum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.phonenum.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phonenum.ForeColor = System.Drawing.Color.Silver;
-            this.phonenum.Location = new System.Drawing.Point(552, 244);
-            this.phonenum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.phonenum.Location = new System.Drawing.Point(414, 198);
+            this.phonenum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.phonenum.Name = "phonenum";
-            this.phonenum.Size = new System.Drawing.Size(300, 34);
+            this.phonenum.Size = new System.Drawing.Size(226, 29);
             this.phonenum.TabIndex = 4;
             this.phonenum.Text = "Phone Number (Optional)";
             this.phonenum.Enter += new System.EventHandler(this.phonenum_Enter);
@@ -143,10 +143,9 @@
             this.Createaccclk.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Createaccclk.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Createaccclk.ForeColor = System.Drawing.Color.White;
-            this.Createaccclk.Location = new System.Drawing.Point(552, 433);
-            this.Createaccclk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Createaccclk.Location = new System.Drawing.Point(414, 352);
             this.Createaccclk.Name = "Createaccclk";
-            this.Createaccclk.Size = new System.Drawing.Size(197, 57);
+            this.Createaccclk.Size = new System.Drawing.Size(148, 46);
             this.Createaccclk.TabIndex = 5;
             this.Createaccclk.Text = "Create Account";
             this.Createaccclk.UseVisualStyleBackColor = false;
@@ -164,9 +163,10 @@
             this.fnameinvalid.BackColor = System.Drawing.Color.Transparent;
             this.fnameinvalid.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fnameinvalid.ForeColor = System.Drawing.Color.Red;
-            this.fnameinvalid.Location = new System.Drawing.Point(150, 138);
+            this.fnameinvalid.Location = new System.Drawing.Point(112, 112);
+            this.fnameinvalid.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.fnameinvalid.Name = "fnameinvalid";
-            this.fnameinvalid.Size = new System.Drawing.Size(135, 16);
+            this.fnameinvalid.Size = new System.Drawing.Size(119, 15);
             this.fnameinvalid.TabIndex = 6;
             this.fnameinvalid.Text = "Please Enter First Name!";
             this.fnameinvalid.Visible = false;
@@ -178,9 +178,10 @@
             this.lnameinvalid.BackColor = System.Drawing.Color.Transparent;
             this.lnameinvalid.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnameinvalid.ForeColor = System.Drawing.Color.Red;
-            this.lnameinvalid.Location = new System.Drawing.Point(150, 211);
+            this.lnameinvalid.Location = new System.Drawing.Point(112, 171);
+            this.lnameinvalid.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lnameinvalid.Name = "lnameinvalid";
-            this.lnameinvalid.Size = new System.Drawing.Size(134, 16);
+            this.lnameinvalid.Size = new System.Drawing.Size(117, 15);
             this.lnameinvalid.TabIndex = 7;
             this.lnameinvalid.Text = "Please Enter Last Name!";
             this.lnameinvalid.Visible = false;
@@ -192,9 +193,10 @@
             this.emailinvalid.BackColor = System.Drawing.Color.Transparent;
             this.emailinvalid.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailinvalid.ForeColor = System.Drawing.Color.Red;
-            this.emailinvalid.Location = new System.Drawing.Point(154, 285);
+            this.emailinvalid.Location = new System.Drawing.Point(116, 232);
+            this.emailinvalid.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.emailinvalid.Name = "emailinvalid";
-            this.emailinvalid.Size = new System.Drawing.Size(192, 16);
+            this.emailinvalid.Size = new System.Drawing.Size(172, 15);
             this.emailinvalid.TabIndex = 8;
             this.emailinvalid.Text = "Please Enter A Valid Email Address!";
             this.emailinvalid.Visible = false;
@@ -206,9 +208,10 @@
             this.passwordinvalid.BackColor = System.Drawing.Color.Transparent;
             this.passwordinvalid.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordinvalid.ForeColor = System.Drawing.Color.Red;
-            this.passwordinvalid.Location = new System.Drawing.Point(150, 383);
+            this.passwordinvalid.Location = new System.Drawing.Point(112, 311);
+            this.passwordinvalid.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.passwordinvalid.Name = "passwordinvalid";
-            this.passwordinvalid.Size = new System.Drawing.Size(140, 16);
+            this.passwordinvalid.Size = new System.Drawing.Size(123, 15);
             this.passwordinvalid.TabIndex = 9;
             this.passwordinvalid.Text = "Please Enter A Password!";
             this.passwordinvalid.Visible = false;
@@ -219,9 +222,10 @@
             this.passstatuslbl.AutoSize = true;
             this.passstatuslbl.BackColor = System.Drawing.Color.Transparent;
             this.passstatuslbl.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passstatuslbl.Location = new System.Drawing.Point(452, 358);
+            this.passstatuslbl.Location = new System.Drawing.Point(339, 291);
+            this.passstatuslbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.passstatuslbl.Name = "passstatuslbl";
-            this.passstatuslbl.Size = new System.Drawing.Size(43, 16);
+            this.passstatuslbl.Size = new System.Drawing.Size(37, 14);
             this.passstatuslbl.TabIndex = 11;
             this.passstatuslbl.Text = "Weak";
             this.passstatuslbl.Visible = false;
@@ -231,10 +235,10 @@
             this.confirmpass.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.confirmpass.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmpass.ForeColor = System.Drawing.Color.Silver;
-            this.confirmpass.Location = new System.Drawing.Point(552, 317);
-            this.confirmpass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.confirmpass.Location = new System.Drawing.Point(414, 258);
+            this.confirmpass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.confirmpass.Name = "confirmpass";
-            this.confirmpass.Size = new System.Drawing.Size(300, 34);
+            this.confirmpass.Size = new System.Drawing.Size(226, 29);
             this.confirmpass.TabIndex = 12;
             this.confirmpass.Text = "Confirm Password";
             this.confirmpass.TextChanged += new System.EventHandler(this.confirmpass_TextChanged);
@@ -247,9 +251,10 @@
             this.confirmpasslbl.AutoSize = true;
             this.confirmpasslbl.BackColor = System.Drawing.Color.Transparent;
             this.confirmpasslbl.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmpasslbl.Location = new System.Drawing.Point(549, 358);
+            this.confirmpasslbl.Location = new System.Drawing.Point(412, 291);
+            this.confirmpasslbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.confirmpasslbl.Name = "confirmpasslbl";
-            this.confirmpasslbl.Size = new System.Drawing.Size(162, 16);
+            this.confirmpasslbl.Size = new System.Drawing.Size(142, 15);
             this.confirmpasslbl.TabIndex = 13;
             this.confirmpasslbl.Text = "Please confirm the Password!";
             this.confirmpasslbl.Visible = false;
@@ -260,9 +265,10 @@
             this.visiblepass.BackColor = System.Drawing.Color.Transparent;
             this.visiblepass.Cursor = System.Windows.Forms.Cursors.Hand;
             this.visiblepass.Image = ((System.Drawing.Image)(resources.GetObject("visiblepass.Image")));
-            this.visiblepass.Location = new System.Drawing.Point(457, 317);
+            this.visiblepass.Location = new System.Drawing.Point(343, 258);
+            this.visiblepass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.visiblepass.Name = "visiblepass";
-            this.visiblepass.Size = new System.Drawing.Size(37, 34);
+            this.visiblepass.Size = new System.Drawing.Size(28, 28);
             this.visiblepass.TabIndex = 15;
             this.visiblepass.Click += new System.EventHandler(this.visiblepass_Click);
             // 
@@ -272,9 +278,10 @@
             this.visibleconfpass.BackColor = System.Drawing.Color.Transparent;
             this.visibleconfpass.Cursor = System.Windows.Forms.Cursors.Hand;
             this.visibleconfpass.Image = ((System.Drawing.Image)(resources.GetObject("visibleconfpass.Image")));
-            this.visibleconfpass.Location = new System.Drawing.Point(858, 317);
+            this.visibleconfpass.Location = new System.Drawing.Point(644, 258);
+            this.visibleconfpass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.visibleconfpass.Name = "visibleconfpass";
-            this.visibleconfpass.Size = new System.Drawing.Size(37, 34);
+            this.visibleconfpass.Size = new System.Drawing.Size(28, 28);
             this.visibleconfpass.TabIndex = 16;
             this.visibleconfpass.Click += new System.EventHandler(this.visibleconfpass_Click);
             // 
@@ -284,10 +291,10 @@
             this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.panel1.Location = new System.Drawing.Point(150, 358);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(112, 291);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(75, 16);
+            this.panel1.Size = new System.Drawing.Size(57, 13);
             this.panel1.TabIndex = 21;
             // 
             // panel2
@@ -295,10 +302,10 @@
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.LightGray;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(225, 358);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(169, 291);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(75, 16);
+            this.panel2.Size = new System.Drawing.Size(57, 13);
             this.panel2.TabIndex = 22;
             // 
             // panel3
@@ -306,10 +313,10 @@
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.BackColor = System.Drawing.Color.LightGray;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(300, 358);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Location = new System.Drawing.Point(225, 291);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(75, 16);
+            this.panel3.Size = new System.Drawing.Size(57, 13);
             this.panel3.TabIndex = 22;
             // 
             // panel4
@@ -317,10 +324,10 @@
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel4.BackColor = System.Drawing.Color.LightGray;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Location = new System.Drawing.Point(373, 358);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Location = new System.Drawing.Point(280, 291);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(75, 16);
+            this.panel4.Size = new System.Drawing.Size(57, 13);
             this.panel4.TabIndex = 22;
             // 
             // lowercaselbl
@@ -329,9 +336,10 @@
             this.lowercaselbl.AutoSize = true;
             this.lowercaselbl.BackColor = System.Drawing.Color.Transparent;
             this.lowercaselbl.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lowercaselbl.Location = new System.Drawing.Point(148, 410);
+            this.lowercaselbl.Location = new System.Drawing.Point(111, 333);
+            this.lowercaselbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lowercaselbl.Name = "lowercaselbl";
-            this.lowercaselbl.Size = new System.Drawing.Size(346, 20);
+            this.lowercaselbl.Size = new System.Drawing.Size(267, 16);
             this.lowercaselbl.TabIndex = 23;
             this.lowercaselbl.Text = "• Password should contain at least one lower case letter.";
             // 
@@ -341,9 +349,10 @@
             this.uppercaselbl.AutoSize = true;
             this.uppercaselbl.BackColor = System.Drawing.Color.Transparent;
             this.uppercaselbl.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uppercaselbl.Location = new System.Drawing.Point(148, 430);
+            this.uppercaselbl.Location = new System.Drawing.Point(111, 349);
+            this.uppercaselbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.uppercaselbl.Name = "uppercaselbl";
-            this.uppercaselbl.Size = new System.Drawing.Size(349, 20);
+            this.uppercaselbl.Size = new System.Drawing.Size(268, 16);
             this.uppercaselbl.TabIndex = 24;
             this.uppercaselbl.Text = "• Password should contain at least one upper case letter.\r\n";
             // 
@@ -353,9 +362,10 @@
             this.numericvallbl.AutoSize = true;
             this.numericvallbl.BackColor = System.Drawing.Color.Transparent;
             this.numericvallbl.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericvallbl.Location = new System.Drawing.Point(148, 450);
+            this.numericvallbl.Location = new System.Drawing.Point(111, 366);
+            this.numericvallbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.numericvallbl.Name = "numericvallbl";
-            this.numericvallbl.Size = new System.Drawing.Size(334, 20);
+            this.numericvallbl.Size = new System.Drawing.Size(258, 16);
             this.numericvallbl.TabIndex = 25;
             this.numericvallbl.Text = "• Password should contain at least one numeric value.\r\n";
             // 
@@ -365,9 +375,10 @@
             this.specialcharlbl.AutoSize = true;
             this.specialcharlbl.BackColor = System.Drawing.Color.Transparent;
             this.specialcharlbl.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.specialcharlbl.Location = new System.Drawing.Point(148, 470);
+            this.specialcharlbl.Location = new System.Drawing.Point(111, 382);
+            this.specialcharlbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.specialcharlbl.Name = "specialcharlbl";
-            this.specialcharlbl.Size = new System.Drawing.Size(352, 20);
+            this.specialcharlbl.Size = new System.Drawing.Size(269, 16);
             this.specialcharlbl.TabIndex = 26;
             this.specialcharlbl.Text = "• Password should contain at least one special character.\r\n";
             // 
@@ -377,9 +388,10 @@
             this.passlenlbl.AutoSize = true;
             this.passlenlbl.BackColor = System.Drawing.Color.Transparent;
             this.passlenlbl.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passlenlbl.Location = new System.Drawing.Point(148, 490);
+            this.passlenlbl.Location = new System.Drawing.Point(111, 398);
+            this.passlenlbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.passlenlbl.Name = "passlenlbl";
-            this.passlenlbl.Size = new System.Drawing.Size(290, 20);
+            this.passlenlbl.Size = new System.Drawing.Size(223, 16);
             this.passlenlbl.TabIndex = 27;
             this.passlenlbl.Text = "• Password should be between 8-15 characters.\r\n";
             // 
@@ -387,8 +399,8 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(574, 98);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(430, 80);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(0, 0);
             this.pictureBox1.TabIndex = 28;
@@ -399,10 +411,9 @@
             this.phoneicon.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.phoneicon.BackColor = System.Drawing.Color.Transparent;
             this.phoneicon.Image = ((System.Drawing.Image)(resources.GetObject("phoneicon.Image")));
-            this.phoneicon.Location = new System.Drawing.Point(509, 248);
-            this.phoneicon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.phoneicon.Location = new System.Drawing.Point(382, 202);
             this.phoneicon.Name = "phoneicon";
-            this.phoneicon.Size = new System.Drawing.Size(36, 28);
+            this.phoneicon.Size = new System.Drawing.Size(27, 23);
             this.phoneicon.TabIndex = 29;
             // 
             // emailicon
@@ -410,10 +421,9 @@
             this.emailicon.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.emailicon.BackColor = System.Drawing.Color.Transparent;
             this.emailicon.Image = ((System.Drawing.Image)(resources.GetObject("emailicon.Image")));
-            this.emailicon.Location = new System.Drawing.Point(113, 248);
-            this.emailicon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.emailicon.Location = new System.Drawing.Point(85, 202);
             this.emailicon.Name = "emailicon";
-            this.emailicon.Size = new System.Drawing.Size(30, 30);
+            this.emailicon.Size = new System.Drawing.Size(22, 24);
             this.emailicon.TabIndex = 30;
             // 
             // passicon
@@ -421,19 +431,18 @@
             this.passicon.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.passicon.BackColor = System.Drawing.Color.Transparent;
             this.passicon.Image = ((System.Drawing.Image)(resources.GetObject("passicon.Image")));
-            this.passicon.Location = new System.Drawing.Point(106, 317);
-            this.passicon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.passicon.Location = new System.Drawing.Point(80, 258);
             this.passicon.Name = "passicon";
-            this.passicon.Size = new System.Drawing.Size(37, 39);
+            this.passicon.Size = new System.Drawing.Size(28, 32);
             this.passicon.TabIndex = 31;
             // 
             // NewUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(977, 633);
+            this.ClientSize = new System.Drawing.Size(733, 514);
             this.Controls.Add(this.passicon);
             this.Controls.Add(this.emailicon);
             this.Controls.Add(this.phoneicon);
@@ -464,7 +473,7 @@
             this.Controls.Add(this.Fname);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Red;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "NewUser";
             this.Text = "NewUser";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
