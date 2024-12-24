@@ -1,5 +1,11 @@
 ----------------------------------------Database Creation----------------------------------------
+USE MASTER
+GO
+DROP TABLE IF EXISTS MovieBooking_system
+GO
 CREATE DATABASE MovieBooking_system;
+GO
+USE MovieBooking_system
 GO
 --------------------------------------------Functions--------------------------------------------
 CREATE FUNCTION dbo.GetEndTime (@MovieID INTEGER,@StartTime TIME)
@@ -26,20 +32,20 @@ BEGIN
 END;
 GO
 ----------------------------------------
-CREATE FUNCTION dbo.CheckOldShows (@ShowID INTEGER)
-RETURNS BIT
-AS
-BEGIN
-    DECLARE @isOld BIT
-    IF EXISTS(SELECT CAST(ShowDate AS DATETIME) + CAST(EndTime AS DATETIME) AS CombinedDate
-              FROM Shows
-              WHERE CombinedDate < NOW() AND ShowID = @ShowID)
-        SET @IsOld = 1
-    ELSE
-        SET @IsOld = 0
-    RETURN @isOld;
-END;
-GO
+--CREATE FUNCTION dbo.CheckOldShows (@ShowID INTEGER)
+--RETURNS BIT
+--AS
+--BEGIN
+--    DECLARE @isOld BIT
+--    IF EXISTS(SELECT CAST(ShowDate AS DATETIME) + CAST(EndTime AS DATETIME) AS CombinedDate
+--              FROM Shows
+--              WHERE CombinedDate < NOW() AND ShowID = @ShowID)
+--        SET @IsOld = 1
+--    ELSE
+--        SET @IsOld = 0
+--    RETURN @isOld;
+--END;
+--GO
 ---------------------------------------------Tables----------------------------------------------
 CREATE TABLE Accounts (
     UserID			INTEGER 		NOT NULL IDENTITY(1,1),
@@ -83,7 +89,7 @@ CinemaID            INTEGER         NOT NULL,
 ShowDate			DATE			NOT NULL,
 StartTime			TIME			NOT NULL,
 EndTime             AS dbo.GetEndTime(MovieID,StartTime),
-Old                 AS dbo.CheckOldShows(ShowID),
+Old                 BIT             NOT NULL,
 PRIMARY KEY			(ShowID),
 FOREIGN KEY         (MovieID)       REFERENCES Movies,
 FOREIGN KEY         (CinemaID)      REFERENCES Cinemas
@@ -94,22 +100,23 @@ CREATE TABLE Seats (
 SeatNumber			INTEGER			NOT NULL,
 CinemaID			INTEGER			NOT NULL,
 Price				DECIMAL			NOT NULL,
-FOREIGN KEY			(CinemaID)      REFERENCES Cinema,
+FOREIGN KEY			(CinemaID)      REFERENCES Cinemas,
 PRIMARY KEY			(CinemaID,SeatNumber)
 );
 GO
 ---------------------------------------
 CREATE TABLE Bookings (
-BookingID			INTEGER			NOT NULL IDENTITY(1,1),
-UserID              INTEGER         NOT NULL,
-SeatID              INTEGER         NOT NULL,
-ShowID              INTEGER         NOT NULL,
+BookingID			INTEGER				NOT NULL IDENTITY(1,1),
+UserID              INTEGER				NOT NULL,
+SeatID              INTEGER				NOT NULL,
+CinemaID			INTEGER				NOT NULL,
+ShowID              INTEGER				NOT NULL,
 Price               AS dbo.GetBookingPrice(SeatID),
-PaymentMethod		VARCHAR(20)		NOT NULL CHECK (Paymentmethod IN ('Cash', 'Credit')),
+PaymentMethod		VARCHAR(20)			NOT NULL CHECK (Paymentmethod IN ('Cash', 'Credit')),
 PRIMARY KEY			(BookingID),
-FOREIGN KEY         (UserID)        REFERENCES Users,
-FOREIGN KEY         (SeatID)        REFERENCES Seats,
-FOREIGN KEY         (ShowID)        REFERENCES Shows
+FOREIGN KEY         (UserID)			REFERENCES Accounts,
+FOREIGN KEY         (CinemaID,SeatID)	REFERENCES Seats,
+FOREIGN KEY         (ShowID)			REFERENCES Shows
 );
 ---------------------------------------
 CREATE TABLE Orders (
@@ -128,7 +135,7 @@ Content				VARCHAR(500)	NOT NULL,
 Header				VARCHAR(50)		NOT NULL,
 Closed              BIT             NOT NULL DEFAULT 0,
 PRIMARY KEY			(HelpTicketID,UserID),
-FOREIGN KEY         (UserID)        REFERENCES Users
+FOREIGN KEY         (UserID)        REFERENCES Accounts
 );
 ---------------------------------------
 CREATE TABLE MovieReviews (
@@ -139,7 +146,7 @@ Rating				INTEGER			NOT NULL,
 Description   		VARCHAR(100)	NOT NULL DEFAULT '',
 PRIMARY KEY			(ReviewID),
 FOREIGN KEY         (MovieID)       REFERENCES Movies,
-FOREIGN KEY         (UserID)        REFERENCES Users
+FOREIGN KEY         (UserID)        REFERENCES Accounts
 );
 ---------------------------------------
 CREATE TABLE FoodReviews (
@@ -150,6 +157,6 @@ Rating				INTEGER			NOT NULL,
 Description         VARCHAR(100)	NOT NULL DEFAULT '',
 PRIMARY KEY			(ReviewID),
 FOREIGN KEY         (FoodID)        REFERENCES FoodItems,
-FOREIGN KEY         (UserID)        REFERENCES Users
+FOREIGN KEY         (UserID)        REFERENCES Accounts
 );
 ---------------------------------------
