@@ -179,6 +179,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Screens\employeeFulfillOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\employeeFulfillOrders.Designer.cs">
+      <DependentUpon>employeeFulfillOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\userFoodOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\userFoodOrder.Designer.cs">
+      <DependentUpon>userFoodOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Util\HelperFunctions.cs" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -206,17 +218,17 @@
     <EmbeddedResource Include="Screens\loginScreen.resx">
       <DependentUpon>loginScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\NewUser.resx">
-      <DependentUpon>NewUser.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\newUser.resx">
+      <DependentUpon>newUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\userScreen.resx">
       <DependentUpon>userScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Screens\NewUser.cs">
+    <Compile Include="Screens\newUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\NewUser.Designer.cs">
-      <DependentUpon>NewUser.cs</DependentUpon>
+    <Compile Include="Screens\newUser.Designer.cs">
+      <DependentUpon>newUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\userScreen.cs">
       <SubType>Form</SubType>

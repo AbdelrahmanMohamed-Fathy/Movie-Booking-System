@@ -98,7 +98,7 @@ namespace Movie_Booking_System.Screens
         private void btnSignup_Click(object sender, EventArgs e)
         {
             parentForm.Authority = userMode.Guest;
-            parentForm.LoadNewForm(new NewUser(parentForm, parentForm.Authority));
+            parentForm.LoadNewForm(new newUser(parentForm, parentForm.Authority));
         }
 
         private void btnPassVis_Click(object sender, EventArgs e)

@@ -41,7 +41,7 @@ namespace Movie_Booking_System.Util
             else
                 Result = null;
 
-            return HelperFunctions.ParseAuthority(Result);
+            return HelperFunctions.ParseAuthorityToEnum(Result);
         }
 
     }

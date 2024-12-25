@@ -1,6 +1,6 @@
 ﻿namespace Movie_Booking_System.Screens
 {
-    partial class NewUser
+    partial class newUser
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewUser));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(newUser));
             this.Fname = new System.Windows.Forms.TextBox();
             this.Lname = new System.Windows.Forms.TextBox();
             this.Email = new System.Windows.Forms.TextBox();

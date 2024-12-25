@@ -8,7 +8,7 @@ namespace Movie_Booking_System.Util
 {
     internal class HelperFunctions
     {
-        public static userMode ParseAuthority(string Authority)
+        public static userMode ParseAuthorityToEnum(string Authority)
         {
             switch (Authority)
             {
@@ -20,6 +20,21 @@ namespace Movie_Booking_System.Util
                     return userMode.User;
                 default:
                     return userMode.Guest;
+            }
+        }
+
+        public static string ParseEnumToAuthority(userMode Authority)
+        {
+            switch (Authority)
+            {
+                case userMode.Admin:
+                    return "Admin";
+                case userMode.Employee:
+                    return "Employee";
+                case userMode.User:
+                    return "Client";
+                default:
+                    return null;
             }
         }
     }
