@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Movie_Booking_System.Util;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -24,13 +25,16 @@ namespace Movie_Booking_System.Screens
         private void btnLogin_Click(object sender, EventArgs e)
         {
             userMode mode;
+            this.Cursor = Cursors.WaitCursor;
             if (ValidateLogin(out mode))
             {
+                this.Cursor = Cursors.Default;
                 parentForm.Authority = mode;
                 parentForm.LoadNewForm(new userScreen(parentForm,parentForm.Authority));
             }
             else
             {
+                this.Cursor = Cursors.Default;
                 txtbxUsername.ForeColor = Color.Red;
                 txtbxPassword.ForeColor = Color.Red;
                 lblInvalid.Show();
@@ -45,25 +49,22 @@ namespace Movie_Booking_System.Screens
 
         private bool ValidateLogin(out userMode mode)
         {
-            //TODO: write these condition once queries are done
-            if (false)
+            userMode Result = Controller.FetchUser(txtbxUsername.Text, txtbxPassword.Text);
+            switch (Result)
             {
-                mode = userMode.User;
-                return true;
+                case userMode.Admin:
+                    mode = userMode.Admin;
+                    return true;
+                case userMode.Employee:
+                    mode = userMode.Employee;
+                    return true;
+                case userMode.User:
+                    mode = userMode.User;
+                    return true;
+                default:
+                    mode = userMode.Guest;
+                    return false;
             }
-            else if (false)
-            {
-                mode = userMode.Employee;
-                return true;
-            }
-            else if (false)
-            {
-                mode = userMode.Admin;
-                return true;
-            }
-
-            mode = userMode.Guest;
-            return false;
         }
 
         private void txtbxUsername_TextChanged(object sender, EventArgs e)
@@ -97,12 +98,22 @@ namespace Movie_Booking_System.Screens
         private void btnSignup_Click(object sender, EventArgs e)
         {
             parentForm.Authority = userMode.Guest;
-            parentForm.LoadNewForm(new NewUser(parentForm, parentForm.Authority));
+            parentForm.LoadNewForm(new signupScreen(parentForm, parentForm.Authority));
         }
 
         private void btnPassVis_Click(object sender, EventArgs e)
         {
             txtbxPassword.UseSystemPasswordChar = !txtbxPassword.UseSystemPasswordChar;
+        }
+
+        private void loginScreen_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void placeHolderTextBox1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

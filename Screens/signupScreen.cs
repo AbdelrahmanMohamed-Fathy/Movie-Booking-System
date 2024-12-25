@@ -17,13 +17,12 @@ using System.Collections.ObjectModel;
 
 namespace Movie_Booking_System.Screens
 {
-    public partial class NewUser : Form
+    public partial class signupScreen : Form
     {
-        Controller controllerobj = new Controller();
         private mainForm parentForm;
         sbyte progessBarRed = 2;
         sbyte progessBarYellow = 3;
-        public NewUser(mainForm parent, userMode mode)
+        public signupScreen(mainForm parent, userMode mode)
         {
             InitializeComponent();
             this.parentForm = parent;
@@ -196,7 +195,7 @@ namespace Movie_Booking_System.Screens
             if (IsValid)
             {
                 //exception error
-                //controllerobj.InsertAccount(Fname.Text, Lname.Text, Email.Text, password.Text, Convert.ToInt32(phonenum.Text), "Client");
+                //Controller.InsertAccount(Fname.Text, Lname.Text, Email.Text, password.Text, Convert.ToInt32(phonenum.Text), "Client");
                 MessageBox.Show("user entered successfully");
             }
         }
