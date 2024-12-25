@@ -16,6 +16,7 @@ namespace Movie_Booking_System
 
         private Stack<Type> formStack = new Stack<Type>();
         public userMode Authority = userMode.Guest;
+        public int CurrentUserID = -1;
         public mainForm()
         {
             InitializeComponent();

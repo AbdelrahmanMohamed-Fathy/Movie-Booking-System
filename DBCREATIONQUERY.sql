@@ -50,7 +50,7 @@ GO
 --GO
 ---------------------------------------------Tables----------------------------------------------
 CREATE TABLE Accounts (
-UserID			INTEGER 		NOT NULL IDENTITY(1,1),
+UserID			INTEGER 		NOT NULL IDENTITY(5267,1),
 Fname			VARCHAR(20)		NOT NULL,
 Lname			VARCHAR(20)		NOT NULL,
 Email			VARCHAR(50)		NOT NULL UNIQUE,
@@ -59,6 +59,7 @@ PhoneNumber		INTEGER,
 Authority		VARCHAR(10)		NOT NULL CHECK (Authority IN ('Admin', 'Employee', 'Client')),
 PRIMARY KEY		(UserID)
 );
+GO
 ----------------------------------------
 CREATE TABLE Movies (
 MovieID				INTEGER			NOT NULL IDENTITY(1,1),
@@ -80,6 +81,7 @@ PRIMARY KEY			(FoodID)
 CREATE TABLE Cinemas (
 CinemaID			INTEGER			NOT NULL IDENTITY(1,1),
 CinemaType			VARCHAR(10)		NOT NULL,
+CinemaManagerID		INTEGER			REFERENCES Accounts,
 PRIMARY KEY			(CinemaID)
 );
 GO
@@ -108,7 +110,7 @@ PRIMARY KEY			(CinemaID,SeatNumber)
 GO
 ---------------------------------------
 CREATE TABLE Bookings (
-BookingID			INTEGER				NOT NULL IDENTITY(1,1),
+BookingID			INTEGER				NOT NULL IDENTITY(9034,1),
 UserID              INTEGER				NOT NULL,
 SeatID              INTEGER				NOT NULL,
 CinemaID			INTEGER				NOT NULL,
@@ -122,7 +124,7 @@ FOREIGN KEY         (ShowID)			REFERENCES Shows
 );
 ---------------------------------------
 CREATE TABLE Orders (
-OrderID				INTEGER			NOT NULL IDENTITY(1,1),
+OrderID				INTEGER			NOT NULL IDENTITY(2364,1),
 FoodID				INTEGER			NOT NULL,
 OrderCount			INTEGER			NOT NULL,
 Fulfilled           BIT             NOT NULL DEFAULT 0,
@@ -131,11 +133,11 @@ FOREIGN KEY			(FoodID)        REFERENCES Fooditems
 );
 ---------------------------------------
 CREATE TABLE HelpTickets (
-HelpTicketID		INTEGER			NOT NULL IDENTITY(1,1),
+HelpTicketID		INTEGER			NOT NULL IDENTITY(5867,1),
 UserID              INTEGER         NOT NULL,
-Content				VARCHAR(500)	NOT NULL,
 Header				VARCHAR(50)		NOT NULL,
-Closed              BIT             NOT NULL DEFAULT 0,
+Content				VARCHAR(500)	NOT NULL,
+Seen				BIT             NOT NULL DEFAULT 0,
 PRIMARY KEY			(HelpTicketID,UserID),
 FOREIGN KEY         (UserID)        REFERENCES Accounts
 );
@@ -185,3 +187,5 @@ INSERT INTO Movies VALUES ('Memento', N'Christopher Nolan', CAST(N'01:53:00' AS 
 INSERT INTO Movies VALUES ('The Departed', N'Martin Scorsese', CAST(N'02:31:00' AS Time)) 
 INSERT INTO Movies VALUES ('Whiplash', N'Damien Chazelle', CAST(N'01:47:00' AS Time))
 INSERT INTO Movies VALUES ('Django Unchained', N'Quentin Tarantino', CAST(N'02:45:00' AS Time))
+
+INSERT INTO HelpTickets (UserID,Header,Content) VALUES (5267,'help','kofta gedan')

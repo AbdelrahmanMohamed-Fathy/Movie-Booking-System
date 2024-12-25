@@ -6,20 +6,20 @@ namespace Movie_Booking_System.Util
 {
     public class Controller
     {
-        static DBManager dbMan = new DBManager();
+        private static DBManager dbMan = new DBManager();
 
-        static public void TerminateConnection()
+        public static void TerminateConnection()
         {
             dbMan.CloseConnection();
         }
 
-        static public DataTable showallMovies()
+        public static DataTable showallMovies()
         {
             string query = $"SELECT * FROM Movies";
             return dbMan.ExecuteReader(query);
         }
 
-        static public int InsertAccount(string Fname, string Lname, string email, string pass, int PhoneNumber, userMode authority)
+        public static int InsertAccount(string Fname, string Lname, string email, string pass, int PhoneNumber, userMode authority)
         {
             string query =
                 "INSERT INTO Accounts (Fname, Lname, Email, Pass, PhoneNumber, Authority)\n" +
@@ -27,22 +27,74 @@ namespace Movie_Booking_System.Util
             return dbMan.ExecuteNonQuery(query);
         }
 
-        static public userMode FetchUser(string Email,string Password)
+        public static userMode FetchUser(string Email,string Password, out int ID)
         {
             string query =
-                "SELECT Authority\n" +
+                "SELECT Authority,UserID\n" +
                 "FROM Accounts\n" +
                 $"WHERE Email='{Email}' AND Pass='{Password}'";
 
-            object ResultObject = dbMan.ExecuteScalar(query);
+            DataTable table = dbMan.ExecuteReader(query);
+            if (table == null)
+            {
+                ID = -1;
+                return userMode.Guest;
+            }
+            object ResultObject = table.Rows[0][0];
             string Result;
             if (ResultObject != null)
                 Result = ResultObject.ToString();
             else
                 Result = null;
+            ID = (int)table.Rows[0][1];
 
             return HelperFunctions.ParseAuthorityToEnum(Result);
         }
 
+        public static DataTable GetTickets()
+        {
+            string query =
+                "SELECT HelpTicketID, Header, Fname, Lname\n" +
+                "FROM HelpTickets, Accounts\n" +
+                "WHERE HelpTickets.UserID = Accounts.UserID\n";
+
+            return dbMan.ExecuteReader(query);
+        }
+
+        public static DataTable GetUserTickets(int UserID)
+        {
+            string query =
+                "SELECT HelpTicketID, Header, Fname, Lname\n" +
+                "FROM HelpTickets, Accounts\n" +
+                $"WHERE HelpTickets.UserID = Accounts.UserID AND Accounts.UserID = {UserID}\n";
+
+            return dbMan.ExecuteReader(query);
+        }
+
+        public static DataTable GetTicket(int TicketID, bool unSeenOnly = true)
+        {
+
+            string query;
+            if (unSeenOnly)
+                query =
+                    "SELECT HelpTickets.*, Fname, Lname\n" +
+                    "FROM HelpTickets, Accounts\n" +
+                    $"WHERE HelpTickets.UserID = Accounts.UserID AND HelpTickets.HelpTicketID = {TicketID}\n";
+            else
+                query =
+                    "SELECT HelpTickets.*, Fname, Lname\n" +
+                    "FROM HelpTickets, Accounts\n" +
+                    $"WHERE HelpTickets.UserID = Accounts.UserID AND HelpTickets.HelpTicketID = {TicketID}\n";
+
+            return dbMan.ExecuteReader(query);
+        }
+
+        public static void MarkTicket(int TicketID)
+        {
+            string query =
+                "UPDATE HelpTickets(Seen)\n" +
+                "SET 1\n" +
+                $"WHERE HelpTicketID = {TicketID}\n";
+        }
     }
 }

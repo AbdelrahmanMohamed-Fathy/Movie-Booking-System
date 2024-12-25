@@ -14,6 +14,7 @@ namespace Movie_Booking_System.Screens
             InitializeComponent();
             this.parentForm = parent;
             parentForm.Authority = userMode.Guest;
+            parentForm.CurrentUserID = -1;
             
             this.BackColor = parent.FormColor;
             this.ForeColor = parent.FormTextColor;
@@ -49,20 +50,25 @@ namespace Movie_Booking_System.Screens
 
         private bool ValidateLogin(out userMode mode)
         {
-            userMode Result = Controller.FetchUser(txtbxUsername.Text, txtbxPassword.Text);
+            int ID;
+            userMode Result = Controller.FetchUser(txtbxUsername.Text, txtbxPassword.Text,out ID);
             switch (Result)
             {
                 case userMode.Admin:
                     mode = userMode.Admin;
+                    parentForm.CurrentUserID = ID;
                     return true;
                 case userMode.Employee:
                     mode = userMode.Employee;
+                    parentForm.CurrentUserID = ID;
                     return true;
                 case userMode.User:
                     mode = userMode.User;
+                    parentForm.CurrentUserID = ID;
                     return true;
                 default:
                     mode = userMode.Guest;
+                    parentForm.CurrentUserID = -1;
                     return false;
             }
         }

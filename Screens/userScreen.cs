@@ -49,18 +49,5 @@ namespace Movie_Booking_System.Screens
         {
 
         }
-
-        private void placeHolderTextBox1_TextChanged(object sender, EventArgs e)
-        {
-            label1.Text = placeHolderTextBox1.Text;
-        }
-
-        private void placeHolderTextBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
     }
 }
