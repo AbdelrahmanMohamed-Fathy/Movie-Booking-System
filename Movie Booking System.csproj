@@ -179,6 +179,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Screens\employeeDashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\employeeDashBoard.Designer.cs">
+      <DependentUpon>employeeDashBoard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\FoodOrders\employeeFulfillOrder.cs">
       <SubType>Form</SubType>
     </Compile>
