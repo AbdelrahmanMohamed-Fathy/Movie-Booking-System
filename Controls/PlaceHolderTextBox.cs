@@ -12,26 +12,38 @@ using System.Windows.Forms;
 
 namespace Movie_Booking_System.Controls
 {
+    [DefaultEvent("TextChanged")]
     public partial class PlaceHolderTextBox : UserControl
     {
         private string placeHolderText = "PlaceHolder";
         private Color placeHolderTextColor = Color.Silver;
         private Color TextColor;
 
-        [Description("PlaceHolder text"),Category("Data"),System.ComponentModel.DefaultValue("PlaceHolder")]
+        [Description("PlaceHolder text")]
+        [Category("Appearance")]
+        [System.ComponentModel.DefaultValue("PlaceHolder")]
         public string PlaceHolderText
         {
             get { return placeHolderText; }
             set { placeHolderText = value; textBox1.Text = value; }
         }
 
-        [Description("PlaceHolder text color"), Category("Appearance"), System.ComponentModel.DefaultValue("Silver")]
+        [Description("PlaceHolder text color")]
+        [Category("Appearance")]
+        [System.ComponentModel.DefaultValue("Silver")]
         public Color PlaceHolderTextColor
         {
             get { return placeHolderTextColor; }
             set { placeHolderTextColor = value; textBox1.ForeColor = value; }
         }
 
+        [Category("Appearance")]
+        [System.ComponentModel.DefaultValue("")]
+        public override string Text
+        {
+            get { return textBox1.Text; }
+            set { textBox1.Text = value; }
+        }
 
         public PlaceHolderTextBox()
         {
@@ -77,11 +89,21 @@ namespace Movie_Booking_System.Controls
         [Category("Property Changed")]
         public event EventHandler TextChanged;
 
+        [Browsable(true)]
+        [Category("Key")]
+        public event KeyPressEventHandler KeyPress;
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (this.TextChanged != null)
                 if (textBox1.Text != placeHolderText)
                     this.TextChanged(this, e);
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (this.KeyPress != null)
+                this.KeyPress(this, e);
         }
     }
 }
