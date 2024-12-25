@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Movie_Booking_System.Screens
+namespace Movie_Booking_System.Screens.FoodOrders
 {
     public partial class userFoodOrder : Form
     {

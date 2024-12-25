@@ -17,12 +17,12 @@ using System.Collections.ObjectModel;
 
 namespace Movie_Booking_System.Screens
 {
-    public partial class newUser : Form
+    public partial class signupScreen : Form
     {
         private mainForm parentForm;
         sbyte progessBarRed = 2;
         sbyte progessBarYellow = 3;
-        public newUser(mainForm parent, userMode mode)
+        public signupScreen(mainForm parent, userMode mode)
         {
             InitializeComponent();
             this.parentForm = parent;

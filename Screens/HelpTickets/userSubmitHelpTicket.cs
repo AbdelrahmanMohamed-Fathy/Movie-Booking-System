@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Movie_Booking_System.Screens
+namespace Movie_Booking_System.Screens.HelpTickets
 {
-    public partial class employeeFulfillOrders : Form
+    public partial class userSubmitHelpTicket : Form
     {
-        public employeeFulfillOrders()
+        public userSubmitHelpTicket()
         {
             InitializeComponent();
         }

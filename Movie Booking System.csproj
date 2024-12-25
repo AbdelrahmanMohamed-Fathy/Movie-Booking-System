@@ -179,17 +179,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Screens\employeeFulfillOrders.cs">
+    <Compile Include="Screens\FoodOrders\employeeFulfillOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\employeeFulfillOrders.Designer.cs">
-      <DependentUpon>employeeFulfillOrders.cs</DependentUpon>
+    <Compile Include="Screens\FoodOrders\employeeFulfillOrder.Designer.cs">
+      <DependentUpon>employeeFulfillOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\userFoodOrder.cs">
+    <Compile Include="Screens\FoodOrders\userFoodOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\userFoodOrder.Designer.cs">
+    <Compile Include="Screens\FoodOrders\userFoodOrder.Designer.cs">
       <DependentUpon>userFoodOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\HelpTickets\employeeReviewHelpTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\HelpTickets\employeeReviewHelpTicket.Designer.cs">
+      <DependentUpon>employeeReviewHelpTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\HelpTickets\userSubmitHelpTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\HelpTickets\userSubmitHelpTicket.Designer.cs">
+      <DependentUpon>userSubmitHelpTicket.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\HelperFunctions.cs" />
     <None Include="Properties\Settings.settings">
@@ -218,17 +230,17 @@
     <EmbeddedResource Include="Screens\loginScreen.resx">
       <DependentUpon>loginScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\newUser.resx">
-      <DependentUpon>newUser.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\signupScreen.resx">
+      <DependentUpon>signupScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\userScreen.resx">
       <DependentUpon>userScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Screens\newUser.cs">
+    <Compile Include="Screens\signupScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\newUser.Designer.cs">
-      <DependentUpon>newUser.cs</DependentUpon>
+    <Compile Include="Screens\signupScreen.Designer.cs">
+      <DependentUpon>signupScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\userScreen.cs">
       <SubType>Form</SubType>
