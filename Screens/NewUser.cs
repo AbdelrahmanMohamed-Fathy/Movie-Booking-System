@@ -28,6 +28,8 @@ namespace Movie_Booking_System.Screens
             InitializeComponent();
             this.parentForm = parent;
             parentForm.Authority = userMode.Guest;
+            visiblepass.Hide();
+            visibleconfpass.Hide();
         }
 
         private void Fname_Enter(object sender, EventArgs e)
@@ -216,6 +218,14 @@ namespace Movie_Booking_System.Screens
 
         private void password_TextChanged(object sender, EventArgs e)
         {
+                if (string.IsNullOrEmpty(password.Text) || password.Text == "Password")
+                {
+                    visiblepass.Hide();
+                }
+                else
+                {
+                    visiblepass.Show();
+                }
                 ValidatePasswordlbl(password.Text);
                 int charcount = password.Text.Length;
                 if (string.IsNullOrEmpty(password.Text))
@@ -276,6 +286,14 @@ namespace Movie_Booking_System.Screens
         }
         private void confirmpass_TextChanged(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(confirmpass.Text) || confirmpass.Text == "Confirm Password")
+            {
+                visibleconfpass.Hide();
+            }
+            else
+            {
+                visibleconfpass.Show();
+            }
             confirmpasslbl.Hide();
         }
 
