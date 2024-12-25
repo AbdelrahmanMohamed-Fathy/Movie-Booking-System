@@ -189,3 +189,4 @@ INSERT INTO Movies VALUES ('Whiplash', N'Damien Chazelle', CAST(N'01:47:00' AS T
 INSERT INTO Movies VALUES ('Django Unchained', N'Quentin Tarantino', CAST(N'02:45:00' AS Time))
 
 INSERT INTO HelpTickets (UserID,Header,Content) VALUES (5267,'help','kofta gedan')
+INSERT INTO HelpTickets (UserID,Header,Content) VALUES (5267,'Issue with Orders','kofta gedan')

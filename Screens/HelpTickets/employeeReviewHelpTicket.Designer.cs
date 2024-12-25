@@ -34,9 +34,8 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnMark = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblFname = new System.Windows.Forms.Label();
-            this.lblLname = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblFrom = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,16 +73,18 @@
             this.txtbxContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtbxContent.Size = new System.Drawing.Size(571, 187);
             this.txtbxContent.TabIndex = 2;
+            this.txtbxContent.Visible = false;
             // 
             // lblHeader
             // 
             this.lblHeader.AutoSize = true;
-            this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.Location = new System.Drawing.Point(4, 233);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(121, 37);
+            this.lblHeader.Size = new System.Drawing.Size(127, 37);
             this.lblHeader.TabIndex = 3;
             this.lblHeader.Text = "Header";
+            this.lblHeader.Visible = false;
             // 
             // btnMark
             // 
@@ -99,6 +100,7 @@
             this.btnMark.TabIndex = 6;
             this.btnMark.Text = "Mark Seen";
             this.btnMark.UseVisualStyleBackColor = false;
+            this.btnMark.Visible = false;
             this.btnMark.Click += new System.EventHandler(this.btnMark_Click);
             // 
             // label2
@@ -111,44 +113,35 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Ticket ID:";
             // 
-            // lblFname
+            // lblName
             // 
-            this.lblFname.AutoSize = true;
-            this.lblFname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFname.Location = new System.Drawing.Point(456, 464);
-            this.lblFname.Name = "lblFname";
-            this.lblFname.Size = new System.Drawing.Size(60, 24);
-            this.lblFname.TabIndex = 8;
-            this.lblFname.Text = "label3";
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(473, 464);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(61, 24);
+            this.lblName.TabIndex = 8;
+            this.lblName.Text = "Name";
+            this.lblName.Visible = false;
             // 
-            // lblLname
+            // lblFrom
             // 
-            this.lblLname.AutoSize = true;
-            this.lblLname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLname.Location = new System.Drawing.Point(522, 464);
-            this.lblLname.Name = "lblLname";
-            this.lblLname.Size = new System.Drawing.Size(60, 24);
-            this.lblLname.TabIndex = 10;
-            this.lblLname.Text = "label5";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(390, 464);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 24);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "From:";
+            this.lblFrom.AutoSize = true;
+            this.lblFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFrom.Location = new System.Drawing.Point(418, 464);
+            this.lblFrom.Name = "lblFrom";
+            this.lblFrom.Size = new System.Drawing.Size(60, 24);
+            this.lblFrom.TabIndex = 11;
+            this.lblFrom.Text = "From:";
+            this.lblFrom.Visible = false;
             // 
             // employeeReviewHelpTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(783, 514);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblLname);
-            this.Controls.Add(this.lblFname);
+            this.Controls.Add(this.lblFrom);
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnMark);
             this.Controls.Add(this.lblHeader);
@@ -171,8 +164,7 @@
         private System.Windows.Forms.Button btnMark;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblFname;
-        private System.Windows.Forms.Label lblLname;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblFrom;
     }
 }

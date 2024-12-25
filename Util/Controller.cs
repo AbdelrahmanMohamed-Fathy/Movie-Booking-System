@@ -51,12 +51,19 @@ namespace Movie_Booking_System.Util
             return HelperFunctions.ParseAuthorityToEnum(Result);
         }
 
-        public static DataTable GetTickets()
+        public static DataTable GetTickets(bool unSeenOnly = true)
         {
-            string query =
-                "SELECT HelpTicketID, Header, Fname, Lname\n" +
-                "FROM HelpTickets, Accounts\n" +
-                "WHERE HelpTickets.UserID = Accounts.UserID\n";
+            string query;
+            if (unSeenOnly)
+                query =
+                    "SELECT HelpTicketID, Header, Fname, Lname\n" +
+                    "FROM HelpTickets, Accounts\n" +
+                    $"WHERE HelpTickets.UserID = Accounts.UserID AND Seen=0\n";
+            else
+                query =
+                    "SELECT HelpTicketID, Header, Fname, Lname\n" +
+                    "FROM HelpTickets, Accounts\n" +
+                    "WHERE HelpTickets.UserID = Accounts.UserID\n";
 
             return dbMan.ExecuteReader(query);
         }
@@ -71,20 +78,13 @@ namespace Movie_Booking_System.Util
             return dbMan.ExecuteReader(query);
         }
 
-        public static DataTable GetTicket(int TicketID, bool unSeenOnly = true)
+        public static DataTable GetTicket(int TicketID)
         {
 
-            string query;
-            if (unSeenOnly)
-                query =
-                    "SELECT HelpTickets.*, Fname, Lname\n" +
-                    "FROM HelpTickets, Accounts\n" +
-                    $"WHERE HelpTickets.UserID = Accounts.UserID AND HelpTickets.HelpTicketID = {TicketID}\n";
-            else
-                query =
-                    "SELECT HelpTickets.*, Fname, Lname\n" +
-                    "FROM HelpTickets, Accounts\n" +
-                    $"WHERE HelpTickets.UserID = Accounts.UserID AND HelpTickets.HelpTicketID = {TicketID}\n";
+            string query =
+                "SELECT HelpTickets.*, Fname, Lname\n" +
+                "FROM HelpTickets, Accounts\n" +
+                $"WHERE HelpTickets.UserID = Accounts.UserID AND HelpTickets.HelpTicketID = {TicketID}\n";
 
             return dbMan.ExecuteReader(query);
         }
@@ -92,9 +92,19 @@ namespace Movie_Booking_System.Util
         public static void MarkTicket(int TicketID)
         {
             string query =
-                "UPDATE HelpTickets(Seen)\n" +
-                "SET 1\n" +
+                "UPDATE HelpTickets\n" +
+                "SET Seen=1\n" +
                 $"WHERE HelpTicketID = {TicketID}\n";
+            dbMan.ExecuteNonQuery(query);
+            return;
+        }
+
+        public static int SubmitTicket(int UserID,string Header, string Content)
+        {
+            string query =
+                "INSERT INTO HelpTickets (UserID,Header,Content)\n" +
+                $"VALUES ({UserID},'{Header}','{Content}')\n";
+            return dbMan.ExecuteNonQuery(query);
         }
     }
 }

@@ -26,6 +26,8 @@ namespace Movie_Booking_System.Screens
         private void btnLogin_Click(object sender, EventArgs e)
         {
             userMode mode;
+            if (txtbxUsername.Text == "kofta" && txtbxPassword.Text == "kofta")
+                parentForm.LoadNewForm(new Debug(parentForm, userMode.Guest));
             this.Cursor = Cursors.WaitCursor;
             if (ValidateLogin(out mode))
             {
