@@ -19,7 +19,7 @@ namespace Movie_Booking_System.Util
             return dbMan.ExecuteReader(query);
         }
 
-        public static int InsertAccount(string Fname, string Lname, string email, string pass, int PhoneNumber, userMode authority)
+        public static int InsertAccount(string Fname, string Lname, string email, string pass, int PhoneNumber, string authority)
         {
             string query =
                 "INSERT INTO Accounts (Fname, Lname, Email, Pass, PhoneNumber, Authority)\n" +
