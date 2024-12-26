@@ -36,6 +36,7 @@
             // 
             // mainPanel
             // 
+            this.mainPanel.BackColor = System.Drawing.Color.MintCream;
             this.mainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.mainPanel.Cursor = System.Windows.Forms.Cursors.Default;
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -48,7 +49,7 @@
             // 
             this.btnGoBack.BackColor = System.Drawing.Color.Transparent;
             this.btnGoBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGoBack.Image = ((System.Drawing.Image)(resources.GetObject("btnGoBack.Image")));
             this.btnGoBack.Location = new System.Drawing.Point(12, 9);
             this.btnGoBack.Name = "btnGoBack";

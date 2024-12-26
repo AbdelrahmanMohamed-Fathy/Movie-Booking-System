@@ -27,7 +27,7 @@ namespace Movie_Booking_System.Controls
             if (picturePath != null)
                 pictureBox1.Image = Image.FromFile(picturePath);
 
-            lblTitle.Text = data.Field<string>("Name");
+            lblTitle.Text = data.Field<string>("MovieName");
             lblDescription.Text = data.Field<string>("MovieDescription");
             lblRatingValue.Text = data.Field<string>("Rating");
             int value = (int)Math.Round(data.Field<decimal>("Rating"));

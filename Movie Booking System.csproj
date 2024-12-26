@@ -53,6 +53,9 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>absolute-cinema.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
     <Reference Include="Azure.Core, Version=1.44.1.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
@@ -348,6 +351,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="absolute-cinema.ico" />
     <Content Include="Assets\Absolute Cinema logo with the name included, simple and stylish.png" />
     <Content Include="Assets\absolute-cinema.ico" />
     <Content Include="Assets\Absolute_Cinema_Full.png" />
@@ -359,16 +363,27 @@
     <Content Include="Assets\Create a unique and cinematic logo for Absolute Cinema, resize to 950x600, remove all text except Absolute Cinema.png" />
     <Content Include="Assets\download %2818%29.jpg" />
     <Content Include="Assets\download %2819%29.jpg" />
+    <Content Include="Assets\email-icon.png" />
     <Content Include="Assets\go-back-arrow.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Closed-eye-icon.png" />
+    <Content Include="Assets\icons8-phone-30.png" />
+    <Content Include="Assets\Name-icon.png" />
     <Content Include="Assets\Open-eye-icon.png" />
     <Content Include="Assets\icons8-search-30.png" />
     <Content Include="Assets\icons8-visibility-30.png" />
-    <Content Include="Assets\icons8-eye-24.png" />
     <Content Include="Assets\icons8-search-30.png" />
+    <Content Include="Assets\Pass-icon.png" />
+    <Content Include="Assets\password--icon.png" />
+    <Content Include="Assets\Password-icon.png" />
+    <Content Include="Assets\Phone-icon.png" />
+    <Content Include="Assets\Phone.png" />
     <Content Include="Assets\Search icon.png" />
+    <Content Include="Assets\Tele-icon.png" />
+    <Content Include="Assets\Test.png" />
+    <Content Include="Assets\visibility_16dp_000000_FILL0_wght400_GRAD0_opsz20.png" />
+    <Content Include="Assets\visibility_off_16dp_000000_FILL0_wght400_GRAD0_opsz20.png" />
     <Content Include="DBCREATIONQUERY.sql" />
   </ItemGroup>
   <ItemGroup>

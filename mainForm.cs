@@ -11,7 +11,7 @@ namespace Movie_Booking_System
     public partial class mainForm : Form
     {
         //Standard Colors:
-        public Color FormColor = Color.White;
+        public Color FormColor = Color.FromArgb(175, 236, 231);
         public Color FormSubTextColor = Color.Silver;
         public Color FormTextColor = Color.Black;
         public Color btnColor = Color.Gray;
@@ -32,8 +32,6 @@ namespace Movie_Booking_System
 
         private void mainForm_Load(object sender, EventArgs e)
         {
-            btnGoBack.FlatStyle = FlatStyle.Flat;
-            btnGoBack.BackColor = FormColor;
             LoadNewForm(new Screens.userScreen(this, this.Authority),false);
         }
 
@@ -59,6 +57,8 @@ namespace Movie_Booking_System
                 formStack.Push(mainPanel.Controls[0].GetType());
 
             CleanUp();
+            this.BackColor = form.BackColor;
+            this.BackgroundImage = form.BackgroundImage;
             form.TopLevel = false;
             form.ControlBox = false;
             form.FormBorderStyle = FormBorderStyle.None;
