@@ -82,9 +82,9 @@ namespace Movie_Booking_System.Util
         public static DataTable GetOrders()     // ahmad
         {
             string query =
-                "SELECT Orders_Details.OrderID, Orders_Details.FoodID, FoodItems.FoodName, Orders_Details.OrderCount, FoodItems.Price, Orders_Details.Fulfilled \n" +
-                "FROM Orders_Details, FoodItems\n" +
-                "WHERE Orders_Details.FoodID = FoodItems.FoodID\n Order by Orders_Details.OrderID";
+                "SELECT Orders_Details.OrderID, Orders_Details.FoodID, FoodItems.FoodName, Orders_Details.OrderCount, FoodItems.Price, Orders_Details.Fulfilled, AllOrders.UserID \n" +
+                "FROM Orders_Details, FoodItems, AllOrders\n" +
+                "WHERE AllOrders.OrderID = Orders_Details.OrderID and Orders_Details.FoodID = FoodItems.FoodID\n Order by Orders_Details.OrderID";
 
             return dbMan.ExecuteReader(query);
         }

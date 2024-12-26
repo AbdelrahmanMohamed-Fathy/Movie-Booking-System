@@ -124,10 +124,10 @@ FOREIGN KEY         (ShowID)			REFERENCES Shows
 );
 ---------------------------------------
 CREATE TABLE AllOrders(
-OrderID             INTEGER			NOT NULL IDENTITY(5867,1),
+OrderID             INTEGER			NOT NULL IDENTITY(1,1),
 UserID              INTEGER
 PRIMARY KEY			(OrderID)
-
+FOREIGN KEY			(UserID)        REFERENCES Accounts
 );
 CREATE TABLE Orders_Details (
 OrderID				INTEGER			NOT NULL,

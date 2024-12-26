@@ -22,7 +22,7 @@ namespace Movie_Booking_System.Screens.FoodOrders
         public userFoodOrder(String UserID_)
         {
             InitializeComponent();
-            UserID = UserID_;
+            UserID = UserID_;//someone add the user Id;
             textBox4.Text = UserID;
         }
 
@@ -175,7 +175,7 @@ namespace Movie_Booking_System.Screens.FoodOrders
             }
             else
             {
-                String OrderID, FoodID, FoodName, OrderCount, TotalPrice, UnitPrice, Fulfilled;
+                String OrderID, FoodID, FoodName, OrderCount, TotalPrice, UnitPrice, Fulfilled, UserID;
                 for (int x = 0; x < table.Rows.Count; x++)
                 {
                     OrderID = table.Rows[x][0].ToString();
@@ -185,7 +185,8 @@ namespace Movie_Booking_System.Screens.FoodOrders
                     UnitPrice = table.Rows[x][4].ToString();
                     TotalPrice = Convert.ToString(Convert.ToInt32(OrderCount) * Convert.ToInt32(UnitPrice));
                     Fulfilled = table.Rows[x][5].ToString();
-                    dataGridView1.Rows.Add(OrderID, FoodID, FoodName, OrderCount, TotalPrice, UnitPrice, Fulfilled);
+                    UserID = table.Rows[x][6].ToString();
+                    dataGridView1.Rows.Add(OrderID, FoodID, FoodName, OrderCount, TotalPrice, UnitPrice, Fulfilled, UserID);
                 }
             }
         }
@@ -212,6 +213,11 @@ namespace Movie_Booking_System.Screens.FoodOrders
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
         {
 
         }

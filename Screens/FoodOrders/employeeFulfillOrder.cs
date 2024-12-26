@@ -44,7 +44,7 @@ namespace Movie_Booking_System.Screens.FoodOrders
             }
             else
             {
-                String OrderID, FoodID, FoodName, OrderCount, TotalPrice, UnitPrice, Fulfilled;
+                String OrderID, FoodID, FoodName, OrderCount, TotalPrice, UnitPrice, Fulfilled, UserID;
                 for (int x = 0; x < table.Rows.Count; x++)
                 {
                     OrderID = table.Rows[x][0].ToString();
@@ -54,8 +54,9 @@ namespace Movie_Booking_System.Screens.FoodOrders
                     UnitPrice = table.Rows[x][4].ToString();
                     TotalPrice = Convert.ToString(Convert.ToInt32(OrderCount) * Convert.ToInt32(UnitPrice));
                     Fulfilled = table.Rows[x][5].ToString();
+                    UserID = table.Rows[x][6].ToString();
                     if (Fulfilled == "False")
-                        dataGridView1.Rows.Add(OrderID, FoodID, FoodName, OrderCount, TotalPrice, UnitPrice, Fulfilled);
+                        dataGridView1.Rows.Add(OrderID, FoodID, FoodName, OrderCount, TotalPrice, UnitPrice, Fulfilled, UserID);
                 }
             }
         }
@@ -70,7 +71,7 @@ namespace Movie_Booking_System.Screens.FoodOrders
             }
             else
             {
-                String OrderID, FoodID, FoodName, OrderCount, TotalPrice, UnitPrice, Fulfilled;
+                String OrderID, FoodID, FoodName, OrderCount, TotalPrice, UnitPrice, Fulfilled, UserID;
                 for (int x = 0; x < table.Rows.Count; x++)
                 {
                     OrderID = table.Rows[x][0].ToString();
@@ -80,8 +81,9 @@ namespace Movie_Booking_System.Screens.FoodOrders
                     UnitPrice = table.Rows[x][4].ToString();
                     TotalPrice = Convert.ToString(Convert.ToInt32(OrderCount) * Convert.ToInt32(UnitPrice));
                     Fulfilled = table.Rows[x][5].ToString();
+                    UserID = table.Rows[x][6].ToString();
                     //if (Fulfilled == "false")
-                    dataGridView1.Rows.Add(OrderID, FoodID, FoodName, OrderCount, TotalPrice, UnitPrice, Fulfilled);
+                    dataGridView1.Rows.Add(OrderID, FoodID, FoodName, OrderCount, TotalPrice, UnitPrice, Fulfilled, UserID);
                 }
             }
         }
