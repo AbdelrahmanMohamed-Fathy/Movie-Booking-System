@@ -27,7 +27,7 @@ namespace Movie_Booking_System.Util
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public static userMode FetchUser(string Email,string Password, out int ID)
+        public static userMode CheckUser(string Email,string Password, out int ID)
         {
             string query =
                 "SELECT Authority,UserID\n" +
@@ -106,5 +106,15 @@ namespace Movie_Booking_System.Util
                 $"VALUES ({UserID},'{Header}','{Content}')\n";
             return dbMan.ExecuteNonQuery(query);
         }
+
+        public static DataTable FetchUser(int UserID)
+        {
+            string query =
+                "SELECT Fname, Lname\n" +
+                "FROM Accounts\n" +
+                $"WHERE UserID = {UserID}\n";
+            return dbMan.ExecuteReader(query);
+        }
+
     }
 }

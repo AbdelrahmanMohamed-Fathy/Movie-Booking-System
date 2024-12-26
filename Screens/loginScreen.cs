@@ -13,26 +13,30 @@ namespace Movie_Booking_System.Screens
         {
             InitializeComponent();
             this.parentForm = parent;
-            parentForm.Authority = userMode.Guest;
-            parentForm.CurrentUserID = -1;
             
+
             this.BackColor = parent.FormColor;
             this.ForeColor = parent.FormTextColor;
             this.btnContinue.BackColor = parent.btnColor;
             this.btnLogin.BackColor = parent.btnColor;
             this.btnSignup.BackColor = parent.btnColor;
+            parentForm.HideStatus();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             userMode mode;
             if (txtbxUsername.Text == "kofta" && txtbxPassword.Text == "kofta")
+            {
+                parentForm.ShowStatus();
                 parentForm.LoadNewForm(new Debug(parentForm, userMode.Guest));
+            }
             this.Cursor = Cursors.WaitCursor;
             if (ValidateLogin(out mode))
             {
                 this.Cursor = Cursors.Default;
                 parentForm.Authority = mode;
+                parentForm.ShowStatus();
                 parentForm.LoadNewForm(new userScreen(parentForm,parentForm.Authority));
             }
             else
@@ -47,13 +51,16 @@ namespace Movie_Booking_System.Screens
         private void btnContinue_Click(object sender, EventArgs e)
         {
             parentForm.Authority = userMode.Guest;
+            parentForm.CurrentUserID = -1;
+            parentForm.ShowStatus();
+
             parentForm.LoadNewForm(new userScreen(parentForm, parentForm.Authority));
         }
 
         private bool ValidateLogin(out userMode mode)
         {
             int ID;
-            userMode Result = Controller.FetchUser(txtbxUsername.Text, txtbxPassword.Text,out ID);
+            userMode Result = Controller.CheckUser(txtbxUsername.Text, txtbxPassword.Text,out ID);
             switch (Result)
             {
                 case userMode.Admin:
@@ -115,11 +122,6 @@ namespace Movie_Booking_System.Screens
         }
 
         private void loginScreen_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void placeHolderTextBox1_Load(object sender, EventArgs e)
         {
 
         }

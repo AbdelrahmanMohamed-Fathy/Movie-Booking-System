@@ -34,7 +34,7 @@
             // 
             // btnEmployeeTicket
             // 
-            this.btnEmployeeTicket.Location = new System.Drawing.Point(41, 62);
+            this.btnEmployeeTicket.Location = new System.Drawing.Point(110, 61);
             this.btnEmployeeTicket.Name = "btnEmployeeTicket";
             this.btnEmployeeTicket.Size = new System.Drawing.Size(93, 36);
             this.btnEmployeeTicket.TabIndex = 0;
@@ -44,7 +44,7 @@
             // 
             // btnUserTicket
             // 
-            this.btnUserTicket.Location = new System.Drawing.Point(140, 62);
+            this.btnUserTicket.Location = new System.Drawing.Point(209, 61);
             this.btnUserTicket.Name = "btnUserTicket";
             this.btnUserTicket.Size = new System.Drawing.Size(93, 36);
             this.btnUserTicket.TabIndex = 1;

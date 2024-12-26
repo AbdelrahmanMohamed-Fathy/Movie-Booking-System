@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Movie_Booking_System.Util;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -15,8 +17,14 @@ namespace Movie_Booking_System
         public Color btnColor = Color.Gray;
 
         private Stack<Type> formStack = new Stack<Type>();
+        private int currentUserID = -1;
         public userMode Authority = userMode.Guest;
-        public int CurrentUserID = -1;
+
+        public int CurrentUserID
+        {
+            get { return currentUserID; }
+            set { currentUserID = value; RefreshStatus(); }
+        }
         public mainForm()
         {
             InitializeComponent();
@@ -26,7 +34,7 @@ namespace Movie_Booking_System
         {
             btnGoBack.FlatStyle = FlatStyle.Flat;
             btnGoBack.BackColor = FormColor;
-            LoadNewForm(new Screens.loginScreen(this, this.Authority),false);
+            LoadNewForm(new Screens.userScreen(this, this.Authority),false);
         }
 
         /// <summary>
@@ -73,13 +81,34 @@ namespace Movie_Booking_System
                 return;
 
             Type formtype = formStack.Pop();
+            ShowStatus();
             Form form = (Form)System.Activator.CreateInstance(formtype, this, this.Authority);
             LoadNewForm(form, false);
         }
 
-        private void metroProgressBar1_Click(object sender, EventArgs e)
+        private void btnStatus_Click(object sender, EventArgs e)
         {
+            LoadNewForm(new Screens.loginScreen(this, this.Authority));
+        }
 
+        private void RefreshStatus()
+        {
+            if (currentUserID == -1)
+            {
+                btnStatus.Text = "Login";
+                return;
+            }
+            DataTable dt = Controller.FetchUser(currentUserID);
+            btnStatus.Text = dt.Rows[0].Field<string>("Fname") + " " + dt.Rows[0].Field<string>("Lname");
+        }
+
+        public void HideStatus()
+        {
+            btnStatus.Hide();
+        }
+        public void ShowStatus()
+        {
+            btnStatus.Show();
         }
     }
     public enum userMode

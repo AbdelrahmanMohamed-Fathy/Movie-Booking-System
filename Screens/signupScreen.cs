@@ -196,7 +196,10 @@ namespace Movie_Booking_System.Screens
             {
                 //exception error
                 //Controller.InsertAccount(Fname.Text, Lname.Text, Email.Text, password.Text, Convert.ToInt32(phonenum.Text), "Client");
+                parentForm.ShowStatus();
+
                 MessageBox.Show("user entered successfully");
+                //parentForm.LoadNewForm(new userScreen(parentForm,parentForm.Authority));
             }
         }
 
