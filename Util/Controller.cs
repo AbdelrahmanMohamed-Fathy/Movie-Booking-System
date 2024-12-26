@@ -19,6 +19,24 @@ namespace Movie_Booking_System.Util
             return dbMan.ExecuteReader(query);
         }
 
+        public static int InsertNewOrder(string UserID)  // ahmad
+        {
+            string query =
+                "INSERT INTO AllOrders (UserID)\n" +
+                $"Values ({UserID})";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public static int GetNewOrderID(string UserID)  // ahmad
+        {
+            string query = $@"
+        SELECT ISNULL(MAX(OrderID),0)
+        FROM AllOrders
+        WHERE UserID = " + UserID.ToString();
+
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
         public static DataTable showallFoods()   // ahmad
         {
             string query = $"SELECT * FROM FoodItems";
@@ -35,11 +53,11 @@ namespace Movie_Booking_System.Util
             return dbMan.ExecuteReader(query);
         }
 
-        public static int InsertFoodOrder(string DoodID, string OrderCount, string Fulfilled)  // ahmad
+        public static int InsertFoodOrder(string DoodID, string OrderCount, string Fulfilled,String OrderID)  // ahmad
         {
             string query =
-                "INSERT INTO Orders (FoodID, OrderCount, Fulfilled)\n" +
-                $"Values ({DoodID}, {OrderCount}, {Fulfilled})";
+                "INSERT INTO Orders_Details (FoodID, OrderCount, Fulfilled, OrderID)\n" +
+                $"Values ({DoodID}, {OrderCount}, {Fulfilled}, {OrderID})";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -50,13 +68,13 @@ namespace Movie_Booking_System.Util
             if (OrderID == "")
             {
                 query =
-                "Delete Orders\n" +
+                "Delete Orders_Details\n" +
                 $"Where OrderID = " + OrderID;
             }
             else
             {
                 query =
-                    "Delete Orders\n";
+                    "Delete Orders_Details\n";
             }
             return dbMan.ExecuteNonQuery(query);
         }
@@ -64,9 +82,9 @@ namespace Movie_Booking_System.Util
         public static DataTable GetOrders()     // ahmad
         {
             string query =
-                "SELECT Orders.OrderID, Orders.FoodID, FoodItems.FoodName, Orders.OrderCount, FoodItems.Price, Orders.Fulfilled \n" +
-                "FROM Orders, FoodItems\n" +
-                "WHERE Orders.FoodID = FoodItems.FoodID\n";
+                "SELECT Orders_Details.OrderID, Orders_Details.FoodID, FoodItems.FoodName, Orders_Details.OrderCount, FoodItems.Price, Orders_Details.Fulfilled \n" +
+                "FROM Orders_Details, FoodItems\n" +
+                "WHERE Orders_Details.FoodID = FoodItems.FoodID\n Order by Orders_Details.OrderID";
 
             return dbMan.ExecuteReader(query);
         }
@@ -74,7 +92,7 @@ namespace Movie_Booking_System.Util
         public static int UpdateOrder(int OrderID)   // ahmad
         {
             string query =
-                "UPDATE Orders\n" +
+                "UPDATE Orders_Details\n" +
                 "SET Fulfilled = 1\n" +
                 $"WHERE OrderID = {OrderID}\n";
             return dbMan.ExecuteNonQuery(query);
@@ -84,10 +102,23 @@ namespace Movie_Booking_System.Util
         {
             string query = $@"
         SELECT ISNULL(SUM(OrderCount),0)
-        FROM Orders
+        FROM Orders_Details
         WHERE FoodID = " + FoodID.ToString();
 
             return (int)dbMan.ExecuteScalar(query);
+        }
+
+
+        public static DataTable GetTotalOrderPrice(String OrderID)   // Ahmad
+        {
+            
+                string query = $@"
+        SELECT SUM( CAST(Orders_Details.OrderCount AS DECIMAL(7,2))  * FoodItems.Price) as TotalPrice
+        FROM Orders_Details,FoodItems
+        WHERE Orders_Details.FoodID = FoodItems.FoodID and Orders_Details.OrderID = " + OrderID;
+
+                return dbMan.ExecuteReader(query);
+            
         }
 
         public static int InsertAccount(string Fname, string Lname, string email, string pass, int PhoneNumber, userMode authority)

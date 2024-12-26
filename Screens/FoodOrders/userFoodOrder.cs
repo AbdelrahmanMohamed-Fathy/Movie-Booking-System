@@ -42,6 +42,9 @@ namespace Movie_Booking_System.Screens.FoodOrders
                     comboBox1.Items.Add(table.Rows[x][0].ToString());
                     comboBox2.Items.Add(table.Rows[x][1].ToString());
                 }
+                Controller.InsertNewOrder(UserID);
+                textBox7.Text = Controller.GetNewOrderID(UserID).ToString();
+                textBox8.Text = "0";
             }
         }
 
@@ -104,11 +107,16 @@ namespace Movie_Booking_System.Screens.FoodOrders
                     int TotalPrice = FoodPrice * Convert.ToInt32(textBox1.Text);
                     textBox2.Text = TotalPrice.ToString();
                 }
+                else
+                {
+                    textBox2.Text = FoodPrice.ToString();
+                }
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Error in data entry !!");
                 textBox1.Text = "";
+                textBox2.Text = FoodPrice.ToString();
             }
         }
 
@@ -133,13 +141,14 @@ namespace Movie_Booking_System.Screens.FoodOrders
                     }
                     else
                     {
-                        Controller.InsertFoodOrder(comboBox1.Text, textBox1.Text, "0");
+                        Controller.InsertFoodOrder(comboBox1.Text, textBox1.Text, "0", textBox7.Text);
                         MessageBox.Show("Your order was added succesfully ...");
 
                         textBox3.Text = (FoodQty - Controller.GetAllOrdersCountFromFood(Convert.ToInt32(comboBox1.Text))).ToString();
                         textBox5.Text = FoodQty.ToString();
                         textBox6.Text = Controller.GetAllOrdersCountFromFood(Convert.ToInt32(comboBox1.Text)).ToString();
-
+                        DataTable tablePrice = Controller.GetTotalOrderPrice(textBox7.Text);
+                        textBox8.Text = tablePrice.Rows[0][0].ToString();
                         LoadAllOrders();
                         //textBox3.Refresh();
                     }
@@ -153,6 +162,7 @@ namespace Movie_Booking_System.Screens.FoodOrders
 
         private void button3_Click(object sender, EventArgs e)
         {
+            textBox8.Text = "";
             LoadAllOrders();
         }
         void LoadAllOrders()
@@ -190,10 +200,12 @@ namespace Movie_Booking_System.Screens.FoodOrders
             textBox3.Text = "";
             textBox5.Text = "";
             textBox6.Text = "";
+            textBox8.Text = "";
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            textBox8.Text = "";
             Controller.DeleteOrders("");
             MessageBox.Show("All orders deleted Correctly");
             LoadAllOrders();
