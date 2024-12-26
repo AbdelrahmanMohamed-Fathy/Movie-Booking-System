@@ -53,6 +53,9 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>absolute-cinema.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
     <Reference Include="Azure.Core, Version=1.44.1.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
@@ -345,6 +348,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="absolute-cinema.ico" />
     <Content Include="Assets\Absolute Cinema logo with the name included, simple and stylish.png" />
     <Content Include="Assets\absolute-cinema.ico" />
     <Content Include="Assets\Absolute_Cinema_Full.png" />
