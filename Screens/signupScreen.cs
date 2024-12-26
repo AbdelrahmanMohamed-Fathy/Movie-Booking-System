@@ -29,6 +29,7 @@ namespace Movie_Booking_System.Screens
             parentForm.Authority = userMode.Guest;
             visiblepass.Hide();
             visibleconfpass.Hide();
+            parentForm.HideStatus();
         }
 
         private void Fname_Enter(object sender, EventArgs e)
