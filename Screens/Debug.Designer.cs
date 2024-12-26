@@ -30,6 +30,7 @@
         {
             this.btnEmployeeTicket = new System.Windows.Forms.Button();
             this.btnUserTicket = new System.Windows.Forms.Button();
+            this.btnBookReport = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEmployeeTicket
@@ -52,11 +53,22 @@
             this.btnUserTicket.UseVisualStyleBackColor = true;
             this.btnUserTicket.Click += new System.EventHandler(this.btnUserTicket_Click);
             // 
+            // btnBookReport
+            // 
+            this.btnBookReport.Location = new System.Drawing.Point(308, 61);
+            this.btnBookReport.Name = "btnBookReport";
+            this.btnBookReport.Size = new System.Drawing.Size(93, 36);
+            this.btnBookReport.TabIndex = 2;
+            this.btnBookReport.Text = "Booking Report";
+            this.btnBookReport.UseVisualStyleBackColor = true;
+            this.btnBookReport.Click += new System.EventHandler(this.btnBookReport_Click);
+            // 
             // Debug
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnBookReport);
             this.Controls.Add(this.btnUserTicket);
             this.Controls.Add(this.btnEmployeeTicket);
             this.Name = "Debug";
@@ -69,5 +81,6 @@
 
         private System.Windows.Forms.Button btnEmployeeTicket;
         private System.Windows.Forms.Button btnUserTicket;
+        private System.Windows.Forms.Button btnBookReport;
     }
 }

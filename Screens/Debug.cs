@@ -34,5 +34,11 @@ namespace Movie_Booking_System.Screens
             parentForm.CurrentUserID = DebugUser;
             parentForm.LoadNewForm(new HelpTickets.userSubmitHelpTicket(parentForm, userMode.Employee));
         }
+
+        private void btnBookReport_Click(object sender, EventArgs e)
+        {
+            parentForm.CurrentUserID = DebugAdmin;
+            parentForm.LoadNewForm(new AdminScreens.ordersReport(parentForm, userMode.Employee));
+        }
     }
 }
