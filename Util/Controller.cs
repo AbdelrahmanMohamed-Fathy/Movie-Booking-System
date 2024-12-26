@@ -19,6 +19,77 @@ namespace Movie_Booking_System.Util
             return dbMan.ExecuteReader(query);
         }
 
+        public static DataTable showallFoods()   // ahmad
+        {
+            string query = $"SELECT * FROM FoodItems";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public static DataTable GetFoodPriceandQty(String FoodID)    // ahmad
+        {
+            string query =
+                "SELECT FoodQty, Price\n" +
+                "FROM FoodItems\n" +
+                "WHERE FoodID = " + FoodID + "\n";
+
+            return dbMan.ExecuteReader(query);
+        }
+
+        public static int InsertFoodOrder(string DoodID, string OrderCount, string Fulfilled)  // ahmad
+        {
+            string query =
+                "INSERT INTO Orders (FoodID, OrderCount, Fulfilled)\n" +
+                $"Values ({DoodID}, {OrderCount}, {Fulfilled})";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+
+        public static int DeleteOrders(string OrderID)  // ahmad
+        {
+            string query;
+            if (OrderID == "")
+            {
+                query =
+                "Delete Orders\n" +
+                $"Where OrderID = " + OrderID;
+            }
+            else
+            {
+                query =
+                    "Delete Orders\n";
+            }
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public static DataTable GetOrders()     // ahmad
+        {
+            string query =
+                "SELECT Orders.OrderID, Orders.FoodID, FoodItems.FoodName, Orders.OrderCount, FoodItems.Price, Orders.Fulfilled \n" +
+                "FROM Orders, FoodItems\n" +
+                "WHERE Orders.FoodID = FoodItems.FoodID\n";
+
+            return dbMan.ExecuteReader(query);
+        }
+
+        public static int UpdateOrder(int OrderID)   // ahmad
+        {
+            string query =
+                "UPDATE Orders\n" +
+                "SET Fulfilled = 1\n" +
+                $"WHERE OrderID = {OrderID}\n";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public static int GetAllOrdersCountFromFood(int FoodID)   // Ahmad
+        {
+            string query = $@"
+        SELECT ISNULL(SUM(OrderCount),0)
+        FROM Orders
+        WHERE FoodID = " + FoodID.ToString();
+
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
         public static int InsertAccount(string Fname, string Lname, string email, string pass, int PhoneNumber, userMode authority)
         {
             string query =
@@ -27,7 +98,7 @@ namespace Movie_Booking_System.Util
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public static userMode FetchUser(string Email,string Password, out int ID)
+        public static userMode FetchUser(string Email, string Password, out int ID)
         {
             string query =
                 "SELECT Authority,UserID\n" +

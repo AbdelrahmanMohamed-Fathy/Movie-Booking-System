@@ -227,6 +227,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\FoodOrders\employeeFulfillOrder.resx">
+      <DependentUpon>employeeFulfillOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\FoodOrders\userFoodOrder.resx">
+      <DependentUpon>userFoodOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\HelpTickets\employeeReviewHelpTicket.resx">
       <DependentUpon>employeeReviewHelpTicket.cs</DependentUpon>
     </EmbeddedResource>
