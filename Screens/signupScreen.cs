@@ -194,10 +194,9 @@ namespace Movie_Booking_System.Screens
             }
             if (IsValid)
             {
-                //exception error
-                //Controller.InsertAccount(Fname.Text, Lname.Text, Email.Text, password.Text, Convert.ToInt32(phonenum.Text), "Client");
+                string Role = HelperFunctions.ParseEnumToAuthority(userMode.User);
+                Controller.InsertAccount(Fname.Text, Lname.Text, Email.Text, password.Text, Convert.ToInt32(phonenum.Text), Role);
                 parentForm.ShowStatus();
-
                 MessageBox.Show("user entered successfully");
                 //parentForm.LoadNewForm(new userScreen(parentForm,parentForm.Authority));
             }
@@ -398,7 +397,7 @@ namespace Movie_Booking_System.Screens
         private bool ValidatePasswordlbl(string input)
         {
             var pass = input;
-            bool ispassvalid = true;
+            bool ispassnotvalid = true;
             lowercaselbl.ForeColor = Color.Red;
             uppercaselbl.ForeColor = Color.Red;
             numericvallbl.ForeColor = Color.Red;
@@ -417,29 +416,29 @@ namespace Movie_Booking_System.Screens
             if (hasLowerChar.IsMatch(input))
             {
                 lowercaselbl.ForeColor = Color.Green;
-                ispassvalid = false;
+                ispassnotvalid = false;
             }
             if (hasUpperChar.IsMatch(input))
             {
                 uppercaselbl.ForeColor = Color.Green;
-                ispassvalid = false;
+                ispassnotvalid = false;
             }
             if (hasNumber.IsMatch(input))
             {
                 numericvallbl.ForeColor = Color.Green;
-                ispassvalid = false;
+                ispassnotvalid = false;
             }
             if (hasSymbols.IsMatch(input))
             {
                 specialcharlbl.ForeColor = Color.Green;
-                ispassvalid = false;
+                ispassnotvalid = false;
             }
             if (hasMiniMaxChars.IsMatch(input))
             {
                 passlenlbl.ForeColor = Color.Green;
-                ispassvalid = false;
+                ispassnotvalid = false;
             }
-            if(ispassvalid)
+            if (!ispassnotvalid)
             {
                 return true;
             }
