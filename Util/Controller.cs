@@ -116,5 +116,16 @@ namespace Movie_Booking_System.Util
             return dbMan.ExecuteReader(query);
         }
 
+        public static DataTable GetCurrentShows()
+        {
+            string query =
+                "SELECT Movies.Name, Movies.MovieDescription, Movies.MoviePicturePath, AVG(MovieReviews.Rating) AS Rating\n" +
+                "FROM Shows, Movies, MovieReviews\n" +
+                "WHERE Old=0 AND Movies.MovieID = MovieReviews.MovieID\n";
+            return dbMan.ExecuteReader(query);
+        }
+
+
+
     }
 }
