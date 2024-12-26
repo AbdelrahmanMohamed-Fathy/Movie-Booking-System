@@ -13,13 +13,6 @@ namespace Movie_Booking_System.Screens
         {
             InitializeComponent();
             this.parentForm = parent;
-            
-
-            this.BackColor = parent.FormColor;
-            this.ForeColor = parent.FormTextColor;
-            this.btnContinue.BackColor = parent.btnColor;
-            this.btnLogin.BackColor = parent.btnColor;
-            this.btnSignup.BackColor = parent.btnColor;
             parentForm.HideStatus();
         }
 
