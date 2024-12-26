@@ -41,7 +41,7 @@ namespace Movie_Booking_System.Controls
         [System.ComponentModel.DefaultValue("")]
         public override string Text
         {
-            get { return textBox1.Text; }
+            get { return (textBox1.Text == placeHolderText)?(""):(textBox1.Text); }
             set { textBox1.Text = value; }
         }
 

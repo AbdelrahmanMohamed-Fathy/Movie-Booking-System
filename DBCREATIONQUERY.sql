@@ -55,7 +55,7 @@ Fname			VARCHAR(20)		NOT NULL,
 Lname			VARCHAR(20)		NOT NULL,
 Email			VARCHAR(50)		NOT NULL UNIQUE,
 Pass			VARCHAR(64)		NOT NULL,
-PhoneNumber		INTEGER,
+PhoneNumber		INTEGER         NOT NULL DEFAULT -1,
 Authority		VARCHAR(10)		NOT NULL CHECK (Authority IN ('Admin', 'Employee', 'Client')),
 PRIMARY KEY		(UserID)
 );
