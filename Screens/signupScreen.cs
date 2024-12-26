@@ -194,11 +194,18 @@ namespace Movie_Booking_System.Screens
             }
             if (IsValid)
             {
-                string Role = HelperFunctions.ParseEnumToAuthority(userMode.User);
-                Controller.InsertAccount(Fname.Text, Lname.Text, Email.Text, password.Text, Convert.ToInt32(phonenum.Text), Role);
+                string authority = HelperFunctions.ParseEnumToAuthority(userMode.User);
+                if (phonenum.Text == "Phone Number (Optional)")
+                {
+                    Controller.InsertAccount(Fname.Text, Lname.Text, Email.Text, password.Text, -1 , authority);
+                }
+                else
+                {
+                    Controller.InsertAccount(Fname.Text, Lname.Text, Email.Text, password.Text, Convert.ToInt32(phonenum.Text), authority);
+                }
+                MessageBox.Show("New Account Created.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 parentForm.ShowStatus();
-                MessageBox.Show("user entered successfully");
-                //parentForm.LoadNewForm(new userScreen(parentForm,parentForm.Authority));
+                parentForm.LoadNewForm(new loginScreen(parentForm,parentForm.Authority));
             }
         }
 
