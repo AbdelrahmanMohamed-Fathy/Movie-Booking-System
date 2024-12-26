@@ -315,12 +315,12 @@ namespace Movie_Booking_System.Screens
             if (confirmpass.UseSystemPasswordChar == true)
             {
                 confirmpass.UseSystemPasswordChar = false;
-                visibleconfpass.Image = Image.FromFile("C:\\Users\\User\\Source\\Repos\\Movie-Booking-System\\Assets\\Closed-eye-icon.png");
+                visibleconfpass.Image = Image.FromFile("..\\..\\Assets\\Closed-eye-icon.png");
             }
             else
             {
                 confirmpass.UseSystemPasswordChar = true;
-                visibleconfpass.Image = Image.FromFile("C:\\Users\\User\\Source\\Repos\\Movie-Booking-System\\Assets\\Open-eye-icon.png");
+                visibleconfpass.Image = Image.FromFile("..\\..\\Assets\\Open-eye-icon.png");
             }
 
         }
@@ -333,14 +333,14 @@ namespace Movie_Booking_System.Screens
             if (password.UseSystemPasswordChar == true)
             {
                 password.UseSystemPasswordChar = false;
-                visiblepass.Image = Image.FromFile("C:\\Users\\User\\Source\\Repos\\Movie-Booking-System\\Assets\\Closed-eye-icon.png");
+                visiblepass.Image = Image.FromFile("..\\..\\Assets\\Closed-eye-icon.png");
                 
 
             }
             else
             {
                 password.UseSystemPasswordChar = true;
-                visiblepass.Image = Image.FromFile("C:\\Users\\User\\Source\\Repos\\Movie-Booking-System\\Assets\\Open-eye-icon.png");
+                visiblepass.Image = Image.FromFile("..\\..\\Assets\\Open-eye-icon.png");
 
             }
            

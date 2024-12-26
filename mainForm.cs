@@ -32,8 +32,6 @@ namespace Movie_Booking_System
 
         private void mainForm_Load(object sender, EventArgs e)
         {
-            btnGoBack.FlatStyle = FlatStyle.Flat;
-            btnGoBack.BackColor = FormColor;
             LoadNewForm(new Screens.userScreen(this, this.Authority),false);
         }
 
