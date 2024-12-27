@@ -39,8 +39,8 @@ namespace Movie_Booking_System.Screens
             }
             lblTitle.Text = data.Field<string>("MovieName");
             lblDescription.Text = data.Field<string>("MovieDescription");
-            lblRatingValue.Text = data.Field<int>("Rating").ToString();
-            int value = (data.Field<int>("Rating"));
+            int value = Controller.GetMovieReviews(MovieID);
+            lblRatingValue.Text = value.ToString();
             lblRatingStars.Text = "";
             for (int i = 0; i < 5; i++)
             {
