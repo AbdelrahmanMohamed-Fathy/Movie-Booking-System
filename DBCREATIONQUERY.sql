@@ -119,7 +119,6 @@ BookingID			INTEGER				NOT NULL IDENTITY(9034,1),
 UserID              INTEGER				NOT NULL,
 ShowID              INTEGER				NOT NULL,
 Price               AS dbo.GetBookingPrice(BookingID),
-PaymentMethod		VARCHAR(20)			NOT NULL CHECK (Paymentmethod IN ('Cash', 'Credit')),
 PRIMARY KEY			(BookingID),
 FOREIGN KEY         (UserID)			REFERENCES Accounts,
 FOREIGN KEY         (ShowID)			REFERENCES Shows
