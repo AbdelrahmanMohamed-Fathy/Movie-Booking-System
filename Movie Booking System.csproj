@@ -191,6 +191,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Adminticket.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Adminticket.Designer.cs">
+      <DependentUpon>Adminticket.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\PlaceHolderTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -291,6 +297,9 @@
     <Compile Include="Screens\loginScreen.Designer.cs">
       <DependentUpon>loginScreen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\Adminticket.resx">
+      <DependentUpon>Adminticket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\PlaceHolderTextBox.resx">
       <DependentUpon>PlaceHolderTextBox.cs</DependentUpon>
     </EmbeddedResource>
