@@ -138,6 +138,16 @@
   <metadata name="panel1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="label1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAADTSURBVEhL5dJLDgFBFIXhnrMKVmAd2BEjYiI2wFK8NkBY
+        BDHWJCZe/0l6UINLlaqe4CRf0oO6p7urKvubtLHEubBAC6VkgMcLfSRFX24Vu5L+RNtilbrmiM4JVqkr
+        R3RCXnBEdHRbrFJX0hbpAK1SVxNJ0VW0iqWHUqI/0VboTETPyV/+vWlgizusfbdorWY0640WWiUhNvDm
+        Bms4hGa92cMaDrGDNyNYwyGG8KaKNayCd1aoICh6yQRXWGUurRlDMx+nji5mOOBS0PMUHdTws8myJ9OO
+        uUOkY/a1AAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

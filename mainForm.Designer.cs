@@ -33,6 +33,7 @@
             this.btnGoBack = new System.Windows.Forms.Label();
             this.btnStatus = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,11 +65,12 @@
             this.btnStatus.AutoSize = true;
             this.btnStatus.BackColor = System.Drawing.Color.Transparent;
             this.btnStatus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatus.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatus.ForeColor = System.Drawing.Color.MintCream;
+            this.btnStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStatus.Location = new System.Drawing.Point(620, 16);
             this.btnStatus.Name = "btnStatus";
-            this.btnStatus.Size = new System.Drawing.Size(48, 20);
+            this.btnStatus.Size = new System.Drawing.Size(49, 25);
             this.btnStatus.TabIndex = 2;
             this.btnStatus.Text = "Login";
             this.btnStatus.Click += new System.EventHandler(this.btnStatus_Click);
@@ -76,6 +78,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnStatus);
             this.panel1.Controls.Add(this.btnGoBack);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -83,6 +86,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 50);
             this.panel1.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(599, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 23);
+            this.label1.TabIndex = 3;
             // 
             // mainForm
             // 
@@ -105,6 +116,7 @@
         private System.Windows.Forms.Label btnGoBack;
         private System.Windows.Forms.Label btnStatus;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

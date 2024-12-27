@@ -102,10 +102,12 @@ namespace Movie_Booking_System
 
         public void HideStatus()
         {
+            label1.Hide();
             btnStatus.Hide();
         }
         public void ShowStatus()
         {
+            label1.Show();
             btnStatus.Show();
         }
     }
