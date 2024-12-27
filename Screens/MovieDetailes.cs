@@ -62,10 +62,14 @@ namespace Movie_Booking_System.Screens
 
         private void button1_Click(object sender, EventArgs e)
         {
+            userReview userRev;
             if (parentForm.Authority == userMode.Guest)
                 parentForm.LoadNewForm(new loginScreen(parentForm, parentForm.Authority), false);
             else
-                parentForm.LoadNewForm(new userReview(parentForm, parentForm.Authority), false);
+            {
+                userRev = new userReview(MovieID, parentForm.CurrentUserID);
+                userRev.ShowDialog();
+            }
         }
     }
 }
