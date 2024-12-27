@@ -20,6 +20,11 @@ namespace Movie_Booking_System.Util
             string query = $"SELECT * FROM Movies";
             return dbMan.ExecuteReader(query);
         }
+        public static DataTable Getauthority()
+        {
+            string query = $"SELECT Authority FROM Accounts";
+            return dbMan.ExecuteReader(query);
+        }
         public static int DeleteHelpTicket(int TicketID)
         {
             string query = $"DELETE FROM HelpTickets WHERE HelpTicketID ={TicketID};";
@@ -37,9 +42,9 @@ namespace Movie_Booking_System.Util
         public static int GetNewOrderID(string UserID)  // ahmad
         {
             string query = $@"
-        SELECT ISNULL(MAX(OrderID),0)
-        FROM Orders
-        WHERE UserID = " + UserID.ToString();
+            SELECT ISNULL(MAX(OrderID),0)
+            FROM Orders
+            WHERE UserID = " + UserID.ToString();
 
             return (int)dbMan.ExecuteScalar(query);
         }
