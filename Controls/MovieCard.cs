@@ -35,6 +35,7 @@ namespace Movie_Booking_System.Controls
             {
                 pictureBox1.Image = pictureBox1.ErrorImage;
             }
+
             MovieID = data.Field<int>("MovieID");
             lblTitle.Text = data.Field<string>("MovieName");
             lblDescription.Text = data.Field<string>("MovieDescription");

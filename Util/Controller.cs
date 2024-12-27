@@ -256,10 +256,9 @@ namespace Movie_Booking_System.Util
         public static DataTable GetMovie(int MovieID)
         {
             string query =
-                "SELECT Movies.MovieName, Movies.MoviePicturePath, Movies.MovieDescription, AVG(MovieReviews.Rating) AS Rating\n" +
-                "FROM Movies, MovieReviews\n" +
-                $"WHERE  Movies.MovieID = MovieReviews.MovieID AND Movies.MovieID = {MovieID} \n" +
-                "GROUP BY Movies.MovieName, Movies.MoviePicturePath, Movies.MovieDescription\n";
+                "SELECT Movies.MovieName, Movies.MoviePicturePath, Movies.MovieDescription\n" +
+                "FROM Movies\n" +
+                $"WHERE Movies.MovieID = {MovieID} \n";
             return dbMan.ExecuteReader(query);
         }
 
