@@ -1,9 +1,0 @@
-﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Movie_Booking_System.Properties" GeneratedClassName="Settings">
-  <Profiles />
-  <Settings>
-    <Setting Name="MovieBooking_systemConnectionString1" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=DESKTOP-DK58FL1\SQLEXPRESS;Initial Catalog=MovieBooking_system;Integrated Security=True;Encrypt=False</Value>
-    </Setting>
-  </Settings>
-</SettingsFile>
