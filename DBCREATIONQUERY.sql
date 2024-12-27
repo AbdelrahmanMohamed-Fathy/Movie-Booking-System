@@ -1,8 +1,8 @@
 ----------------------------------------Database Creation----------------------------------------
 USE master;
 GO
---ALTER DATABASE MovieBooking_system SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
---GO
+ALTER DATABASE MovieBooking_system SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+GO
 DROP DATABASE IF EXISTS MovieBooking_system;
 GO
 CREATE DATABASE MovieBooking_system;
@@ -127,11 +127,18 @@ FOREIGN KEY         (CinemaID,SeatID)	REFERENCES Seats,
 FOREIGN KEY         (ShowID)			REFERENCES Shows
 );
 ---------------------------------------
-CREATE TABLE Orders (
-OrderID				INTEGER			NOT NULL IDENTITY(2364,1),
+CREATE TABLE Orders(
+OrderID             INTEGER			NOT NULL IDENTITY(1,1),
+UserID              INTEGER         NOT NULL,
+Fulfilled           BIT             NOT NULL DEFAULT 0,
+PRIMARY KEY			(OrderID),
+FOREIGN KEY			(UserID)        REFERENCES Accounts
+);
+---------------------------------------
+CREATE TABLE Orders_Details (
+OrderID				INTEGER			NOT NULL,
 FoodID				INTEGER			NOT NULL,
 OrderCount			INTEGER			NOT NULL,
-Fulfilled           BIT             NOT NULL DEFAULT 0,
 PRIMARY KEY			(OrderID,FoodID),
 FOREIGN KEY			(FoodID)        REFERENCES Fooditems
 );
@@ -206,3 +213,18 @@ INSERT INTO MovieReviews (UserID, MovieID, Rating) VALUES (5267,1,4)
 
 INSERT INTO HelpTickets (UserID,Header,Content) VALUES (5267,'help','kofta gedan')
 INSERT INTO HelpTickets (UserID,Header,Content) VALUES (5267,'Issue with Orders','kofta gedan 2: electric boogaloo')
+
+INSERT INTO FoodItems (FoodName, FoodQty, Price, FoodDescription) VALUES ('Pop-Corn', 500, 50, 'Feshar yasta enta 3abeet?')
+INSERT INTO FoodItems (FoodName, FoodQty, Price, FoodDescription) VALUES ('Kofta', 20, 300, 'kofta not kobeba dumbass')
+
+INSERT INTO Orders (UserID) VALUES (5267)
+
+INSERT INTO Orders_Details (OrderID, FoodID, OrderCount) VALUES (1, 2, 6)
+INSERT INTO Orders_Details (OrderID, FoodID, OrderCount) VALUES (1, 1, 3)
+INSERT INTO HelpTickets (UserID,Header,Content) VALUES (5267,'Issue with Orders','kofta gedan 2: electric boogaloo')
+
+SELECT FoodItems.FoodName, SUM(OrderCount) AS Quantity , SUM(OrderCount*FoodItems.Price) AS Revenue
+FROM Orders_Details, FoodItems
+WHERE Orders_Details.FoodID = FoodItems.FoodID
+GROUP BY FoodItems.FoodName
+ORDER BY Quantity

@@ -1,4 +1,5 @@
-﻿using Movie_Booking_System.Util;
+﻿using Movie_Booking_System.Screens.FoodOrders;
+using Movie_Booking_System.Util;
 using System;
 using System.Data;
 using System.Drawing;
@@ -25,6 +26,11 @@ namespace Movie_Booking_System.Screens
                 {
                     flowLayoutPanel1.Controls.Add(new Controls.MovieCard(parentForm,r));
                 }
+        }
+
+        private void Helptickets_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
