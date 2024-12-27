@@ -14,31 +14,43 @@ namespace Movie_Booking_System.Controls
     public partial class MovieCard : UserControl
     {
         private DataRow data;
-
-        public MovieCard(DataRow data)
+        private mainForm parentForm;
+        private int MovieID;
+        public MovieCard(mainForm parent,DataRow data)
         {
             InitializeComponent();
             this.data = data;
+            this.parentForm = parent;
         }
 
         private void MovieCard_Load(object sender, EventArgs e)
         {
             string picturePath = data.Field<string>("MoviePicturePath");
-            if (picturePath != null)
+            try
+            {
                 pictureBox1.Image = Image.FromFile(picturePath);
-
+            }
+            catch (Exception E)
+            {
+                pictureBox1.Image = pictureBox1.ErrorImage;
+            }
+            MovieID = data.Field<int>("MovieID");
             lblTitle.Text = data.Field<string>("MovieName");
             lblDescription.Text = data.Field<string>("MovieDescription");
-            lblRatingValue.Text = data.Field<string>("Rating");
-            int value = (int)Math.Round(data.Field<decimal>("Rating"));
+            lblRatingValue.Text = data.Field<int>("Rating").ToString();
+            int value = (data.Field<int>("Rating"));
             lblRatingStars.Text = "";
             for (int i = 0; i < 5; i++)
             {
-                value--;
                 if (value > 0)
                     lblRatingStars.Text += "★";
                 else
                     lblRatingStars.Text += "☆";
+                value--;
+            }
+            foreach (Control C in this.Controls)
+            {
+                C.Click += new EventHandler(MovieCard_Click);
             }
         }
 
@@ -48,6 +60,11 @@ namespace Movie_Booking_System.Controls
             {
                 c.BackColor = this.BackColor;
             }
+        }
+
+        private void MovieCard_Click(object sender, EventArgs e)
+        {
+            parentForm.LoadNewForm(new Screens.MovieDetailes(parentForm,parentForm.Authority,MovieID));
         }
     }
 }

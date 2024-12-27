@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Movie_Booking_System.Util
@@ -19,6 +21,108 @@ namespace Movie_Booking_System.Util
             return dbMan.ExecuteReader(query);
         }
 
+        public static int InsertNewOrder(string UserID)  // ahmad
+        {
+            string query =
+                "INSERT INTO Orders (UserID)\n" +
+                $"Values ({UserID})";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public static int GetNewOrderID(string UserID)  // ahmad
+        {
+            string query = $@"
+        SELECT ISNULL(MAX(OrderID),0)
+        FROM Orders
+        WHERE UserID = " + UserID.ToString();
+
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
+        public static DataTable showallFoods()   // ahmad
+        {
+            string query = $"SELECT * FROM FoodItems";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public static DataTable GetFoodPriceandQty(String FoodID)    // ahmad
+        {
+            string query =
+                "SELECT FoodQty, Price\n" +
+                "FROM FoodItems\n" +
+                "WHERE FoodID = " + FoodID + "\n";
+
+            return dbMan.ExecuteReader(query);
+        }
+
+        public static int InsertFoodOrder(string DoodID, string OrderCount, string OrderID)  // ahmad
+        {
+            string query =
+                "INSERT INTO Orders_Details (FoodID, OrderCount, OrderID)\n" +
+                $"Values ({DoodID}, {OrderCount}, {OrderID})";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+
+        public static int DeleteOrders(string OrderID)  // ahmad
+        {
+            string query;
+            if (OrderID == "")
+            {
+                query =
+                "Delete Orders_Details\n" +
+                $"Where OrderID = " + OrderID;
+            }
+            else
+            {
+                query =
+                    "Delete Orders_Details\n";
+            }
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public static DataTable GetOrders()     // ahmad
+        {
+            string query =
+                "SELECT Orders_Details.OrderID, Orders_Details.FoodID, FoodItems.FoodName, Orders_Details.OrderCount, FoodItems.Price, Orders_Details.Fulfilled, Orders.UserID \n" +
+                "FROM Orders_Details, FoodItems, Orders\n" +
+                "WHERE Orders.OrderID = Orders_Details.OrderID and Orders_Details.FoodID = FoodItems.FoodID\n Order by Orders_Details.OrderID";
+
+            return dbMan.ExecuteReader(query);
+        }
+
+        public static int UpdateOrder(int OrderID)   // ahmad
+        {
+            string query =
+                "UPDATE Orders\n" +
+                "SET Fulfilled = 1\n" +
+                $"WHERE OrderID = {OrderID}\n";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public static int GetOrdersCountFromFood(int FoodID)   // Ahmad
+        {
+            string query = $@"
+        SELECT ISNULL(SUM(OrderCount),0)
+        FROM Orders_Details
+        WHERE FoodID = " + FoodID.ToString();
+
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
+
+        public static DataTable GetTotalOrderPrice(String OrderID)   // Ahmad
+        {
+            
+                string query = $@"
+        SELECT SUM( CAST(Orders_Details.OrderCount AS DECIMAL(7,2))  * FoodItems.Price) as TotalPrice
+        FROM Orders_Details,FoodItems
+        WHERE Orders_Details.FoodID = FoodItems.FoodID and Orders_Details.OrderID = " + OrderID;
+
+                return dbMan.ExecuteReader(query);
+            
+        }
+      
         public static int InsertAccount(string Fname, string Lname, string email, string pass, int PhoneNumber, string authority)
         {
             string query =
@@ -119,13 +223,15 @@ namespace Movie_Booking_System.Util
         public static DataTable GetCurrentShows()
         {
             string query =
-                "SELECT Movies.Name, Movies.MovieDescription, Movies.MoviePicturePath, AVG(MovieReviews.Rating) AS Rating\n" +
-                "FROM Shows, Movies, MovieReviews\n" +
-                "WHERE Old=0 AND Movies.MovieID = MovieReviews.MovieID\n";
+                "SELECT M.MovieID, M.MovieName, M.MovieDescription, M.MoviePicturePath, AVG(R.Rating) AS Rating\n" +
+                "FROM\n" +
+                    "(\n" +
+                    "SELECT DISTINCT Movies.*\n" +
+                    "FROM Shows, Movies\n" +
+                    "WHERE Shows.MovieID = Movies.MovieID) M, MovieReviews R\n" +
+                "WHERE R.MovieID = M.MovieID\n" +
+                "GROUP BY M.MovieID , M.MovieName, M.MovieDescription, M.MoviePicturePath\n";
             return dbMan.ExecuteReader(query);
         }
-
-
-
     }
 }
