@@ -32,5 +32,19 @@ namespace Movie_Booking_System.Screens.AdminScreens
             }
 
         }
+
+        private void adminDashBoard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Helptickets_Click(object sender, EventArgs e)
+        {
+            Controls.Adminticket adminmenu = new Controls.Adminticket();
+            dashboardadmin.Controls.Clear();
+            dashboardadmin.Controls.Add(adminmenu);
+            adminmenu.Dock = DockStyle.Fill;
+
+        }
     }
 }

@@ -20,6 +20,11 @@ namespace Movie_Booking_System.Util
             string query = $"SELECT * FROM Movies";
             return dbMan.ExecuteReader(query);
         }
+        public static int DeleteHelpTicket(int TicketID)
+        {
+            string query = $"DELETE FROM HelpTickets WHERE HelpTicketID ={TicketID};";
+            return dbMan.ExecuteNonQuery(query);
+        }
 
         public static int InsertAccount(string Fname, string Lname, string email, string pass, int PhoneNumber, string authority)
         {
