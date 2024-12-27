@@ -196,7 +196,7 @@ INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('The Shawshank Redempt
 INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('The Godfather', 'Francis Ford Coppola', CAST(N'02:55:00' AS Time))
 INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('The Dark Knight', 'Christopher Nolan', CAST(N'02:32:00' AS Time)) 
 INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Pulp Fiction', 'Quentin Tarantino', CAST(N'02:34:00' AS Time)) 
-INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('The Lord of the Rings: The Return of the King', N'Peter Jackson', CAST(N'03:21:00' AS Time))
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('The Lord of the Rings The Return of the King', N'Peter Jackson', CAST(N'03:21:00' AS Time))
 INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Fight Club', 'David Fincher', CAST(N'02:19:00' AS Time)) 
 INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Inception', 'Christopher Nolan', CAST(N'02:28:00' AS Time)) 
 INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Forrest Gump', 'Robert Zemeckis', CAST(N'02:22:00' AS Time))
@@ -216,7 +216,26 @@ GO
 
 
 INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (1,1,CAST('02:00:00' AS Time))
-
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (2,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (3,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (4,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (5,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (6,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (7,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (8,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (9,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (10,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (11,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (12,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (13,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (14,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (15,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (16,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (17,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (18,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (19,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (20,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (21,1,CAST('02:00:00' AS Time))
 
 INSERT INTO MovieReviews (UserID, MovieID, Rating) VALUES (5267,1,4)
 
