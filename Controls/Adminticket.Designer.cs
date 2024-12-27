@@ -46,6 +46,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(3, 374);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(512, 176);
@@ -95,6 +96,8 @@
             this.btnMark.BackColor = System.Drawing.Color.Teal;
             this.btnMark.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
             this.btnMark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMark.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMark.ForeColor = System.Drawing.Color.MintCream;
             this.btnMark.Location = new System.Drawing.Point(237, 114);
             this.btnMark.Name = "btnMark";
             this.btnMark.Size = new System.Drawing.Size(114, 34);
@@ -109,6 +112,8 @@
             this.btnDeleteTicket.BackColor = System.Drawing.Color.Teal;
             this.btnDeleteTicket.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
             this.btnDeleteTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteTicket.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteTicket.ForeColor = System.Drawing.Color.MintCream;
             this.btnDeleteTicket.Location = new System.Drawing.Point(390, 114);
             this.btnDeleteTicket.Name = "btnDeleteTicket";
             this.btnDeleteTicket.Size = new System.Drawing.Size(125, 34);

@@ -53,7 +53,7 @@ namespace Movie_Booking_System.Controls
 
         private void RefreshSources()
         {
-            DataTable dt = Controller.GetTickets();
+            DataTable dt = Controller.GetTicketsAdmin();
             dataGridView1.DataSource = dt;
             combobxTicketId.DataSource = dt;
             combobxTicketId.DisplayMember = "HelpTicketID";
@@ -62,7 +62,7 @@ namespace Movie_Booking_System.Controls
 
         private void btnDeleteTicket_Click(object sender, EventArgs e)
         {
-            DataTable dt = Controller.GetTickets();
+            DataTable dt = Controller.GetTicketsAdmin();
             if (combobxTicketId.SelectedIndex > -1)
             {
                 string ticketid = combobxTicketId.Text;

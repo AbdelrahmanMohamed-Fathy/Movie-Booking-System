@@ -74,6 +74,15 @@ namespace Movie_Booking_System.Util
 
             return dbMan.ExecuteReader(query);
         }
+        public static DataTable GetTicketsAdmin()
+        {
+            string query =
+                    "SELECT HelpTicketID, Header, Fname, Lname, Seen\n" +
+                    "FROM HelpTickets, Accounts\n" +
+                    "WHERE HelpTickets.UserID = Accounts.UserID\n";
+            return dbMan.ExecuteReader(query);
+        }
+
 
         public static DataTable GetUserTickets(int UserID)
         {
