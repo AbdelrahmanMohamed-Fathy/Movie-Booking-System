@@ -140,8 +140,7 @@ OrderID				INTEGER			NOT NULL,
 FoodID				INTEGER			NOT NULL,
 OrderCount			INTEGER			NOT NULL,
 PRIMARY KEY			(OrderID,FoodID),
-FOREIGN KEY			(FoodID)        REFERENCES FoodItems,
-FOREIGN KEY			(OrderID)        REFERENCES AllOrders
+FOREIGN KEY			(FoodID)        REFERENCES Fooditems
 );
 ---------------------------------------
 CREATE TABLE HelpTickets (
