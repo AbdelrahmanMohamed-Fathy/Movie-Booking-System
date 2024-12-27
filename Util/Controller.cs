@@ -227,6 +227,14 @@ namespace Movie_Booking_System.Util
             return dbMan.ExecuteNonQuery(query);
         }
 
+        public static void SubmitReview(int UserID, int Rating, int MovieID)
+        {
+            string query =
+                "INSERT INTO MovieReviews (UserID,MovieID,Rating)\n" +
+                $"VALUES ({UserID},{MovieID},{Rating})\n";
+            dbMan.ExecuteNonQuery(query);
+        }
+
         public static DataTable FetchUser(int UserID)
         {
             string query =
@@ -273,6 +281,15 @@ namespace Movie_Booking_System.Util
                 "SELECT Shows.StartTime, Shows.EndTime, Shows.ShowDate\n" +
                 "FROM Shows, Movies\n" +
                 $"WHERE Movies.MovieID = {MovieID} AND Movies.MovieID = Shows.MovieID\n";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public static DataTable GetMovieName(int MovieID)
+        {
+            string query =
+                "SELECT Movies.MovieName\n" +
+                "FROM Movies\n" +
+                $"WHERE Movies.MovieID = {MovieID}\n";
             return dbMan.ExecuteReader(query);
         }
 

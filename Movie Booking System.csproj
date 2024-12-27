@@ -528,6 +528,7 @@
     <Content Include="Assets\Phone.png" />
     <Content Include="Assets\Search icon.png" />
     <Content Include="Assets\seat.png" />
+    <Content Include="Assets\Star.png" />
     <Content Include="Assets\Tele-icon.png" />
     <Content Include="Assets\Test.png" />
     <Content Include="DBCREATIONQUERY.sql" />
