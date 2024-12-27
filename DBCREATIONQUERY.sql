@@ -71,7 +71,7 @@ MovieName			VARCHAR(50)		NOT NULL,
 Director			VARCHAR(20)		NOT NULL,
 Runtime				TIME			NOT NULL,
 MovieDescription    VARCHAR(200)    NOT NULL DEFAULT '',
-MoviePicturePath    AS '..\\..\\Assests\\Movies\\' + MovieName + '.png',
+MoviePicturePath    AS '..\..\Assets\Movies\' + MovieName + '.png',
 PRIMARY KEY			(MovieID),
 );
 ----------------------------------------
@@ -244,3 +244,4 @@ FROM Bookings, Movies, Shows
 WHERE Bookings.ShowID = Shows.ShowID AND Shows.MovieID = Movies.MovieID
 GROUP BY Movies.MovieName
 ORDER BY Revenue
+

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Runtime.Remoting.Messaging;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
@@ -254,5 +255,23 @@ namespace Movie_Booking_System.Util
             return dbMan.ExecuteReader(query);
         }
 
+        public static DataTable GetMovie(int MovieID)
+        {
+            string query =
+                "SELECT Movies.MovieName, Movies.MoviePicturePath, Movies.MovieDescription, AVG(MovieReviews.Rating) AS Rating\n" +
+                "FROM Movies, MovieReviews\n" +
+                $"WHERE  Movies.MovieID = MovieReviews.MovieID AND Movies.MovieID = {MovieID} \n" +
+                "GROUP BY Movies.MovieName, Movies.MoviePicturePath, Movies.MovieDescription\n";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public static DataTable GetShowTimes(int MovieID)
+        {
+            string query =
+                "SELECT Shows.StartTime, Shows.EndTime, Shows.ShowDate\n"+
+                "FROM Shows, Movies\n"+
+                $"WHERE Movies.MovieID = {MovieID} AND Movies.MovieID = Shows.MovieID\n";
+            return dbMan.ExecuteReader(query);
+        }
     }
 }

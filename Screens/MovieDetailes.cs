@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Movie_Booking_System.Util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,7 +24,32 @@ namespace Movie_Booking_System.Screens
 
         private void MovieDetailes_Load(object sender, EventArgs e)
         {
+            DataTable dt = Controller.GetMovie(this.MovieID);
+            dataGridView1.DataSource = Controller.GetShowTimes(this.MovieID);
 
+            DataRow data = dt.Rows[0];
+            string picturePath = data.Field<string>("MoviePicturePath");
+            try
+            {
+                pictureBox1.Image = Image.FromFile(picturePath);
+            }
+            catch (Exception E)
+            {
+                pictureBox1.Image = pictureBox1.ErrorImage;
+            }
+            lblTitle.Text = data.Field<string>("MovieName");
+            lblDescription.Text = data.Field<string>("MovieDescription");
+            lblRatingValue.Text = data.Field<int>("Rating").ToString();
+            int value = (data.Field<int>("Rating"));
+            lblRatingStars.Text = "";
+            for (int i = 0; i < 5; i++)
+            {
+                if (value > 0)
+                    lblRatingStars.Text += "★";
+                else
+                    lblRatingStars.Text += "☆";
+                value--;
+            }
         }
 
         private void btnBook_Click(object sender, EventArgs e)

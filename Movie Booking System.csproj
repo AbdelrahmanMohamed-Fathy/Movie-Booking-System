@@ -454,6 +454,7 @@
   <ItemGroup>
     <Content Include="Assets\Closed-eye-icon.png" />
     <Content Include="Assets\icons8-phone-30.png" />
+    <Content Include="Assets\Movies\La La Land.png" />
     <Content Include="Assets\Name-icon.png" />
     <Content Include="Assets\Open-eye-icon.png" />
     <Content Include="Assets\icons8-search-30.png" />
