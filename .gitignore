@@ -366,3 +366,5 @@ FodyWeavers.xsd
 /Movie_Booking_DBDataSet.xsc
 /Movie_Booking_DBDataSet.xsd
 /Movie_Booking_DBDataSet.xss
+/Properties/Settings.Designer.cs
+/Properties/Settings.settings
