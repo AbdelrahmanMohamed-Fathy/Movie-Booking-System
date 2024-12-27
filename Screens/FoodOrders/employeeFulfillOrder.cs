@@ -13,9 +13,11 @@ namespace Movie_Booking_System.Screens.FoodOrders
 {
     public partial class employeeFulfillOrder : Form
     {
-        public employeeFulfillOrder()
+        private mainForm parentForm;
+        public employeeFulfillOrder(mainForm parent, userMode mode)
         {
             InitializeComponent();
+            this.parentForm = parent;
         }
 
         private void employeeFulfillOrder_Load(object sender, EventArgs e)
@@ -38,13 +40,9 @@ namespace Movie_Booking_System.Screens.FoodOrders
         {
             dataGridView1.Rows.Clear();
             DataTable table = Controller.GetOrders();
-            if (table == null)
+            if (table != null)
             {
-
-            }
-            else
-            {
-                String OrderID, FoodID, FoodName, OrderCount, TotalPrice, UnitPrice, Fulfilled, UserID;
+                string OrderID, FoodID, FoodName, OrderCount, TotalPrice, UnitPrice, Fulfilled, UserID;
                 for (int x = 0; x < table.Rows.Count; x++)
                 {
                     OrderID = table.Rows[x][0].ToString();
@@ -65,11 +63,7 @@ namespace Movie_Booking_System.Screens.FoodOrders
         {
             dataGridView1.Rows.Clear();
             DataTable table = Controller.GetOrders();
-            if (table == null)
-            {
-
-            }
-            else
+            if (table != null)
             {
                 String OrderID, FoodID, FoodName, OrderCount, TotalPrice, UnitPrice, Fulfilled, UserID;
                 for (int x = 0; x < table.Rows.Count; x++)

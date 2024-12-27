@@ -221,3 +221,10 @@ INSERT INTO Orders (UserID) VALUES (5267)
 
 INSERT INTO Orders_Details (OrderID, FoodID, OrderCount) VALUES (1, 2, 6)
 INSERT INTO Orders_Details (OrderID, FoodID, OrderCount) VALUES (1, 1, 3)
+INSERT INTO HelpTickets (UserID,Header,Content) VALUES (5267,'Issue with Orders','kofta gedan 2: electric boogaloo')
+
+SELECT FoodItems.FoodName, SUM(OrderCount) AS Quantity , SUM(OrderCount*FoodItems.Price) AS Revenue
+FROM Orders_Details, FoodItems
+WHERE Orders_Details.FoodID = FoodItems.FoodID
+GROUP BY FoodItems.FoodName
+ORDER BY Quantity

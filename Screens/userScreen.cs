@@ -27,5 +27,10 @@ namespace Movie_Booking_System.Screens
                     flowLayoutPanel1.Controls.Add(new Controls.MovieCard(parentForm,r));
                 }
         }
+
+        private void Helptickets_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

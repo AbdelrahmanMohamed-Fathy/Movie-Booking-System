@@ -41,8 +41,8 @@
             this.mainPanel.BackColor = System.Drawing.Color.MintCream;
             this.mainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.mainPanel.Cursor = System.Windows.Forms.Cursors.Default;
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(0, 0);
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.mainPanel.Location = new System.Drawing.Point(0, 50);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(800, 600);
             this.mainPanel.TabIndex = 0;
@@ -68,7 +68,7 @@
             this.btnStatus.ForeColor = System.Drawing.Color.MintCream;
             this.btnStatus.Location = new System.Drawing.Point(620, 16);
             this.btnStatus.Name = "btnStatus";
-            this.btnStatus.Size = new System.Drawing.Size(60, 25);
+            this.btnStatus.Size = new System.Drawing.Size(48, 20);
             this.btnStatus.TabIndex = 2;
             this.btnStatus.Text = "Login";
             this.btnStatus.Click += new System.EventHandler(this.btnStatus_Click);
@@ -86,7 +86,7 @@
             // 
             // mainForm
             // 
-            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.ClientSize = new System.Drawing.Size(800, 650);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.mainPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
