@@ -12,9 +12,25 @@ namespace Movie_Booking_System.Screens.AdminScreens
 {
     public partial class adminDashBoard : Form
     {
-        public adminDashBoard()
+        private mainForm parentForm;
+        public adminDashBoard(mainForm parent, userMode mode)
         {
             InitializeComponent();
+            this.parentForm = parent;
+        }
+
+        private void Menuicon_Click(object sender, EventArgs e)
+        {
+            AdminMenu.Visible = !AdminMenu.Visible;
+            if (AdminMenu.Visible) 
+            {
+                Menuicon.BackColor = AdminMenu.BackColor;
+            }
+            else
+            {
+                Menuicon.BackColor = this.BackColor;
+            }
+
         }
     }
 }

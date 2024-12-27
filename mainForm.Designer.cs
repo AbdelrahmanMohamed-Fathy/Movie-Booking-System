@@ -68,7 +68,7 @@
             this.btnStatus.ForeColor = System.Drawing.Color.MintCream;
             this.btnStatus.Location = new System.Drawing.Point(620, 16);
             this.btnStatus.Name = "btnStatus";
-            this.btnStatus.Size = new System.Drawing.Size(48, 20);
+            this.btnStatus.Size = new System.Drawing.Size(60, 25);
             this.btnStatus.TabIndex = 2;
             this.btnStatus.Text = "Login";
             this.btnStatus.Click += new System.EventHandler(this.btnStatus_Click);
