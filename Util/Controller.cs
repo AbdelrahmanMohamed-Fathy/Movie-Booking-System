@@ -234,14 +234,12 @@ namespace Movie_Booking_System.Util
         public static DataTable GetCurrentShows()
         {
             string query =
-                "SELECT M.MovieID, M.MovieName, M.MovieDescription, M.MoviePicturePath, AVG(R.Rating) AS Rating\n" +
+                "SELECT M.MovieID, M.MovieName, M.MovieDescription, M.MoviePicturePath\n" +
                 "FROM\n" +
                     "(\n" +
                     "SELECT DISTINCT Movies.*\n" +
                     "FROM Shows, Movies\n" +
-                    "WHERE Shows.MovieID = Movies.MovieID) M, MovieReviews R\n" +
-                "WHERE R.MovieID = M.MovieID\n" +
-                "GROUP BY M.MovieID , M.MovieName, M.MovieDescription, M.MoviePicturePath\n";
+                    "WHERE Shows.MovieID = Movies.MovieID) M\n";
             return dbMan.ExecuteReader(query);
         }
 
@@ -278,8 +276,9 @@ namespace Movie_Booking_System.Util
         {
             string query =
                 "SELECT AVG(MovieReviews.Rating) AS Rating\n" +
-                "FROM MovieReviews, Movies\n" +
-                "WHERE Movies.MovieID = MovieReviews.MovieID\n";
+                "FROM MovieReviews\n" +
+                $"WHERE MovieReviews.MovieID = {MovieID}\n" +
+                "GROUP BY MovieReviews.MovieID\n";
             object Rating = dbMan.ExecuteScalar(query);
             if (Rating != null)
                 return Convert.ToInt32(Rating);

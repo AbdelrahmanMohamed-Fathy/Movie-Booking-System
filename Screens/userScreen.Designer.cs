@@ -37,6 +37,7 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.MintCream;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(145, 11);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);

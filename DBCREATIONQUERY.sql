@@ -264,3 +264,8 @@ WHERE Bookings.ShowID = Shows.ShowID AND Shows.MovieID = Movies.MovieID
 GROUP BY Movies.MovieName
 ORDER BY Revenue
 
+SELECT AVG(MovieReviews.Rating) AS Rating
+FROM MovieReviews
+WHERE MovieReviews.MovieID = MovieReviews.MovieID
+GROUP BY MovieReviews.MovieID
+

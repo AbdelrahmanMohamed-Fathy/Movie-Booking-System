@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Movie_Booking_System.Util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,8 +38,8 @@ namespace Movie_Booking_System.Controls
             MovieID = data.Field<int>("MovieID");
             lblTitle.Text = data.Field<string>("MovieName");
             lblDescription.Text = data.Field<string>("MovieDescription");
-            lblRatingValue.Text = data.Field<int>("Rating").ToString();
-            int value = (data.Field<int>("Rating"));
+            int value = Controller.GetMovieReviews(MovieID);
+            lblRatingValue.Text = value.ToString();
             lblRatingStars.Text = "";
             for (int i = 0; i < 5; i++)
             {
