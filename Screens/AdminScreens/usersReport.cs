@@ -12,9 +12,17 @@ namespace Movie_Booking_System.Screens.AdminScreens
 {
     public partial class usersReport : Form
     {
-        public usersReport()
+        mainForm parentForm;
+        public usersReport(mainForm parent, userMode mode)
         {
             InitializeComponent();
+            this.parentForm = parent;
+        }
+
+        private void usersReport_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
         }
     }
 }

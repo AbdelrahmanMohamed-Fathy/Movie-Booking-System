@@ -20,6 +20,11 @@ namespace Movie_Booking_System.Util
             string query = $"SELECT * FROM Movies";
             return dbMan.ExecuteReader(query);
         }
+        public static int DeleteHelpTicket(int TicketID)
+        {
+            string query = $"DELETE FROM HelpTickets WHERE HelpTicketID ={TicketID};";
+            return dbMan.ExecuteNonQuery(query);
+        }
 
         public static int InsertNewOrder(string UserID)  // ahmad
         {
@@ -167,6 +172,15 @@ namespace Movie_Booking_System.Util
 
             return dbMan.ExecuteReader(query);
         }
+        public static DataTable GetTicketsAdmin()
+        {
+            string query =
+                    "SELECT HelpTicketID, Header, Fname, Lname, Seen\n" +
+                    "FROM HelpTickets, Accounts\n" +
+                    "WHERE HelpTickets.UserID = Accounts.UserID\n";
+            return dbMan.ExecuteReader(query);
+        }
+
 
         public static DataTable GetUserTickets(int UserID)
         {

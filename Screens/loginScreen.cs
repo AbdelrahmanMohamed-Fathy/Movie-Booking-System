@@ -111,7 +111,16 @@ namespace Movie_Booking_System.Screens
 
         private void btnPassVis_Click(object sender, EventArgs e)
         {
-            txtbxPassword.UseSystemPasswordChar = !txtbxPassword.UseSystemPasswordChar;
+            if (txtbxPassword.UseSystemPasswordChar == true)
+            {
+                txtbxPassword.UseSystemPasswordChar = false;
+                btnPassVis.Image = Image.FromFile("..\\..\\Assets\\Closed-eye-icon.png");
+            }
+            else
+            {
+                txtbxPassword.UseSystemPasswordChar = true;
+                btnPassVis.Image = Image.FromFile("..\\..\\Assets\\Open-eye-icon.png");
+            }          
         }
 
         private void loginScreen_Load(object sender, EventArgs e)
