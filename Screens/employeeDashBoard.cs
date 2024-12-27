@@ -12,9 +12,11 @@ namespace Movie_Booking_System.Screens
 {
     public partial class employeeDashBoard : Form
     {
-        public employeeDashBoard()
+        private mainForm parentForm;
+        public employeeDashBoard(mainForm parent,userMode mode)
         {
             InitializeComponent();
+            this.parentForm = parent;
         }
     }
 }
