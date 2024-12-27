@@ -452,6 +452,11 @@
   <ItemGroup>
     <Content Include="Assets\Closed-eye-icon.png" />
     <Content Include="Assets\icons8-phone-30.png" />
+    <Content Include="Assets\icons8-popcorn-24.png" />
+    <Content Include="Assets\ManageAccicon.png" />
+    <Content Include="Assets\Managecinema.png" />
+    <Content Include="Assets\Menu-icon.png" />
+    <Content Include="Assets\menuicon.png" />
     <Content Include="Assets\Movies\Django Unchained.png" />
     <Content Include="Assets\Movies\Fight Club.png" />
     <Content Include="Assets\Movies\Forrest Gump.png" />
@@ -461,7 +466,7 @@
     <Content Include="Assets\Movies\Interstellar.png" />
     <Content Include="Assets\Movies\La La Land.png" />
     <Content Include="Assets\Movies\Memento.png" />
-    <Content Include="Assets\Movies\Pulp Function.png" />
+    <Content Include="Assets\Movies\Pulp Fiction.png" />
     <Content Include="Assets\Movies\Se7en.png" />
     <Content Include="Assets\Movies\The Dark Knight.png" />
     <Content Include="Assets\Movies\The Departed.png" />
@@ -483,6 +488,7 @@
     <Content Include="Assets\Phone-icon.png" />
     <Content Include="Assets\Phone.png" />
     <Content Include="Assets\Search icon.png" />
+    <Content Include="Assets\seat.png" />
     <Content Include="Assets\Tele-icon.png" />
     <Content Include="Assets\Test.png" />
     <Content Include="DBCREATIONQUERY.sql" />
