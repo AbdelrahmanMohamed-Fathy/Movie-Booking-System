@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Movie_Booking_System.Util
@@ -119,9 +121,14 @@ namespace Movie_Booking_System.Util
         public static DataTable GetCurrentShows()
         {
             string query =
-                "SELECT Movies.Name, Movies.MovieDescription, Movies.MoviePicturePath, AVG(MovieReviews.Rating) AS Rating\n" +
-                "FROM Shows, Movies, MovieReviews\n" +
-                "WHERE Old=0 AND Movies.MovieID = MovieReviews.MovieID\n";
+                "SELECT M.MovieID, M.MovieName, M.MovieDescription, M.MoviePicturePath, AVG(R.Rating) AS Rating\n" +
+                "FROM\n" +
+                    "(\n" +
+                    "SELECT DISTINCT Movies.*\n" +
+                    "FROM Shows, Movies\n" +
+                    "WHERE Shows.MovieID = Movies.MovieID) M, MovieReviews R\n" +
+                "WHERE R.MovieID = M.MovieID\n" +
+                "GROUP BY M.MovieID , M.MovieName, M.MovieDescription, M.MoviePicturePath\n";
             return dbMan.ExecuteReader(query);
         }
 

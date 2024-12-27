@@ -57,8 +57,6 @@ namespace Movie_Booking_System
                 formStack.Push(mainPanel.Controls[0].GetType());
 
             CleanUp();
-            this.BackColor = form.BackColor;
-            this.BackgroundImage = form.BackgroundImage;
             form.TopLevel = false;
             form.ControlBox = false;
             form.FormBorderStyle = FormBorderStyle.None;

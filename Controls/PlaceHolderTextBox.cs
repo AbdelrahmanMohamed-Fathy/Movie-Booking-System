@@ -17,6 +17,7 @@ namespace Movie_Booking_System.Controls
     {
         private string placeHolderText = "PlaceHolder";
         private Color placeHolderTextColor = Color.Silver;
+        private bool IsPassword = false;
         private Color TextColor;
 
         [Description("PlaceHolder text")]
@@ -45,6 +46,20 @@ namespace Movie_Booking_System.Controls
             set { textBox1.Text = value; }
         }
 
+        [Category("Behavior")]
+        [System.ComponentModel.DefaultValue("False")]
+        public bool UseSystemPasswordChar
+        {
+            get { return IsPassword; }
+            set {
+                IsPassword = value;
+                if (textBox1.Text != placeHolderText)
+                {
+                    textBox1.UseSystemPasswordChar = value;
+                }
+            }
+        }
+
         public PlaceHolderTextBox()
         {
             InitializeComponent();
@@ -56,6 +71,7 @@ namespace Movie_Booking_System.Controls
             {
                 textBox1.Text = "";
                 textBox1.ForeColor = TextColor;
+                textBox1.UseSystemPasswordChar = IsPassword;
                 this.Font = new Font(this.Font, FontStyle.Regular);
             }
         }
@@ -64,6 +80,7 @@ namespace Movie_Booking_System.Controls
         {
             if (string.IsNullOrEmpty(textBox1.Text))
             {
+                textBox1.UseSystemPasswordChar=false;
                 textBox1.Text = placeHolderText;
                 textBox1.ForeColor = placeHolderTextColor;
                 this.Font = new Font(this.Font, FontStyle.Italic);

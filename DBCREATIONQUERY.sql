@@ -1,8 +1,8 @@
 ----------------------------------------Database Creation----------------------------------------
 USE master;
 GO
-ALTER DATABASE MovieBooking_system SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-GO
+--ALTER DATABASE MovieBooking_system SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+--GO
 DROP DATABASE IF EXISTS MovieBooking_system;
 GO
 CREATE DATABASE MovieBooking_system;
@@ -15,9 +15,11 @@ RETURNS TIME
 AS
 BEGIN
     DECLARE @EndTime TIME;
-    SELECT @ENDTime = StartTime + RunTime
+
+    SELECT @EndTime = DATEADD(MINUTE, DATEDIFF(MINUTE,0,Runtime),@StartTime)
     FROM Movies
     WHERE MovieID = @MovieID;
+
     RETURN @EndTime;
 END;
 GO
@@ -67,7 +69,7 @@ MovieName			VARCHAR(50)		NOT NULL,
 Director			VARCHAR(20)		NOT NULL,
 Runtime				TIME			NOT NULL,
 MovieDescription    VARCHAR(200)    NOT NULL DEFAULT '',
-MoviePicturePath    VARCHAR(200),
+MoviePicturePath    AS '..\\..\\Assests\\Movies\\' + MovieName + '.png',
 PRIMARY KEY			(MovieID),
 );
 ----------------------------------------
@@ -93,9 +95,9 @@ ShowID				INTEGER			NOT NULL IDENTITY(1,1),
 MovieID             INTEGER         NOT NULL,
 CinemaID            INTEGER         NOT NULL,
 ShowDate			DATE			NOT NULL,
-StartTime			TIME			NOT NULL,
-EndTime             AS dbo.GetEndTime(MovieID,StartTime),
-Old                 BIT             NOT NULL,
+StartDate			TIME			NOT NULL,
+EndTime             AS dbo.GetEndTime(MovieID,StartDate),
+Old                 BIT             NOT NULL DEFAULT 0,
 PRIMARY KEY			(ShowID),
 FOREIGN KEY         (MovieID)       REFERENCES Movies,
 FOREIGN KEY         (CinemaID)      REFERENCES Cinemas
@@ -148,7 +150,7 @@ CREATE TABLE MovieReviews (
 ReviewID			INTEGER			NOT NULL IDENTITY(1,1),
 UserID              INTEGER         NOT NULL,
 MovieID             INTEGER         NOT NULL,
-Rating				INTEGER			NOT NULL,
+Rating				INTEGER			NOT NULL CHECK (Rating > 0 AND Rating <6),
 Description   		VARCHAR(100)	NOT NULL DEFAULT '',
 PRIMARY KEY			(ReviewID),
 FOREIGN KEY         (MovieID)       REFERENCES Movies,
@@ -159,15 +161,20 @@ CREATE TABLE FoodReviews (
 ReviewID			INTEGER			NOT NULL IDENTITY(1,1),
 UserID              INTEGER         NOT NULL,
 FoodID              INTEGER         NOT NULL,
-Rating				INTEGER			NOT NULL,
+Rating				INTEGER			NOT NULL CHECK (Rating > 0 AND Rating <6),
 Description         VARCHAR(100)	NOT NULL DEFAULT '',
 PRIMARY KEY			(ReviewID),
 FOREIGN KEY         (FoodID)        REFERENCES FoodItems,
 FOREIGN KEY         (UserID)        REFERENCES Accounts
 );
 ---------------------------------------
-
+GO
 INSERT INTO Accounts VALUES ('Ahmed', 'Soltan', 'A7medsoltan2004@gmail.com', '12345', 1203547383, 'Admin')
+
+
+INSERT INTO Cinemas (CinemaType, CinemaManagerID) VALUES ('IMAX',5267)
+
+
 INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('La La Land', 'Damien Chazelle', CAST(N'02:08:00' AS Time))
 INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('The Shawshank Redemption', 'Frank Darabont', CAST(N'02:22:00' AS Time))
 INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('The Godfather', 'Francis Ford Coppola', CAST(N'02:55:00' AS Time))
@@ -189,6 +196,13 @@ INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Memento', 'Christophe
 INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('The Departed', 'Martin Scorsese', CAST(N'02:31:00' AS Time)) 
 INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Whiplash', 'Damien Chazelle', CAST(N'01:47:00' AS Time))
 INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Django Unchained', 'Quentin Tarantino', CAST(N'02:45:00' AS Time))
+GO
+
+INSERT INTO Shows (MovieID,CinemaID,ShowDate,StartDate) VALUES (1,1,CAST('12-30-2024' AS DATE),CAST('02:00:00' AS Time))
+
+
+INSERT INTO MovieReviews (UserID, MovieID, Rating) VALUES (5267,1,4)
+
 
 INSERT INTO HelpTickets (UserID,Header,Content) VALUES (5267,'help','kofta gedan')
-INSERT INTO HelpTickets (UserID,Header,Content) VALUES (5267,'Issue with Orders','kofta gedan')
+INSERT INTO HelpTickets (UserID,Header,Content) VALUES (5267,'Issue with Orders','kofta gedan 2: electric boogaloo')
