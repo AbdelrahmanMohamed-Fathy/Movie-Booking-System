@@ -213,3 +213,9 @@ INSERT INTO MovieReviews (UserID, MovieID, Rating) VALUES (5267,1,4)
 
 INSERT INTO HelpTickets (UserID,Header,Content) VALUES (5267,'help','kofta gedan')
 INSERT INTO HelpTickets (UserID,Header,Content) VALUES (5267,'Issue with Orders','kofta gedan 2: electric boogaloo')
+
+SELECT FoodItems.FoodName, SUM(OrderCount) AS Quantity
+FROM Orders_Details, FoodItems
+WHERE Orders_Details.FoodID = FoodItems.FoodID
+GROUP BY FoodItems.FoodName
+ORDER BY Quantity

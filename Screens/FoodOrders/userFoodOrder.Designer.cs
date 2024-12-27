@@ -38,6 +38,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -60,7 +61,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,6 +103,7 @@
             this.Column8});
             this.dataGridView1.Location = new System.Drawing.Point(21, 332);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(672, 287);
             this.dataGridView1.TabIndex = 2;
             // 
@@ -110,36 +111,49 @@
             // 
             this.Column1.HeaderText = "ORDER ID";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "FOOD ID";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "FOOD NAME";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "ORDER COUNT";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "TOTAL PRICE";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "UNIT PRICE";
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "FULFILLED";
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "UserID";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             // 
             // label1
             // 
@@ -364,11 +378,6 @@
             this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(222, 38);
             this.textBox8.TabIndex = 25;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "UserID";
-            this.Column8.Name = "Column8";
             // 
             // userFoodOrder
             // 

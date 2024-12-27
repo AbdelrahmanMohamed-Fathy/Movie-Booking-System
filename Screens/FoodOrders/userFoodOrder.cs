@@ -10,19 +10,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Movie_Booking_System.Screens.FoodOrders
 {
     public partial class userFoodOrder : Form
     {
+        private mainForm parentForm;
         int FoodQty = 0;
         int FoodPrice = 0;
         String UserID = "";
-        public userFoodOrder(String UserID_)
+
+        public userFoodOrder(mainForm parent,userMode mode)
         {
             InitializeComponent();
-            UserID = UserID_;//someone add the user Id;
+            this.parentForm = parent;
+
+            UserID = parent.CurrentUserID.ToString();//someone add the user Id;
             textBox4.Text = UserID;
         }
 

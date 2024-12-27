@@ -69,7 +69,7 @@
             this.lblDescription.Multiline = true;
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.ReadOnly = true;
-            this.lblDescription.Size = new System.Drawing.Size(555, 70);
+            this.lblDescription.Size = new System.Drawing.Size(433, 70);
             this.lblDescription.TabIndex = 2;
             this.lblDescription.TabStop = false;
             this.lblDescription.Text = "Lorem Ipsum";
@@ -106,7 +106,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "MovieCard";
-            this.Size = new System.Drawing.Size(776, 147);
+            this.Size = new System.Drawing.Size(644, 147);
             this.Load += new System.EventHandler(this.MovieCard_Load);
             this.BackColorChanged += new System.EventHandler(this.MovieCard_BackColorChanged);
             this.Click += new System.EventHandler(this.MovieCard_Click);
