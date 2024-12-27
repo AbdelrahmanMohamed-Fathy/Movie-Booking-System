@@ -28,41 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // textBox1
+            // flowLayoutPanel1
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Silver;
-            this.textBox1.Location = new System.Drawing.Point(544, 57);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 29);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "Enter Movie Name";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.MintCream;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 62);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(776, 526);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // userScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(236)))), ((int)(((byte)(231)))));
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.ControlBox = false;
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "userScreen";
             this.Text = "userScreen";
             this.Load += new System.EventHandler(this.userScreen_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
+
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
