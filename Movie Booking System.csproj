@@ -280,6 +280,12 @@
     <Compile Include="Screens\MovieDetailes.Designer.cs">
       <DependentUpon>MovieDetailes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\userBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\userBooking.Designer.cs">
+      <DependentUpon>userBooking.cs</DependentUpon>
+    </Compile>
     <Compile Include="Util\HelperFunctions.cs" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -315,7 +321,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\FoodOrders\userFoodOrder.resx">
       <DependentUpon>userFoodOrder.cs</DependentUpon>
-	</EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\AdminScreens\adminDashBoard.resx">
       <DependentUpon>adminDashBoard.cs</DependentUpon>
     </EmbeddedResource>
@@ -339,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\signupScreen.resx">
       <DependentUpon>signupScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\userBooking.resx">
+      <DependentUpon>userBooking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\userScreen.resx">
       <DependentUpon>userScreen.cs</DependentUpon>

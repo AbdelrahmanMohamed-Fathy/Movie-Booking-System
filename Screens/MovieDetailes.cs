@@ -29,7 +29,9 @@ namespace Movie_Booking_System.Screens
         private void btnBook_Click(object sender, EventArgs e)
         {
             if (parentForm.Authority == userMode.Guest)
-                parentForm.LoadNewForm(new loginScreen(parentForm,parentForm.Authority), false);
+                parentForm.LoadNewForm(new loginScreen(parentForm, parentForm.Authority), false);
+            else
+                parentForm.LoadNewForm(new userBooking(parentForm, parentForm.Authority), false);
         }
     }
 }

@@ -67,24 +67,20 @@ namespace Movie_Booking_System.Util
         public static int DeleteOrders(string OrderID)  // ahmad
         {
             string query;
-            if (OrderID == "")
+            if (OrderID != "")
             {
                 query =
                 "Delete Orders_Details\n" +
-                $"Where OrderID = " + OrderID;
+                $"Where OrderID = {OrderID} ";
+                return dbMan.ExecuteNonQuery(query);
             }
-            else
-            {
-                query =
-                    "Delete Orders_Details\n";
-            }
-            return dbMan.ExecuteNonQuery(query);
+            return -1;
         }
 
         public static DataTable GetOrders()     // ahmad
         {
             string query =
-                "SELECT Orders_Details.OrderID, Orders_Details.FoodID, FoodItems.FoodName, Orders_Details.OrderCount, FoodItems.Price, Orders_Details.Fulfilled, Orders.UserID \n" +
+                "SELECT Orders_Details.OrderID, Orders_Details.FoodID, FoodItems.FoodName, Orders_Details.OrderCount, FoodItems.Price, Orders.Fulfilled, Orders.UserID \n" +
                 "FROM Orders_Details, FoodItems, Orders\n" +
                 "WHERE Orders.OrderID = Orders_Details.OrderID and Orders_Details.FoodID = FoodItems.FoodID\n Order by Orders_Details.OrderID";
 
@@ -233,5 +229,16 @@ namespace Movie_Booking_System.Util
                 "GROUP BY M.MovieID , M.MovieName, M.MovieDescription, M.MoviePicturePath\n";
             return dbMan.ExecuteReader(query);
         }
+
+        public static DataTable GetShowsForMovie(int MovieID)
+        {
+            string query =
+                "SELECT Shows.StartTime, Shows.EndTime, Cinemas.CinemaType, COUNT(SeatNumber) AS Seats_Available\n" +
+                "FROM Shows, Cinemas, Seats\n" +
+                "WHERE Shows.CinemaID = Seats.CinemaID\n" +
+                "GROUP BY Shows.StartTime, Shows.EndTime, CinemaID\n";
+            return dbMan.ExecuteReader(query);
+        }
+
     }
 }
