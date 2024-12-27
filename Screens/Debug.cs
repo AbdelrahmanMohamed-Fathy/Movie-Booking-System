@@ -50,13 +50,18 @@ namespace Movie_Booking_System.Screens
         private void btnBookReport_Click(object sender, EventArgs e)
         {
             parentForm.CurrentUserID = DebugAdmin;
-            parentForm.LoadNewForm(new AdminScreens.ordersReport(parentForm, userMode.Employee));
+            parentForm.LoadNewForm(new AdminScreens.bookingReport(parentForm, userMode.Employee));
         }
 
         private void btnUserReport_Click(object sender, EventArgs e)
         {
             parentForm.CurrentUserID = DebugAdmin;
             parentForm.LoadNewForm(new AdminScreens.usersReport(parentForm, userMode.Employee));
+        }
+
+        private void Debug_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -110,6 +110,7 @@
             this.Controls.Add(this.btnEmployeeTicket);
             this.Name = "Debug";
             this.Text = "Debug";
+            this.Load += new System.EventHandler(this.Debug_Load);
             this.ResumeLayout(false);
 
         }
