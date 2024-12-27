@@ -38,10 +38,10 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.MintCream;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(145, 71);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(145, 11);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(644, 518);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(644, 578);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -63,7 +63,7 @@
             this.Helptickets.ForeColor = System.Drawing.Color.MintCream;
             this.Helptickets.Image = ((System.Drawing.Image)(resources.GetObject("Helptickets.Image")));
             this.Helptickets.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.Helptickets.Location = new System.Drawing.Point(2, 71);
+            this.Helptickets.Location = new System.Drawing.Point(2, 11);
             this.Helptickets.Margin = new System.Windows.Forms.Padding(2);
             this.Helptickets.Name = "Helptickets";
             this.Helptickets.Size = new System.Drawing.Size(129, 29);
@@ -72,6 +72,7 @@
             this.Helptickets.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Helptickets.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Helptickets.UseVisualStyleBackColor = true;
+            this.Helptickets.Click += new System.EventHandler(this.Helptickets_Click);
             // 
             // userScreen
             // 

@@ -44,7 +44,7 @@
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.mainPanel.Location = new System.Drawing.Point(0, 50);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(800, 550);
+            this.mainPanel.Size = new System.Drawing.Size(800, 600);
             this.mainPanel.TabIndex = 0;
             // 
             // btnGoBack
@@ -86,7 +86,7 @@
             // 
             // mainForm
             // 
-            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.ClientSize = new System.Drawing.Size(800, 650);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.mainPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
