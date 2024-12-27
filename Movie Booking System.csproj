@@ -443,11 +443,9 @@
     <Content Include="Assets\Absolute_Cinema_Quarter.png" />
     <Content Include="Assets\arrow_back_16dp_000000_FILL0_wght400_GRAD0_opsz20%281%29.png" />
     <Content Include="Assets\arrow_back_16dp_000000_FILL0_wght400_GRAD0_opsz20.png" />
-    <Content Include="Assets\arrow_back_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" />
-    <Content Include="Assets\CINEMA.jpg" />
+    <Content Include="Assets\bars.png" />
+    <Content Include="Assets\Complaint.png" />
     <Content Include="Assets\Create a unique and cinematic logo for Absolute Cinema, resize to 950x600, remove all text except Absolute Cinema.png" />
-    <Content Include="Assets\download %2818%29.jpg" />
-    <Content Include="Assets\download %2819%29.jpg" />
     <Content Include="Assets\email-icon.png" />
     <Content Include="Assets\go-back-arrow.png" />
   </ItemGroup>
@@ -478,7 +476,6 @@
     <Content Include="Assets\Name-icon.png" />
     <Content Include="Assets\Open-eye-icon.png" />
     <Content Include="Assets\icons8-search-30.png" />
-    <Content Include="Assets\icons8-visibility-30.png" />
     <Content Include="Assets\icons8-search-30.png" />
     <Content Include="Assets\Pass-icon.png" />
     <Content Include="Assets\password--icon.png" />
@@ -488,8 +485,6 @@
     <Content Include="Assets\Search icon.png" />
     <Content Include="Assets\Tele-icon.png" />
     <Content Include="Assets\Test.png" />
-    <Content Include="Assets\visibility_16dp_000000_FILL0_wght400_GRAD0_opsz20.png" />
-    <Content Include="Assets\visibility_off_16dp_000000_FILL0_wght400_GRAD0_opsz20.png" />
     <Content Include="DBCREATIONQUERY.sql" />
   </ItemGroup>
   <ItemGroup>
