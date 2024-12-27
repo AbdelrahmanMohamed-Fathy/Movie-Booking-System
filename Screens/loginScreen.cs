@@ -30,7 +30,20 @@ namespace Movie_Booking_System.Screens
                 this.Cursor = Cursors.Default;
                 parentForm.Authority = mode;
                 parentForm.ShowStatus();
-                parentForm.LoadNewForm(new userScreen(parentForm,parentForm.Authority));
+                switch (parentForm.Authority)
+                {
+                    case userMode.Admin:
+                        parentForm.LoadNewForm(new AdminScreens.adminDashBoard(parentForm, parentForm.Authority));
+                        break;
+                    case userMode.Employee:
+                        parentForm.LoadNewForm(new Screens.employeeDashBoard(parentForm, parentForm.Authority));
+                        break;
+                    case userMode.Guest:
+                    case userMode.User:
+                    default:
+                        parentForm.LoadNewForm(new userScreen(parentForm,parentForm.Authority));
+                        break;
+                }
             }
             else
             {
