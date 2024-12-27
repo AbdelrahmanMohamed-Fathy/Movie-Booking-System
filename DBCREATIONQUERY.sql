@@ -24,14 +24,16 @@ BEGIN
 END;
 GO
 ----------------------------------------
-CREATE FUNCTION dbo.GetBookingPrice (@SeatID INTEGER)
+CREATE FUNCTION dbo.GetBookingPrice (@BookingID INTEGER)
 RETURNS DECIMAL
 AS
 BEGIN
     DECLARE @Price DECIMAL;
-    SELECT @Price = Price
-    FROM Seats
-    WHERE SeatID = @SeatID;
+
+    SELECT @Price = Price*COUNT(Seats)
+    FROM Seats, BookingSeats
+    WHERE BookingSeats.SeatID = Seats.SeatID AND BookingSeats.BookingID = @BookingID;
+
     RETURN @Price;
 END;
 GO
@@ -94,13 +96,12 @@ CREATE TABLE Shows (
 ShowID				INTEGER			NOT NULL IDENTITY(1,1),
 MovieID             INTEGER         NOT NULL,
 CinemaID            INTEGER         NOT NULL,
-ShowDate			DATE			NOT NULL,
-StartDate			TIME			NOT NULL,
-EndTime             AS dbo.GetEndTime(MovieID,StartDate),
+ShowDate			DATE			NOT NULL DEFAULT GETDATE(),
+StartTime			TIME			NOT NULL,
+EndTime             AS dbo.GetEndTime(MovieID,StartTime),
 Old                 BIT             NOT NULL DEFAULT 0,
 PRIMARY KEY			(ShowID),
 FOREIGN KEY         (MovieID)       REFERENCES Movies,
-FOREIGN KEY         (CinemaID)      REFERENCES Cinemas
 );
 GO
 ---------------------------------------
@@ -116,15 +117,22 @@ GO
 CREATE TABLE Bookings (
 BookingID			INTEGER				NOT NULL IDENTITY(9034,1),
 UserID              INTEGER				NOT NULL,
-SeatID              INTEGER				NOT NULL,
-CinemaID			INTEGER				NOT NULL,
 ShowID              INTEGER				NOT NULL,
-Price               AS dbo.GetBookingPrice(SeatID),
+Price               AS dbo.GetBookingPrice(BookingID),
 PaymentMethod		VARCHAR(20)			NOT NULL CHECK (Paymentmethod IN ('Cash', 'Credit')),
 PRIMARY KEY			(BookingID),
 FOREIGN KEY         (UserID)			REFERENCES Accounts,
-FOREIGN KEY         (CinemaID,SeatID)	REFERENCES Seats,
 FOREIGN KEY         (ShowID)			REFERENCES Shows
+);
+GO
+---------------------------------------
+CREATE TABLE BookingSeats (
+BookingID			INTEGER				NOT NULL,
+CinemaID			INTEGER				NOT NULL,
+SeatID              INTEGER				NOT NULL,
+PRIMARY KEY         (BookingID,SeatID),
+FOREIGN KEY         (BookingID)         REFERENCES Bookings,
+FOREIGN KEY         (CinemaID,SeatID)   REFERENCES Seats
 );
 ---------------------------------------
 CREATE TABLE Orders(
@@ -177,6 +185,7 @@ FOREIGN KEY         (UserID)        REFERENCES Accounts
 ---------------------------------------
 GO
 INSERT INTO Accounts VALUES ('Ahmed', 'Soltan', 'A7medsoltan2004@gmail.com', '12345', 1203547383, 'Admin')
+INSERT INTO Accounts (Fname,Lname,Email,Pass,Authority) VALUES ('Abdelrahman', 'Fathy', 'test@test.com','test','Client')
 
 
 INSERT INTO Cinemas (CinemaType, CinemaManagerID) VALUES ('IMAX',5267)
@@ -205,7 +214,8 @@ INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Whiplash', 'Damien Ch
 INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Django Unchained', 'Quentin Tarantino', CAST(N'02:45:00' AS Time))
 GO
 
-INSERT INTO Shows (MovieID,CinemaID,ShowDate,StartDate) VALUES (1,1,CAST('12-30-2024' AS DATE),CAST('02:00:00' AS Time))
+
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (1,1,CAST('02:00:00' AS Time))
 
 
 INSERT INTO MovieReviews (UserID, MovieID, Rating) VALUES (5267,1,4)
@@ -228,3 +238,9 @@ FROM Orders_Details, FoodItems
 WHERE Orders_Details.FoodID = FoodItems.FoodID
 GROUP BY FoodItems.FoodName
 ORDER BY Quantity
+
+SELECT Movies.MovieName, COUNT(Shows.ShowID) AS Total_Shows,SUM(Bookings.Price) AS Revenue
+FROM Bookings, Movies, Shows
+WHERE Bookings.ShowID = Shows.ShowID AND Shows.MovieID = Movies.MovieID
+GROUP BY Movies.MovieName
+ORDER BY Revenue

@@ -46,7 +46,7 @@
             this.lblLogin.BackColor = System.Drawing.Color.Transparent;
             this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblLogin.ForeColor = System.Drawing.Color.Black;
-            this.lblLogin.Location = new System.Drawing.Point(322, 134);
+            this.lblLogin.Location = new System.Drawing.Point(332, 118);
             this.lblLogin.Margin = new System.Windows.Forms.Padding(3);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(80, 31);
@@ -57,7 +57,7 @@
             // 
             this.txtbxUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtbxUsername.BackColor = System.Drawing.Color.MintCream;
-            this.txtbxUsername.Location = new System.Drawing.Point(271, 171);
+            this.txtbxUsername.Location = new System.Drawing.Point(281, 155);
             this.txtbxUsername.Name = "txtbxUsername";
             this.txtbxUsername.Size = new System.Drawing.Size(182, 20);
             this.txtbxUsername.TabIndex = 1;
@@ -67,7 +67,7 @@
             // 
             this.txtbxPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtbxPassword.BackColor = System.Drawing.Color.MintCream;
-            this.txtbxPassword.Location = new System.Drawing.Point(271, 197);
+            this.txtbxPassword.Location = new System.Drawing.Point(281, 181);
             this.txtbxPassword.Name = "txtbxPassword";
             this.txtbxPassword.Size = new System.Drawing.Size(182, 20);
             this.txtbxPassword.TabIndex = 2;
@@ -80,7 +80,7 @@
             this.btnLogin.BackColor = System.Drawing.Color.Teal;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogin.ForeColor = System.Drawing.Color.MintCream;
-            this.btnLogin.Location = new System.Drawing.Point(282, 247);
+            this.btnLogin.Location = new System.Drawing.Point(292, 231);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(160, 23);
             this.btnLogin.TabIndex = 3;
@@ -94,7 +94,7 @@
             this.btnContinue.BackColor = System.Drawing.Color.Teal;
             this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnContinue.ForeColor = System.Drawing.Color.MintCream;
-            this.btnContinue.Location = new System.Drawing.Point(282, 277);
+            this.btnContinue.Location = new System.Drawing.Point(292, 261);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(160, 23);
             this.btnContinue.TabIndex = 4;
@@ -108,7 +108,7 @@
             this.lblInvalid.AutoSize = true;
             this.lblInvalid.BackColor = System.Drawing.Color.Transparent;
             this.lblInvalid.ForeColor = System.Drawing.Color.Red;
-            this.lblInvalid.Location = new System.Drawing.Point(279, 220);
+            this.lblInvalid.Location = new System.Drawing.Point(289, 204);
             this.lblInvalid.Name = "lblInvalid";
             this.lblInvalid.Size = new System.Drawing.Size(147, 13);
             this.lblInvalid.TabIndex = 5;
@@ -121,7 +121,7 @@
             this.btnSignup.BackColor = System.Drawing.Color.Teal;
             this.btnSignup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSignup.ForeColor = System.Drawing.Color.MintCream;
-            this.btnSignup.Location = new System.Drawing.Point(282, 305);
+            this.btnSignup.Location = new System.Drawing.Point(292, 289);
             this.btnSignup.Margin = new System.Windows.Forms.Padding(2);
             this.btnSignup.Name = "btnSignup";
             this.btnSignup.Size = new System.Drawing.Size(160, 24);
@@ -136,7 +136,7 @@
             this.btnPassVis.BackColor = System.Drawing.Color.Transparent;
             this.btnPassVis.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPassVis.Image = ((System.Drawing.Image)(resources.GetObject("btnPassVis.Image")));
-            this.btnPassVis.Location = new System.Drawing.Point(458, 197);
+            this.btnPassVis.Location = new System.Drawing.Point(468, 181);
             this.btnPassVis.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnPassVis.Name = "btnPassVis";
             this.btnPassVis.Size = new System.Drawing.Size(31, 20);

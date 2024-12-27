@@ -12,7 +12,7 @@ namespace Movie_Booking_System.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.11.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.12.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -23,14 +23,16 @@ namespace Movie_Booking_System.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-BP7M6ML\\SQLEXPRESS;Initial Catalog=MovieBooking_system;Integr" +
-            "ated Security=True;Encrypt=False;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-DK58FL1\\SQLEXPRESS;Initial Catalog=MovieBooking_system;Integr" +
+            "ated Security=True;Encrypt=False")]
         public string MovieBooking_systemConnectionString1 {
             get {
                 return ((string)(this["MovieBooking_systemConnectionString1"]));
+            }
+            set {
+                this["MovieBooking_systemConnectionString1"] = value;
             }
         }
     }
