@@ -127,11 +127,18 @@ FOREIGN KEY         (CinemaID,SeatID)	REFERENCES Seats,
 FOREIGN KEY         (ShowID)			REFERENCES Shows
 );
 ---------------------------------------
-CREATE TABLE Orders (
-OrderID				INTEGER			NOT NULL IDENTITY(2364,1),
+CREATE TABLE Orders(
+OrderID             INTEGER			NOT NULL IDENTITY(1,1),
+UserID              INTEGER         NOT NULL,
+Fulfilled           BIT             NOT NULL DEFAULT 0,
+PRIMARY KEY			(OrderID),
+FOREIGN KEY			(UserID)        REFERENCES Accounts
+);
+---------------------------------------
+CREATE TABLE Orders_Details (
+OrderID				INTEGER			NOT NULL,
 FoodID				INTEGER			NOT NULL,
 OrderCount			INTEGER			NOT NULL,
-Fulfilled           BIT             NOT NULL DEFAULT 0,
 PRIMARY KEY			(OrderID,FoodID),
 FOREIGN KEY			(FoodID)        REFERENCES Fooditems
 );
