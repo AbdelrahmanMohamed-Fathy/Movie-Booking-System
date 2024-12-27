@@ -55,9 +55,7 @@
             this.ResumeLayout(false);
 
         }
-
         #endregion
-
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
