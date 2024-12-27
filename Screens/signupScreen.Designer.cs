@@ -66,6 +66,7 @@
             // Fname
             // 
             this.Fname.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Fname.BackColor = System.Drawing.Color.MintCream;
             this.Fname.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fname.ForeColor = System.Drawing.Color.Silver;
             this.Fname.Location = new System.Drawing.Point(63, 27);
@@ -81,6 +82,7 @@
             // Lname
             // 
             this.Lname.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Lname.BackColor = System.Drawing.Color.MintCream;
             this.Lname.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lname.ForeColor = System.Drawing.Color.Silver;
             this.Lname.Location = new System.Drawing.Point(63, 104);
@@ -96,6 +98,7 @@
             // Email
             // 
             this.Email.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Email.BackColor = System.Drawing.Color.MintCream;
             this.Email.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Email.ForeColor = System.Drawing.Color.Silver;
             this.Email.Location = new System.Drawing.Point(64, 180);
@@ -111,6 +114,7 @@
             // password
             // 
             this.password.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.password.BackColor = System.Drawing.Color.MintCream;
             this.password.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password.ForeColor = System.Drawing.Color.Silver;
             this.password.Location = new System.Drawing.Point(63, 257);
@@ -126,6 +130,7 @@
             // phonenum
             // 
             this.phonenum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.phonenum.BackColor = System.Drawing.Color.MintCream;
             this.phonenum.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phonenum.ForeColor = System.Drawing.Color.Silver;
             this.phonenum.Location = new System.Drawing.Point(526, 25);
@@ -140,10 +145,12 @@
             // Createaccclk
             // 
             this.Createaccclk.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Createaccclk.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Createaccclk.BackColor = System.Drawing.Color.Teal;
             this.Createaccclk.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Createaccclk.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Createaccclk.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Createaccclk.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(236)))), ((int)(((byte)(231)))));
+            this.Createaccclk.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.Createaccclk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Createaccclk.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Createaccclk.ForeColor = System.Drawing.Color.White;
             this.Createaccclk.Location = new System.Drawing.Point(644, 480);
             this.Createaccclk.Margin = new System.Windows.Forms.Padding(5);
@@ -236,6 +243,7 @@
             // confirmpass
             // 
             this.confirmpass.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.confirmpass.BackColor = System.Drawing.Color.MintCream;
             this.confirmpass.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmpass.ForeColor = System.Drawing.Color.Silver;
             this.confirmpass.Location = new System.Drawing.Point(63, 345);
@@ -468,7 +476,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(236)))), ((int)(((byte)(231)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(931, 575);
             this.Controls.Add(this.panel2);
@@ -503,6 +511,7 @@
             this.Controls.Add(this.Fname);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Red;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "signupScreen";
             this.Text = "NewUser";
