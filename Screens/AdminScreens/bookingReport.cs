@@ -21,6 +21,8 @@ namespace Movie_Booking_System.Screens.AdminScreens
 
         private void bookingReport_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'reportsData.BookingStats' table. You can move, or remove it, as needed.
+            this.bookingStatsTableAdapter.Fill(this.reportsData.BookingStats);
 
             this.reportViewer1.RefreshReport();
         }
