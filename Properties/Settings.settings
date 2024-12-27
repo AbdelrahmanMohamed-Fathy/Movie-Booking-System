@@ -2,13 +2,13 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Movie_Booking_System.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="MovieBooking_systemConnectionString" Type="(Connection string)" Scope="Application">
+    <Setting Name="MovieBooking_systemConnectionString1" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionString&gt;Data Source=DESKTOP-DK58FL1\SQLEXPRESS;Initial Catalog=MovieBooking_system;Integrated Security=True;Encrypt=False&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=DESKTOP-BP7M6ML\SQLEXPRESS;Initial Catalog=MovieBooking_system;Integrated Security=True;Encrypt=False;TrustServerCertificate=True&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=DESKTOP-DK58FL1\SQLEXPRESS;Initial Catalog=MovieBooking_system;Integrated Security=True;Encrypt=False</Value>
+      <Value Profile="(Default)">Data Source=DESKTOP-BP7M6ML\SQLEXPRESS;Initial Catalog=MovieBooking_system;Integrated Security=True;Encrypt=False;TrustServerCertificate=True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

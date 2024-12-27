@@ -19,5 +19,15 @@ namespace Movie_Booking_System.Screens.AdminScreens
             InitializeComponent();
             this.parentForm = parent;
         }
+
+        private void ordersReport_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'reportsData.FoodStats' table. You can move, or remove it, as needed.
+            this.foodStatsTableAdapter.Fill(this.reportsData.FoodStats);
+
+            this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
+        }
     }
 }
