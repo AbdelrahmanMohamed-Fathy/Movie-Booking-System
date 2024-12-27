@@ -197,6 +197,12 @@
     <Compile Include="Controls\Adminticket.Designer.cs">
       <DependentUpon>Adminticket.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ManageAccountsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ManageAccountsControl.Designer.cs">
+      <DependentUpon>ManageAccountsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\PlaceHolderTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>

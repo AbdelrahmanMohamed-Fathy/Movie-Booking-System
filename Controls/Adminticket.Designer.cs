@@ -43,7 +43,9 @@
             // dataGridView1
             // 
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.MintCream;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.Color.Teal;
             this.dataGridView1.Location = new System.Drawing.Point(3, 374);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;

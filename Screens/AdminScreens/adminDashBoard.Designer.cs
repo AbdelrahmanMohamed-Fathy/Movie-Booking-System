@@ -123,6 +123,7 @@
             this.btnManageAcc.Text = "Manage Accounts.";
             this.btnManageAcc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnManageAcc.UseVisualStyleBackColor = true;
+            this.btnManageAcc.Click += new System.EventHandler(this.btnManageAcc_Click);
             // 
             // Helptickets
             // 

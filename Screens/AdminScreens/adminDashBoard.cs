@@ -44,7 +44,14 @@ namespace Movie_Booking_System.Screens.AdminScreens
             dashboardadmin.Controls.Clear();
             dashboardadmin.Controls.Add(adminmenu);
             adminmenu.Dock = DockStyle.Fill;
+        }
 
+        private void btnManageAcc_Click(object sender, EventArgs e)
+        {
+            Controls.Adminticket adminmenu = new Controls.Adminticket();
+            dashboardadmin.Controls.Clear();
+            dashboardadmin.Controls.Add(adminmenu);
+            adminmenu.Dock = DockStyle.Fill;
         }
     }
 }
