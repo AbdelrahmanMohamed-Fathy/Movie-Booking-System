@@ -7,7 +7,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>bea2e147-6ef3-4811-a601-2ce33d48744d</rd:DataSourceID>
+      <rd:DataSourceID>46cc175a-bdab-44da-b39b-52eedfe9d89b</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -17,12 +17,12 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="FoodName">
-          <DataField>FoodName</DataField>
+        <Field Name="MovieName">
+          <DataField>MovieName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Quantity">
-          <DataField>Quantity</DataField>
+        <Field Name="Total_Shows">
+          <DataField>Total_Shows</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Revenue">
@@ -33,10 +33,10 @@
       <rd:DataSetInfo>
         <rd:DataSetName>ReportsData</rd:DataSetName>
         <rd:SchemaPath>C:\Users\001\Source\Repos\Movie-Booking-System\ReportsData.xsd</rd:SchemaPath>
-        <rd:TableName>FoodStats</rd:TableName>
+        <rd:TableName>BookingStats</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>FoodStatsTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>BookingStatsTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -48,15 +48,15 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.50694in</Width>
+                  <Width>1in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.50694in</Width>
+                  <Width>1in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.33333in</Height>
+                  <Height>0.25in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -67,7 +67,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Quantity</Value>
+                                  <Value>Total Shows</Value>
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -143,18 +143,18 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.33333in</Height>
+                  <Height>0.25in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Quantity">
+                        <Textbox Name="Total_Shows">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!Quantity.Value)</Value>
+                                  <Value>=Fields!Total_Shows.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
                                     <Color>#333333</Color>
@@ -164,7 +164,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Quantity</rd:DefaultName>
+                          <rd:DefaultName>Total_Shows</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -187,7 +187,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!Revenue.Value)</Value>
+                                  <Value>=Fields!Revenue.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
                                     <Color>#333333</Color>
@@ -225,7 +225,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>1.50694in</Size>
+                    <Size>1in</Size>
                     <CellContents>
                       <Textbox Name="Textbox5">
                         <CanGrow>true</CanGrow>
@@ -234,7 +234,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>Food Name</Value>
+                                <Value>Movie Name</Value>
                                 <Style>
                                   <FontSize>11pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
@@ -269,29 +269,30 @@
                   <TablixMembers>
                     <TablixMember />
                   </TablixMembers>
+                  <KeepWithGroup>After</KeepWithGroup>
                 </TablixMember>
                 <TablixMember>
-                  <Group Name="FoodName">
+                  <Group Name="MovieName">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!FoodName.Value</GroupExpression>
+                      <GroupExpression>=Fields!MovieName.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!FoodName.Value</Value>
+                      <Value>=Fields!MovieName.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>1.50694in</Size>
+                    <Size>1in</Size>
                     <CellContents>
-                      <Textbox Name="FoodName">
+                      <Textbox Name="MovieName">
                         <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>=Fields!FoodName.Value</Value>
+                                <Value>=Fields!MovieName.Value</Value>
                                 <Style>
                                   <FontWeight>Normal</FontWeight>
                                   <Color>#333333</Color>
@@ -301,7 +302,7 @@
                             <Style />
                           </Paragraph>
                         </Paragraphs>
-                        <rd:DefaultName>FoodName</rd:DefaultName>
+                        <rd:DefaultName>MovieName</rd:DefaultName>
                         <Style>
                           <Border>
                             <Style>None</Style>
@@ -321,15 +322,20 @@
                     </CellContents>
                   </TablixHeader>
                   <TablixMembers>
-                    <TablixMember />
+                    <TablixMember>
+                      <Group Name="Details" />
+                      <Visibility>
+                        <Hidden>true</Hidden>
+                        <ToggleItem>MovieName</ToggleItem>
+                      </Visibility>
+                    </TablixMember>
                   </TablixMembers>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.01389in</Top>
-            <Height>0.66666in</Height>
-            <Width>4.52082in</Width>
+            <Height>0.5in</Height>
+            <Width>3in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -342,32 +348,32 @@
                 <ChartMember>
                   <Group Name="Chart1_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!FoodName.Value</GroupExpression>
+                      <GroupExpression>=Fields!MovieName.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!FoodName.Value</Value>
+                      <Value>=Fields!MovieName.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!FoodName.Value</Label>
+                  <Label>=Fields!MovieName.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>Quantity</Label>
+                  <Label>Total Shows</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="Quantity">
+                <ChartSeries Name="Total_Shows">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Sum(Fields!Quantity.Value)</Y>
+                        <Y>=Sum(Fields!Total_Shows.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
@@ -651,7 +657,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Quantity Sold Per Food Item</Caption>
+                <Caption>Number of Shows per Movie</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -681,10 +687,9 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.01389in</Top>
-            <Left>4.63417in</Left>
-            <Height>2.13542in</Height>
-            <Width>4.47in</Width>
+            <Left>3.45708in</Left>
+            <Height>2.0625in</Height>
+            <Width>3.44792in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -701,15 +706,15 @@
                 <ChartMember>
                   <Group Name="Chart2_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!FoodName.Value</GroupExpression>
+                      <GroupExpression>=Fields!MovieName.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!FoodName.Value</Value>
+                      <Value>=Fields!MovieName.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!FoodName.Value</Label>
+                  <Label>=Fields!MovieName.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
@@ -1014,7 +1019,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Total Revenue</Caption>
+                <Caption>Movies Revenue </Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -1044,10 +1049,10 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
-            <Top>2.13542in</Top>
-            <Left>4.63417in</Left>
-            <Height>2.47917in</Height>
-            <Width>4.47in</Width>
+            <Top>2.07639in</Top>
+            <Left>3.45708in</Left>
+            <Height>2in</Height>
+            <Width>3.44792in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -1059,10 +1064,10 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>4.61459in</Height>
+        <Height>4.07639in</Height>
         <Style />
       </Body>
-      <Width>9.10417in</Width>
+      <Width>6.905in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
@@ -1079,5 +1084,5 @@
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>9fb08ea1-48f6-44a5-8bb1-63b966a189ef</rd:ReportID>
+  <rd:ReportID>c89c8ac4-9ad0-4c4f-9c73-42147036cd06</rd:ReportID>
 </Report>

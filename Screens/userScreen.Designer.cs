@@ -31,12 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(userScreen));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Helptickets = new System.Windows.Forms.Button();
+            this.btnOrderFood = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.MintCream;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(145, 11);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
@@ -47,32 +48,32 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
-            this.panel1.Controls.Add(this.Helptickets);
+            this.panel1.Controls.Add(this.btnOrderFood);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(140, 600);
             this.panel1.TabIndex = 1;
             // 
-            // Helptickets
+            // btnOrderFood
             // 
-            this.Helptickets.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Helptickets.FlatAppearance.BorderSize = 0;
-            this.Helptickets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Helptickets.Font = new System.Drawing.Font("Impact", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Helptickets.ForeColor = System.Drawing.Color.MintCream;
-            this.Helptickets.Image = ((System.Drawing.Image)(resources.GetObject("Helptickets.Image")));
-            this.Helptickets.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.Helptickets.Location = new System.Drawing.Point(2, 11);
-            this.Helptickets.Margin = new System.Windows.Forms.Padding(2);
-            this.Helptickets.Name = "Helptickets";
-            this.Helptickets.Size = new System.Drawing.Size(129, 29);
-            this.Helptickets.TabIndex = 2;
-            this.Helptickets.Text = "Want to eat?";
-            this.Helptickets.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Helptickets.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Helptickets.UseVisualStyleBackColor = true;
-            this.Helptickets.Click += new System.EventHandler(this.Helptickets_Click);
+            this.btnOrderFood.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnOrderFood.FlatAppearance.BorderSize = 0;
+            this.btnOrderFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrderFood.Font = new System.Drawing.Font("Impact", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrderFood.ForeColor = System.Drawing.Color.MintCream;
+            this.btnOrderFood.Image = ((System.Drawing.Image)(resources.GetObject("btnOrderFood.Image")));
+            this.btnOrderFood.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnOrderFood.Location = new System.Drawing.Point(2, 11);
+            this.btnOrderFood.Margin = new System.Windows.Forms.Padding(2);
+            this.btnOrderFood.Name = "btnOrderFood";
+            this.btnOrderFood.Size = new System.Drawing.Size(129, 29);
+            this.btnOrderFood.TabIndex = 2;
+            this.btnOrderFood.Text = "Want to eat?";
+            this.btnOrderFood.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrderFood.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOrderFood.UseVisualStyleBackColor = true;
+            this.btnOrderFood.Click += new System.EventHandler(this.btnOrderFood_Click);
             // 
             // userScreen
             // 
@@ -96,6 +97,6 @@
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button Helptickets;
+        private System.Windows.Forms.Button btnOrderFood;
     }
 }

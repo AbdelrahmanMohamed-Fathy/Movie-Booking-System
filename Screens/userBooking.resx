@@ -117,21 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnOrderFood.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAAktJREFUSEut1WtoT3Ecx/H/mFoUiRbJA/MAIw+HeOCStiZJFC1DSYky2wMKSfHA
-        pWQmuZVbPHKN3O9hbkmUiNzS4oGxFCHxfp9LSWv/39l86tX/1+9/zul3fud7vifXzhQkv/8ly/EVN7AE
-        Z9CMUehwStGEcbiF31iKalxAhzMaD3AOF7ETz5O5b/D/dqcLTuMXfuIAduMHJmAm7uE4ZiNzRsKVDsBm
-        3MQa3MYgrMNDzMMb9EJwhqIeL1CLFkzBeHhHn3ACXrgc7zAQQemMRzgEL3Qdd+ADfoyz2IFCfMA1+P8s
-        BKUEbzEZjViMCrj3M1CF1/AZfEZ3rMIxBGUSLM1TcNVPcTkZu9L7yfgSnsC7OAkXNRF5sw/WufEOfKBu
-        20v0QM9k3AlD4DHGLdobD9vOevjG/hsvmKa1cQ08N2/mYns8zO1BWTyMtqYIfeD2GLdzQzyMzvHcvLH+
-        rQyzC2l1uC3FGIa7TpA6rI2H0TnpYtqMVeGDM6uxLB5GpWuFeZGrTpCNWBQPo3N8RkGxinpjPrY4QWx2
-        wzEWthBzEFPhW+zLFhz3eAwqccQJch42N+cOO0GuYAQ8NlN33QpX74qtfXMUtoXp2O8EeYb+8NgGJ0Lj
-        vm7C37fuRafBzplWmT3KruuxC50IjU0t3ecv8EXbhjlYAC9oMbyH8SvnRyk4ffEqHkYdtR+sd+8sLc3B
-        sJ0be5PvR6Z8RDek9W1Ds2RXYgW8S/tVV3hs5tjg7JZ2UbfJD7/8VPrr3Hd4TPpmZ4oPz8YWwmNbSS73
-        B3UkkFOLU0TzAAAAAElFTkSuQmCC
-</value>
-  </data>
 </root>
