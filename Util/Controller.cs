@@ -115,16 +115,16 @@ namespace Movie_Booking_System.Util
 
         public static DataTable GetTotalOrderPrice(String OrderID)   // Ahmad
         {
-            
-                string query = $@"
+
+            string query = $@"
         SELECT SUM( CAST(Orders_Details.OrderCount AS DECIMAL(7,2))  * FoodItems.Price) as TotalPrice
         FROM Orders_Details,FoodItems
         WHERE Orders_Details.FoodID = FoodItems.FoodID and Orders_Details.OrderID = " + OrderID;
 
-                return dbMan.ExecuteReader(query);
-            
+            return dbMan.ExecuteReader(query);
+
         }
-      
+
         public static int InsertAccount(string Fname, string Lname, string email, string pass, int PhoneNumber, string authority)
         {
             string query =
@@ -133,7 +133,7 @@ namespace Movie_Booking_System.Util
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public static userMode CheckUser(string Email,string Password, out int ID)
+        public static userMode CheckUser(string Email, string Password, out int ID)
         {
             string query =
                 "SELECT Authority,UserID\n" +
@@ -214,7 +214,7 @@ namespace Movie_Booking_System.Util
             return;
         }
 
-        public static int SubmitTicket(int UserID,string Header, string Content)
+        public static int SubmitTicket(int UserID, string Header, string Content)
         {
             string query =
                 "INSERT INTO HelpTickets (UserID,Header,Content)\n" +
@@ -268,10 +268,24 @@ namespace Movie_Booking_System.Util
         public static DataTable GetShowTimes(int MovieID)
         {
             string query =
-                "SELECT Shows.StartTime, Shows.EndTime, Shows.ShowDate\n"+
-                "FROM Shows, Movies\n"+
+                "SELECT Shows.StartTime, Shows.EndTime, Shows.ShowDate\n" +
+                "FROM Shows, Movies\n" +
                 $"WHERE Movies.MovieID = {MovieID} AND Movies.MovieID = Shows.MovieID\n";
             return dbMan.ExecuteReader(query);
+        }
+
+        public static int GetMovieReviews(int MovieID)
+        {
+            string query =
+                "SELECT AVG(MovieReviews.Rating) AS Rating\n" +
+                "FROM MovieReviews, Movies\n" +
+                "WHERE Movies.MovieID = MovieReviews.MovieID\n";
+            object Rating = dbMan.ExecuteScalar(query);
+            if (Rating != null)
+                return Convert.ToInt32(Rating);
+            else
+                return 0;
+
         }
     }
 }
