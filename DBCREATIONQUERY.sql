@@ -162,28 +162,16 @@ FOREIGN KEY         (UserID)        REFERENCES Accounts
 );
 ---------------------------------------
 CREATE TABLE MovieReviews (
-ReviewID			INTEGER			NOT NULL IDENTITY(1,1),
 UserID              INTEGER         NOT NULL,
 MovieID             INTEGER         NOT NULL,
 Rating				INTEGER			NOT NULL CHECK (Rating > 0 AND Rating <6),
-Description   		VARCHAR(100)	NOT NULL DEFAULT '',
-PRIMARY KEY			(ReviewID),
+PRIMARY KEY			(MovieID,UserID),
 FOREIGN KEY         (MovieID)       REFERENCES Movies,
 FOREIGN KEY         (UserID)        REFERENCES Accounts
 );
 ---------------------------------------
-CREATE TABLE FoodReviews (
-ReviewID			INTEGER			NOT NULL IDENTITY(1,1),
-UserID              INTEGER         NOT NULL,
-FoodID              INTEGER         NOT NULL,
-Rating				INTEGER			NOT NULL CHECK (Rating > 0 AND Rating <6),
-Description         VARCHAR(100)	NOT NULL DEFAULT '',
-PRIMARY KEY			(ReviewID),
-FOREIGN KEY         (FoodID)        REFERENCES FoodItems,
-FOREIGN KEY         (UserID)        REFERENCES Accounts
-);
----------------------------------------
 GO
+
 INSERT INTO Accounts VALUES ('Ahmed', 'Soltan', 'A7medsoltan2004@gmail.com', '12345', 1203547383, 'Admin')
 INSERT INTO Accounts (Fname,Lname,Email,Pass,Authority) VALUES ('Abdelrahman', 'Fathy', 'test@test.com','test','Client')
 
@@ -250,7 +238,6 @@ INSERT INTO Orders (UserID) VALUES (5267)
 
 INSERT INTO Orders_Details (OrderID, FoodID, OrderCount) VALUES (1, 2, 6)
 INSERT INTO Orders_Details (OrderID, FoodID, OrderCount) VALUES (1, 1, 3)
-INSERT INTO HelpTickets (UserID,Header,Content) VALUES (5267,'Issue with Orders','kofta gedan 2: electric boogaloo')
 
 SELECT FoodItems.FoodName, SUM(OrderCount) AS Quantity , SUM(OrderCount*FoodItems.Price) AS Revenue
 FROM Orders_Details, FoodItems
