@@ -146,7 +146,7 @@
             this.Createaccclk.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Createaccclk.ForeColor = System.Drawing.Color.White;
             this.Createaccclk.Location = new System.Drawing.Point(644, 480);
-            this.Createaccclk.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Createaccclk.Margin = new System.Windows.Forms.Padding(5);
             this.Createaccclk.Name = "Createaccclk";
             this.Createaccclk.Size = new System.Drawing.Size(197, 57);
             this.Createaccclk.TabIndex = 5;
@@ -352,7 +352,7 @@
             this.uppercaselbl.AutoSize = true;
             this.uppercaselbl.BackColor = System.Drawing.Color.Transparent;
             this.uppercaselbl.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uppercaselbl.Location = new System.Drawing.Point(59, 469);
+            this.uppercaselbl.Location = new System.Drawing.Point(60, 423);
             this.uppercaselbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uppercaselbl.Name = "uppercaselbl";
             this.uppercaselbl.Size = new System.Drawing.Size(349, 20);
@@ -365,7 +365,7 @@
             this.numericvallbl.AutoSize = true;
             this.numericvallbl.BackColor = System.Drawing.Color.Transparent;
             this.numericvallbl.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericvallbl.Location = new System.Drawing.Point(59, 493);
+            this.numericvallbl.Location = new System.Drawing.Point(59, 463);
             this.numericvallbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.numericvallbl.Name = "numericvallbl";
             this.numericvallbl.Size = new System.Drawing.Size(334, 20);
@@ -378,7 +378,7 @@
             this.specialcharlbl.AutoSize = true;
             this.specialcharlbl.BackColor = System.Drawing.Color.Transparent;
             this.specialcharlbl.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.specialcharlbl.Location = new System.Drawing.Point(59, 419);
+            this.specialcharlbl.Location = new System.Drawing.Point(59, 480);
             this.specialcharlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.specialcharlbl.Name = "specialcharlbl";
             this.specialcharlbl.Size = new System.Drawing.Size(352, 20);
@@ -391,7 +391,7 @@
             this.passlenlbl.AutoSize = true;
             this.passlenlbl.BackColor = System.Drawing.Color.Transparent;
             this.passlenlbl.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passlenlbl.Location = new System.Drawing.Point(59, 517);
+            this.passlenlbl.Location = new System.Drawing.Point(59, 500);
             this.passlenlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.passlenlbl.Name = "passlenlbl";
             this.passlenlbl.Size = new System.Drawing.Size(290, 20);

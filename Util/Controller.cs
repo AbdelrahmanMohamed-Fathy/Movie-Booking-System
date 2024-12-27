@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Movie_Booking_System.Util
@@ -129,7 +131,7 @@ namespace Movie_Booking_System.Util
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public static userMode FetchUser(string Email, string Password, out int ID)
+        public static userMode CheckUser(string Email,string Password, out int ID)
         {
             string query =
                 "SELECT Authority,UserID\n" +
@@ -153,12 +155,19 @@ namespace Movie_Booking_System.Util
             return HelperFunctions.ParseAuthorityToEnum(Result);
         }
 
-        public static DataTable GetTickets()
+        public static DataTable GetTickets(bool unSeenOnly = true)
         {
-            string query =
-                "SELECT HelpTicketID, Header, Fname, Lname\n" +
-                "FROM HelpTickets, Accounts\n" +
-                "WHERE HelpTickets.UserID = Accounts.UserID\n";
+            string query;
+            if (unSeenOnly)
+                query =
+                    "SELECT HelpTicketID, Header, Fname, Lname\n" +
+                    "FROM HelpTickets, Accounts\n" +
+                    $"WHERE HelpTickets.UserID = Accounts.UserID AND Seen=0\n";
+            else
+                query =
+                    "SELECT HelpTicketID, Header, Fname, Lname\n" +
+                    "FROM HelpTickets, Accounts\n" +
+                    "WHERE HelpTickets.UserID = Accounts.UserID\n";
 
             return dbMan.ExecuteReader(query);
         }
@@ -173,20 +182,13 @@ namespace Movie_Booking_System.Util
             return dbMan.ExecuteReader(query);
         }
 
-        public static DataTable GetTicket(int TicketID, bool unSeenOnly = true)
+        public static DataTable GetTicket(int TicketID)
         {
 
-            string query;
-            if (unSeenOnly)
-                query =
-                    "SELECT HelpTickets.*, Fname, Lname\n" +
-                    "FROM HelpTickets, Accounts\n" +
-                    $"WHERE HelpTickets.UserID = Accounts.UserID AND HelpTickets.HelpTicketID = {TicketID}\n";
-            else
-                query =
-                    "SELECT HelpTickets.*, Fname, Lname\n" +
-                    "FROM HelpTickets, Accounts\n" +
-                    $"WHERE HelpTickets.UserID = Accounts.UserID AND HelpTickets.HelpTicketID = {TicketID}\n";
+            string query =
+                "SELECT HelpTickets.*, Fname, Lname\n" +
+                "FROM HelpTickets, Accounts\n" +
+                $"WHERE HelpTickets.UserID = Accounts.UserID AND HelpTickets.HelpTicketID = {TicketID}\n";
 
             return dbMan.ExecuteReader(query);
         }
@@ -194,9 +196,42 @@ namespace Movie_Booking_System.Util
         public static void MarkTicket(int TicketID)
         {
             string query =
-                "UPDATE HelpTickets(Seen)\n" +
-                "SET 1\n" +
+                "UPDATE HelpTickets\n" +
+                "SET Seen=1\n" +
                 $"WHERE HelpTicketID = {TicketID}\n";
+            dbMan.ExecuteNonQuery(query);
+            return;
+        }
+
+        public static int SubmitTicket(int UserID,string Header, string Content)
+        {
+            string query =
+                "INSERT INTO HelpTickets (UserID,Header,Content)\n" +
+                $"VALUES ({UserID},'{Header}','{Content}')\n";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public static DataTable FetchUser(int UserID)
+        {
+            string query =
+                "SELECT Fname, Lname\n" +
+                "FROM Accounts\n" +
+                $"WHERE UserID = {UserID}\n";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public static DataTable GetCurrentShows()
+        {
+            string query =
+                "SELECT M.MovieID, M.MovieName, M.MovieDescription, M.MoviePicturePath, AVG(R.Rating) AS Rating\n" +
+                "FROM\n" +
+                    "(\n" +
+                    "SELECT DISTINCT Movies.*\n" +
+                    "FROM Shows, Movies\n" +
+                    "WHERE Shows.MovieID = Movies.MovieID) M, MovieReviews R\n" +
+                "WHERE R.MovieID = M.MovieID\n" +
+                "GROUP BY M.MovieID , M.MovieName, M.MovieDescription, M.MoviePicturePath\n";
+            return dbMan.ExecuteReader(query);
         }
     }
 }

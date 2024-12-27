@@ -29,6 +29,7 @@ namespace Movie_Booking_System.Screens
             parentForm.Authority = userMode.Guest;
             visiblepass.Hide();
             visibleconfpass.Hide();
+            parentForm.HideStatus();
         }
 
         private void Fname_Enter(object sender, EventArgs e)
@@ -194,9 +195,18 @@ namespace Movie_Booking_System.Screens
             }
             if (IsValid)
             {
-                //exception error
-                //Controller.InsertAccount(Fname.Text, Lname.Text, Email.Text, password.Text, Convert.ToInt32(phonenum.Text), "Client");
-                MessageBox.Show("user entered successfully");
+                string authority = HelperFunctions.ParseEnumToAuthority(userMode.User);
+                if (phonenum.Text == "Phone Number (Optional)")
+                {
+                    Controller.InsertAccount(Fname.Text, Lname.Text, Email.Text, password.Text, -1 , authority);
+                }
+                else
+                {
+                    Controller.InsertAccount(Fname.Text, Lname.Text, Email.Text, password.Text, Convert.ToInt32(phonenum.Text), authority);
+                }
+                MessageBox.Show("New Account Created.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                parentForm.ShowStatus();
+                parentForm.LoadNewForm(new loginScreen(parentForm,parentForm.Authority));
             }
         }
 
@@ -305,12 +315,12 @@ namespace Movie_Booking_System.Screens
             if (confirmpass.UseSystemPasswordChar == true)
             {
                 confirmpass.UseSystemPasswordChar = false;
-                visibleconfpass.Image = Image.FromFile("C:\\Users\\User\\Source\\Repos\\Movie-Booking-System\\Assets\\Closed-eye-icon.png");
+                visibleconfpass.Image = Image.FromFile("..\\..\\Assets\\Closed-eye-icon.png");
             }
             else
             {
                 confirmpass.UseSystemPasswordChar = true;
-                visibleconfpass.Image = Image.FromFile("C:\\Users\\User\\Source\\Repos\\Movie-Booking-System\\Assets\\Open-eye-icon.png");
+                visibleconfpass.Image = Image.FromFile("..\\..\\Assets\\Open-eye-icon.png");
             }
 
         }
@@ -323,14 +333,14 @@ namespace Movie_Booking_System.Screens
             if (password.UseSystemPasswordChar == true)
             {
                 password.UseSystemPasswordChar = false;
-                visiblepass.Image = Image.FromFile("C:\\Users\\User\\Source\\Repos\\Movie-Booking-System\\Assets\\Closed-eye-icon.png");
+                visiblepass.Image = Image.FromFile("..\\..\\Assets\\Closed-eye-icon.png");
                 
 
             }
             else
             {
                 password.UseSystemPasswordChar = true;
-                visiblepass.Image = Image.FromFile("C:\\Users\\User\\Source\\Repos\\Movie-Booking-System\\Assets\\Open-eye-icon.png");
+                visiblepass.Image = Image.FromFile("..\\..\\Assets\\Open-eye-icon.png");
 
             }
            
@@ -395,7 +405,7 @@ namespace Movie_Booking_System.Screens
         private bool ValidatePasswordlbl(string input)
         {
             var pass = input;
-            bool ispassvalid = true;
+            bool ispassnotvalid = true;
             lowercaselbl.ForeColor = Color.Red;
             uppercaselbl.ForeColor = Color.Red;
             numericvallbl.ForeColor = Color.Red;
@@ -414,29 +424,29 @@ namespace Movie_Booking_System.Screens
             if (hasLowerChar.IsMatch(input))
             {
                 lowercaselbl.ForeColor = Color.Green;
-                ispassvalid = false;
+                ispassnotvalid = false;
             }
             if (hasUpperChar.IsMatch(input))
             {
                 uppercaselbl.ForeColor = Color.Green;
-                ispassvalid = false;
+                ispassnotvalid = false;
             }
             if (hasNumber.IsMatch(input))
             {
                 numericvallbl.ForeColor = Color.Green;
-                ispassvalid = false;
+                ispassnotvalid = false;
             }
             if (hasSymbols.IsMatch(input))
             {
                 specialcharlbl.ForeColor = Color.Green;
-                ispassvalid = false;
+                ispassnotvalid = false;
             }
             if (hasMiniMaxChars.IsMatch(input))
             {
                 passlenlbl.ForeColor = Color.Green;
-                ispassvalid = false;
+                ispassnotvalid = false;
             }
-            if(ispassvalid)
+            if (!ispassnotvalid)
             {
                 return true;
             }

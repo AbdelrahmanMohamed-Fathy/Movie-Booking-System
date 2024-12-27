@@ -1,5 +1,6 @@
-﻿using Movie_Booking_System.Screens.FoodOrders;
+﻿using Movie_Booking_System.Util;
 using System;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -18,37 +19,12 @@ namespace Movie_Booking_System.Screens
 
         private void userScreen_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "Enter Movie Name")
-            {
-                textBox1.Text = "";
-                textBox1.ForeColor = Color.Black;
-                textBox1.Font =new Font(textBox1.Font,FontStyle.Regular);
-            }
-        }
-
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            if(string.IsNullOrEmpty(textBox1.Text))
-            {
-                textBox1.Text = "Enter Movie Name";
-                textBox1.ForeColor = Color.Silver;
-                textBox1.Font = new Font(textBox1.Font, FontStyle.Italic);
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
+            DataTable dt = Controller.GetCurrentShows();
+            if (dt != null )
+                foreach (DataRow r in dt.Rows)
+                {
+                    flowLayoutPanel1.Controls.Add(new Controls.MovieCard(parentForm,r));
+                }
         }
 
         private void button1_Click(object sender, EventArgs e)//Ahmad

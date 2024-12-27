@@ -1,8 +1,8 @@
 ----------------------------------------Database Creation----------------------------------------
 USE master;
 GO
-ALTER DATABASE MovieBooking_system SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-GO
+--ALTER DATABASE MovieBooking_system SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+--GO
 DROP DATABASE IF EXISTS MovieBooking_system;
 GO
 CREATE DATABASE MovieBooking_system;
@@ -15,9 +15,11 @@ RETURNS TIME
 AS
 BEGIN
     DECLARE @EndTime TIME;
-    SELECT @ENDTime = StartTime + RunTime
+
+    SELECT @EndTime = DATEADD(MINUTE, DATEDIFF(MINUTE,0,Runtime),@StartTime)
     FROM Movies
     WHERE MovieID = @MovieID;
+
     RETURN @EndTime;
 END;
 GO
@@ -55,7 +57,7 @@ Fname			VARCHAR(20)		NOT NULL,
 Lname			VARCHAR(20)		NOT NULL,
 Email			VARCHAR(50)		NOT NULL UNIQUE,
 Pass			VARCHAR(64)		NOT NULL,
-PhoneNumber		INTEGER,
+PhoneNumber		INTEGER         NOT NULL DEFAULT -1,
 Authority		VARCHAR(10)		NOT NULL CHECK (Authority IN ('Admin', 'Employee', 'Client')),
 PRIMARY KEY		(UserID)
 );
@@ -66,6 +68,8 @@ MovieID				INTEGER			NOT NULL IDENTITY(1,1),
 MovieName			VARCHAR(50)		NOT NULL,
 Director			VARCHAR(20)		NOT NULL,
 Runtime				TIME			NOT NULL,
+MovieDescription    VARCHAR(200)    NOT NULL DEFAULT '',
+MoviePicturePath    AS '..\\..\\Assests\\Movies\\' + MovieName + '.png',
 PRIMARY KEY			(MovieID),
 );
 ----------------------------------------
@@ -91,9 +95,9 @@ ShowID				INTEGER			NOT NULL IDENTITY(1,1),
 MovieID             INTEGER         NOT NULL,
 CinemaID            INTEGER         NOT NULL,
 ShowDate			DATE			NOT NULL,
-StartTime			TIME			NOT NULL,
-EndTime             AS dbo.GetEndTime(MovieID,StartTime),
-Old                 BIT             NOT NULL,
+StartDate			TIME			NOT NULL,
+EndTime             AS dbo.GetEndTime(MovieID,StartDate),
+Old                 BIT             NOT NULL DEFAULT 0,
 PRIMARY KEY			(ShowID),
 FOREIGN KEY         (MovieID)       REFERENCES Movies,
 FOREIGN KEY         (CinemaID)      REFERENCES Cinemas
@@ -153,7 +157,7 @@ CREATE TABLE MovieReviews (
 ReviewID			INTEGER			NOT NULL IDENTITY(1,1),
 UserID              INTEGER         NOT NULL,
 MovieID             INTEGER         NOT NULL,
-Rating				INTEGER			NOT NULL,
+Rating				INTEGER			NOT NULL CHECK (Rating > 0 AND Rating <6),
 Description   		VARCHAR(100)	NOT NULL DEFAULT '',
 PRIMARY KEY			(ReviewID),
 FOREIGN KEY         (MovieID)       REFERENCES Movies,
@@ -164,35 +168,48 @@ CREATE TABLE FoodReviews (
 ReviewID			INTEGER			NOT NULL IDENTITY(1,1),
 UserID              INTEGER         NOT NULL,
 FoodID              INTEGER         NOT NULL,
-Rating				INTEGER			NOT NULL,
+Rating				INTEGER			NOT NULL CHECK (Rating > 0 AND Rating <6),
 Description         VARCHAR(100)	NOT NULL DEFAULT '',
 PRIMARY KEY			(ReviewID),
 FOREIGN KEY         (FoodID)        REFERENCES FoodItems,
 FOREIGN KEY         (UserID)        REFERENCES Accounts
 );
 ---------------------------------------
+GO
+INSERT INTO Accounts VALUES ('Ahmed', 'Soltan', 'A7medsoltan2004@gmail.com', '12345', 1203547383, 'Admin')
 
-INSERT INTO Accounts VALUES (N'Ahmed', N'Soltan', N'A7medsoltan2004@gmail.com', N'12345', 1203547383, N'Admin')
-INSERT INTO Movies VALUES ('La La Land', N'Damien Chazelle', CAST(N'02:08:00' AS Time))
-INSERT INTO Movies VALUES ('The Shawshank Redemption', N'Frank Darabont', CAST(N'02:22:00' AS Time))
-INSERT INTO Movies VALUES ('The Godfather', N'Francis Ford Coppola', CAST(N'02:55:00' AS Time))
-INSERT INTO Movies VALUES ('The Dark Knight', N'Christopher Nolan', CAST(N'02:32:00' AS Time)) 
-INSERT INTO Movies VALUES ('Pulp Fiction', N'Quentin Tarantino', CAST(N'02:34:00' AS Time)) 
-INSERT INTO Movies VALUES ('The Lord of the Rings: The Return of the King', N'Peter Jackson', CAST(N'03:21:00' AS Time))
-INSERT INTO Movies VALUES ('Fight Club', N'David Fincher', CAST(N'02:19:00' AS Time)) 
-INSERT INTO Movies VALUES ('Inception', N'Christopher Nolan', CAST(N'02:28:00' AS Time)) 
-INSERT INTO Movies VALUES ('Forrest Gump', N'Robert Zemeckis', CAST(N'02:22:00' AS Time))
-INSERT INTO Movies VALUES ('The Matrix', N'Lana Wachowski', CAST(N'02:16:00' AS Time)) 
-INSERT INTO Movies VALUES ('Goodfellas', N'Martin Scorsese', CAST(N'02:26:00' AS Time))
-INSERT INTO Movies VALUES ('Se7en', N'David Fincher', CAST(N'02:07:00' AS Time)) 
-INSERT INTO Movies VALUES ('Interstellar', N'Christopher Nolan', CAST(N'02:49:00' AS Time)) 
-INSERT INTO Movies VALUES ('The Silence of the Lambs', N'Jonathan Demme', CAST(N'01:58:00' AS Time)) 
-INSERT INTO Movies VALUES ('The Green Mile', N'Frank Darabont', CAST(N'03:09:00' AS Time)) 
-INSERT INTO Movies VALUES ('Gladiator', N'Ridley Scott', CAST(N'02:35:00' AS Time)) 
-INSERT INTO Movies VALUES ('The Prestige', N'Christopher Nolan', CAST(N'02:10:00' AS Time)) 
-INSERT INTO Movies VALUES ('Memento', N'Christopher Nolan', CAST(N'01:53:00' AS Time)) 
-INSERT INTO Movies VALUES ('The Departed', N'Martin Scorsese', CAST(N'02:31:00' AS Time)) 
-INSERT INTO Movies VALUES ('Whiplash', N'Damien Chazelle', CAST(N'01:47:00' AS Time))
-INSERT INTO Movies VALUES ('Django Unchained', N'Quentin Tarantino', CAST(N'02:45:00' AS Time))
+
+INSERT INTO Cinemas (CinemaType, CinemaManagerID) VALUES ('IMAX',5267)
+
+
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('La La Land', 'Damien Chazelle', CAST(N'02:08:00' AS Time))
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('The Shawshank Redemption', 'Frank Darabont', CAST(N'02:22:00' AS Time))
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('The Godfather', 'Francis Ford Coppola', CAST(N'02:55:00' AS Time))
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('The Dark Knight', 'Christopher Nolan', CAST(N'02:32:00' AS Time)) 
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Pulp Fiction', 'Quentin Tarantino', CAST(N'02:34:00' AS Time)) 
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('The Lord of the Rings: The Return of the King', N'Peter Jackson', CAST(N'03:21:00' AS Time))
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Fight Club', 'David Fincher', CAST(N'02:19:00' AS Time)) 
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Inception', 'Christopher Nolan', CAST(N'02:28:00' AS Time)) 
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Forrest Gump', 'Robert Zemeckis', CAST(N'02:22:00' AS Time))
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('The Matrix', 'Lana Wachowski', CAST(N'02:16:00' AS Time)) 
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Goodfellas', 'Martin Scorsese', CAST(N'02:26:00' AS Time))
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Se7en', N'David Fincher', CAST(N'02:07:00' AS Time)) 
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Interstellar', 'Christopher Nolan', CAST(N'02:49:00' AS Time)) 
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('The Silence of the Lambs', N'Jonathan Demme', CAST(N'01:58:00' AS Time)) 
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('The Green Mile', 'Frank Darabont', CAST(N'03:09:00' AS Time)) 
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Gladiator', 'Ridley Scott', CAST(N'02:35:00' AS Time)) 
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('The Prestige', 'Christopher Nolan', CAST(N'02:10:00' AS Time)) 
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Memento', 'Christopher Nolan', CAST(N'01:53:00' AS Time)) 
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('The Departed', 'Martin Scorsese', CAST(N'02:31:00' AS Time)) 
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Whiplash', 'Damien Chazelle', CAST(N'01:47:00' AS Time))
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Django Unchained', 'Quentin Tarantino', CAST(N'02:45:00' AS Time))
+GO
+
+INSERT INTO Shows (MovieID,CinemaID,ShowDate,StartDate) VALUES (1,1,CAST('12-30-2024' AS DATE),CAST('02:00:00' AS Time))
+
+
+INSERT INTO MovieReviews (UserID, MovieID, Rating) VALUES (5267,1,4)
+
 
 INSERT INTO HelpTickets (UserID,Header,Content) VALUES (5267,'help','kofta gedan')
+INSERT INTO HelpTickets (UserID,Header,Content) VALUES (5267,'Issue with Orders','kofta gedan 2: electric boogaloo')
