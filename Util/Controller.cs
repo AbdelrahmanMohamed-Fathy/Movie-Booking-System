@@ -24,7 +24,7 @@ namespace Movie_Booking_System.Util
         public static int InsertNewOrder(string UserID)  // ahmad
         {
             string query =
-                "INSERT INTO AllOrders (UserID)\n" +
+                "INSERT INTO Orders (UserID)\n" +
                 $"Values ({UserID})";
             return dbMan.ExecuteNonQuery(query);
         }
@@ -33,7 +33,7 @@ namespace Movie_Booking_System.Util
         {
             string query = $@"
         SELECT ISNULL(MAX(OrderID),0)
-        FROM AllOrders
+        FROM Orders
         WHERE UserID = " + UserID.ToString();
 
             return (int)dbMan.ExecuteScalar(query);
@@ -55,11 +55,11 @@ namespace Movie_Booking_System.Util
             return dbMan.ExecuteReader(query);
         }
 
-        public static int InsertFoodOrder(string DoodID, string OrderCount, string Fulfilled,String OrderID)  // ahmad
+        public static int InsertFoodOrder(string DoodID, string OrderCount, string OrderID)  // ahmad
         {
             string query =
-                "INSERT INTO Orders_Details (FoodID, OrderCount, Fulfilled, OrderID)\n" +
-                $"Values ({DoodID}, {OrderCount}, {Fulfilled}, {OrderID})";
+                "INSERT INTO Orders_Details (FoodID, OrderCount, OrderID)\n" +
+                $"Values ({DoodID}, {OrderCount}, {OrderID})";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -84,9 +84,9 @@ namespace Movie_Booking_System.Util
         public static DataTable GetOrders()     // ahmad
         {
             string query =
-                "SELECT Orders_Details.OrderID, Orders_Details.FoodID, FoodItems.FoodName, Orders_Details.OrderCount, FoodItems.Price, Orders_Details.Fulfilled, AllOrders.UserID \n" +
-                "FROM Orders_Details, FoodItems, AllOrders\n" +
-                "WHERE AllOrders.OrderID = Orders_Details.OrderID and Orders_Details.FoodID = FoodItems.FoodID\n Order by Orders_Details.OrderID";
+                "SELECT Orders_Details.OrderID, Orders_Details.FoodID, FoodItems.FoodName, Orders_Details.OrderCount, FoodItems.Price, Orders_Details.Fulfilled, Orders.UserID \n" +
+                "FROM Orders_Details, FoodItems, Orders\n" +
+                "WHERE Orders.OrderID = Orders_Details.OrderID and Orders_Details.FoodID = FoodItems.FoodID\n Order by Orders_Details.OrderID";
 
             return dbMan.ExecuteReader(query);
         }
@@ -94,13 +94,13 @@ namespace Movie_Booking_System.Util
         public static int UpdateOrder(int OrderID)   // ahmad
         {
             string query =
-                "UPDATE Orders_Details\n" +
+                "UPDATE Orders\n" +
                 "SET Fulfilled = 1\n" +
                 $"WHERE OrderID = {OrderID}\n";
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public static int GetAllOrdersCountFromFood(int FoodID)   // Ahmad
+        public static int GetOrdersCountFromFood(int FoodID)   // Ahmad
         {
             string query = $@"
         SELECT ISNULL(SUM(OrderCount),0)
@@ -123,7 +123,7 @@ namespace Movie_Booking_System.Util
             
         }
 
-        public static int InsertAccount(string Fname, string Lname, string email, string pass, int PhoneNumber, userMode authority)
+        public static int InsertAccount(string Fname, string Lname, string email, string pass, int PhoneNumber, string authority)
         {
             string query =
                 "INSERT INTO Accounts (Fname, Lname, Email, Pass, PhoneNumber, Authority)\n" +

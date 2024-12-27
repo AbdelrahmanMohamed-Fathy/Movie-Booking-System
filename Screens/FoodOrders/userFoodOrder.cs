@@ -63,8 +63,8 @@ namespace Movie_Booking_System.Screens.FoodOrders
                 {
                     FoodQty = Convert.ToInt32(table.Rows[x][0].ToString());
                     textBox5.Text = FoodQty.ToString();
-                    textBox6.Text = Controller.GetAllOrdersCountFromFood(Convert.ToInt32(comboBox1.Text)).ToString();
-                    textBox3.Text = (FoodQty - Controller.GetAllOrdersCountFromFood(Convert.ToInt32(comboBox1.Text))).ToString(); 
+                    textBox6.Text = Controller.GetOrdersCountFromFood(Convert.ToInt32(comboBox1.Text)).ToString();
+                    textBox3.Text = (FoodQty - Controller.GetOrdersCountFromFood(Convert.ToInt32(comboBox1.Text))).ToString(); 
                     FoodPrice = Convert.ToInt32(table.Rows[x][1].ToString());
                     textBox2.Text = FoodPrice.ToString();
                     textBox1.Text = "";
@@ -86,10 +86,10 @@ namespace Movie_Booking_System.Screens.FoodOrders
                 for (int x = 0; x < table.Rows.Count; x++)
                 {
                     FoodQty = Convert.ToInt32(table.Rows[x][0].ToString());
-                    textBox3.Text = (FoodQty - Controller.GetAllOrdersCountFromFood(Convert.ToInt32(comboBox1.Text))).ToString();
+                    textBox3.Text = (FoodQty - Controller.GetOrdersCountFromFood(Convert.ToInt32(comboBox1.Text))).ToString();
 
                     textBox5.Text = FoodQty.ToString();
-                    textBox6.Text = Controller.GetAllOrdersCountFromFood(Convert.ToInt32(comboBox1.Text)).ToString();
+                    textBox6.Text = Controller.GetOrdersCountFromFood(Convert.ToInt32(comboBox1.Text)).ToString();
 
                     FoodPrice = Convert.ToInt32(table.Rows[x][1].ToString());
                     textBox2.Text = FoodPrice.ToString();
@@ -144,9 +144,9 @@ namespace Movie_Booking_System.Screens.FoodOrders
                         Controller.InsertFoodOrder(comboBox1.Text, textBox1.Text, "0", textBox7.Text);
                         MessageBox.Show("Your order was added succesfully ...");
 
-                        textBox3.Text = (FoodQty - Controller.GetAllOrdersCountFromFood(Convert.ToInt32(comboBox1.Text))).ToString();
+                        textBox3.Text = (FoodQty - Controller.GetOrdersCountFromFood(Convert.ToInt32(comboBox1.Text))).ToString();
                         textBox5.Text = FoodQty.ToString();
-                        textBox6.Text = Controller.GetAllOrdersCountFromFood(Convert.ToInt32(comboBox1.Text)).ToString();
+                        textBox6.Text = Controller.GetOrdersCountFromFood(Convert.ToInt32(comboBox1.Text)).ToString();
                         DataTable tablePrice = Controller.GetTotalOrderPrice(textBox7.Text);
                         textBox8.Text = tablePrice.Rows[0][0].ToString();
                         LoadAllOrders();

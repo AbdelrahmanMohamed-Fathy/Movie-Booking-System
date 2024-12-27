@@ -315,6 +315,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\FoodOrders\userFoodOrder.resx">
       <DependentUpon>userFoodOrder.cs</DependentUpon>
+	</EmbeddedResource>
     <EmbeddedResource Include="Screens\AdminScreens\adminDashBoard.resx">
       <DependentUpon>adminDashBoard.cs</DependentUpon>
     </EmbeddedResource>

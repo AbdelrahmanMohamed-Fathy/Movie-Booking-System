@@ -1,4 +1,5 @@
-﻿using Movie_Booking_System.Util;
+﻿using Movie_Booking_System.Screens.FoodOrders;
+using Movie_Booking_System.Util;
 using System;
 using System.Data;
 using System.Drawing;
@@ -25,19 +26,6 @@ namespace Movie_Booking_System.Screens
                 {
                     flowLayoutPanel1.Controls.Add(new Controls.MovieCard(parentForm,r));
                 }
-        }
-
-        private void button1_Click(object sender, EventArgs e)//Ahmad
-        {
-            String UserID = "1"; // Select user from form
-            userFoodOrder userFoodOrder1 = new userFoodOrder(UserID);
-            userFoodOrder1.ShowDialog(this);
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            employeeFulfillOrder employeeFulfillOrder1 = new employeeFulfillOrder();
-            employeeFulfillOrder1.ShowDialog(this);
         }
     }
 }
