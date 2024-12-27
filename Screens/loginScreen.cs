@@ -35,6 +35,9 @@ namespace Movie_Booking_System.Screens
                     case userMode.Admin:
                         parentForm.LoadNewForm(new AdminScreens.adminDashBoard(parentForm, parentForm.Authority));
                         break;
+                    case userMode.Employee:
+                        parentForm.LoadNewForm(new Screens.employeeDashBoard(parentForm, parentForm.Authority));
+                        break;
                     case userMode.Guest:
                     case userMode.User:
                     default:
