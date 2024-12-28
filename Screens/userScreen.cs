@@ -35,5 +35,13 @@ namespace Movie_Booking_System.Screens
             else
                 parentForm.LoadNewForm(new Screens.FoodOrders.userFoodOrder(parentForm, parentForm.Authority));
         }
+
+        private void btnHelpTicket_Click(object sender, EventArgs e)
+        {
+            if (parentForm.Authority == userMode.Guest)
+                parentForm.LoadNewForm(new Screens.loginScreen(parentForm, parentForm.Authority));
+            else
+                parentForm.LoadNewForm(new Screens.HelpTickets.userSubmitHelpTicket(parentForm, parentForm.Authority));
+        }
     }
 }

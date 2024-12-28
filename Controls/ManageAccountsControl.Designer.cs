@@ -30,7 +30,6 @@
         {
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnModifyAccounts = new System.Windows.Forms.Button();
-            this.btnViewReports = new System.Windows.Forms.Button();
             this.btnAddAccountAdmin = new System.Windows.Forms.Button();
             this.panelmngacc = new System.Windows.Forms.Panel();
             this.panelmngacc.SuspendLayout();
@@ -70,22 +69,6 @@
             this.btnModifyAccounts.UseVisualStyleBackColor = false;
             this.btnModifyAccounts.Click += new System.EventHandler(this.btnModifyAccounts_Click);
             // 
-            // btnViewReports
-            // 
-            this.btnViewReports.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnViewReports.BackColor = System.Drawing.Color.Transparent;
-            this.btnViewReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewReports.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewReports.ForeColor = System.Drawing.Color.Teal;
-            this.btnViewReports.Location = new System.Drawing.Point(12, 311);
-            this.btnViewReports.Name = "btnViewReports";
-            this.btnViewReports.Size = new System.Drawing.Size(171, 62);
-            this.btnViewReports.TabIndex = 7;
-            this.btnViewReports.Text = "View Reports.";
-            this.btnViewReports.UseVisualStyleBackColor = false;
-            // 
             // btnAddAccountAdmin
             // 
             this.btnAddAccountAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -107,7 +90,6 @@
             // 
             this.panelmngacc.BackColor = System.Drawing.Color.Transparent;
             this.panelmngacc.Controls.Add(this.btnAddAccountAdmin);
-            this.panelmngacc.Controls.Add(this.btnViewReports);
             this.panelmngacc.Controls.Add(this.btnModifyAccounts);
             this.panelmngacc.Controls.Add(this.btnDeleteAccount);
             this.panelmngacc.Location = new System.Drawing.Point(0, 120);
@@ -132,7 +114,6 @@
 
         private System.Windows.Forms.Button btnDeleteAccount;
         private System.Windows.Forms.Button btnModifyAccounts;
-        private System.Windows.Forms.Button btnViewReports;
         private System.Windows.Forms.Button btnAddAccountAdmin;
         private System.Windows.Forms.Panel panelmngacc;
     }

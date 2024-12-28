@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Reporting.Map.WebForms.BingMaps;
+using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
+using System;
 using System.Data;
 using System.Runtime.Remoting.Messaging;
 using System.Text.RegularExpressions;
@@ -15,10 +17,15 @@ namespace Movie_Booking_System.Util
         {
             dbMan.CloseConnection();
         }
-
         public static DataTable showallMovies()
         {
             string query = $"SELECT * FROM Movies";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public static DataTable Getallfooditems()
+        {
+            string query = $"SELECT * FROM FoodItems";
             return dbMan.ExecuteReader(query);
         }
         public static DataTable Getauthority()
@@ -57,6 +64,13 @@ namespace Movie_Booking_System.Util
             string query =
                 "INSERT INTO Orders (UserID)\n" +
                 $"Values ({UserID})";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public static int AddFoodItm(string foodname,int qty,int price,string desc)
+        {
+            string query =
+                            "INSERT INTO Student (FoodName, FoodQty, Price, FoodDescription) " +
+                            $"Values ('{foodname}' , {qty} , {price}, '{desc}');";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -352,8 +366,29 @@ namespace Movie_Booking_System.Util
             string query =
                 "SELECT Shows.*\n" +
                 "FROM Shows, Movies\n" +
-                $"WHERE Movies.MovieID = {MovieID} AND Movies.MovieID = Shows.MovieID\n";
+                $"WHERE Movies.MovieID = {MovieID} AND Movies.MovieID = Shows.MovieID AND Shows.Old = 0\n";
             return dbMan.ExecuteReader(query);
         }
+
+        public static int GetLastBooking(int UserID)
+        {
+            string query =
+                "SELECT MAX(BookingID) AS last\n" +
+                "FROM Bookings\n" +
+                $"WHERE Bookings.UserID = {UserID}\n";
+            DataTable dt = dbMan.ExecuteReader(query);
+            if (dt == null) return 0;
+                return dt.Rows[0].Field<int>("last");
+        }
+
+        public static InsertBooking(int UserID)
+        {
+            string query =
+                "\n" +
+                "\n" +
+                "\n";
+
+        }
+
     }
 }

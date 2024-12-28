@@ -1,4 +1,5 @@
-﻿using Movie_Booking_System.Util;
+﻿using Movie_Booking_System.Controls.Booking;
+using Movie_Booking_System.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -55,7 +56,8 @@ namespace Movie_Booking_System.Screens
             panelSeat.Controls.Clear();
             foreach (DataRow dr in dt.Rows)
             {
-                panelSeat.Controls.Add(new Controls.Booking.seat(dr.Field<int>("SeatNumber")));
+                Controls.Booking.seat seat = new Controls.Booking.seat(dr.Field<int>("SeatNumber"));
+                panelSeat.Controls.Add(seat);
             }
         }
 
@@ -70,6 +72,9 @@ namespace Movie_Booking_System.Screens
             }
         }
 
+        private void btnBook_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

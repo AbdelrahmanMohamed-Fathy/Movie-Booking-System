@@ -290,9 +290,11 @@ INSERT INTO FoodItems (FoodName, FoodQty, Price, FoodDescription) VALUES ('Pop-C
 INSERT INTO FoodItems (FoodName, FoodQty, Price, FoodDescription) VALUES ('Kofta', 20, 300, 'kofta not kobeba dumbass')
 
 INSERT INTO Orders (UserID) VALUES (5267)
+INSERT INTO Orders (UserID) VALUES (5268)
 
 INSERT INTO Orders_Details (OrderID, FoodID, OrderCount) VALUES (1, 2, 6)
 INSERT INTO Orders_Details (OrderID, FoodID, OrderCount) VALUES (1, 1, 3)
+INSERT INTO Orders_Details (OrderID, FoodID, OrderCount) VALUES (2, 2, 4)
 
 SELECT FoodItems.FoodName, SUM(OrderCount) AS Quantity , SUM(OrderCount*FoodItems.Price) AS Revenue
 FROM Orders_Details, FoodItems
