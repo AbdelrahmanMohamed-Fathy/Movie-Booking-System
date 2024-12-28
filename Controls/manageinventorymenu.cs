@@ -32,13 +32,13 @@ namespace Movie_Booking_System.Controls
 
         private void btnAddFoodItm_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtbxfoodname.Text))
+            if (string.IsNullOrEmpty(txtbxfoodname.Text))
             {
                 MessageBox.Show("Please Insert the Food Item Name for the Item to be Added to the inventory", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
 
             }
-            else if(string.IsNullOrEmpty(txtbxqty.Text))
+            else if(qtycont.Value == 0)
             {
                 MessageBox.Show("Please Insert the Food Item Quantity for the Item to be Added to the inventory", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -53,7 +53,7 @@ namespace Movie_Booking_System.Controls
             else
             {
 
-                Controller.AddFoodItm(txtbxfoodname.Text,Convert.ToInt32(txtbxqty.Text),Convert.ToInt32(txtbxprice.Text),txtbxdesc.Text);
+                Controller.AddFoodItm(txtbxfoodname.Text,Convert.ToInt32(qtycont.Value),Convert.ToInt32(txtbxprice.Text),txtbxdesc.Text);
                 MessageBox.Show("Food Item Added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 RefreshSources();
             }
@@ -85,7 +85,7 @@ namespace Movie_Booking_System.Controls
             }
             else
             {
-                Controller.Updatefooditmqty(Convert.ToInt32(txtbxnewqty.Text), Convert.ToInt32(cmbxFoodID.Text));
+                Controller.Updatefooditmqty(Convert.ToInt32(qtycont.Value), Convert.ToInt32(cmbxFoodID.Text));
                 MessageBox.Show("Inventory Updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 RefreshSources();
             }

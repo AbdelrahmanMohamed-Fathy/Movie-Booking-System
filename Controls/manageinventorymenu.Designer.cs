@@ -35,11 +35,12 @@
             this.btnUpdateFooditm = new System.Windows.Forms.Button();
             this.txtbxdesc = new System.Windows.Forms.TextBox();
             this.lblfooddesc = new System.Windows.Forms.Label();
-            this.txtbxprice = new Movie_Booking_System.Controls.PlaceHolderTextBox();
-            this.txtbxqty = new Movie_Booking_System.Controls.PlaceHolderTextBox();
-            this.txtbxfoodname = new Movie_Booking_System.Controls.PlaceHolderTextBox();
+            this.qtycont = new System.Windows.Forms.NumericUpDown();
             this.txtbxnewqty = new Movie_Booking_System.Controls.PlaceHolderTextBox();
+            this.txtbxprice = new Movie_Booking_System.Controls.PlaceHolderTextBox();
+            this.txtbxfoodname = new Movie_Booking_System.Controls.PlaceHolderTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.datagridallfood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qtycont)).BeginInit();
             this.SuspendLayout();
             // 
             // datagridallfood
@@ -135,59 +136,13 @@
             this.lblfooddesc.TabIndex = 16;
             this.lblfooddesc.Text = "Food Description.";
             // 
-            // txtbxprice
+            // qtycont
             // 
-            this.txtbxprice.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtbxprice.AutoSize = true;
-            this.txtbxprice.BackColor = System.Drawing.Color.MintCream;
-            this.txtbxprice.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxprice.ForeColor = System.Drawing.Color.Black;
-            this.txtbxprice.Location = new System.Drawing.Point(44, 214);
-            this.txtbxprice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtbxprice.MaximumSize = new System.Drawing.Size(11600, 32);
-            this.txtbxprice.MinimumSize = new System.Drawing.Size(0, 32);
-            this.txtbxprice.Name = "txtbxprice";
-            this.txtbxprice.PlaceHolderText = "Price.";
-            this.txtbxprice.PlaceHolderTextColor = System.Drawing.Color.Silver;
-            this.txtbxprice.Size = new System.Drawing.Size(116, 32);
-            this.txtbxprice.TabIndex = 11;
-            this.txtbxprice.UseSystemPasswordChar = false;
-            // 
-            // txtbxqty
-            // 
-            this.txtbxqty.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtbxqty.AutoSize = true;
-            this.txtbxqty.BackColor = System.Drawing.Color.MintCream;
-            this.txtbxqty.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxqty.ForeColor = System.Drawing.Color.Black;
-            this.txtbxqty.Location = new System.Drawing.Point(301, 179);
-            this.txtbxqty.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtbxqty.MaximumSize = new System.Drawing.Size(3700, 28);
-            this.txtbxqty.MinimumSize = new System.Drawing.Size(0, 28);
-            this.txtbxqty.Name = "txtbxqty";
-            this.txtbxqty.PlaceHolderText = "Qty.";
-            this.txtbxqty.PlaceHolderTextColor = System.Drawing.Color.Silver;
-            this.txtbxqty.Size = new System.Drawing.Size(37, 28);
-            this.txtbxqty.TabIndex = 10;
-            this.txtbxqty.UseSystemPasswordChar = false;
-            // 
-            // txtbxfoodname
-            // 
-            this.txtbxfoodname.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtbxfoodname.AutoSize = true;
-            this.txtbxfoodname.BackColor = System.Drawing.Color.MintCream;
-            this.txtbxfoodname.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxfoodname.ForeColor = System.Drawing.Color.Black;
-            this.txtbxfoodname.Location = new System.Drawing.Point(44, 176);
-            this.txtbxfoodname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtbxfoodname.MaximumSize = new System.Drawing.Size(25100, 32);
-            this.txtbxfoodname.MinimumSize = new System.Drawing.Size(0, 32);
-            this.txtbxfoodname.Name = "txtbxfoodname";
-            this.txtbxfoodname.PlaceHolderText = "Food Item Name.";
-            this.txtbxfoodname.PlaceHolderTextColor = System.Drawing.Color.Silver;
-            this.txtbxfoodname.Size = new System.Drawing.Size(251, 32);
-            this.txtbxfoodname.TabIndex = 9;
-            this.txtbxfoodname.UseSystemPasswordChar = false;
+            this.qtycont.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.qtycont.Location = new System.Drawing.Point(166, 219);
+            this.qtycont.Name = "qtycont";
+            this.qtycont.Size = new System.Drawing.Size(52, 22);
+            this.qtycont.TabIndex = 18;
             // 
             // txtbxnewqty
             // 
@@ -207,11 +162,48 @@
             this.txtbxnewqty.TabIndex = 17;
             this.txtbxnewqty.UseSystemPasswordChar = false;
             // 
+            // txtbxprice
+            // 
+            this.txtbxprice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtbxprice.AutoSize = true;
+            this.txtbxprice.BackColor = System.Drawing.Color.MintCream;
+            this.txtbxprice.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxprice.ForeColor = System.Drawing.Color.Black;
+            this.txtbxprice.Location = new System.Drawing.Point(44, 214);
+            this.txtbxprice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtbxprice.MaximumSize = new System.Drawing.Size(11600, 32);
+            this.txtbxprice.MinimumSize = new System.Drawing.Size(0, 32);
+            this.txtbxprice.Name = "txtbxprice";
+            this.txtbxprice.PlaceHolderText = "Price.";
+            this.txtbxprice.PlaceHolderTextColor = System.Drawing.Color.Silver;
+            this.txtbxprice.Size = new System.Drawing.Size(116, 32);
+            this.txtbxprice.TabIndex = 11;
+            this.txtbxprice.UseSystemPasswordChar = false;
+            // 
+            // txtbxfoodname
+            // 
+            this.txtbxfoodname.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtbxfoodname.AutoSize = true;
+            this.txtbxfoodname.BackColor = System.Drawing.Color.MintCream;
+            this.txtbxfoodname.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxfoodname.ForeColor = System.Drawing.Color.Black;
+            this.txtbxfoodname.Location = new System.Drawing.Point(44, 176);
+            this.txtbxfoodname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtbxfoodname.MaximumSize = new System.Drawing.Size(25100, 32);
+            this.txtbxfoodname.MinimumSize = new System.Drawing.Size(0, 32);
+            this.txtbxfoodname.Name = "txtbxfoodname";
+            this.txtbxfoodname.PlaceHolderText = "Food Item Name.";
+            this.txtbxfoodname.PlaceHolderTextColor = System.Drawing.Color.Silver;
+            this.txtbxfoodname.Size = new System.Drawing.Size(251, 32);
+            this.txtbxfoodname.TabIndex = 9;
+            this.txtbxfoodname.UseSystemPasswordChar = false;
+            // 
             // manageinventorymenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(236)))), ((int)(((byte)(231)))));
+            this.Controls.Add(this.qtycont);
             this.Controls.Add(this.txtbxnewqty);
             this.Controls.Add(this.lblfooddesc);
             this.Controls.Add(this.txtbxdesc);
@@ -219,13 +211,13 @@
             this.Controls.Add(this.btnAddFoodItm);
             this.Controls.Add(this.btnRemoveFooditm);
             this.Controls.Add(this.txtbxprice);
-            this.Controls.Add(this.txtbxqty);
             this.Controls.Add(this.txtbxfoodname);
             this.Controls.Add(this.cmbxFoodID);
             this.Controls.Add(this.datagridallfood);
             this.Name = "manageinventorymenu";
             this.Size = new System.Drawing.Size(858, 802);
             ((System.ComponentModel.ISupportInitialize)(this.datagridallfood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qtycont)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,7 +228,6 @@
         private System.Windows.Forms.DataGridView datagridallfood;
         private System.Windows.Forms.ComboBox cmbxFoodID;
         private PlaceHolderTextBox txtbxfoodname;
-        private PlaceHolderTextBox txtbxqty;
         private PlaceHolderTextBox txtbxprice;
         private System.Windows.Forms.Button btnAddFoodItm;
         private System.Windows.Forms.Button btnRemoveFooditm;
@@ -244,5 +235,6 @@
         private System.Windows.Forms.TextBox txtbxdesc;
         private System.Windows.Forms.Label lblfooddesc;
         private PlaceHolderTextBox txtbxnewqty;
+        private System.Windows.Forms.NumericUpDown qtycont;
     }
 }

@@ -147,7 +147,7 @@
             // 
             this.lblHelpTicket.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblHelpTicket.Image = ((System.Drawing.Image)(resources.GetObject("lblHelpTicket.Image")));
-            this.lblHelpTicket.Location = new System.Drawing.Point(19, 159);
+            this.lblHelpTicket.Location = new System.Drawing.Point(23, 159);
             this.lblHelpTicket.Name = "lblHelpTicket";
             this.lblHelpTicket.Size = new System.Drawing.Size(39, 37);
             this.lblHelpTicket.TabIndex = 4;

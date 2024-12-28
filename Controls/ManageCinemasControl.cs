@@ -16,5 +16,37 @@ namespace Movie_Booking_System.Controls
         {
             InitializeComponent();
         }
+
+        private void btnAddRemMovies_Click(object sender, EventArgs e)
+        {
+            Controls.addremmoviesmenu addremmoviemen = new Controls.addremmoviesmenu();
+            this.Controls.Clear();
+            this.Controls.Add(addremmoviemen);
+            addremmoviemen.Dock = DockStyle.Fill;
+        }
+
+        private void btnAddRemCinemas_Click(object sender, EventArgs e)
+        {
+            Controls.AddAccountmenu addaccmen = new Controls.AddAccountmenu();
+            this.Controls.Clear();
+            this.Controls.Add(addaccmen);
+            addaccmen.Dock = DockStyle.Fill;
+        }
+
+        private void btnAddRemShows_Click(object sender, EventArgs e)
+        {
+            Controls.AddAccountmenu addaccmen = new Controls.AddAccountmenu();
+            this.Controls.Clear();
+            this.Controls.Add(addaccmen);
+            addaccmen.Dock = DockStyle.Fill;
+        }
+
+        private void btnAddRemSeats_Click(object sender, EventArgs e)
+        {
+            Controls.AddAccountmenu addaccmen = new Controls.AddAccountmenu();
+            this.Controls.Clear();
+            this.Controls.Add(addaccmen);
+            addaccmen.Dock = DockStyle.Fill;
+        }
     }
 }
