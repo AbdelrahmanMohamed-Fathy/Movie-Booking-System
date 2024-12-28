@@ -213,17 +213,41 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\AddAccountmenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AddAccountmenu.Designer.cs">
+      <DependentUpon>AddAccountmenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Adminticket.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\Adminticket.Designer.cs">
       <DependentUpon>Adminticket.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Booking\seat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Booking\seat.Designer.cs">
+      <DependentUpon>seat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DeleteAccountmenucs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DeleteAccountmenucs.Designer.cs">
+      <DependentUpon>DeleteAccountmenucs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ManageAccountsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\ManageAccountsControl.Designer.cs">
       <DependentUpon>ManageAccountsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ManageCinemasControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ManageCinemasControl.Designer.cs">
+      <DependentUpon>ManageCinemasControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\PlaceHolderTextBox.cs">
       <SubType>UserControl</SubType>
@@ -319,6 +343,12 @@
     <Compile Include="Screens\userBooking.Designer.cs">
       <DependentUpon>userBooking.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\userReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\userReview.Designer.cs">
+      <DependentUpon>userReview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Util\HelperFunctions.cs" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -336,8 +366,23 @@
     <Compile Include="Screens\loginScreen.Designer.cs">
       <DependentUpon>loginScreen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\AddAccountmenu.resx">
+      <DependentUpon>AddAccountmenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Adminticket.resx">
       <DependentUpon>Adminticket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Booking\seat.resx">
+      <DependentUpon>seat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DeleteAccountmenucs.resx">
+      <DependentUpon>DeleteAccountmenucs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ManageAccountsControl.resx">
+      <DependentUpon>ManageAccountsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ManageCinemasControl.resx">
+      <DependentUpon>ManageCinemasControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\PlaceHolderTextBox.resx">
       <DependentUpon>PlaceHolderTextBox.cs</DependentUpon>
@@ -391,6 +436,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\userBooking.resx">
       <DependentUpon>userBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\userReview.resx">
+      <DependentUpon>userReview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\userScreen.resx">
       <DependentUpon>userScreen.cs</DependentUpon>
@@ -446,22 +494,49 @@
     <Content Include="Assets\Absolute_Cinema_Quarter.png" />
     <Content Include="Assets\arrow_back_16dp_000000_FILL0_wght400_GRAD0_opsz20%281%29.png" />
     <Content Include="Assets\arrow_back_16dp_000000_FILL0_wght400_GRAD0_opsz20.png" />
-    <Content Include="Assets\arrow_back_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" />
-    <Content Include="Assets\CINEMA.jpg" />
+    <Content Include="Assets\bars.png" />
+    <Content Include="Assets\chair.png" />
+    <Content Include="Assets\chair_green.png" />
+    <Content Include="Assets\chair_red.png" />
+    <Content Include="Assets\chair_yellow.png" />
+    <Content Include="Assets\Complaint.png" />
     <Content Include="Assets\Create a unique and cinematic logo for Absolute Cinema, resize to 950x600, remove all text except Absolute Cinema.png" />
-    <Content Include="Assets\download %2818%29.jpg" />
-    <Content Include="Assets\download %2819%29.jpg" />
     <Content Include="Assets\email-icon.png" />
     <Content Include="Assets\go-back-arrow.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Closed-eye-icon.png" />
+    <Content Include="Assets\icons8-person-24_1.png" />
     <Content Include="Assets\icons8-phone-30.png" />
+    <Content Include="Assets\icons8-popcorn-24.png" />
+    <Content Include="Assets\ManageAccicon.png" />
+    <Content Include="Assets\Managecinema.png" />
+    <Content Include="Assets\Menu-icon.png" />
+    <Content Include="Assets\menuicon.png" />
+    <Content Include="Assets\Movies\Django Unchained.png" />
+    <Content Include="Assets\Movies\Fight Club.png" />
+    <Content Include="Assets\Movies\Forrest Gump.png" />
+    <Content Include="Assets\Movies\Gladiator.png" />
+    <Content Include="Assets\Movies\Goodfellas.png" />
+    <Content Include="Assets\Movies\Inception.png" />
+    <Content Include="Assets\Movies\Interstellar.png" />
     <Content Include="Assets\Movies\La La Land.png" />
+    <Content Include="Assets\Movies\Memento.png" />
+    <Content Include="Assets\Movies\Pulp Fiction.png" />
+    <Content Include="Assets\Movies\Se7en.png" />
+    <Content Include="Assets\Movies\The Dark Knight.png" />
+    <Content Include="Assets\Movies\The Departed.png" />
+    <Content Include="Assets\Movies\The Godfather.png" />
+    <Content Include="Assets\Movies\The Green Mile.png" />
+    <Content Include="Assets\Movies\The Lord of the Rings The Return of the King.png" />
+    <Content Include="Assets\Movies\The Matrix.png" />
+    <Content Include="Assets\Movies\The Prestige.png" />
+    <Content Include="Assets\Movies\The Shawshank Redemption.png" />
+    <Content Include="Assets\Movies\The Silence of the Lambs.png" />
+    <Content Include="Assets\Movies\Whiplash.png" />
     <Content Include="Assets\Name-icon.png" />
     <Content Include="Assets\Open-eye-icon.png" />
     <Content Include="Assets\icons8-search-30.png" />
-    <Content Include="Assets\icons8-visibility-30.png" />
     <Content Include="Assets\icons8-search-30.png" />
     <Content Include="Assets\Pass-icon.png" />
     <Content Include="Assets\password--icon.png" />
@@ -469,10 +544,10 @@
     <Content Include="Assets\Phone-icon.png" />
     <Content Include="Assets\Phone.png" />
     <Content Include="Assets\Search icon.png" />
+    <Content Include="Assets\seat_green.png" />
+    <Content Include="Assets\Star.png" />
     <Content Include="Assets\Tele-icon.png" />
     <Content Include="Assets\Test.png" />
-    <Content Include="Assets\visibility_16dp_000000_FILL0_wght400_GRAD0_opsz20.png" />
-    <Content Include="Assets\visibility_off_16dp_000000_FILL0_wght400_GRAD0_opsz20.png" />
     <Content Include="DBCREATIONQUERY.sql" />
   </ItemGroup>
   <ItemGroup>

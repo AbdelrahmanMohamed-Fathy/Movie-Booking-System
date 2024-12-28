@@ -21,6 +21,11 @@ namespace Movie_Booking_System.Util
             string query = $"SELECT * FROM Movies";
             return dbMan.ExecuteReader(query);
         }
+        public static DataTable Getauthority()
+        {
+            string query = $"SELECT Authority FROM Accounts";
+            return dbMan.ExecuteReader(query);
+        }
         public static int DeleteHelpTicket(int TicketID)
         {
             string query = $"DELETE FROM HelpTickets WHERE HelpTicketID ={TicketID};";
@@ -38,9 +43,9 @@ namespace Movie_Booking_System.Util
         public static int GetNewOrderID(string UserID)  // ahmad
         {
             string query = $@"
-        SELECT ISNULL(MAX(OrderID),0)
-        FROM Orders
-        WHERE UserID = " + UserID.ToString();
+            SELECT ISNULL(MAX(OrderID),0)
+            FROM Orders
+            WHERE UserID = " + UserID.ToString();
 
             return (int)dbMan.ExecuteScalar(query);
         }
@@ -115,16 +120,16 @@ namespace Movie_Booking_System.Util
 
         public static DataTable GetTotalOrderPrice(String OrderID)   // Ahmad
         {
-            
-                string query = $@"
+
+            string query = $@"
         SELECT SUM( CAST(Orders_Details.OrderCount AS DECIMAL(7,2))  * FoodItems.Price) as TotalPrice
         FROM Orders_Details,FoodItems
         WHERE Orders_Details.FoodID = FoodItems.FoodID and Orders_Details.OrderID = " + OrderID;
 
-                return dbMan.ExecuteReader(query);
-            
+            return dbMan.ExecuteReader(query);
+
         }
-      
+
         public static int InsertAccount(string Fname, string Lname, string email, string pass, int PhoneNumber, string authority)
         {
             string query =
@@ -133,7 +138,7 @@ namespace Movie_Booking_System.Util
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public static userMode CheckUser(string Email,string Password, out int ID)
+        public static userMode CheckUser(string Email, string Password, out int ID)
         {
             string query =
                 "SELECT Authority,UserID\n" +
@@ -214,12 +219,20 @@ namespace Movie_Booking_System.Util
             return;
         }
 
-        public static int SubmitTicket(int UserID,string Header, string Content)
+        public static int SubmitTicket(int UserID, string Header, string Content)
         {
             string query =
                 "INSERT INTO HelpTickets (UserID,Header,Content)\n" +
                 $"VALUES ({UserID},'{Header}','{Content}')\n";
             return dbMan.ExecuteNonQuery(query);
+        }
+
+        public static void SubmitReview(int UserID, int Rating, int MovieID)
+        {
+            string query =
+                "INSERT INTO MovieReviews (UserID,MovieID,Rating)\n" +
+                $"VALUES ({UserID},{MovieID},{Rating})\n";
+            dbMan.ExecuteNonQuery(query);
         }
 
         public static DataTable FetchUser(int UserID)
@@ -234,14 +247,12 @@ namespace Movie_Booking_System.Util
         public static DataTable GetCurrentShows()
         {
             string query =
-                "SELECT M.MovieID, M.MovieName, M.MovieDescription, M.MoviePicturePath, AVG(R.Rating) AS Rating\n" +
+                "SELECT M.MovieID, M.MovieName, M.MovieDescription, M.MoviePicturePath\n" +
                 "FROM\n" +
                     "(\n" +
                     "SELECT DISTINCT Movies.*\n" +
                     "FROM Shows, Movies\n" +
-                    "WHERE Shows.MovieID = Movies.MovieID) M, MovieReviews R\n" +
-                "WHERE R.MovieID = M.MovieID\n" +
-                "GROUP BY M.MovieID , M.MovieName, M.MovieDescription, M.MoviePicturePath\n";
+                    "WHERE Shows.MovieID = Movies.MovieID) M\n";
             return dbMan.ExecuteReader(query);
         }
 
@@ -258,20 +269,43 @@ namespace Movie_Booking_System.Util
         public static DataTable GetMovie(int MovieID)
         {
             string query =
-                "SELECT Movies.MovieName, Movies.MoviePicturePath, Movies.MovieDescription, AVG(MovieReviews.Rating) AS Rating\n" +
-                "FROM Movies, MovieReviews\n" +
-                $"WHERE  Movies.MovieID = MovieReviews.MovieID AND Movies.MovieID = {MovieID} \n" +
-                "GROUP BY Movies.MovieName, Movies.MoviePicturePath, Movies.MovieDescription\n";
+                "SELECT Movies.MovieName, Movies.MoviePicturePath, Movies.MovieDescription\n" +
+                "FROM Movies\n" +
+                $"WHERE Movies.MovieID = {MovieID} \n";
             return dbMan.ExecuteReader(query);
         }
 
         public static DataTable GetShowTimes(int MovieID)
         {
             string query =
-                "SELECT Shows.StartTime, Shows.EndTime, Shows.ShowDate\n"+
-                "FROM Shows, Movies\n"+
+                "SELECT Shows.StartTime, Shows.EndTime, Shows.ShowDate\n" +
+                "FROM Shows, Movies\n" +
                 $"WHERE Movies.MovieID = {MovieID} AND Movies.MovieID = Shows.MovieID\n";
             return dbMan.ExecuteReader(query);
+        }
+
+        public static DataTable GetMovieName(int MovieID)
+        {
+            string query =
+                "SELECT Movies.MovieName\n" +
+                "FROM Movies\n" +
+                $"WHERE Movies.MovieID = {MovieID}\n";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public static int GetMovieReviews(int MovieID)
+        {
+            string query =
+                "SELECT AVG(MovieReviews.Rating) AS Rating\n" +
+                "FROM MovieReviews\n" +
+                $"WHERE MovieReviews.MovieID = {MovieID}\n" +
+                "GROUP BY MovieReviews.MovieID\n";
+            object Rating = dbMan.ExecuteScalar(query);
+            if (Rating != null)
+                return Convert.ToInt32(Rating);
+            else
+                return 0;
+
         }
     }
 }

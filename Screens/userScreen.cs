@@ -21,7 +21,7 @@ namespace Movie_Booking_System.Screens
         private void userScreen_Load(object sender, EventArgs e)
         {
             DataTable dt = Controller.GetCurrentShows();
-            if (dt != null )
+            if ( dt != null )
                 foreach (DataRow r in dt.Rows)
                 {
                     flowLayoutPanel1.Controls.Add(new Controls.MovieCard(parentForm,r));

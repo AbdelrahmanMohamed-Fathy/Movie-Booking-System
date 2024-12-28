@@ -46,9 +46,9 @@
             this.Menuicon.BackColor = System.Drawing.Color.Teal;
             this.Menuicon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Menuicon.Image = ((System.Drawing.Image)(resources.GetObject("Menuicon.Image")));
-            this.Menuicon.Location = new System.Drawing.Point(19, 55);
+            this.Menuicon.Location = new System.Drawing.Point(22, 0);
             this.Menuicon.Name = "Menuicon";
-            this.Menuicon.Size = new System.Drawing.Size(40, 39);
+            this.Menuicon.Size = new System.Drawing.Size(40, 30);
             this.Menuicon.TabIndex = 0;
             this.Menuicon.Click += new System.EventHandler(this.Menuicon_Click);
             // 
@@ -108,6 +108,7 @@
             this.btnManageCinemas.Text = "Manage Cinemas.";
             this.btnManageCinemas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnManageCinemas.UseVisualStyleBackColor = true;
+            this.btnManageCinemas.Click += new System.EventHandler(this.btnManageCinemas_Click);
             // 
             // btnManageAcc
             // 
@@ -146,7 +147,7 @@
             this.dashboardadmin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dashboardadmin.BackColor = System.Drawing.Color.MintCream;
+            this.dashboardadmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(236)))), ((int)(((byte)(231)))));
             this.dashboardadmin.Location = new System.Drawing.Point(264, 0);
             this.dashboardadmin.Name = "dashboardadmin";
             this.dashboardadmin.Size = new System.Drawing.Size(535, 600);
@@ -156,6 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(236)))), ((int)(((byte)(231)))));
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.dashboardadmin);
             this.Controls.Add(this.Menuicon);

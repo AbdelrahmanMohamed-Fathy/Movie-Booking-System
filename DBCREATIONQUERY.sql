@@ -119,7 +119,6 @@ BookingID			INTEGER				NOT NULL IDENTITY(9034,1),
 UserID              INTEGER				NOT NULL,
 ShowID              INTEGER				NOT NULL,
 Price               AS dbo.GetBookingPrice(BookingID),
-PaymentMethod		VARCHAR(20)			NOT NULL CHECK (Paymentmethod IN ('Cash', 'Credit')),
 PRIMARY KEY			(BookingID),
 FOREIGN KEY         (UserID)			REFERENCES Accounts,
 FOREIGN KEY         (ShowID)			REFERENCES Shows
@@ -162,28 +161,16 @@ FOREIGN KEY         (UserID)        REFERENCES Accounts
 );
 ---------------------------------------
 CREATE TABLE MovieReviews (
-ReviewID			INTEGER			NOT NULL IDENTITY(1,1),
 UserID              INTEGER         NOT NULL,
 MovieID             INTEGER         NOT NULL,
 Rating				INTEGER			NOT NULL CHECK (Rating > 0 AND Rating <6),
-Description   		VARCHAR(100)	NOT NULL DEFAULT '',
-PRIMARY KEY			(ReviewID),
+PRIMARY KEY			(MovieID,UserID),
 FOREIGN KEY         (MovieID)       REFERENCES Movies,
 FOREIGN KEY         (UserID)        REFERENCES Accounts
 );
 ---------------------------------------
-CREATE TABLE FoodReviews (
-ReviewID			INTEGER			NOT NULL IDENTITY(1,1),
-UserID              INTEGER         NOT NULL,
-FoodID              INTEGER         NOT NULL,
-Rating				INTEGER			NOT NULL CHECK (Rating > 0 AND Rating <6),
-Description         VARCHAR(100)	NOT NULL DEFAULT '',
-PRIMARY KEY			(ReviewID),
-FOREIGN KEY         (FoodID)        REFERENCES FoodItems,
-FOREIGN KEY         (UserID)        REFERENCES Accounts
-);
----------------------------------------
 GO
+
 INSERT INTO Accounts VALUES ('Ahmed', 'Soltan', 'A7medsoltan2004@gmail.com', '12345', 1203547383, 'Admin')
 INSERT INTO Accounts (Fname,Lname,Email,Pass,Authority) VALUES ('Abdelrahman', 'Fathy', 'test@test.com','test','Client')
 
@@ -196,7 +183,7 @@ INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('The Shawshank Redempt
 INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('The Godfather', 'Francis Ford Coppola', CAST(N'02:55:00' AS Time))
 INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('The Dark Knight', 'Christopher Nolan', CAST(N'02:32:00' AS Time)) 
 INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Pulp Fiction', 'Quentin Tarantino', CAST(N'02:34:00' AS Time)) 
-INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('The Lord of the Rings: The Return of the King', N'Peter Jackson', CAST(N'03:21:00' AS Time))
+INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('The Lord of the Rings The Return of the King', N'Peter Jackson', CAST(N'03:21:00' AS Time))
 INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Fight Club', 'David Fincher', CAST(N'02:19:00' AS Time)) 
 INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Inception', 'Christopher Nolan', CAST(N'02:28:00' AS Time)) 
 INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('Forrest Gump', 'Robert Zemeckis', CAST(N'02:22:00' AS Time))
@@ -216,7 +203,26 @@ GO
 
 
 INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (1,1,CAST('02:00:00' AS Time))
-
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (2,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (3,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (4,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (5,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (6,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (7,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (8,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (9,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (10,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (11,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (12,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (13,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (14,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (15,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (16,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (17,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (18,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (19,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (20,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (21,1,CAST('02:00:00' AS Time))
 
 INSERT INTO MovieReviews (UserID, MovieID, Rating) VALUES (5267,1,4)
 
@@ -231,7 +237,6 @@ INSERT INTO Orders (UserID) VALUES (5267)
 
 INSERT INTO Orders_Details (OrderID, FoodID, OrderCount) VALUES (1, 2, 6)
 INSERT INTO Orders_Details (OrderID, FoodID, OrderCount) VALUES (1, 1, 3)
-INSERT INTO HelpTickets (UserID,Header,Content) VALUES (5267,'Issue with Orders','kofta gedan 2: electric boogaloo')
 
 SELECT FoodItems.FoodName, SUM(OrderCount) AS Quantity , SUM(OrderCount*FoodItems.Price) AS Revenue
 FROM Orders_Details, FoodItems
@@ -244,4 +249,9 @@ FROM Bookings, Movies, Shows
 WHERE Bookings.ShowID = Shows.ShowID AND Shows.MovieID = Movies.MovieID
 GROUP BY Movies.MovieName
 ORDER BY Revenue
+
+SELECT AVG(MovieReviews.Rating) AS Rating
+FROM MovieReviews
+WHERE MovieReviews.MovieID = MovieReviews.MovieID
+GROUP BY MovieReviews.MovieID
 

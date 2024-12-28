@@ -39,8 +39,8 @@ namespace Movie_Booking_System.Screens
             }
             lblTitle.Text = data.Field<string>("MovieName");
             lblDescription.Text = data.Field<string>("MovieDescription");
-            lblRatingValue.Text = data.Field<int>("Rating").ToString();
-            int value = (data.Field<int>("Rating"));
+            int value = Controller.GetMovieReviews(MovieID);
+            lblRatingValue.Text = value.ToString();
             lblRatingStars.Text = "";
             for (int i = 0; i < 5; i++)
             {
@@ -58,6 +58,18 @@ namespace Movie_Booking_System.Screens
                 parentForm.LoadNewForm(new loginScreen(parentForm, parentForm.Authority), false);
             else
                 parentForm.LoadNewForm(new userBooking(parentForm, parentForm.Authority), false);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            userReview userRev;
+            if (parentForm.Authority == userMode.Guest)
+                parentForm.LoadNewForm(new loginScreen(parentForm, parentForm.Authority), false);
+            else
+            {
+                userRev = new userReview(MovieID, parentForm.CurrentUserID);
+                userRev.ShowDialog();
+            }
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Movie_Booking_System.Screens.AdminScreens
     public partial class adminDashBoard : Form
     {
         private mainForm parentForm;
+        //bool ismousehovering;
         public adminDashBoard(mainForm parent, userMode mode)
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace Movie_Booking_System.Screens.AdminScreens
 
         private void Menuicon_Click(object sender, EventArgs e)
         {
+            dashboardadmin.Controls.Clear();
             AdminMenu.Visible = !AdminMenu.Visible;
             if (AdminMenu.Visible) 
             {
@@ -40,18 +42,26 @@ namespace Movie_Booking_System.Screens.AdminScreens
 
         private void Helptickets_Click(object sender, EventArgs e)
         {
-            Controls.Adminticket adminmenu = new Controls.Adminticket();
+            Controls.Adminticket adminticketmenu = new Controls.Adminticket();
             dashboardadmin.Controls.Clear();
-            dashboardadmin.Controls.Add(adminmenu);
-            adminmenu.Dock = DockStyle.Fill;
+            dashboardadmin.Controls.Add(adminticketmenu);
+            adminticketmenu.Dock = DockStyle.Fill;
         }
 
         private void btnManageAcc_Click(object sender, EventArgs e)
         {
-            Controls.Adminticket adminmenu = new Controls.Adminticket();
+            Controls.ManageAccountsControl ManageAccAdminmenu = new Controls.ManageAccountsControl();
             dashboardadmin.Controls.Clear();
-            dashboardadmin.Controls.Add(adminmenu);
-            adminmenu.Dock = DockStyle.Fill;
+            dashboardadmin.Controls.Add(ManageAccAdminmenu);
+            ManageAccAdminmenu.Dock = DockStyle.Fill;
+        }
+
+        private void btnManageCinemas_Click(object sender, EventArgs e)
+        {
+            Controls.ManageCinemasControl ManageAccAdminmenu = new Controls.ManageCinemasControl();
+            dashboardadmin.Controls.Clear();
+            dashboardadmin.Controls.Add(ManageAccAdminmenu);
+            ManageAccAdminmenu.Dock = DockStyle.Fill;
         }
     }
 }
