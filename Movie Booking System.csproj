@@ -225,6 +225,12 @@
     <Compile Include="Controls\addremmoviesmenu.Designer.cs">
       <DependentUpon>addremmoviesmenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\AddRemShows.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AddRemShows.Designer.cs">
+      <DependentUpon>AddRemShows.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Adminticket.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -413,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\addremmoviesmenu.resx">
       <DependentUpon>addremmoviesmenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AddRemShows.resx">
+      <DependentUpon>AddRemShows.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Adminticket.resx">
       <DependentUpon>Adminticket.cs</DependentUpon>
