@@ -298,9 +298,9 @@ namespace Movie_Booking_System.Util
         public static DataTable GetShowTimes(int MovieID)
         {
             string query =
-                "SELECT Shows.StartTime, Shows.EndTime, Shows.ShowDate\n" +
-                "FROM Shows, Movies\n" +
-                $"WHERE Movies.MovieID = {MovieID} AND Movies.MovieID = Shows.MovieID\n";
+                "SELECT Shows.CinemaID, Cinemas.CinemaType, Shows.StartTime, Shows.EndTime, Shows.ShowDate\n" +
+                "FROM Shows, Movies, Cinemas\n" +
+                $"WHERE Shows.CinemaID = Cinemas.CinemaID AND Movies.MovieID = {MovieID} AND Movies.MovieID = Shows.MovieID\n";
             return dbMan.ExecuteReader(query);
         }
 
