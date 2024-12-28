@@ -118,10 +118,24 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnHelpTicket.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAHpSURBVEhLxdVNSBVRGMbxU0hFkloLISTIpEVaC0O0Fgkp
+        WrgrEIQIKczURApECZRIXLlTdCEtpAgCJQgkNGmnC40CV4qEfZhghbUJt9L/OW+X7ujMJecKPfCD99wL
+        M2fOOfOO24Wcxih+YANvcQN7kHYu4SuakQldtAxzePxnHDs5+IZSP3KuELetdBnQTfQkkTmODgyjD8VI
+        TiMeWelzGc+t9DmHN1ZuTz0+oQfX0IIFjOEklH40WOmz9QZ78cvKYI5hFUf96G8OQjf+gH3own0kcgRn
+        rPTJwncrg2nCoJWheYUKaAneQTNVSvDASp87eGZlMN3otDI0T3HFSreEU1a6QzhhpTsPna7Ef4HcxICV
+        oZnEReRhHQ/xGu3Qxo9gDVUIzQVoGcKic6111RFtwyaeoBo6ENr4W9D6R6YVmkVYDkCnSZupGWovdpzr
+        0COHzSIfOmF6R2JHR3AKdX4UzBC05mlHFx9Hci/Jxhdoc9OOesl7nPUjy11E7U2sTCP5BvfQa2X60QlZ
+        Qa4fWXT2F1HkRzGyH3rJ1AHnob6+Ndqbz5hADf6531dC3VNfpnL9kCLan6uYwSwKkDL6YGhWiQ/HTqJ3
+        5iP0ZkfmJWqtjBV13lTN0f2EnmA5JvWmF4jM4V2gVv0/4txvlfld/ZOdDmUAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btnOrderFood.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAAktJREFUSEut1WtoT3Ecx/H/mFoUiRbJA/MAIw+HeOCStiZJFC1DSYky2wMKSfHA
+        EAAACxABrSO9dQAAAktJREFUSEut1WtoT3Ecx/H/mFoUiRbJA/MAIw+HeOCStiZJFC1DSYky2wMKSfHA
         pWQmuZVbPHKN3O9hbkmUiNzS4oGxFCHxfp9LSWv/39l86tX/1+9/zul3fud7vifXzhQkv/8ly/EVN7AE
         Z9CMUehwStGEcbiF31iKalxAhzMaD3AOF7ETz5O5b/D/dqcLTuMXfuIAduMHJmAm7uE4ZiNzRsKVDsBm
         3MQa3MYgrMNDzMMb9EJwhqIeL1CLFkzBeHhHn3ACXrgc7zAQQemMRzgEL3Qdd+ADfoyz2IFCfMA1+P8s

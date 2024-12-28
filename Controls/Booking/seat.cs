@@ -42,6 +42,7 @@ namespace Movie_Booking_System.Controls.Booking
             InitializeComponent();
             status = ChairStatus.Available;
             SeatNumber = seatNumber;
+            label1.Click += seat_Click;
         }
 
         public seat(ChairStatus status)
@@ -67,6 +68,22 @@ namespace Movie_Booking_System.Controls.Booking
                     break;
             }
             this.BackgroundImage = Image.FromFile("..\\..\\Assets\\" + ImageFile);
+        }
+
+        private void seat_Click(object sender, EventArgs e)
+        {
+            switch (this.Status)
+            {
+                default:
+                case ChairStatus.Taken:
+                    break;
+                case ChairStatus.Selected:
+                    this.Status = ChairStatus.Available;
+                    break;
+                case ChairStatus.Available:
+                    this.Status = ChairStatus.Selected;
+                    break;
+            }
         }
 
         public enum ChairStatus

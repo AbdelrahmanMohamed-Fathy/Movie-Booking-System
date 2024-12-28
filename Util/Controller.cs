@@ -352,8 +352,29 @@ namespace Movie_Booking_System.Util
             string query =
                 "SELECT Shows.*\n" +
                 "FROM Shows, Movies\n" +
-                $"WHERE Movies.MovieID = {MovieID} AND Movies.MovieID = Shows.MovieID\n";
+                $"WHERE Movies.MovieID = {MovieID} AND Movies.MovieID = Shows.MovieID AND Shows.Old = 0\n";
             return dbMan.ExecuteReader(query);
         }
+
+        public static int GetLastBooking(int UserID)
+        {
+            string query =
+                "SELECT MAX(BookingID) AS last\n" +
+                "FROM Bookings\n" +
+                $"WHERE Bookings.UserID = {UserID}\n";
+            DataTable dt = dbMan.ExecuteReader(query);
+            if (dt == null) return 0;
+                return dt.Rows[0].Field<int>("last");
+        }
+
+        public static InsertBooking(int UserID)
+        {
+            string query =
+                "\n" +
+                "\n" +
+                "\n";
+
+        }
+
     }
 }
