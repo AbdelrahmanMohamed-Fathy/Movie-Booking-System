@@ -127,12 +127,10 @@ GO
 ---------------------------------------
 CREATE TABLE BookingSeats (
 BookingID			INTEGER				NOT NULL,
-ShowID              INTEGER             NOT NULL,
 CinemaID			INTEGER				NOT NULL,
 SeatID              INTEGER				NOT NULL,
 PRIMARY KEY         (BookingID,SeatID),
 FOREIGN KEY         (BookingID)         REFERENCES Bookings,
-FOREIGN KEY         (ShowID)            REFERENCES Shows,
 FOREIGN KEY         (CinemaID,SeatID)   REFERENCES Seats
 );
 ---------------------------------------
@@ -279,7 +277,7 @@ INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (17,1,CAST('06:00:00' AS T
 INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (18,2,CAST('08:00:00' AS Time))
 INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (19,8,CAST('05:00:00' AS Time))
 INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (20,5,CAST('06:00:00' AS Time))
-INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (21,10,CAST('06:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (4,10,CAST('06:00:00' AS Time))
 
 INSERT INTO MovieReviews (UserID, MovieID, Rating) VALUES (5267,1,4)
 

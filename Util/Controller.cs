@@ -1,6 +1,7 @@
 ﻿using Microsoft.Reporting.Map.WebForms.BingMaps;
 using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Runtime.Remoting.Messaging;
 using System.Text.RegularExpressions;
@@ -351,7 +352,6 @@ namespace Movie_Booking_System.Util
                 return 0;
 
         }
-
         public static DataTable GetAllSeats(int CinemaID)
         {
             string query =
@@ -366,8 +366,8 @@ namespace Movie_Booking_System.Util
         {
             string query =
                 "SELECT SeatNumber\n" +
-                "FROM BookingSeats, Seats\n" +
-                $"WHERE ShowID = {ShowID} AND Seats.CinemaID = BookingSeats.CinemaID\n";
+                "FROM Bookings, BookingSeats, Seats\n" +
+                $"WHERE Bookings.ShowID = {ShowID} AND Seats.CinemaID = BookingSeats.CinemaID AND Bookings.BookingID = BookingSeats.BookingID\n";
             return dbMan.ExecuteReader(query);
         }
 
@@ -391,14 +391,26 @@ namespace Movie_Booking_System.Util
                 return dt.Rows[0].Field<int>("last");
         }
 
-        public static void InsertBooking(int UserID)
+        public static void InsertBooking(int UserID, int ShowID, List<int> SeatNumbers)
         {
-            string query =
-                "\n" +
-                "\n" +
-                "\n";
-            dbMan.ExecuteReader(query);
-            return; 
+            string Initialquery =
+                "INSERT INTO Bookings (UserID, ShowID)\n" +
+                $"VALUES ({UserID}, {ShowID})\n";
+
+            dbMan.ExecuteNonQuery(Initialquery);
+
+            int bookingID = Convert.ToInt32(dbMan.ExecuteScalar("SELECT @@IDENTITY"));
+            int CinemaID = Convert.ToInt32(dbMan.ExecuteScalar($"SELECT Cinemas.CinemaID FROM Cinemas, Shows WHERE Shows.CinemaID = Cinemas.CinemaID AND Shows.ShowID = {ShowID}"));
+
+            foreach(int Seat in SeatNumbers)
+            {
+                string query =
+                    "INSERT INTO BookingSeats (BookingID, CinemaID, SeatID)\n" +
+                    $"VALUES ({bookingID}, {CinemaID}, {Seat})\n";
+
+            dbMan.ExecuteNonQuery(query);
+            }
+
         }
 
     }
