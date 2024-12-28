@@ -66,7 +66,7 @@ namespace Movie_Booking_System.Screens
                 return;
             foreach (Controls.Booking.seat C in panelSeat.Controls)
             {
-                if (dt.Rows.Contains(C.SeatNumber))
+                if (dt.AsEnumerable().Any(row => row.Field<int>("SeatNumber") == C.SeatNumber))
                     C.Status = ChairStatus.Taken;
             }
         }

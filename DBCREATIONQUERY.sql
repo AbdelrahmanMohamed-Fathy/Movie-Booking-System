@@ -314,3 +314,7 @@ GROUP BY MovieReviews.MovieID
 SELECT  SeatNumber
 FROM Seats
 WHERE Seats.CinemaID = 1
+
+SELECT *
+FROM BookingSeats
+
