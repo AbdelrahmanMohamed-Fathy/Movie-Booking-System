@@ -381,13 +381,14 @@ namespace Movie_Booking_System.Util
                 return dt.Rows[0].Field<int>("last");
         }
 
-        public static InsertBooking(int UserID)
+        public static void InsertBooking(int UserID)
         {
             string query =
                 "\n" +
                 "\n" +
                 "\n";
-
+            dbMan.ExecuteReader(query);
+            return; 
         }
 
     }
