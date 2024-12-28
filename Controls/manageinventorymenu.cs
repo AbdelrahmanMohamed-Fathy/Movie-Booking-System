@@ -64,13 +64,21 @@ namespace Movie_Booking_System.Controls
             if (cmbxFoodID.SelectedIndex == -1)
             {
                 MessageBox.Show("Please Select the Food Item ID for the Item to be Removed from the inventory", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
 
             }
             else
             {
-                MessageBox.Show("Are you sure you want to delete this Food Item with ID = " + cmbxFoodID.Text + " ? ", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                Controller.DeleteFooditm(Convert.ToInt32(cmbxFoodID.Text));
-                RefreshSources();
+                DialogResult res = MessageBox.Show("Are you sure you want to delete this Food Item with ID = " + cmbxFoodID.Text + " ? ", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (res == DialogResult.Yes)
+                {
+                    Controller.DeleteFooditm(Convert.ToInt32(cmbxFoodID.Text));
+                    RefreshSources();
+                }
+                else
+                {
+                    return;
+                }
 
             }
 
@@ -81,6 +89,7 @@ namespace Movie_Booking_System.Controls
             if (cmbxFoodID.SelectedIndex == -1)
             {
                 MessageBox.Show("Please Select the Food Item ID for the Item to be Updated in the inventory", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
 
             }
             else

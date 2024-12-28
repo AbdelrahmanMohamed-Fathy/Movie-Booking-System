@@ -35,13 +35,21 @@ namespace Movie_Booking_System.Controls
                 if (currentuserid == userid)
                 {
                     MessageBox.Show("A User Cannot Delete Themself! ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
 
                 }
                 else
                 {
-                    MessageBox.Show("Are you sure you want to delete this User with ID = " + cmbxUserID.Text + " ? ", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    Controller.DeleteAccount(Convert.ToInt32(cmbxUserID.Text));
-                    RefreshSources();
+                    DialogResult res = MessageBox.Show("Are you sure you want to delete this User with ID = " + cmbxUserID.Text + " ? ", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (res == DialogResult.Yes)
+                    {
+                        Controller.DeleteAccount(Convert.ToInt32(cmbxUserID.Text));
+                        RefreshSources();
+                    }
+                    else
+                    {
+                        return;
+                    }
                 }
 
             }

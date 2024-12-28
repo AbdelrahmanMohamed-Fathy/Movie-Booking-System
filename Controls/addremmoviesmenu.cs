@@ -21,7 +21,7 @@ namespace Movie_Booking_System.Controls
         private void RefreshSources()
         {
 
-            DataTable dt = Controller.GetOrders();
+            DataTable dt = Controller.showallMovies();
             datagridallmovies.DataSource = dt;
             cmbxMovieID.DataSource = dt;
             cmbxMovieID.DisplayMember = "MovieID";
@@ -34,27 +34,54 @@ namespace Movie_Booking_System.Controls
             if (string.IsNullOrEmpty(txtbxMovieName.Text))
             {
                 MessageBox.Show("Please Insert the Movie Name for the Movie to be Added", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
 
             }
             else if (string.IsNullOrEmpty(txtbxdirector.Text))
             {
                 MessageBox.Show("Please Insert the Movie Director for the Movie to be Added", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
 
             }
             else if (string.IsNullOrEmpty(txtbxdesc.Text))
             {
                 MessageBox.Show("Please Insert the Movie Description for the Movie to be Added", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
 
             }
-            //else if
-            //{
+            else if(string.IsNullOrEmpty(lblruntime.Text))
+            {
+                MessageBox.Show("Please Insert the Movie Runtime for the Movie to be Added", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
 
-            //}
+            }
+            else
+            {
+                Controller.AddMovie(txtbxMovieName.Text, txtbxdirector.Text, Convert.ToDateTime(lblruntime.Text), txtbxdesc.Text);
+                RefreshSources();
+            }
         }
 
         private void btnRemMovie_Click(object sender, EventArgs e)
         {
+            if (cmbxMovieID.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please Select the Movie ID for the Movie to be Deleted", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult res = MessageBox.Show("Are you sure you want to delete this Movie with ID = " + cmbxMovieID.Text + " ? ", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (res == DialogResult.Yes) 
+                {
+                    Controller.DeleteMovie(Convert.ToInt32(cmbxMovieID.Text));
+                    RefreshSources();
+                }
+                else
+                {
+                    return;
+                }
 
+            }
         }
     }
 }

@@ -39,6 +39,11 @@ namespace Movie_Booking_System.Util
             string query = $"DELETE FROM HelpTickets WHERE HelpTicketID ={TicketID};";
             return dbMan.ExecuteNonQuery(query);
         }
+        public static int DeleteMovie(int movieID)
+        {
+            string query = $"DELETE FROM Movies WHERE MovieID ={movieID};";
+            return dbMan.ExecuteNonQuery(query);
+        }
         public static int UpdateAuthority(int UserID,string authority)
         {
             string query = $"UPDATE Accounts SET Authority='{authority}' WHERE UserID ={UserID};";
@@ -82,6 +87,13 @@ namespace Movie_Booking_System.Util
             string query =
                             "INSERT INTO FoodItems (FoodName, FoodQty, Price, FoodDescription) " +
                             $"Values ('{foodname}' , {qty} , {price}, '{desc}');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public static int AddMovie(string Moviename, string director, DateTime runtime,string moviedesc)
+        {
+            string query =
+                            "INSERT INTO Movies (MovieName, Director, Runtime, MovieDescription) " +
+                            $"Values ('{Moviename}' , '{director}' , '{runtime}', '{moviedesc}');";
             return dbMan.ExecuteNonQuery(query);
         }
 
