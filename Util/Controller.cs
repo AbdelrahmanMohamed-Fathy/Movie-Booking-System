@@ -3,6 +3,7 @@ using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Runtime.Remoting.Messaging;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -412,6 +413,18 @@ namespace Movie_Booking_System.Util
             }
 
         }
+
+        public static DataTable GetAllShows()
+        {
+            string query =
+                "SELECT * FROM Shows";
+            return dbMan.ExecuteReader(query);
+        }
+
+        //public static void InsertShow(string MovieName, string CinemaType, int Start)
+        //{
+        //    string query =     
+        //}
 
     }
 }
