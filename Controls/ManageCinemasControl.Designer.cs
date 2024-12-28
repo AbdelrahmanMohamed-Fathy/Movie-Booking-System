@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelmngacc = new System.Windows.Forms.Panel();
+            this.panelmngcin = new System.Windows.Forms.Panel();
             this.btnAddRemMovies = new System.Windows.Forms.Button();
-            this.btnViewReports = new System.Windows.Forms.Button();
-            this.btnModifyAccounts = new System.Windows.Forms.Button();
+            this.btnAddRemShows = new System.Windows.Forms.Button();
             this.btnAddRemCinemas = new System.Windows.Forms.Button();
-            this.panelmngacc.SuspendLayout();
+            this.btnAddRemSeats = new System.Windows.Forms.Button();
+            this.panelmngcin.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelmngacc
+            // panelmngcin
             // 
-            this.panelmngacc.BackColor = System.Drawing.Color.Transparent;
-            this.panelmngacc.Controls.Add(this.btnAddRemMovies);
-            this.panelmngacc.Controls.Add(this.btnViewReports);
-            this.panelmngacc.Controls.Add(this.btnModifyAccounts);
-            this.panelmngacc.Controls.Add(this.btnAddRemCinemas);
-            this.panelmngacc.Location = new System.Drawing.Point(3, 291);
-            this.panelmngacc.Name = "panelmngacc";
-            this.panelmngacc.Size = new System.Drawing.Size(250, 500);
-            this.panelmngacc.TabIndex = 5;
+            this.panelmngcin.BackColor = System.Drawing.Color.Transparent;
+            this.panelmngcin.Controls.Add(this.btnAddRemSeats);
+            this.panelmngcin.Controls.Add(this.btnAddRemMovies);
+            this.panelmngcin.Controls.Add(this.btnAddRemShows);
+            this.panelmngcin.Controls.Add(this.btnAddRemCinemas);
+            this.panelmngcin.Location = new System.Drawing.Point(3, 132);
+            this.panelmngcin.Name = "panelmngcin";
+            this.panelmngcin.Size = new System.Drawing.Size(250, 500);
+            this.panelmngcin.TabIndex = 5;
             // 
             // btnAddRemMovies
             // 
@@ -59,42 +59,26 @@
             this.btnAddRemMovies.ForeColor = System.Drawing.Color.Teal;
             this.btnAddRemMovies.Location = new System.Drawing.Point(12, 113);
             this.btnAddRemMovies.Name = "btnAddRemMovies";
-            this.btnAddRemMovies.Size = new System.Drawing.Size(171, 59);
+            this.btnAddRemMovies.Size = new System.Drawing.Size(196, 59);
             this.btnAddRemMovies.TabIndex = 4;
             this.btnAddRemMovies.Text = "Add/Remove Movies.";
             this.btnAddRemMovies.UseVisualStyleBackColor = false;
             // 
-            // btnViewReports
+            // btnAddRemShows
             // 
-            this.btnViewReports.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnAddRemShows.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnViewReports.BackColor = System.Drawing.Color.Transparent;
-            this.btnViewReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewReports.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewReports.ForeColor = System.Drawing.Color.Teal;
-            this.btnViewReports.Location = new System.Drawing.Point(12, 311);
-            this.btnViewReports.Name = "btnViewReports";
-            this.btnViewReports.Size = new System.Drawing.Size(171, 62);
-            this.btnViewReports.TabIndex = 7;
-            this.btnViewReports.Text = "View Reports.";
-            this.btnViewReports.UseVisualStyleBackColor = false;
-            // 
-            // btnModifyAccounts
-            // 
-            this.btnModifyAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModifyAccounts.BackColor = System.Drawing.Color.Transparent;
-            this.btnModifyAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifyAccounts.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifyAccounts.ForeColor = System.Drawing.Color.Teal;
-            this.btnModifyAccounts.Location = new System.Drawing.Point(12, 244);
-            this.btnModifyAccounts.Name = "btnModifyAccounts";
-            this.btnModifyAccounts.Size = new System.Drawing.Size(171, 61);
-            this.btnModifyAccounts.TabIndex = 6;
-            this.btnModifyAccounts.Text = "Add/Remove Seats.";
-            this.btnModifyAccounts.UseVisualStyleBackColor = false;
+            this.btnAddRemShows.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddRemShows.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddRemShows.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddRemShows.ForeColor = System.Drawing.Color.Teal;
+            this.btnAddRemShows.Location = new System.Drawing.Point(12, 244);
+            this.btnAddRemShows.Name = "btnAddRemShows";
+            this.btnAddRemShows.Size = new System.Drawing.Size(196, 61);
+            this.btnAddRemShows.TabIndex = 6;
+            this.btnAddRemShows.Text = "Add/Remove Showtimes.";
+            this.btnAddRemShows.UseVisualStyleBackColor = false;
             // 
             // btnAddRemCinemas
             // 
@@ -107,29 +91,45 @@
             this.btnAddRemCinemas.ForeColor = System.Drawing.Color.Teal;
             this.btnAddRemCinemas.Location = new System.Drawing.Point(12, 178);
             this.btnAddRemCinemas.Name = "btnAddRemCinemas";
-            this.btnAddRemCinemas.Size = new System.Drawing.Size(171, 60);
+            this.btnAddRemCinemas.Size = new System.Drawing.Size(196, 60);
             this.btnAddRemCinemas.TabIndex = 5;
             this.btnAddRemCinemas.Text = "Add/Remove Cinemas.";
             this.btnAddRemCinemas.UseVisualStyleBackColor = false;
+            // 
+            // btnAddRemSeats
+            // 
+            this.btnAddRemSeats.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddRemSeats.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddRemSeats.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddRemSeats.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddRemSeats.ForeColor = System.Drawing.Color.Teal;
+            this.btnAddRemSeats.Location = new System.Drawing.Point(12, 311);
+            this.btnAddRemSeats.Name = "btnAddRemSeats";
+            this.btnAddRemSeats.Size = new System.Drawing.Size(196, 61);
+            this.btnAddRemSeats.TabIndex = 7;
+            this.btnAddRemSeats.Text = "Add/Remove Seats.";
+            this.btnAddRemSeats.UseVisualStyleBackColor = false;
             // 
             // ManageCinemasControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelmngacc);
+            this.Controls.Add(this.panelmngcin);
             this.Name = "ManageCinemasControl";
             this.Size = new System.Drawing.Size(765, 728);
-            this.panelmngacc.ResumeLayout(false);
+            this.panelmngcin.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panelmngacc;
+        private System.Windows.Forms.Panel panelmngcin;
         private System.Windows.Forms.Button btnAddRemMovies;
-        private System.Windows.Forms.Button btnViewReports;
-        private System.Windows.Forms.Button btnModifyAccounts;
+        private System.Windows.Forms.Button btnAddRemShows;
         private System.Windows.Forms.Button btnAddRemCinemas;
+        private System.Windows.Forms.Button btnAddRemSeats;
     }
 }
