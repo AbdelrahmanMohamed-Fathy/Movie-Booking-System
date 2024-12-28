@@ -68,6 +68,7 @@
             this.btnModifyAccounts.TabIndex = 6;
             this.btnModifyAccounts.Text = "Modify Accounts.";
             this.btnModifyAccounts.UseVisualStyleBackColor = false;
+            this.btnModifyAccounts.Click += new System.EventHandler(this.btnModifyAccounts_Click);
             // 
             // btnViewReports
             // 

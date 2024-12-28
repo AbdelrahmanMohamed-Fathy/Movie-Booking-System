@@ -31,6 +31,26 @@ namespace Movie_Booking_System.Util
             string query = $"DELETE FROM HelpTickets WHERE HelpTicketID ={TicketID};";
             return dbMan.ExecuteNonQuery(query);
         }
+        public static int UpdateAuthority(int UserID,string authority)
+        {
+            string query = $"UPDATE Accounts SET Authority='{authority}' WHERE UserID ={UserID};";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public static DataTable GetUserID()
+        {
+            string query = $"SELECT UserID FROM Accounts";
+            return dbMan.ExecuteReader(query);
+        }
+        public static DataTable GetAllAccounts()
+        {
+            string query = $"SELECT * FROM Accounts";
+            return dbMan.ExecuteReader(query);
+        }
+        public static int DeleteAccount(int UserID)
+        {
+            string query = $"DELETE FROM Accounts WHERE UserID ={UserID};";
+            return dbMan.ExecuteNonQuery(query);
+        }
 
         public static int InsertNewOrder(string UserID)  // ahmad
         {
