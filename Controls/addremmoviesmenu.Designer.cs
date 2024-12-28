@@ -49,9 +49,10 @@
             this.lblfooddesc.AutoSize = true;
             this.lblfooddesc.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfooddesc.ForeColor = System.Drawing.Color.Teal;
-            this.lblfooddesc.Location = new System.Drawing.Point(42, 244);
+            this.lblfooddesc.Location = new System.Drawing.Point(32, 198);
+            this.lblfooddesc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblfooddesc.Name = "lblfooddesc";
-            this.lblfooddesc.Size = new System.Drawing.Size(131, 24);
+            this.lblfooddesc.Size = new System.Drawing.Size(104, 19);
             this.lblfooddesc.TabIndex = 27;
             this.lblfooddesc.Text = "Movie Description.";
             // 
@@ -59,10 +60,11 @@
             // 
             this.txtbxdesc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtbxdesc.BackColor = System.Drawing.Color.MintCream;
-            this.txtbxdesc.Location = new System.Drawing.Point(46, 271);
+            this.txtbxdesc.Location = new System.Drawing.Point(34, 220);
+            this.txtbxdesc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtbxdesc.Multiline = true;
             this.txtbxdesc.Name = "txtbxdesc";
-            this.txtbxdesc.Size = new System.Drawing.Size(251, 101);
+            this.txtbxdesc.Size = new System.Drawing.Size(189, 83);
             this.txtbxdesc.TabIndex = 26;
             // 
             // btnAddMovie
@@ -72,9 +74,10 @@
             this.btnAddMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddMovie.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddMovie.ForeColor = System.Drawing.Color.Teal;
-            this.btnAddMovie.Location = new System.Drawing.Point(74, 466);
+            this.btnAddMovie.Location = new System.Drawing.Point(56, 379);
+            this.btnAddMovie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddMovie.Name = "btnAddMovie";
-            this.btnAddMovie.Size = new System.Drawing.Size(171, 60);
+            this.btnAddMovie.Size = new System.Drawing.Size(128, 49);
             this.btnAddMovie.TabIndex = 24;
             this.btnAddMovie.Text = "Add Food Item.";
             this.btnAddMovie.UseVisualStyleBackColor = false;
@@ -87,9 +90,10 @@
             this.btnRemMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemMovie.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemMovie.ForeColor = System.Drawing.Color.Teal;
-            this.btnRemMovie.Location = new System.Drawing.Point(74, 532);
+            this.btnRemMovie.Location = new System.Drawing.Point(56, 432);
+            this.btnRemMovie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemMovie.Name = "btnRemMovie";
-            this.btnRemMovie.Size = new System.Drawing.Size(171, 60);
+            this.btnRemMovie.Size = new System.Drawing.Size(128, 49);
             this.btnRemMovie.TabIndex = 23;
             this.btnRemMovie.Text = "Remove Food Item.";
             this.btnRemMovie.UseVisualStyleBackColor = false;
@@ -102,14 +106,14 @@
             this.txtbxMovieName.BackColor = System.Drawing.Color.MintCream;
             this.txtbxMovieName.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxMovieName.ForeColor = System.Drawing.Color.Black;
-            this.txtbxMovieName.Location = new System.Drawing.Point(46, 122);
-            this.txtbxMovieName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtbxMovieName.MaximumSize = new System.Drawing.Size(25100, 32);
-            this.txtbxMovieName.MinimumSize = new System.Drawing.Size(0, 32);
+            this.txtbxMovieName.Location = new System.Drawing.Point(34, 99);
+            this.txtbxMovieName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtbxMovieName.MaximumSize = new System.Drawing.Size(18825, 26);
+            this.txtbxMovieName.MinimumSize = new System.Drawing.Size(0, 26);
             this.txtbxMovieName.Name = "txtbxMovieName";
             this.txtbxMovieName.PlaceHolderText = "Movie Name.";
             this.txtbxMovieName.PlaceHolderTextColor = System.Drawing.Color.Silver;
-            this.txtbxMovieName.Size = new System.Drawing.Size(251, 32);
+            this.txtbxMovieName.Size = new System.Drawing.Size(188, 26);
             this.txtbxMovieName.TabIndex = 20;
             this.txtbxMovieName.UseSystemPasswordChar = false;
             // 
@@ -119,12 +123,14 @@
             this.datagridallmovies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridallmovies.Dock = System.Windows.Forms.DockStyle.Right;
             this.datagridallmovies.GridColor = System.Drawing.Color.Teal;
-            this.datagridallmovies.Location = new System.Drawing.Point(385, 0);
+            this.datagridallmovies.Location = new System.Drawing.Point(288, 0);
+            this.datagridallmovies.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.datagridallmovies.Name = "datagridallmovies";
             this.datagridallmovies.RowHeadersWidth = 51;
             this.datagridallmovies.RowTemplate.Height = 24;
-            this.datagridallmovies.Size = new System.Drawing.Size(474, 743);
+            this.datagridallmovies.Size = new System.Drawing.Size(356, 604);
             this.datagridallmovies.TabIndex = 18;
+            this.datagridallmovies.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridallmovies_CellContentClick);
             // 
             // cmbxMovieID
             // 
@@ -133,9 +139,10 @@
             this.cmbxMovieID.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbxMovieID.ForeColor = System.Drawing.Color.Gray;
             this.cmbxMovieID.FormattingEnabled = true;
-            this.cmbxMovieID.Location = new System.Drawing.Point(74, 378);
+            this.cmbxMovieID.Location = new System.Drawing.Point(56, 307);
+            this.cmbxMovieID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbxMovieID.Name = "cmbxMovieID";
-            this.cmbxMovieID.Size = new System.Drawing.Size(169, 32);
+            this.cmbxMovieID.Size = new System.Drawing.Size(128, 27);
             this.cmbxMovieID.TabIndex = 19;
             this.cmbxMovieID.Text = "Movie ID.";
             // 
@@ -146,14 +153,14 @@
             this.txtbxdirector.BackColor = System.Drawing.Color.MintCream;
             this.txtbxdirector.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxdirector.ForeColor = System.Drawing.Color.Black;
-            this.txtbxdirector.Location = new System.Drawing.Point(46, 157);
-            this.txtbxdirector.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtbxdirector.MaximumSize = new System.Drawing.Size(28700, 32);
-            this.txtbxdirector.MinimumSize = new System.Drawing.Size(0, 32);
+            this.txtbxdirector.Location = new System.Drawing.Point(34, 128);
+            this.txtbxdirector.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.txtbxdirector.MaximumSize = new System.Drawing.Size(21525, 26);
+            this.txtbxdirector.MinimumSize = new System.Drawing.Size(0, 26);
             this.txtbxdirector.Name = "txtbxdirector";
             this.txtbxdirector.PlaceHolderText = "Director.";
             this.txtbxdirector.PlaceHolderTextColor = System.Drawing.Color.Silver;
-            this.txtbxdirector.Size = new System.Drawing.Size(251, 32);
+            this.txtbxdirector.Size = new System.Drawing.Size(188, 26);
             this.txtbxdirector.TabIndex = 21;
             this.txtbxdirector.UseSystemPasswordChar = false;
             // 
@@ -164,20 +171,20 @@
             this.lblruntime.BackColor = System.Drawing.Color.MintCream;
             this.lblruntime.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblruntime.ForeColor = System.Drawing.Color.Black;
-            this.lblruntime.Location = new System.Drawing.Point(46, 192);
-            this.lblruntime.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.lblruntime.MaximumSize = new System.Drawing.Size(28700, 32);
-            this.lblruntime.MinimumSize = new System.Drawing.Size(0, 32);
+            this.lblruntime.Location = new System.Drawing.Point(34, 156);
+            this.lblruntime.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.lblruntime.MaximumSize = new System.Drawing.Size(21525, 26);
+            this.lblruntime.MinimumSize = new System.Drawing.Size(0, 26);
             this.lblruntime.Name = "lblruntime";
             this.lblruntime.PlaceHolderText = "Director.";
             this.lblruntime.PlaceHolderTextColor = System.Drawing.Color.Silver;
-            this.lblruntime.Size = new System.Drawing.Size(251, 32);
+            this.lblruntime.Size = new System.Drawing.Size(188, 26);
             this.lblruntime.TabIndex = 30;
             this.lblruntime.UseSystemPasswordChar = false;
             // 
             // addremmoviesmenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(236)))), ((int)(((byte)(231)))));
             this.Controls.Add(this.lblruntime);
@@ -189,8 +196,9 @@
             this.Controls.Add(this.txtbxMovieName);
             this.Controls.Add(this.cmbxMovieID);
             this.Controls.Add(this.datagridallmovies);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "addremmoviesmenu";
-            this.Size = new System.Drawing.Size(859, 743);
+            this.Size = new System.Drawing.Size(644, 604);
             ((System.ComponentModel.ISupportInitialize)(this.datagridallmovies)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

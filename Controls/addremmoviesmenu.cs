@@ -56,5 +56,10 @@ namespace Movie_Booking_System.Controls
         {
 
         }
+
+        private void datagridallmovies_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
