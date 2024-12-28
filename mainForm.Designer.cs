@@ -34,6 +34,7 @@
             this.btnStatus = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnChangePass = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +79,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.Controls.Add(this.btnChangePass);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnStatus);
             this.panel1.Controls.Add(this.btnGoBack);
@@ -95,12 +97,27 @@
             this.label1.Size = new System.Drawing.Size(23, 23);
             this.label1.TabIndex = 3;
             // 
+            // btnChangePass
+            // 
+            this.btnChangePass.AutoSize = true;
+            this.btnChangePass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangePass.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnChangePass.ForeColor = System.Drawing.Color.White;
+            this.btnChangePass.Location = new System.Drawing.Point(296, 16);
+            this.btnChangePass.Name = "btnChangePass";
+            this.btnChangePass.Size = new System.Drawing.Size(136, 25);
+            this.btnChangePass.TabIndex = 4;
+            this.btnChangePass.Text = "Change Password";
+            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
+            // 
             // mainForm
             // 
             this.ClientSize = new System.Drawing.Size(800, 650);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.mainPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "mainForm";
             this.Text = "Movie Booking System";
             this.Load += new System.EventHandler(this.mainForm_Load);
@@ -117,6 +134,7 @@
         private System.Windows.Forms.Label btnStatus;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label btnChangePass;
     }
 }
 

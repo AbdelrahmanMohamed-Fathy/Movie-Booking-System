@@ -318,3 +318,5 @@ WHERE Seats.CinemaID = 1
 SELECT *
 FROM BookingSeats
 
+SELECT *
+FROM Accounts

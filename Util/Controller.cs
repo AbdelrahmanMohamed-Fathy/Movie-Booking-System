@@ -413,5 +413,13 @@ namespace Movie_Booking_System.Util
 
         }
 
+        public static void UpdatePass(int UserID,string Password)
+        {
+            string query =
+                "UPDATE Accounts\n" +
+                $"SET Pass = '{Password}'\n" +
+                $"WHERE UserID = {UserID}\n";
+            dbMan.ExecuteNonQuery(query);
+        }
     }
 }
