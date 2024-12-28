@@ -25,13 +25,13 @@ namespace Movie_Booking_System.Screens.FoodOrders
             LoadAllIncompleteOrders();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
-            textBox4.Text = "";
+            txtOrderId.Text = "";
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnLoadorder_Click(object sender, EventArgs e)
         {
             LoadAllOrders();
         }
@@ -82,20 +82,20 @@ namespace Movie_Booking_System.Screens.FoodOrders
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnLoadincOrd_Click(object sender, EventArgs e)
         {
             LoadAllIncompleteOrders();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCompleteorder_Click(object sender, EventArgs e)
         {
-            if(textBox4.Text == "")
+            if(txtOrderId.Text == "")
             {
                 MessageBox.Show("Select Order from View .. !!");
             }
             else
             {
-                Controller.UpdateOrder(Convert.ToInt32(textBox4.Text));
+                Controller.UpdateOrder(Convert.ToInt32(txtOrderId.Text));
                 MessageBox.Show("Order Completed Correctly ...");
                 LoadAllIncompleteOrders();
             }
@@ -110,7 +110,7 @@ namespace Movie_Booking_System.Screens.FoodOrders
             String row = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             if (row == null) 
                 return;
-            textBox4.Text = row;
+            txtOrderId.Text = row;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

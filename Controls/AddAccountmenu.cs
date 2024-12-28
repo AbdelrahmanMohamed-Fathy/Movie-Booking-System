@@ -348,7 +348,7 @@ namespace Movie_Booking_System.Controls
             }
             if (cmbxauthority.SelectedIndex == -1)
             {
-                MessageBox.Show("Please Choose the Authority.", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Please Choose the Authority.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             if (string.IsNullOrWhiteSpace(password.Text) || password.Text == "Password")

@@ -119,7 +119,6 @@ BookingID			INTEGER				NOT NULL IDENTITY(9034,1),
 UserID              INTEGER				NOT NULL,
 ShowID              INTEGER				NOT NULL,
 Price               AS dbo.GetBookingPrice(BookingID),
-PaymentMethod		VARCHAR(20)			NOT NULL CHECK (Paymentmethod IN ('Cash', 'Credit')),
 PRIMARY KEY			(BookingID),
 FOREIGN KEY         (UserID)			REFERENCES Accounts,
 FOREIGN KEY         (ShowID)			REFERENCES Shows
@@ -128,10 +127,12 @@ GO
 ---------------------------------------
 CREATE TABLE BookingSeats (
 BookingID			INTEGER				NOT NULL,
+ShowID              INTEGER             NOT NULL,
 CinemaID			INTEGER				NOT NULL,
 SeatID              INTEGER				NOT NULL,
 PRIMARY KEY         (BookingID,SeatID),
 FOREIGN KEY         (BookingID)         REFERENCES Bookings,
+FOREIGN KEY         (ShowID)            REFERENCES Shows,
 FOREIGN KEY         (CinemaID,SeatID)   REFERENCES Seats
 );
 ---------------------------------------
@@ -220,6 +221,19 @@ INSERT INTO Cinemas (CinemaType, CinemaManagerID) VALUES ('VIP', 5274)
 INSERT INTO Cinemas (CinemaType, CinemaManagerID) VALUES ('Luxury', 5275)
 INSERT INTO Cinemas (CinemaType, CinemaManagerID) VALUES ('Standard', 5276)
 
+INSERT INTO Cinemas (CinemaType, CinemaManagerID) VALUES ('IMAX',5267)
+GO
+
+INSERT INTO Seats VALUES (1,1,50)
+INSERT INTO Seats VALUES (2,1,50)
+INSERT INTO Seats VALUES (3,1,50)
+INSERT INTO Seats VALUES (4,1,50)
+INSERT INTO Seats VALUES (5,1,50)
+INSERT INTO Seats VALUES (6,1,50)
+INSERT INTO Seats VALUES (7,1,50)
+INSERT INTO Seats VALUES (8,1,50)
+INSERT INTO Seats VALUES (9,1,50)
+INSERT INTO Seats VALUES (10,1,50)
 
 
 INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('La La Land', 'Damien Chazelle', CAST(N'02:08:00' AS Time))
@@ -298,3 +312,6 @@ FROM MovieReviews
 WHERE MovieReviews.MovieID = MovieReviews.MovieID
 GROUP BY MovieReviews.MovieID
 
+SELECT  SeatNumber
+FROM Seats
+WHERE Seats.CinemaID = 1

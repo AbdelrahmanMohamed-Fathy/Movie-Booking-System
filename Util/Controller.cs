@@ -31,6 +31,26 @@ namespace Movie_Booking_System.Util
             string query = $"DELETE FROM HelpTickets WHERE HelpTicketID ={TicketID};";
             return dbMan.ExecuteNonQuery(query);
         }
+        public static int UpdateAuthority(int UserID,string authority)
+        {
+            string query = $"UPDATE Accounts SET Authority='{authority}' WHERE UserID ={UserID};";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public static DataTable GetUserID()
+        {
+            string query = $"SELECT UserID FROM Accounts";
+            return dbMan.ExecuteReader(query);
+        }
+        public static DataTable GetAllAccounts()
+        {
+            string query = $"SELECT * FROM Accounts";
+            return dbMan.ExecuteReader(query);
+        }
+        public static int DeleteAccount(int UserID)
+        {
+            string query = $"DELETE FROM Accounts WHERE UserID ={UserID};";
+            return dbMan.ExecuteNonQuery(query);
+        }
 
         public static int InsertNewOrder(string UserID)  // ahmad
         {
@@ -306,6 +326,34 @@ namespace Movie_Booking_System.Util
             else
                 return 0;
 
+        }
+
+        public static DataTable GetAllSeats(int CinemaID)
+        {
+            string query =
+                "SELECT SeatNumber\n" +
+                "FROM Seats\n" +
+                $"WHERE CinemaID = {CinemaID}\n";
+
+            return dbMan.ExecuteReader(query);
+        }
+
+        public static DataTable GetTakenShowSeats(int ShowID)
+        {
+            string query =
+                "SELECT SeatNumber\n" +
+                "FROM BookingSeats, Seats\n" +
+                $"WHERE ShowID = {ShowID} AND Seats.CinemaID = BookingSeats.CinemaID\n";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public static DataTable GetShowTimesFull(int MovieID)
+        {
+            string query =
+                "SELECT Shows.*\n" +
+                "FROM Shows, Movies\n" +
+                $"WHERE Movies.MovieID = {MovieID} AND Movies.MovieID = Shows.MovieID\n";
+            return dbMan.ExecuteReader(query);
         }
     }
 }

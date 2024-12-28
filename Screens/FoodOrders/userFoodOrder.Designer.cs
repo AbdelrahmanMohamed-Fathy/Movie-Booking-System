@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.FoodId = new System.Windows.Forms.ComboBox();
+            this.addOrderBut = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,21 +41,21 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.FoodName = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.OrderCount = new System.Windows.Forms.TextBox();
+            this.OrderPrice = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.avaliablecount = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.ClearButt = new System.Windows.Forms.Button();
+            this.LoadOrderButt = new System.Windows.Forms.Button();
+            this.DeleteOrdButton = new System.Windows.Forms.Button();
+            this.UserId1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.TotalOrCo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.UsedCount = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -64,29 +64,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // FoodId
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(134, 107);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(109, 28);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.FoodId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FoodId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.FoodId.FormattingEnabled = true;
+            this.FoodId.Location = new System.Drawing.Point(134, 107);
+            this.FoodId.Name = "FoodId";
+            this.FoodId.Size = new System.Drawing.Size(109, 28);
+            this.FoodId.TabIndex = 0;
+            this.FoodId.SelectedIndexChanged += new System.EventHandler(this.FoodId_SelectedIndexChanged);
             // 
-            // button1
+            // addOrderBut
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(624, 307);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 53);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Add Order";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.addOrderBut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addOrderBut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addOrderBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.addOrderBut.Location = new System.Drawing.Point(624, 307);
+            this.addOrderBut.Name = "addOrderBut";
+            this.addOrderBut.Size = new System.Drawing.Size(146, 53);
+            this.addOrderBut.TabIndex = 1;
+            this.addOrderBut.Text = "Add Order";
+            this.addOrderBut.UseVisualStyleBackColor = true;
+            this.addOrderBut.Click += new System.EventHandler(this.addOrderBut_Click);
             // 
             // dataGridView1
             // 
@@ -175,16 +175,16 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Food Name:";
             // 
-            // comboBox2
+            // FoodName
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(430, 107);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(144, 28);
-            this.comboBox2.TabIndex = 4;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.FoodName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FoodName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.FoodName.FormattingEnabled = true;
+            this.FoodName.Location = new System.Drawing.Point(430, 107);
+            this.FoodName.Name = "FoodName";
+            this.FoodName.Size = new System.Drawing.Size(144, 28);
+            this.FoodName.TabIndex = 4;
+            this.FoodName.SelectedIndexChanged += new System.EventHandler(this.FoodName_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -196,23 +196,23 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Order Count:";
             // 
-            // textBox1
+            // OrderCount
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox1.Location = new System.Drawing.Point(134, 151);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(109, 26);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.OrderCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.OrderCount.Location = new System.Drawing.Point(134, 151);
+            this.OrderCount.Name = "OrderCount";
+            this.OrderCount.Size = new System.Drawing.Size(109, 26);
+            this.OrderCount.TabIndex = 7;
+            this.OrderCount.TextChanged += new System.EventHandler(this.OrderCount_TextChanged);
             // 
-            // textBox2
+            // OrderPrice
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox2.Location = new System.Drawing.Point(430, 154);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(144, 26);
-            this.textBox2.TabIndex = 9;
+            this.OrderPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.OrderPrice.Location = new System.Drawing.Point(430, 154);
+            this.OrderPrice.Name = "OrderPrice";
+            this.OrderPrice.ReadOnly = true;
+            this.OrderPrice.Size = new System.Drawing.Size(144, 26);
+            this.OrderPrice.TabIndex = 9;
             // 
             // label4
             // 
@@ -224,15 +224,15 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Order Price:";
             // 
-            // textBox3
+            // avaliablecount
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox3.Location = new System.Drawing.Point(134, 201);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(109, 26);
-            this.textBox3.TabIndex = 11;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.avaliablecount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.avaliablecount.Location = new System.Drawing.Point(134, 201);
+            this.avaliablecount.Name = "avaliablecount";
+            this.avaliablecount.ReadOnly = true;
+            this.avaliablecount.Size = new System.Drawing.Size(109, 26);
+            this.avaliablecount.TabIndex = 11;
+            this.avaliablecount.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label5
             // 
@@ -244,54 +244,54 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Av. Count:";
             // 
-            // button2
+            // ClearButt
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(624, 366);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(146, 53);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Clear";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.ClearButt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ClearButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.ClearButt.Location = new System.Drawing.Point(624, 366);
+            this.ClearButt.Name = "ClearButt";
+            this.ClearButt.Size = new System.Drawing.Size(146, 53);
+            this.ClearButt.TabIndex = 12;
+            this.ClearButt.Text = "Clear";
+            this.ClearButt.UseVisualStyleBackColor = true;
+            this.ClearButt.Click += new System.EventHandler(this.ClearButt_Click);
             // 
-            // button3
+            // LoadOrderButt
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button3.Location = new System.Drawing.Point(624, 425);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(146, 53);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Load Orders";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.LoadOrderButt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LoadOrderButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LoadOrderButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.LoadOrderButt.Location = new System.Drawing.Point(624, 425);
+            this.LoadOrderButt.Name = "LoadOrderButt";
+            this.LoadOrderButt.Size = new System.Drawing.Size(146, 53);
+            this.LoadOrderButt.TabIndex = 13;
+            this.LoadOrderButt.Text = "Load Orders";
+            this.LoadOrderButt.UseVisualStyleBackColor = true;
+            this.LoadOrderButt.Click += new System.EventHandler(this.LoadOrderButt_Click);
             // 
-            // button5
+            // DeleteOrdButton
             // 
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button5.Location = new System.Drawing.Point(624, 484);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(146, 53);
-            this.button5.TabIndex = 15;
-            this.button5.Text = "Delete Order";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.DeleteOrdButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteOrdButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteOrdButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.DeleteOrdButton.Location = new System.Drawing.Point(624, 484);
+            this.DeleteOrdButton.Name = "DeleteOrdButton";
+            this.DeleteOrdButton.Size = new System.Drawing.Size(146, 53);
+            this.DeleteOrdButton.TabIndex = 15;
+            this.DeleteOrdButton.Text = "Delete Order";
+            this.DeleteOrdButton.UseVisualStyleBackColor = true;
+            this.DeleteOrdButton.Click += new System.EventHandler(this.DeleteOrdButton_Click);
             // 
-            // textBox4
+            // UserId1
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox4.Location = new System.Drawing.Point(430, 204);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(144, 26);
-            this.textBox4.TabIndex = 17;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.UserId1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.UserId1.Location = new System.Drawing.Point(430, 204);
+            this.UserId1.Name = "UserId1";
+            this.UserId1.ReadOnly = true;
+            this.UserId1.Size = new System.Drawing.Size(144, 26);
+            this.UserId1.TabIndex = 17;
+            this.UserId1.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label6
             // 
@@ -303,14 +303,14 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "User ID:";
             // 
-            // textBox5
+            // TotalOrCo
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox5.Location = new System.Drawing.Point(134, 250);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(109, 26);
-            this.textBox5.TabIndex = 19;
+            this.TotalOrCo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.TotalOrCo.Location = new System.Drawing.Point(134, 250);
+            this.TotalOrCo.Name = "TotalOrCo";
+            this.TotalOrCo.ReadOnly = true;
+            this.TotalOrCo.Size = new System.Drawing.Size(109, 26);
+            this.TotalOrCo.TabIndex = 19;
             // 
             // label7
             // 
@@ -322,14 +322,14 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "Total Count:";
             // 
-            // textBox6
+            // UsedCount
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox6.Location = new System.Drawing.Point(430, 250);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(144, 26);
-            this.textBox6.TabIndex = 21;
+            this.UsedCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.UsedCount.Location = new System.Drawing.Point(430, 250);
+            this.UsedCount.Name = "UsedCount";
+            this.UsedCount.ReadOnly = true;
+            this.UsedCount.Size = new System.Drawing.Size(144, 26);
+            this.UsedCount.TabIndex = 21;
             // 
             // label8
             // 
@@ -388,27 +388,27 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.UsedCount);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.TotalOrCo);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.UserId1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.DeleteOrdButton);
+            this.Controls.Add(this.LoadOrderButt);
+            this.Controls.Add(this.ClearButt);
+            this.Controls.Add(this.avaliablecount);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.OrderPrice);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.OrderCount);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.FoodName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.addOrderBut);
+            this.Controls.Add(this.FoodId);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "userFoodOrder";
@@ -423,8 +423,8 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox FoodId;
+        private System.Windows.Forms.Button addOrderBut;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -435,21 +435,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox FoodName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox OrderCount;
+        private System.Windows.Forms.TextBox OrderPrice;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox avaliablecount;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button ClearButt;
+        private System.Windows.Forms.Button LoadOrderButt;
+        private System.Windows.Forms.Button DeleteOrdButton;
+        private System.Windows.Forms.TextBox UserId1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox TotalOrCo;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox UsedCount;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label9;

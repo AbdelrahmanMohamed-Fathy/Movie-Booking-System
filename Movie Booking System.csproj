@@ -225,6 +225,12 @@
     <Compile Include="Controls\Adminticket.Designer.cs">
       <DependentUpon>Adminticket.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Booking\seat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Booking\seat.Designer.cs">
+      <DependentUpon>seat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\DeleteAccountmenucs.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -242,6 +248,12 @@
     </Compile>
     <Compile Include="Controls\ManageCinemasControl.Designer.cs">
       <DependentUpon>ManageCinemasControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ModifyAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ModifyAccount.Designer.cs">
+      <DependentUpon>ModifyAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\PlaceHolderTextBox.cs">
       <SubType>UserControl</SubType>
@@ -366,6 +378,9 @@
     <EmbeddedResource Include="Controls\Adminticket.resx">
       <DependentUpon>Adminticket.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Booking\seat.resx">
+      <DependentUpon>seat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\DeleteAccountmenucs.resx">
       <DependentUpon>DeleteAccountmenucs.cs</DependentUpon>
     </EmbeddedResource>
@@ -374,6 +389,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ManageCinemasControl.resx">
       <DependentUpon>ManageCinemasControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ModifyAccount.resx">
+      <DependentUpon>ModifyAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\PlaceHolderTextBox.resx">
       <DependentUpon>PlaceHolderTextBox.cs</DependentUpon>
@@ -398,9 +416,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\FoodOrders\employeeFulfillOrder.resx">
       <DependentUpon>employeeFulfillOrder.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\FoodOrders\userFoodOrder.resx">
       <DependentUpon>userFoodOrder.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\AdminScreens\adminDashBoard.resx">
       <DependentUpon>adminDashBoard.cs</DependentUpon>
@@ -434,6 +454,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\userScreen.resx">
       <DependentUpon>userScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Screens\signupScreen.cs">
       <SubType>Form</SubType>
@@ -486,6 +507,10 @@
     <Content Include="Assets\arrow_back_16dp_000000_FILL0_wght400_GRAD0_opsz20%281%29.png" />
     <Content Include="Assets\arrow_back_16dp_000000_FILL0_wght400_GRAD0_opsz20.png" />
     <Content Include="Assets\bars.png" />
+    <Content Include="Assets\chair.png" />
+    <Content Include="Assets\chair_green.png" />
+    <Content Include="Assets\chair_red.png" />
+    <Content Include="Assets\chair_yellow.png" />
     <Content Include="Assets\Complaint.png" />
     <Content Include="Assets\Create a unique and cinematic logo for Absolute Cinema, resize to 950x600, remove all text except Absolute Cinema.png" />
     <Content Include="Assets\email-icon.png" />
@@ -493,6 +518,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Closed-eye-icon.png" />
+    <Content Include="Assets\icons8-person-24_1.png" />
     <Content Include="Assets\icons8-phone-30.png" />
     <Content Include="Assets\icons8-popcorn-24.png" />
     <Content Include="Assets\ManageAccicon.png" />
@@ -530,7 +556,7 @@
     <Content Include="Assets\Phone-icon.png" />
     <Content Include="Assets\Phone.png" />
     <Content Include="Assets\Search icon.png" />
-    <Content Include="Assets\seat.png" />
+    <Content Include="Assets\seat_green.png" />
     <Content Include="Assets\Star.png" />
     <Content Include="Assets\Tele-icon.png" />
     <Content Include="Assets\Test.png" />
