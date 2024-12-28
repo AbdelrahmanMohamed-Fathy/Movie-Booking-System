@@ -249,6 +249,24 @@
     <Compile Include="Controls\ManageCinemasControl.Designer.cs">
       <DependentUpon>ManageCinemasControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ManageFoodControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ManageFoodControl.Designer.cs">
+      <DependentUpon>ManageFoodControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\manageinventorymenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\manageinventorymenu.Designer.cs">
+      <DependentUpon>manageinventorymenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Manageordersmenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Manageordersmenu.Designer.cs">
+      <DependentUpon>Manageordersmenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ModifyAccount.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -266,6 +284,12 @@
     </Compile>
     <Compile Include="Controls\MovieCard.Designer.cs">
       <DependentUpon>MovieCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Viewreportscontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Viewreportscontrol.Designer.cs">
+      <DependentUpon>Viewreportscontrol.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -390,6 +414,15 @@
     <EmbeddedResource Include="Controls\ManageCinemasControl.resx">
       <DependentUpon>ManageCinemasControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ManageFoodControl.resx">
+      <DependentUpon>ManageFoodControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\manageinventorymenu.resx">
+      <DependentUpon>manageinventorymenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Manageordersmenu.resx">
+      <DependentUpon>Manageordersmenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ModifyAccount.resx">
       <DependentUpon>ModifyAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -398,6 +431,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MovieCard.resx">
       <DependentUpon>MovieCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Viewreportscontrol.resx">
+      <DependentUpon>Viewreportscontrol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -410,6 +446,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\AdminScreens\usersReport.resx">
       <DependentUpon>usersReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\employeeDashBoard.resx">
+      <DependentUpon>employeeDashBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\FoodOrders\employeeFulfillOrder.resx">
       <DependentUpon>employeeFulfillOrder.cs</DependentUpon>

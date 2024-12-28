@@ -68,7 +68,7 @@ namespace Movie_Booking_System.Screens
             else
             {
                 userRev = new userReview(MovieID, parentForm.CurrentUserID);
-                userRev.ShowDialog();
+                userRev.Show();
             }
         }
     }

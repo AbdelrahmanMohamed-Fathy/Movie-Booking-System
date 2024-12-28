@@ -117,103 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="Menuicon.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Menuicon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAG9JREFUWEft1rENgDAMRFGPAOtAD6PBCLABsAxsBHe13TqmuCf9JorkIooSE5E/
-        GdGC1uQ4Y0DOg95G3ciZ0Yb25DhjQiKhDvXJcUboQtGVyehEDhejzRkdKFR6BCItHyPOcsqfY34SSj8k
-        IlLA7AMKGa2by0DSWwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <metadata name="AdminMenu.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="lblviewrep.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="btnviewrep.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="lblmngfood.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="btnManagefood.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="lblManageCinemas.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="lblManageAcc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="lblHelpTicket.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="btnManageCinemas.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="btnManageAcc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Helptickets.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="lblviewrep.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="lblviewrep.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAAVpJREFUSEul1s8rRFEYxvFJSZEmpUgJSxsS+ZHs7JRCs1G2Uv4AKWupWVDKwtaO
-        bG2sLSytLJSEZEXiD/B9cOpcc+71vtdTn2ame+59ztx7pjOVX2lDh1Er3DnCO17+8PrzOgZXVLD4/bYw
-        nfjAI1wlnoI7zEAl4zDFW6C4SsoUKOYST8EzZiPb0MMvfCbWgnYcJ1xA18iNtSAvOtdcMI1VI41VXAU1
-        7BhprOIqKBNXwQJSs03RWMVVoKW3YaSxiqugTFwFa0it9WALSjf2sIIJ6BpNCMcziQuGoNWRZxLKIQ7w
-        gH7o2DrO0JAyt+gUc9CveAQ9eMIAGhIXbOK8wC4UzVizv4F2uRPowScTF3RhtEAvQvqgi+ubXKEZyZS5
-        RSHaz28xBV3jEloomfynoA49bOUa83j7+hRFBZZNP6ZzhnGPKhRtRoPQvp2J529L0IJ9LCFkGcy+Uv8E
-        w+6DGKbBE8YAAAAASUVORK5CYII=
-</value>
-  </data>
-  <metadata name="btnviewrep.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="lblmngfood.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="lblmngfood.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAASNJREFUSEvtlbFOAkEURZfEYEds/ABsLAwf4CdYYEGHMRq/wcoEiSQUJCQm9iQ0
-        FBR+hqVgZYmxMrG2sRDk3J2djbvDLGyHyZ7kJHfm7ZsHCwtBQR6a+IO/Gb6iRfnMxGCGlyYmcoI71CE9
-        j0+oukVZPcKXE9gBPtL1YoBDur7AjonxoaUot9Eh7wB9Wx5NjAfUonyODjeoYiVcudzjt4khLZzjNapv
-        hFP8xD10OEVdWA9XSfTWJ/gcrgxlHKB6rB94jCvZwRd8wwNtROhwe3sa2khxiKoNcVcbWRzhO37hGB9Q
-        Q3VAH32orhexEfuoizVIjfogTzCLXAMs9rZsQjFgLds1QD8BavirntgL9KH6rYnrucL0n00Xq+hDw7Pq
-        /5YgWAI48Hk4AokMGQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <metadata name="btnManagefood.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="lblManageCinemas.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="lblManageCinemas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAASZJREFUSEvd1dFJA0EQxvEzEJswNiLaQtAovlmHNahtaLQASRqwBlE0pIcgvur3
-        hztYdmf2hsvbffCDZDM7C7t3m2b0OZRrWcqH/LT4zBi/UTMoC9nIX49vuZBwJnIvVrOaO2Fub7zmr3Ik
-        M1m1YzkWqYZtsSaCxl2OxarBuZjhsGp7Hl3gS6ZShCfCmtBhW1iE5ut2zHMlRZ7FKh7iUYp8SlcQOVB4
-        dbwnRXbSFXj7fSKnyXevjl5FIgvQ/Cz57tX9MpAn3aLogXp1PI1FniSdvI8XKdL3mEYPHvQqwovGxWVN
-        gLffua2YLxrhVrQmIbrAXKrxLrvIwT9Ib7hyuRWtBjU0P5BwuBW5uKxmuTe5TdxIKBzWpXC3vAt/l9YC
-        OR6WUaRp/gH1IQyV95uNLwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <metadata name="lblManageAcc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="lblManageAcc.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -226,9 +130,6 @@
         P1GKpPQNdKeki97vr4vFvgBgA0fZGPUqFwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="lblHelpTicket.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="lblHelpTicket.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -243,19 +144,4 @@
         VM3R/YSeYDkm9aYXiMzhXaBW/T/i3G+V+V39k50OZQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="btnManageCinemas.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="btnManageAcc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Helptickets.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dashboardadmin.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

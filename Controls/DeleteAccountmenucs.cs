@@ -34,7 +34,7 @@ namespace Movie_Booking_System.Controls
                 int userid = Convert.ToInt32(cmbxUserID.Text);
                 if (currentuserid == userid)
                 {
-                    MessageBox.Show("BRO YOU ARE DELETING YOURSELF? ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("A User Cannot Delete Themself! ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
                 else

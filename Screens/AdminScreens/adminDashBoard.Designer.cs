@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(adminDashBoard));
             this.Menuicon = new System.Windows.Forms.Label();
             this.AdminMenu = new System.Windows.Forms.Panel();
+            this.lblviewrep = new System.Windows.Forms.Label();
+            this.btnviewrep = new System.Windows.Forms.Button();
+            this.lblmngfood = new System.Windows.Forms.Label();
+            this.btnManagefood = new System.Windows.Forms.Button();
             this.lblManageCinemas = new System.Windows.Forms.Label();
             this.lblManageAcc = new System.Windows.Forms.Label();
             this.lblHelpTicket = new System.Windows.Forms.Label();
@@ -55,6 +59,10 @@
             // AdminMenu
             // 
             this.AdminMenu.BackColor = System.Drawing.Color.Teal;
+            this.AdminMenu.Controls.Add(this.lblviewrep);
+            this.AdminMenu.Controls.Add(this.btnviewrep);
+            this.AdminMenu.Controls.Add(this.lblmngfood);
+            this.AdminMenu.Controls.Add(this.btnManagefood);
             this.AdminMenu.Controls.Add(this.lblManageCinemas);
             this.AdminMenu.Controls.Add(this.lblManageAcc);
             this.AdminMenu.Controls.Add(this.lblHelpTicket);
@@ -67,11 +75,61 @@
             this.AdminMenu.Size = new System.Drawing.Size(265, 600);
             this.AdminMenu.TabIndex = 1;
             // 
+            // lblviewrep
+            // 
+            this.lblviewrep.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblviewrep.Image = ((System.Drawing.Image)(resources.GetObject("lblviewrep.Image")));
+            this.lblviewrep.Location = new System.Drawing.Point(19, 414);
+            this.lblviewrep.Name = "lblviewrep";
+            this.lblviewrep.Size = new System.Drawing.Size(39, 37);
+            this.lblviewrep.TabIndex = 10;
+            // 
+            // btnviewrep
+            // 
+            this.btnviewrep.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnviewrep.FlatAppearance.BorderSize = 0;
+            this.btnviewrep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnviewrep.Font = new System.Drawing.Font("Impact", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnviewrep.ForeColor = System.Drawing.Color.MintCream;
+            this.btnviewrep.Location = new System.Drawing.Point(60, 414);
+            this.btnviewrep.Name = "btnviewrep";
+            this.btnviewrep.Size = new System.Drawing.Size(198, 36);
+            this.btnviewrep.TabIndex = 9;
+            this.btnviewrep.Text = "View Reports.";
+            this.btnviewrep.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnviewrep.UseVisualStyleBackColor = true;
+            this.btnviewrep.Click += new System.EventHandler(this.btnviewrep_Click);
+            // 
+            // lblmngfood
+            // 
+            this.lblmngfood.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblmngfood.Image = ((System.Drawing.Image)(resources.GetObject("lblmngfood.Image")));
+            this.lblmngfood.Location = new System.Drawing.Point(19, 349);
+            this.lblmngfood.Name = "lblmngfood";
+            this.lblmngfood.Size = new System.Drawing.Size(39, 37);
+            this.lblmngfood.TabIndex = 8;
+            // 
+            // btnManagefood
+            // 
+            this.btnManagefood.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnManagefood.FlatAppearance.BorderSize = 0;
+            this.btnManagefood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManagefood.Font = new System.Drawing.Font("Impact", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManagefood.ForeColor = System.Drawing.Color.MintCream;
+            this.btnManagefood.Location = new System.Drawing.Point(60, 340);
+            this.btnManagefood.Name = "btnManagefood";
+            this.btnManagefood.Size = new System.Drawing.Size(202, 59);
+            this.btnManagefood.TabIndex = 7;
+            this.btnManagefood.Text = "Manage Food/Drinks.";
+            this.btnManagefood.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManagefood.UseVisualStyleBackColor = true;
+            this.btnManagefood.Click += new System.EventHandler(this.btnManagefood_Click);
+            // 
             // lblManageCinemas
             // 
             this.lblManageCinemas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblManageCinemas.Image = ((System.Drawing.Image)(resources.GetObject("lblManageCinemas.Image")));
-            this.lblManageCinemas.Location = new System.Drawing.Point(19, 388);
+            this.lblManageCinemas.Location = new System.Drawing.Point(19, 287);
             this.lblManageCinemas.Name = "lblManageCinemas";
             this.lblManageCinemas.Size = new System.Drawing.Size(39, 37);
             this.lblManageCinemas.TabIndex = 6;
@@ -80,7 +138,7 @@
             // 
             this.lblManageAcc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblManageAcc.Image = ((System.Drawing.Image)(resources.GetObject("lblManageAcc.Image")));
-            this.lblManageAcc.Location = new System.Drawing.Point(19, 259);
+            this.lblManageAcc.Location = new System.Drawing.Point(19, 220);
             this.lblManageAcc.Name = "lblManageAcc";
             this.lblManageAcc.Size = new System.Drawing.Size(39, 37);
             this.lblManageAcc.TabIndex = 5;
@@ -89,7 +147,7 @@
             // 
             this.lblHelpTicket.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblHelpTicket.Image = ((System.Drawing.Image)(resources.GetObject("lblHelpTicket.Image")));
-            this.lblHelpTicket.Location = new System.Drawing.Point(19, 149);
+            this.lblHelpTicket.Location = new System.Drawing.Point(19, 159);
             this.lblHelpTicket.Name = "lblHelpTicket";
             this.lblHelpTicket.Size = new System.Drawing.Size(39, 37);
             this.lblHelpTicket.TabIndex = 4;
@@ -101,7 +159,7 @@
             this.btnManageCinemas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageCinemas.Font = new System.Drawing.Font("Impact", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageCinemas.ForeColor = System.Drawing.Color.MintCream;
-            this.btnManageCinemas.Location = new System.Drawing.Point(64, 389);
+            this.btnManageCinemas.Location = new System.Drawing.Point(60, 288);
             this.btnManageCinemas.Name = "btnManageCinemas";
             this.btnManageCinemas.Size = new System.Drawing.Size(198, 36);
             this.btnManageCinemas.TabIndex = 3;
@@ -117,7 +175,7 @@
             this.btnManageAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageAcc.Font = new System.Drawing.Font("Impact", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageAcc.ForeColor = System.Drawing.Color.MintCream;
-            this.btnManageAcc.Location = new System.Drawing.Point(64, 260);
+            this.btnManageAcc.Location = new System.Drawing.Point(60, 221);
             this.btnManageAcc.Name = "btnManageAcc";
             this.btnManageAcc.Size = new System.Drawing.Size(198, 36);
             this.btnManageAcc.TabIndex = 2;
@@ -133,7 +191,7 @@
             this.Helptickets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Helptickets.Font = new System.Drawing.Font("Impact", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Helptickets.ForeColor = System.Drawing.Color.MintCream;
-            this.Helptickets.Location = new System.Drawing.Point(64, 150);
+            this.Helptickets.Location = new System.Drawing.Point(60, 159);
             this.Helptickets.Name = "Helptickets";
             this.Helptickets.Size = new System.Drawing.Size(198, 36);
             this.Helptickets.TabIndex = 1;
@@ -165,7 +223,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "adminDashBoard";
             this.Text = "adminDashBoard";
-            this.Load += new System.EventHandler(this.adminDashBoard_Load);
             this.AdminMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -182,5 +239,9 @@
         private System.Windows.Forms.Label lblHelpTicket;
         private System.Windows.Forms.Label lblManageCinemas;
         private System.Windows.Forms.Panel dashboardadmin;
+        private System.Windows.Forms.Button btnManagefood;
+        private System.Windows.Forms.Label lblviewrep;
+        private System.Windows.Forms.Button btnviewrep;
+        private System.Windows.Forms.Label lblmngfood;
     }
 }

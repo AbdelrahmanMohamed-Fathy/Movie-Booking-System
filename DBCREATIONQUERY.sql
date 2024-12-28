@@ -175,7 +175,51 @@ GO
 
 INSERT INTO Accounts VALUES ('Ahmed', 'Soltan', 'A7medsoltan2004@gmail.com', '12345', 1203547383, 'Admin')
 INSERT INTO Accounts (Fname,Lname,Email,Pass,Authority) VALUES ('Abdelrahman', 'Fathy', 'test@test.com','test','Client')
+INSERT INTO Accounts (Fname, Lname, Email, Pass, Authority) VALUES
+('Benjamin', 'Hernandez', 'benjamin.hernandez@example.com', 'pass6778', 'Admin'),
+('Jane', 'Lewis', 'jane.lewis@example.com', 'pass7527', 'Admin'),
+('Lucas', 'Taylor', 'lucas.taylor@example.com', 'pass9532', 'Client'),
+('Abigail', 'Sanchez', 'abigail.sanchez@example.com', 'pass9291', 'Employee'),
+('Benjamin', 'Garcia', 'benjamin.garcia@example.com', 'pass6527', 'Employee'),
+('Lucas', 'Sanchez', 'lucas.sanchez@example.com', 'pass9824', 'Admin'),
+('Harper', 'Jackson', 'harper.jackson@example.com', 'pass1808', 'Employee'),
+('Mia', 'Robinson', 'mia.robinson@example.com', 'pass2500', 'Admin'),
+('Sarah', 'Lopez', 'sarah.lopez@example.com', 'pass7521', 'Admin'),
+('Sarah', 'Brown', 'sarah.brown@example.com', 'pass7537', 'Client'),
+('Sarah', 'Thomas', 'sarah.thomas@example.com', 'pass2213', 'Admin'),
+('Sarah', 'Moore', 'sarah.moore@example.com', 'pass1138', 'Admin'),
+('Harper', 'Wilson', 'harper.wilson@example.com', 'pass2578', 'Employee'),
+('Amelia', 'Jackson', 'amelia.jackson@example.com', 'pass5089', 'Admin'),
+('Lucas', 'Lewis', 'lucas.lewis@example.com', 'pass4173', 'Client'),
+('James', 'Hernandez', 'james.hernandez@example.com', 'pass1972', 'Employee'),
+('Evelyn', 'Lewis', 'evelyn.lewis@example.com', 'pass3806', 'Client'),
+('Benjamin', 'Lopez', 'benjamin.lopez@example.com', 'pass7303', 'Employee'),
+('Harper', 'Taylor', 'harper.taylor@example.com', 'pass3448', 'Admin'),
+('Elijah', 'Williams', 'elijah.williams@example.com', 'pass3629', 'Client'),
+('Elijah', 'Walker', 'elijah.walker@example.com', 'pass1607', 'Employee'),
+('Harper', 'Jackson', 'harper.jackson1@example.com', 'pass4938', 'Employee'),
+('Alexander', 'Robinson', 'alexander.robinson@example.com', 'pass3029', 'Client'),
+('Ella', 'Robinson', 'ella.robinson@example.com', 'pass3737', 'Employee'),
+('Daniel', 'Hernandez', 'daniel.hernandez@example.com', 'pass5376', 'Client'),
+('David', 'Williams', 'david.williams@example.com', 'pass7765', 'Client'),
+('Olivia', 'Johnson', 'olivia.johnson@example.com', 'pass9412', 'Employee'),
+('Daniel', 'Clark', 'daniel.clark@example.com', 'pass5379', 'Client'),
+('Abigail', 'Miller', 'abigail.miller@example.com', 'pass9239', 'Client'),
+('Benjamin', 'Martinez', 'benjamin.martinez@example.com', 'pass2274', 'Client');
 
+
+
+
+INSERT INTO Cinemas (CinemaType, CinemaManagerID) VALUES ('IMAX', 5267)
+INSERT INTO Cinemas (CinemaType, CinemaManagerID) VALUES ('Standard', 5268)
+INSERT INTO Cinemas (CinemaType, CinemaManagerID) VALUES ('4DX', 5269)
+INSERT INTO Cinemas (CinemaType, CinemaManagerID) VALUES ('VIP', 5270)
+INSERT INTO Cinemas (CinemaType, CinemaManagerID) VALUES ('Luxury', 5271)
+INSERT INTO Cinemas (CinemaType, CinemaManagerID) VALUES ('8D', 5272)
+INSERT INTO Cinemas (CinemaType, CinemaManagerID) VALUES ('Standard', 5273)
+INSERT INTO Cinemas (CinemaType, CinemaManagerID) VALUES ('VIP', 5274)
+INSERT INTO Cinemas (CinemaType, CinemaManagerID) VALUES ('Luxury', 5275)
+INSERT INTO Cinemas (CinemaType, CinemaManagerID) VALUES ('Standard', 5276)
 
 INSERT INTO Cinemas (CinemaType, CinemaManagerID) VALUES ('IMAX',5267)
 GO
@@ -217,29 +261,28 @@ GO
 
 
 INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (1,1,CAST('02:00:00' AS Time))
-INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (2,1,CAST('02:00:00' AS Time))
-INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (3,1,CAST('02:00:00' AS Time))
-INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (4,1,CAST('02:00:00' AS Time))
-INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (5,1,CAST('02:00:00' AS Time))
-INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (6,1,CAST('02:00:00' AS Time))
-INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (7,1,CAST('02:00:00' AS Time))
-INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (8,1,CAST('02:00:00' AS Time))
-INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (9,1,CAST('02:00:00' AS Time))
-INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (10,1,CAST('02:00:00' AS Time))
-INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (11,1,CAST('02:00:00' AS Time))
-INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (12,1,CAST('02:00:00' AS Time))
-INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (13,1,CAST('02:00:00' AS Time))
-INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (14,1,CAST('02:00:00' AS Time))
-INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (15,1,CAST('02:00:00' AS Time))
-INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (16,1,CAST('02:00:00' AS Time))
-INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (17,1,CAST('02:00:00' AS Time))
-INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (18,1,CAST('02:00:00' AS Time))
-INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (19,1,CAST('02:00:00' AS Time))
-INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (20,1,CAST('02:00:00' AS Time))
-INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (21,1,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (2,2,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (3,3,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (4,4,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (5,5,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (6,6,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (7,7,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (8,8,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (9,9,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (10,11,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (11,10,CAST('02:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (12,7,CAST('08:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (13,3,CAST('05:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (14,5,CAST('14:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (15,9,CAST('10:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (16,11,CAST('12:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (17,1,CAST('06:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (18,2,CAST('08:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (19,8,CAST('05:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (20,5,CAST('06:00:00' AS Time))
+INSERT INTO Shows (MovieID,CinemaID,StartTime) VALUES (21,10,CAST('06:00:00' AS Time))
 
 INSERT INTO MovieReviews (UserID, MovieID, Rating) VALUES (5267,1,4)
-
 
 INSERT INTO HelpTickets (UserID,Header,Content) VALUES (5267,'help','kofta gedan')
 INSERT INTO HelpTickets (UserID,Header,Content) VALUES (5267,'Issue with Orders','kofta gedan 2: electric boogaloo')
@@ -248,9 +291,11 @@ INSERT INTO FoodItems (FoodName, FoodQty, Price, FoodDescription) VALUES ('Pop-C
 INSERT INTO FoodItems (FoodName, FoodQty, Price, FoodDescription) VALUES ('Kofta', 20, 300, 'kofta not kobeba dumbass')
 
 INSERT INTO Orders (UserID) VALUES (5267)
+INSERT INTO Orders (UserID) VALUES (5268)
 
 INSERT INTO Orders_Details (OrderID, FoodID, OrderCount) VALUES (1, 2, 6)
 INSERT INTO Orders_Details (OrderID, FoodID, OrderCount) VALUES (1, 1, 3)
+INSERT INTO Orders_Details (OrderID, FoodID, OrderCount) VALUES (2, 2, 4)
 
 SELECT FoodItems.FoodName, SUM(OrderCount) AS Quantity , SUM(OrderCount*FoodItems.Price) AS Revenue
 FROM Orders_Details, FoodItems
