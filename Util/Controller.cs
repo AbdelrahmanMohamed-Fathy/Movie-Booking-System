@@ -422,12 +422,12 @@ namespace Movie_Booking_System.Util
                 $"WHERE UserID = {UserID}\n";
             dbMan.ExecuteNonQuery(query);
         }
+
         public static DataTable GetAllShows()
         {
             string query =
                 "SELECT * FROM Shows";
             return dbMan.ExecuteReader(query);
         }
-
     }
 }
