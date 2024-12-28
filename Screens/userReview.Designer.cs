@@ -183,6 +183,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "userReview";
             this.Text = "userReview";
+            this.Deactivate += new System.EventHandler(this.userReview_Deactivate);
             this.Load += new System.EventHandler(this.userReview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

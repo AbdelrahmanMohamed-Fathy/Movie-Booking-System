@@ -177,5 +177,10 @@ namespace Movie_Booking_System.Screens
         {
 
         }
+
+        private void userReview_Deactivate(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

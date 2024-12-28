@@ -61,5 +61,10 @@ namespace Movie_Booking_System.Screens.HelpTickets
             cmbboxTicketID.DisplayMember = "HelpTicketID";
             cmbboxTicketID.SelectedIndex = -1;
         }
+
+        private void employeeReviewHelpTicket_Deactivate(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
