@@ -12,9 +12,11 @@ namespace Movie_Booking_System.Controls
 {
     public partial class ManageAccountsControl : UserControl
     {
-        public ManageAccountsControl()
+        private int currentuserID;
+        public ManageAccountsControl(int currentuserID)
         {
             InitializeComponent();
+            this.currentuserID = currentuserID;
         }
 
         private void btnAddAccountAdmin_Click_1(object sender, EventArgs e)
@@ -27,10 +29,18 @@ namespace Movie_Booking_System.Controls
 
         private void btnDeleteAccount_Click(object sender, EventArgs e)
         {
-            Controls.AddAccountmenu addaccmen = new Controls.AddAccountmenu();
-            panelmngacc.Controls.Clear();
-            panelmngacc.Controls.Add(addaccmen);
-            addaccmen.Dock = DockStyle.Fill;
+            Controls.DeleteAccountmenucs deleteaccmenu = new Controls.DeleteAccountmenucs(currentuserID);
+            this.Controls.Clear();
+            this.Controls.Add(deleteaccmenu);
+            deleteaccmenu.Dock = DockStyle.Fill;
+        }
+
+        private void btnModifyAccounts_Click(object sender, EventArgs e)
+        {
+            Controls.ModifyAccount Modifyaccmenu = new Controls.ModifyAccount();
+            this.Controls.Clear();
+            this.Controls.Add(Modifyaccmenu);
+            Modifyaccmenu.Dock = DockStyle.Fill;
         }
     }
 }

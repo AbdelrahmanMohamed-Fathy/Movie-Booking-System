@@ -50,7 +50,7 @@ namespace Movie_Booking_System.Screens.AdminScreens
 
         private void btnManageAcc_Click(object sender, EventArgs e)
         {
-            Controls.ManageAccountsControl ManageAccAdminmenu = new Controls.ManageAccountsControl();
+            Controls.ManageAccountsControl ManageAccAdminmenu = new Controls.ManageAccountsControl(parentForm.CurrentUserID);
             dashboardadmin.Controls.Clear();
             dashboardadmin.Controls.Add(ManageAccAdminmenu);
             ManageAccAdminmenu.Dock = DockStyle.Fill;
