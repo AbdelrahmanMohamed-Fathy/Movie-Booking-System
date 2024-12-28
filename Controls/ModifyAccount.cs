@@ -16,6 +16,9 @@ namespace Movie_Booking_System.Controls
         public ModifyAccount()
         {
             InitializeComponent();
+            cmbxNewAuthority.Items.Add(HelperFunctions.ParseEnumToAuthority(userMode.Admin));
+            cmbxNewAuthority.Items.Add(HelperFunctions.ParseEnumToAuthority(userMode.Employee));
+            cmbxNewAuthority.Items.Add(HelperFunctions.ParseEnumToAuthority(userMode.User));
             RefreshSources();
         }
         private void RefreshSources()
@@ -27,9 +30,6 @@ namespace Movie_Booking_System.Controls
             cmbxUserID.DisplayMember = "UserID";
             cmbxUserID.SelectedIndex = -1;
             cmbxUserID.Text = "User ID.";
-            cmbxNewAuthority.Items.Add(HelperFunctions.ParseEnumToAuthority(userMode.Admin));
-            cmbxNewAuthority.Items.Add(HelperFunctions.ParseEnumToAuthority(userMode.Employee));
-            cmbxNewAuthority.Items.Add(HelperFunctions.ParseEnumToAuthority(userMode.User));
             cmbxNewAuthority.DisplayMember = "Authority";
             cmbxNewAuthority.SelectedIndex = -1;
             cmbxNewAuthority.Text = "New Authority";

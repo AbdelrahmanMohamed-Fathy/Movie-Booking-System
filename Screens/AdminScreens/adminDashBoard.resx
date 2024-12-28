@@ -135,40 +135,10 @@
   <metadata name="lblviewrep.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="btnviewrep.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="lblmngfood.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="btnManagefood.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="lblManageCinemas.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="lblManageAcc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="lblHelpTicket.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="btnManageCinemas.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="btnManageAcc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Helptickets.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="lblviewrep.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="lblviewrep.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAAVpJREFUSEul1s8rRFEYxvFJSZEmpUgJSxsS+ZHs7JRCs1G2Uv4AKWupWVDKwtaO
+        EAAACxABrSO9dQAAAVpJREFUSEul1s8rRFEYxvFJSZEmpUgJSxsS+ZHs7JRCs1G2Uv4AKWupWVDKwtaO
         bG2sLSytLJSEZEXiD/B9cOpcc+71vtdTn2ame+59ztx7pjOVX2lDh1Er3DnCO17+8PrzOgZXVLD4/bYw
         nfjAI1wlnoI7zEAl4zDFW6C4SsoUKOYST8EzZiPb0MMvfCbWgnYcJ1xA18iNtSAvOtdcMI1VI41VXAU1
         7BhprOIqKBNXwQJSs03RWMVVoKW3YaSxiqugTFwFa0it9WALSjf2sIIJ6BpNCMcziQuGoNWRZxLKIQ7w
@@ -186,7 +156,7 @@
   <data name="lblmngfood.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAASNJREFUSEvtlbFOAkEURZfEYEds/ABsLAwf4CdYYEGHMRq/wcoEiSQUJCQm9iQ0
+        EAAACxABrSO9dQAAASNJREFUSEvtlbFOAkEURZfEYEds/ABsLAwf4CdYYEGHMRq/wcoEiSQUJCQm9iQ0
         FBR+hqVgZYmxMrG2sRDk3J2djbvDLGyHyZ7kJHfm7ZsHCwtBQR6a+IO/Gb6iRfnMxGCGlyYmcoI71CE9
         j0+oukVZPcKXE9gBPtL1YoBDur7AjonxoaUot9Eh7wB9Wx5NjAfUonyODjeoYiVcudzjt4khLZzjNapv
         hFP8xD10OEVdWA9XSfTWJ/gcrgxlHKB6rB94jCvZwRd8wwNtROhwe3sa2khxiKoNcVcbWRzhO37hGB9Q
