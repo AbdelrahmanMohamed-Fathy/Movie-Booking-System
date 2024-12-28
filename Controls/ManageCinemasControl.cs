@@ -19,7 +19,7 @@ namespace Movie_Booking_System.Controls
 
         private void btnAddRemMovies_Click(object sender, EventArgs e)
         {
-            Controls.addremmoviesmenu addremmoviemen = new Controls.addremseatsmenu();
+            Controls.addremmoviesmenu addremmoviemen = new Controls.addremmoviesmenu();
             this.Controls.Clear();
             this.Controls.Add(addremmoviemen);
             addremmoviemen.Dock = DockStyle.Fill;
@@ -35,10 +35,10 @@ namespace Movie_Booking_System.Controls
 
         private void btnAddRemShows_Click(object sender, EventArgs e)
         {
-            Controls.AddAccountmenu addaccmen = new Controls.AddAccountmenu();
+            Controls.AddRemShows addremshow = new Controls.AddRemShows();
             this.Controls.Clear();
-            this.Controls.Add(addaccmen);
-            addaccmen.Dock = DockStyle.Fill;
+            this.Controls.Add(addremshow);
+            addremshow.Dock = DockStyle.Fill;
         }
 
         private void btnAddRemSeats_Click(object sender, EventArgs e)

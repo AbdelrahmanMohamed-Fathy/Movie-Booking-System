@@ -231,6 +231,12 @@
     <Compile Include="Controls\addremmoviesmenu.Designer.cs">
       <DependentUpon>addremmoviesmenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\AddRemShows.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AddRemShows.Designer.cs">
+      <DependentUpon>AddRemShows.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Adminticket.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -337,6 +343,12 @@
     <Compile Include="Screens\AdminScreens\usersReport.Designer.cs">
       <DependentUpon>usersReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\changePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\changePass.Designer.cs">
+      <DependentUpon>changePass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Debug.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -417,6 +429,9 @@
     <EmbeddedResource Include="Controls\addremmoviesmenu.resx">
       <DependentUpon>addremmoviesmenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AddRemShows.resx">
+      <DependentUpon>AddRemShows.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Adminticket.resx">
       <DependentUpon>Adminticket.cs</DependentUpon>
     </EmbeddedResource>
@@ -464,6 +479,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\AdminScreens\usersReport.resx">
       <DependentUpon>usersReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\changePass.resx">
+      <DependentUpon>changePass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\employeeDashBoard.resx">
       <DependentUpon>employeeDashBoard.cs</DependentUpon>

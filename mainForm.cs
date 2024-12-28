@@ -1,4 +1,5 @@
-﻿using Movie_Booking_System.Util;
+﻿using Movie_Booking_System.Screens;
+using Movie_Booking_System.Util;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -109,6 +110,14 @@ namespace Movie_Booking_System
         {
             label1.Show();
             btnStatus.Show();
+        }
+
+        private void btnChangePass_Click(object sender, EventArgs e)
+        {
+            if (CurrentUserID == -1)
+                return;
+            changePass form = new changePass(this);
+            form.ShowDialog();
         }
     }
     public enum userMode
