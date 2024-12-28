@@ -26,13 +26,13 @@ namespace Movie_Booking_System.Screens.FoodOrders
             this.parentForm = parent;
 
             UserID = parent.CurrentUserID.ToString();//someone add the user Id;
-            textBox4.Text = UserID;
+            UserId1.Text = UserID;
         }
 
         private void userFoodOrder_Load(object sender, EventArgs e)
         {
-            comboBox1.Items.Clear();
-            comboBox2.Items.Clear();
+            FoodId.Items.Clear();
+            FoodName.Items.Clear();
             DataTable table = Controller.showallFoods();
             if (table == null)
             {
@@ -42,8 +42,8 @@ namespace Movie_Booking_System.Screens.FoodOrders
             {
                 for(int x=0; x<table.Rows.Count; x++)
                 {
-                    comboBox1.Items.Add(table.Rows[x][0].ToString());
-                    comboBox2.Items.Add(table.Rows[x][1].ToString());
+                    FoodId.Items.Add(table.Rows[x][0].ToString());
+                    FoodName.Items.Add(table.Rows[x][1].ToString());
                 }
                 Controller.InsertNewOrder(UserID);
                 textBox7.Text = Controller.GetNewOrderID(UserID).ToString();
@@ -51,11 +51,11 @@ namespace Movie_Booking_System.Screens.FoodOrders
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void FoodId_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBox2.SelectedItem = comboBox2.Items[comboBox1.SelectedIndex];
+            FoodName.SelectedItem = FoodName.Items[FoodId.SelectedIndex];
 
-            DataTable table = Controller.GetFoodPriceandQty(comboBox1.Text);
+            DataTable table = Controller.GetFoodPriceandQty(FoodId.Text);
             if (table == null)
             {
 
@@ -65,21 +65,21 @@ namespace Movie_Booking_System.Screens.FoodOrders
                 for (int x = 0; x < table.Rows.Count; x++)
                 {
                     FoodQty = Convert.ToInt32(table.Rows[x][0].ToString());
-                    textBox5.Text = FoodQty.ToString();
-                    textBox6.Text = Controller.GetOrdersCountFromFood(Convert.ToInt32(comboBox1.Text)).ToString();
-                    textBox3.Text = (FoodQty - Controller.GetOrdersCountFromFood(Convert.ToInt32(comboBox1.Text))).ToString(); 
+                    TotalOrCo.Text = FoodQty.ToString();
+                    UsedCount.Text = Controller.GetOrdersCountFromFood(Convert.ToInt32(FoodId.Text)).ToString();
+                    avaliablecount.Text = (FoodQty - Controller.GetOrdersCountFromFood(Convert.ToInt32(FoodId.Text))).ToString(); 
                     FoodPrice = Convert.ToInt32(table.Rows[x][1].ToString());
-                    textBox2.Text = FoodPrice.ToString();
-                    textBox1.Text = "";
+                    OrderPrice.Text = FoodPrice.ToString();
+                    OrderCount.Text = "";
                 }
             }
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void FoodName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBox1.SelectedItem = comboBox1.Items[comboBox2.SelectedIndex];
+            FoodId.SelectedItem = FoodId.Items[FoodName.SelectedIndex];
 
-            DataTable table = Controller.GetFoodPriceandQty(comboBox1.Text);
+            DataTable table = Controller.GetFoodPriceandQty(FoodId.Text);
             if (table == null)
             {
 
@@ -89,67 +89,67 @@ namespace Movie_Booking_System.Screens.FoodOrders
                 for (int x = 0; x < table.Rows.Count; x++)
                 {
                     FoodQty = Convert.ToInt32(table.Rows[x][0].ToString());
-                    textBox3.Text = (FoodQty - Controller.GetOrdersCountFromFood(Convert.ToInt32(comboBox1.Text))).ToString();
+                    avaliablecount.Text = (FoodQty - Controller.GetOrdersCountFromFood(Convert.ToInt32(FoodId.Text))).ToString();
 
-                    textBox5.Text = FoodQty.ToString();
-                    textBox6.Text = Controller.GetOrdersCountFromFood(Convert.ToInt32(comboBox1.Text)).ToString();
+                    TotalOrCo.Text = FoodQty.ToString();
+                    UsedCount.Text = Controller.GetOrdersCountFromFood(Convert.ToInt32(FoodId.Text)).ToString();
 
                     FoodPrice = Convert.ToInt32(table.Rows[x][1].ToString());
-                    textBox2.Text = FoodPrice.ToString();
-                    textBox1.Text = "";
+                    OrderPrice.Text = FoodPrice.ToString();
+                    OrderCount.Text = "";
                 }
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void OrderCount_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                if (textBox1.Text != "")
+                if (OrderCount.Text != "")
                 {
-                    int TotalPrice = FoodPrice * Convert.ToInt32(textBox1.Text);
-                    textBox2.Text = TotalPrice.ToString();
+                    int TotalPrice = FoodPrice * Convert.ToInt32(OrderCount.Text);
+                    OrderPrice.Text = TotalPrice.ToString();
                 }
                 else
                 {
-                    textBox2.Text = FoodPrice.ToString();
+                    OrderPrice.Text = FoodPrice.ToString();
                 }
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Error in data entry !!");
-                textBox1.Text = "";
-                textBox2.Text = FoodPrice.ToString();
+                OrderCount.Text = "";
+                OrderPrice.Text = FoodPrice.ToString();
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void addOrderBut_Click(object sender, EventArgs e)
         {
             try
             {
-                if ((comboBox1.Text == "") || (textBox1.Text == "") || (textBox2.Text == "") || (textBox3.Text == ""))
+                if ((FoodId.Text == "") || (OrderCount.Text == "") || (OrderPrice.Text == "") || (avaliablecount.Text == ""))
                 {
                     MessageBox.Show("Missing Data .. !!");
                 }
                 else
                 {
-                    if (Convert.ToInt32(textBox1.Text) <= 0)
+                    if (Convert.ToInt32(OrderCount.Text) <= 0)
                     {
                         MessageBox.Show("Can't apply zero or negative orders .. !!");
                         return;
                     }
-                    if (Convert.ToInt32(textBox1.Text) > Convert.ToInt32(textBox3.Text))
+                    if (Convert.ToInt32(OrderCount.Text) > Convert.ToInt32(avaliablecount.Text))
                     {
                         MessageBox.Show("More than available count .. !!");
                     }
                     else
                     {
-                        Controller.InsertFoodOrder(comboBox1.Text, textBox1.Text, textBox7.Text);
+                        Controller.InsertFoodOrder(FoodId.Text, OrderCount.Text, textBox7.Text);
                         MessageBox.Show("Your order was added succesfully ...");
 
-                        textBox3.Text = (FoodQty - Controller.GetOrdersCountFromFood(Convert.ToInt32(comboBox1.Text))).ToString();
-                        textBox5.Text = FoodQty.ToString();
-                        textBox6.Text = Controller.GetOrdersCountFromFood(Convert.ToInt32(comboBox1.Text)).ToString();
+                        avaliablecount.Text = (FoodQty - Controller.GetOrdersCountFromFood(Convert.ToInt32(FoodId.Text))).ToString();
+                        TotalOrCo.Text = FoodQty.ToString();
+                        UsedCount.Text = Controller.GetOrdersCountFromFood(Convert.ToInt32(FoodId.Text)).ToString();
                         DataTable tablePrice = Controller.GetTotalOrderPrice(textBox7.Text);
                         textBox8.Text = tablePrice.Rows[0][0].ToString();
                         LoadAllOrders();
@@ -163,7 +163,7 @@ namespace Movie_Booking_System.Screens.FoodOrders
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void LoadOrderButt_Click(object sender, EventArgs e)
         {
             textBox8.Text = "";
             LoadAllOrders();
@@ -194,20 +194,20 @@ namespace Movie_Booking_System.Screens.FoodOrders
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ClearButt_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
-            comboBox1.Text = "";
-            comboBox2.Text = "";
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox3.Text = "";
-            textBox5.Text = "";
-            textBox6.Text = "";
+            FoodId.Text = "";
+            FoodName.Text = "";
+            OrderCount.Text = "";
+            OrderPrice.Text = "";
+            avaliablecount.Text = "";
+            TotalOrCo.Text = "";
+            UsedCount.Text = "";
             textBox8.Text = "";
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void DeleteOrdButton_Click(object sender, EventArgs e)
         {
             textBox8.Text = "";
             Controller.DeleteOrders("");

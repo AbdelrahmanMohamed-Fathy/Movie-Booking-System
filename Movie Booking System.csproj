@@ -359,9 +359,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\FoodOrders\employeeFulfillOrder.resx">
       <DependentUpon>employeeFulfillOrder.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\FoodOrders\userFoodOrder.resx">
       <DependentUpon>userFoodOrder.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\AdminScreens\adminDashBoard.resx">
       <DependentUpon>adminDashBoard.cs</DependentUpon>
@@ -392,6 +394,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\userScreen.resx">
       <DependentUpon>userScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Screens\signupScreen.cs">
       <SubType>Form</SubType>

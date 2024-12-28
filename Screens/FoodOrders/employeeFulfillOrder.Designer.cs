@@ -37,12 +37,12 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.btnCompleteorder = new System.Windows.Forms.Button();
+            this.txtOrderId = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnLoadorder = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnLoadincOrd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,27 +116,27 @@
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             // 
-            // button1
+            // btnCompleteorder
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(599, 305);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(362, 53);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Complete Order";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCompleteorder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCompleteorder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCompleteorder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCompleteorder.Location = new System.Drawing.Point(599, 305);
+            this.btnCompleteorder.Name = "btnCompleteorder";
+            this.btnCompleteorder.Size = new System.Drawing.Size(362, 53);
+            this.btnCompleteorder.TabIndex = 3;
+            this.btnCompleteorder.Text = "Complete Order";
+            this.btnCompleteorder.UseVisualStyleBackColor = true;
+            this.btnCompleteorder.Click += new System.EventHandler(this.btnCompleteorder_Click);
             // 
-            // textBox4
+            // txtOrderId
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox4.Location = new System.Drawing.Point(97, 318);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(458, 26);
-            this.textBox4.TabIndex = 19;
+            this.txtOrderId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.txtOrderId.Location = new System.Drawing.Point(97, 318);
+            this.txtOrderId.Name = "txtOrderId";
+            this.txtOrderId.ReadOnly = true;
+            this.txtOrderId.Size = new System.Drawing.Size(458, 26);
+            this.txtOrderId.TabIndex = 19;
             // 
             // label6
             // 
@@ -148,57 +148,57 @@
             this.label6.TabIndex = 18;
             this.label6.Text = "Order ID:";
             // 
-            // button3
+            // btnLoadorder
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button3.Location = new System.Drawing.Point(782, 71);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(179, 53);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "Load All Orders";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnLoadorder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoadorder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadorder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnLoadorder.Location = new System.Drawing.Point(782, 71);
+            this.btnLoadorder.Name = "btnLoadorder";
+            this.btnLoadorder.Size = new System.Drawing.Size(179, 53);
+            this.btnLoadorder.TabIndex = 21;
+            this.btnLoadorder.Text = "Load All Orders";
+            this.btnLoadorder.UseVisualStyleBackColor = true;
+            this.btnLoadorder.Click += new System.EventHandler(this.btnLoadorder_Click);
             // 
-            // button2
+            // btnClear
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(782, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(179, 53);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Clear";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnClear.Location = new System.Drawing.Point(782, 12);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(179, 53);
+            this.btnClear.TabIndex = 20;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // button4
+            // btnLoadincOrd
             // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button4.Location = new System.Drawing.Point(782, 130);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(179, 53);
-            this.button4.TabIndex = 22;
-            this.button4.Text = "Load Inc. Orders";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnLoadincOrd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoadincOrd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadincOrd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnLoadincOrd.Location = new System.Drawing.Point(782, 130);
+            this.btnLoadincOrd.Name = "btnLoadincOrd";
+            this.btnLoadincOrd.Size = new System.Drawing.Size(179, 53);
+            this.btnLoadincOrd.TabIndex = 22;
+            this.btnLoadincOrd.Text = "Load Inc. Orders";
+            this.btnLoadincOrd.UseVisualStyleBackColor = true;
+            this.btnLoadincOrd.Click += new System.EventHandler(this.btnLoadincOrd_Click);
             // 
             // employeeFulfillOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(971, 377);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.btnLoadincOrd);
+            this.Controls.Add(this.btnLoadorder);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.txtOrderId);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCompleteorder);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "employeeFulfillOrder";
@@ -221,12 +221,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button btnCompleteorder;
+        private System.Windows.Forms.TextBox txtOrderId;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnLoadorder;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnLoadincOrd;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
     }
 }
