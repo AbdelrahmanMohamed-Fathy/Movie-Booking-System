@@ -31,24 +31,23 @@ namespace Movie_Booking_System.Controls.Booking
             set { seatNumber = value; label1.Text = value.ToString(); }
         }
 
-
         public seat()
         {
             InitializeComponent();
-            seatNumber = this.TabIndex;
             status = ChairStatus.Available;
+        }
+
+        public seat(int seatNumber)
+        {
+            InitializeComponent();
+            status = ChairStatus.Available;
+            SeatNumber = seatNumber;
         }
 
         public seat(ChairStatus status)
         {
             InitializeComponent();
-            seatNumber = this.TabIndex;
             this.status = status;
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void RefreshAppearance()
@@ -69,7 +68,6 @@ namespace Movie_Booking_System.Controls.Booking
             }
             this.BackgroundImage = Image.FromFile("..\\..\\Assets\\" + ImageFile);
         }
-
 
         public enum ChairStatus
         {

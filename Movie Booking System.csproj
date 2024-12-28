@@ -447,6 +447,9 @@
     <EmbeddedResource Include="Screens\AdminScreens\usersReport.resx">
       <DependentUpon>usersReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\employeeDashBoard.resx">
+      <DependentUpon>employeeDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\FoodOrders\employeeFulfillOrder.resx">
       <DependentUpon>employeeFulfillOrder.cs</DependentUpon>
       <SubType>Designer</SubType>

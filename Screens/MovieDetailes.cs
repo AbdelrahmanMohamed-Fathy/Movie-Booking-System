@@ -57,7 +57,7 @@ namespace Movie_Booking_System.Screens
             if (parentForm.Authority == userMode.Guest)
                 parentForm.LoadNewForm(new loginScreen(parentForm, parentForm.Authority), false);
             else
-                parentForm.LoadNewForm(new userBooking(parentForm, parentForm.Authority), false);
+                parentForm.LoadNewForm(new userBooking(parentForm, parentForm.Authority, MovieID), false);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace Movie_Booking_System.Screens
             else
             {
                 userRev = new userReview(MovieID, parentForm.CurrentUserID);
-                userRev.ShowDialog();
+                userRev.Show();
             }
         }
     }

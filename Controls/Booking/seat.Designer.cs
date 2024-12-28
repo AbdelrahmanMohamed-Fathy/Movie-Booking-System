@@ -43,12 +43,12 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // seat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.label1);
