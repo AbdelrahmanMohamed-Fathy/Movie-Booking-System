@@ -327,5 +327,33 @@ namespace Movie_Booking_System.Util
                 return 0;
 
         }
+
+        public static DataTable GetAllSeats(int CinemaID)
+        {
+            string query =
+                "SELECT SeatNumber\n" +
+                "FROM Seats\n" +
+                $"WHERE CinemaID = {CinemaID}\n";
+
+            return dbMan.ExecuteReader(query);
+        }
+
+        public static DataTable GetTakenShowSeats(int ShowID)
+        {
+            string query =
+                "SELECT SeatNumber\n" +
+                "FROM BookingSeats, Seats\n" +
+                $"WHERE ShowID = {ShowID} AND Seats.CinemaID = BookingSeats.CinemaID\n";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public static DataTable GetShowTimesFull(int MovieID)
+        {
+            string query =
+                "SELECT Shows.*\n" +
+                "FROM Shows, Movies\n" +
+                $"WHERE Movies.MovieID = {MovieID} AND Movies.MovieID = Shows.MovieID\n";
+            return dbMan.ExecuteReader(query);
+        }
     }
 }

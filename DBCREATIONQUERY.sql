@@ -127,10 +127,12 @@ GO
 ---------------------------------------
 CREATE TABLE BookingSeats (
 BookingID			INTEGER				NOT NULL,
+ShowID              INTEGER             NOT NULL,
 CinemaID			INTEGER				NOT NULL,
 SeatID              INTEGER				NOT NULL,
 PRIMARY KEY         (BookingID,SeatID),
 FOREIGN KEY         (BookingID)         REFERENCES Bookings,
+FOREIGN KEY         (ShowID)            REFERENCES Shows,
 FOREIGN KEY         (CinemaID,SeatID)   REFERENCES Seats
 );
 ---------------------------------------
@@ -176,6 +178,18 @@ INSERT INTO Accounts (Fname,Lname,Email,Pass,Authority) VALUES ('Abdelrahman', '
 
 
 INSERT INTO Cinemas (CinemaType, CinemaManagerID) VALUES ('IMAX',5267)
+GO
+
+INSERT INTO Seats VALUES (1,1,50)
+INSERT INTO Seats VALUES (2,1,50)
+INSERT INTO Seats VALUES (3,1,50)
+INSERT INTO Seats VALUES (4,1,50)
+INSERT INTO Seats VALUES (5,1,50)
+INSERT INTO Seats VALUES (6,1,50)
+INSERT INTO Seats VALUES (7,1,50)
+INSERT INTO Seats VALUES (8,1,50)
+INSERT INTO Seats VALUES (9,1,50)
+INSERT INTO Seats VALUES (10,1,50)
 
 
 INSERT INTO Movies (MovieName, Director, Runtime) VALUES ('La La Land', 'Damien Chazelle', CAST(N'02:08:00' AS Time))
@@ -255,3 +269,6 @@ FROM MovieReviews
 WHERE MovieReviews.MovieID = MovieReviews.MovieID
 GROUP BY MovieReviews.MovieID
 
+SELECT  SeatNumber
+FROM Seats
+WHERE Seats.CinemaID = 1

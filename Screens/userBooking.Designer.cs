@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelSeat = new System.Windows.Forms.FlowLayoutPanel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -37,26 +38,40 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(495, 171);
             this.dataGridView1.TabIndex = 0;
             // 
-            // panel1
+            // panelSeat
             // 
-            this.panel1.Location = new System.Drawing.Point(12, 190);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(495, 248);
-            this.panel1.TabIndex = 1;
+            this.panelSeat.BackColor = System.Drawing.Color.Transparent;
+            this.panelSeat.Location = new System.Drawing.Point(12, 189);
+            this.panelSeat.Name = "panelSeat";
+            this.panelSeat.Size = new System.Drawing.Size(495, 249);
+            this.panelSeat.TabIndex = 1;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(533, 12);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(175, 21);
+            this.comboBox1.TabIndex = 2;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // userBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.panelSeat);
             this.Controls.Add(this.dataGridView1);
             this.Name = "userBooking";
             this.Text = "userBooking";
+            this.Load += new System.EventHandler(this.userBooking_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -65,6 +80,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.FlowLayoutPanel panelSeat;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

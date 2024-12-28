@@ -37,6 +37,13 @@ namespace Movie_Booking_System.Controls.Booking
             status = ChairStatus.Available;
         }
 
+        public seat(int seatNumber)
+        {
+            InitializeComponent();
+            status = ChairStatus.Available;
+            SeatNumber = seatNumber;
+        }
+
         public seat(ChairStatus status)
         {
             InitializeComponent();
