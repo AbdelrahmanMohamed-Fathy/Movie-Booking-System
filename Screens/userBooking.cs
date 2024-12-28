@@ -41,7 +41,6 @@ namespace Movie_Booking_System.Screens
         private void RePopulateSeats()
         {
             int CinemaID = (int)comboBox1.SelectedValue;
-            //int.TryParse(, out CinemaID);
             int ShowID;
             int.TryParse(comboBox1.Text, out ShowID);
 
@@ -74,6 +73,24 @@ namespace Movie_Booking_System.Screens
 
         private void btnBook_Click(object sender, EventArgs e)
         {
+            List<int> SeatNumbers = new List<int>();
+            foreach (Controls.Booking.seat C in panelSeat.Controls)
+            {
+                if (C.Status == ChairStatus.Selected)
+                    SeatNumbers.Add(C.SeatNumber);
+            }
+            if (SeatNumbers.Any())
+            {
+                Controller.InsertBooking(parentForm.CurrentUserID, Convert.ToInt32(comboBox1.Text), SeatNumbers);
+
+                int CinemaID = (int)comboBox1.SelectedValue;
+                int ShowID;
+                int.TryParse(comboBox1.Text, out ShowID);
+
+                DrawSeats(Controller.GetAllSeats(CinemaID));
+                MarkTakenSeats(Controller.GetTakenShowSeats(ShowID));
+            }
+
 
         }
     }
