@@ -44,6 +44,11 @@ namespace Movie_Booking_System.Util
             string query = $"UPDATE Accounts SET Authority='{authority}' WHERE UserID ={UserID};";
             return dbMan.ExecuteNonQuery(query);
         }
+        public static int Updatefooditmqty(int qty, int foodid)
+        {
+            string query = $"UPDATE FoodItems SET FoodQty={qty} WHERE FoodID ={foodid};";
+            return dbMan.ExecuteNonQuery(query);
+        }
         public static DataTable GetUserID()
         {
             string query = $"SELECT UserID FROM Accounts";
@@ -59,6 +64,11 @@ namespace Movie_Booking_System.Util
             string query = $"DELETE FROM Accounts WHERE UserID ={UserID};";
             return dbMan.ExecuteNonQuery(query);
         }
+        public static int DeleteFooditm(int FoodID)
+        {
+            string query = $"DELETE FROM FoodItems WHERE FoodID ={FoodID};";
+            return dbMan.ExecuteNonQuery(query);
+        }
 
         public static int InsertNewOrder(string UserID)  // ahmad
         {
@@ -70,7 +80,7 @@ namespace Movie_Booking_System.Util
         public static int AddFoodItm(string foodname,int qty,int price,string desc)
         {
             string query =
-                            "INSERT INTO Student (FoodName, FoodQty, Price, FoodDescription) " +
+                            "INSERT INTO FoodItems (FoodName, FoodQty, Price, FoodDescription) " +
                             $"Values ('{foodname}' , {qty} , {price}, '{desc}');";
             return dbMan.ExecuteNonQuery(query);
         }
