@@ -428,6 +428,5 @@ namespace Movie_Booking_System.Util
                 "SELECT * FROM Shows";
             return dbMan.ExecuteReader(query);
         }
-
     }
 }
